@@ -15,7 +15,7 @@
 
 [CORE-ATAC - Thibodeau et al. Plos Comp Biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009670) Prediction of *cis*-CREs using ATAC-seq data. Uses CNN + max pooling. Can not predict chromHMM annotations but predicts top 3 functional annotations.
 
-[BIONIC - Forster et al. Nat Meth 2022] (https://www.nature.com/articles/s41592-022-01616-x): Biological network integration. Uses GAT.
+[BIONIC - Forster et al. Nat Meth 2022](https://www.nature.com/articles/s41592-022-01616-x): Biological network integration. Uses GAT.
   **Implementation Details** : Modifies GAT to consider a priori network edge weights (Methods, eqs. 1-2). Uses 3 GAT layers, 10 attention heads per GAT encoder, each with a hidden dimension of 68, as per their hyperparameter optimization results.
 
 
