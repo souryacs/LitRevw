@@ -28,6 +28,8 @@
 
 [MA-FOCUS - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) - Fine mapping and TWAS using multiple ancestry information. Integrates GWAS, eQTL and LD information, and assumes that causal genes are shared across ancestry.
 
+[PALM - Yu et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36744920/) Uses functional annotations to prioritize GWAS variants.
+Supports multiple functional annotations. Computes gradient boosting and tree based likelihood to prioritize the GWAS SNPs.
 
 
 
