@@ -1,4 +1,4 @@
-# T Cell Related epigenomics papers
+# Biology / Cell type (like T cell) Related epigenomics papers
 
 #### (understanding the regulatory regions, important genes, and SNPs related to their functions and differentiation)
 
