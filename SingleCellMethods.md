@@ -58,12 +58,12 @@
 
 
 
-## Single cell eQTL, ASE 
+## Single cell eQTL, ASE, variant annotation
 
-[g-ChromVAR, Ulirsch et al. Nat Genet 2021](https://pubmed.ncbi.nlm.nih.gov/30858613/) presents g-chromVAR, method to identify GWAS variant enrichment among closely related tissues / cell types, using scATAC-seq data. It computes the bias-corrected Z-scores to estimate trait-relevance for each single cell by integrating the probability of variant causality and quantitative strength of chromatin accessibility.
+[g-ChromVAR - Ulirsch et al. Nat Genet 2021](https://pubmed.ncbi.nlm.nih.gov/30858613/) presents g-chromVAR, method to identify GWAS variant enrichment among closely related tissues / cell types, using scATAC-seq data. It computes the bias-corrected Z-scores to estimate trait-relevance for each single cell by integrating the probability of variant causality and quantitative strength of chromatin accessibility.
 
-[scAVENGE, Yu et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35668323/) Uses network propagation on causal variants to identify their relevant cell types using single cell resolution. Using the g-chromVAR output, i.e. single cell based trait-relevance scores, we rank the cells and select the top cells as seed cells, which are used for network propagation algorithm. Using random walk algorithm, we reach the stationary state of network connectivity among these cells, and the final trait relevance scores (TRS) are computed for each cell.
+[scAVENGE - Yu et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35668323/) Uses network propagation on causal variants to identify their relevant cell types using single cell resolution. Using the g-chromVAR output, i.e. single cell based trait-relevance scores, we rank the cells and select the top cells as seed cells, which are used for network propagation algorithm. Using random walk algorithm, we reach the stationary state of network connectivity among these cells, and the final trait relevance scores (TRS) are computed for each cell.
 
-
+[scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) Integrates GWAS summary statistics, epigenomics and scRNA-seq data from multiple tissue types, diseases, individuals and cells. The authors transform gene programs to SNP annotations using tissue-specific enhancer–gene links, standard gene window-based linking strategies such as MAGMA, RSS-E and linkage disequilibrium score regression (LDSC)-specifically expressed genes. Then they link SNP annotations to diseases by applying stratified LDSC (S-LDSC) to the resulting SNP annotations. 
 
 
