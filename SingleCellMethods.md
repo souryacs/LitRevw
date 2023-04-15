@@ -19,14 +19,15 @@
 
 [VIMCCA - Wang et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36622018/) Variational inference method - generalizing CCA. Multi-view latent variable. CCA is modeled by multi-view latent variable and variational distribution. Maximizing log likelihood is modeled as maximizing evidence lower bound (ELBO). It has 2 components - KL divergence, and reconstruction error. SGVB estimator using monte carlo simulator is used to estimate the ELBO.
 
+[TotalVI - Gayoso et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/33589839/) scVI on multi-omic setting (CITE-seq), its joint low dimensional representations and the parameters are inferred by VAE framework.
+
+## Single Cell RNA-seq
+
 [LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single cell RNA-seq data integration.
 
 [MEFISTO - Velten et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35027765/) Uses factor analysis and extends the method MOFA to account for spatio-temporal variation of scRNA-seq data.
 
-
-## Single Cell RNA-seq
-
-
+[scVI - Lopez et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/30504886/) Models scRNA-seq by ZINB distribution, but uses NN to infer its parameters. Performs batch correction. 
 
 
 ## Single Cell ATAC-seq
