@@ -42,11 +42,11 @@
 
 ## Cell Annotation
 
+[CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high resolution cell annotation, but may require manual curation of datasets.
 
+[scNym - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) Cell annotation using domain adversarial neural network. Uses both training data (with labels) and target data (to learn the embeddings). Uses mixmatch scheme to permute the input data and labels and the domain adversarial network predicts the domain of origin (training / test data). Classifier is updated by the inverse of adversarial gradients.
 
-
-
-
+[scANVI - Xu et al. Molecular System Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33491336/) Cell annotation on top of scVI framework. Uses harmonization (similar to batch effect correction, but extended to supports datasets even from multiple technologies) and automatic cell annotation. Uses probabilistic cell annotation (generative model) in 2 steps: 1) First annotates a subset of cells with high confidence, 2) Then annotates the remaining cells using the annotations of the previous set of cells.
 
 
 ## Spatial Transcriptomics
