@@ -38,7 +38,7 @@
 
 [chromVAR - Schep et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28825706/) Using scATAC-seq data, measures the gain / loss of chromatin accessibility within peaks sharing the same motif or annotation.
 
-
+[CICERO - Pliner et al. Mol Cell 2018](https://pubmed.ncbi.nlm.nih.gov/30078726/) Concept of co-accessibility among peaks.
 
 
 ## Cell Annotation
