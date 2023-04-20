@@ -4,6 +4,8 @@
 
 https://github.com/steven2358/awesome-generative-ai Various links related to Generative AI literature
 
+https://www.promptingguide.ai/papers AI papers.
+
 
 
 ## Hi-C / 3C
