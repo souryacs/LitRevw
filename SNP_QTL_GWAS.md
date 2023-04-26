@@ -7,6 +7,7 @@
 
 ## Colocalization / Fine-mapping
 
+[SusieR - Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) Implements the sum of single effects ([SUSiE](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)) model for fine mapping, and describes the differences of fine-mapping techniques when individual lelevl genotype data are available, and when only the summary statistics are available (more common - SusieRSS approach).
 
 
 ## QTL / SNP enrichment analysis
