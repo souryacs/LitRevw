@@ -18,3 +18,13 @@
 ## Structural Variation (CNV, SV) analysis
 
 
+
+
+
+
+## CRISPR / experimental validation of E-P contacts, regulatory regions
+
+[CRISPRQTL - Gasperini et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/30612741/) validated E-P pairs by high throughput CRISPR purturbations in thousands of cells.
+
+
+
