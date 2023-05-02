@@ -26,5 +26,6 @@
 
 [CRISPRQTL - Gasperini et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/30612741/) validated E-P pairs by high throughput CRISPR purturbations in thousands of cells.
 
+[Bergman et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/35594906/) proposed Exp-STARRseq - compatibility rule between enhancer and promoter sequences.
 
 
