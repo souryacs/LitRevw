@@ -28,4 +28,8 @@
 
 [Bergman et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/35594906/) proposed Exp-STARRseq - compatibility rule between enhancer and promoter sequences.
 
+[Nasser et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33828297/) applied ABC score to prioritize regulatory enhancers for target genes, and compared against lots of E-P linking strategies.
+
+[Fulco et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/31784727/) proposed ABC score to prioritize regulatory enhancers for target genes.
+
 
