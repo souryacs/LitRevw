@@ -27,6 +27,8 @@
   
 [BindSpace - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model).
 
+[Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, and concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
+
 
 ## Prediction of Regulatory region without using DNA sequence 
 
