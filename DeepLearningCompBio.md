@@ -17,11 +17,11 @@
 
 [Basenji - Kelley et al. Genome Research 2018](https://genome.cshlp.org/content/28/5/739.long): Extends Basset, which only generates peak based chromatin profiles. Predicts epigenomic and transcriptional effects using the ChIP-seq, DNAse seq, ATAC-seq. Also identifies causal variants using GWAS loci. Predicts distal regulatory interactions and finer resolution chromatin profiles. It also identifies sequence variants, TF motifs.
 
+ **Note** : The input sequencing dataset is processed by a custom pipeline to use the multi-mapping reads and to normalize for GC bias.
+
 [Enformer - Avsec et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34608324/) predicts gene expression from DNA sequences using transformer model and 198 bp receptive field around TSS. Best performing model so far. It also identifies sequence variants, TF motifs, and eQTLs.
 
-[INTERACT - Zhou et al. PNAS 2022](https://pubmed.ncbi.nlm.nih.gov/35969790/) predicts DNA methylation levels from DNA sequences, and also predicts DNA methylation QTLs (sequence variants) which are further integrated to brain GWAS studies.
-
- **Note** : The input sequencing dataset is processed by a custom pipeline to use the multi-mapping reads and to normalize for GC bias.
+[INTERACT - Zhou et al. PNAS 2022](https://pubmed.ncbi.nlm.nih.gov/35969790/) predicts DNA methylation levels from DNA sequences, tissue specific DNA methylation data, TF motifs (validated by TOMTOM motif analysis tool) and also predicts DNA methylation QTLs (sequence variants) which are further integrated to brain GWAS studies.
 
 [CORE-ATAC - Thibodeau et al. Plos Comp Biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009670) Prediction of *cis*-CREs using ATAC-seq data. Uses CNN + max pooling. Can not predict chromHMM annotations but predicts top 3 functional annotations.
 
