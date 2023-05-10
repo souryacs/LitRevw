@@ -10,6 +10,7 @@
 
 [TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
 
+[MetaChrom - Lai et al. PLOS Comp Biol. 2022](https://pubmed.ncbi.nlm.nih.gov/35576194/) employs transfer learning to annotate the regulatory variants and then combine with GWAS data to predict the functional variants.
 
 ## Prediction of Regulatory region using DNA sequence
 
