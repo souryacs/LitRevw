@@ -7,6 +7,7 @@
 [GTEx v8 - Castel et al. Genome Biology 2020](https://pubmed.ncbi.nlm.nih.gov/32912332/) Repository of haplotype specific expression for GTEx v8 tissues. Allelic log fold change count is used for comparing SNP and haplotype-level ASE data. WASP filtering is recommended for ASE inference. 
 
 
+
 ## Genotyping
 
 [Meta Imputation - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
@@ -51,6 +52,10 @@
 Supports multiple functional annotations. Computes gradient boosting and tree based likelihood to prioritize the GWAS SNPs.
 
 [MOVE - Allesoe et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36593394/) Defines MOVE - Multi-omics variational autoencoder including data from multiple omics from 789 sample cohort (vertical integration) and applies VAE, and defines the association between T2D with the latent space features. Significance is computed by t-test, and by feature purturbation (0/1) technique.
+
+[Hierarchical Poisson model - He et al. Transl. Psychiatry 2022](https://pubmed.ncbi.nlm.nih.gov/35436980/) derives allele-specific QTLs and applies on AD. It employs hierarchical poisson model by prioritizing the heterozygous SNPs. Does not consider the total counts.
+
+[stratAS - Shetty et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/34699744/) Applies allele specific QTL inference from ChIP-seq (chromatinQTL) on prCa data. Uses haplotype-based beta binomial model for the allele specific read counts, and identify the causal variants. Tests individual SNPs for each peak (within 100 Kb of peak center).
 
 
 
