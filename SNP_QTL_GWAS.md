@@ -1,5 +1,11 @@
 # SNP / QTL / GWAS and functional variants
 
+## QTL / ASE inference
+
+[MixQTL - Liang et al. Nat Comm 2021](https://pubmed.ncbi.nlm.nih.gov/33658504/) models ASE using allelic fold change. The total read count and haplotype-specific read counts are separately modeled using linear regression, to provide an approximate fast QTL inference. Validated using GTEx v8 data. Implemented in tensorQTL. Appropriate for large sample sizes, but for smaller sample sizes (~100), RASQUAL is better.
+
+[GTEx v8 - Castel et al. Genome Biology 2020](https://pubmed.ncbi.nlm.nih.gov/32912332/) Repository of haplotype specific expression for GTEx v8 tissues. Allelic log fold change count is used for comparing SNP and haplotype-level ASE data. WASP filtering is recommended for ASE inference. 
+
 
 ## Genotyping
 
