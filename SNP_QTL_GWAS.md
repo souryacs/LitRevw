@@ -6,6 +6,8 @@
 
 [GTEx v8 - Castel et al. Genome Biology 2020](https://pubmed.ncbi.nlm.nih.gov/32912332/) Repository of haplotype specific expression for GTEx v8 tissues. Allelic log fold change count is used for comparing SNP and haplotype-level ASE data. WASP filtering is recommended for ASE inference. 
 
+[PLASMA - Wang et al. AJHG 2020](https://pubmed.ncbi.nlm.nih.gov/32004450/) uses both QTL and AS statistics to infer QTLs. Total expression (y) is modeled by allelic dosage (x) while the allelic imbalance (w) is determined by phasing (v). Two association statistics for QTL and AS are computed. Also performs fine-mapping by using genotype-LD matrix, and returns a credible causal set using shotgun stochastic search (SSS). Compares with fine-mapping approaches CAVIAR, AS-Meta and RASQUAL (by converting the chi-sq statistics to z-scores and putting them as input to fine map approachses).
+
 
 
 ## Genotyping
