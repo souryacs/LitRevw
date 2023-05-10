@@ -10,6 +10,7 @@
 
 [ASEP - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) uses mixture model to estimate ASE across individuals, and also computes differential ASE between conditions among groups of individuals.
 
+[HiC-QTL: Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) First interaction-QTL paper. Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. Rather, it focusses on Hi-C specific FIRE-QTLs, etc.
 
 ## Genotyping
 
