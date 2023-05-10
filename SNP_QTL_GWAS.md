@@ -10,7 +10,6 @@
 
 [ASEP - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) uses mixture model to estimate ASE across individuals, and also computes differential ASE between conditions among groups of individuals.
 
-[ieQTL and isQTL - Kim-Hellmuth et al. Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913075/) As a part of GTEx v8, they devised cell type specific enriched eQTLs and sQTLs, and showed that they correspond to better tissue specificity and colocalization with GWAS. These cell-specific enriched eQTLs are obtained by linear regression between genotypes and cell-specific gene expression values.
 
 ## Genotyping
 
@@ -25,6 +24,7 @@
 
 [Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) Tissue-of-action (TOA) scores of T2D GWAS, using fine-mapped variants, independent fine-mapped GWAS loci, reference coding annotations. A weighted sum of annotations for all fine-mapped SNPs are used for tissue-specific enrichment computation.
 
+[ieQTL and isQTL - Kim-Hellmuth et al. Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913075/) As a part of GTEx v8, they devised cell type specific enriched eQTLs and sQTLs, and showed that they correspond to better tissue specificity and colocalization with GWAS. These cell-specific enriched eQTLs are obtained by linear regression between genotypes and cell-specific gene expression values.
 
 
 
@@ -61,5 +61,5 @@ Supports multiple functional annotations. Computes gradient boosting and tree ba
 
 [stratAS - Shetty et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/34699744/) Applies allele specific QTL inference from ChIP-seq (chromatinQTL) on prCa data. Uses haplotype-based beta binomial model for the allele specific read counts, and identify the causal variants. Tests individual SNPs for each peak (within 100 Kb of peak center). It was proposed in [Gusev et al. bioRxiv 2019](https://www.biorxiv.org/content/10.1101/631150v1) and is also used in [Grishin et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35697866/). 
 
-
+[Jeong et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.29.534582v1) employed colocalization between GWAS and transcription factor binding QTL (bQTL), and employed motif analysis to prioritize the causal variants.
 
