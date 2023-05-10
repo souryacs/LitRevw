@@ -57,7 +57,7 @@ Supports multiple functional annotations. Computes gradient boosting and tree ba
 
 [Hierarchical Poisson model - He et al. Transl. Psychiatry 2022](https://pubmed.ncbi.nlm.nih.gov/35436980/) derives allele-specific QTLs and applies on AD. It employs hierarchical poisson model by prioritizing the heterozygous SNPs. Does not consider the total counts.
 
-[stratAS - Shetty et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/34699744/) Applies allele specific QTL inference from ChIP-seq (chromatinQTL) on prCa data. Uses haplotype-based beta binomial model for the allele specific read counts, and identify the causal variants. Tests individual SNPs for each peak (within 100 Kb of peak center).
+[stratAS - Shetty et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/34699744/) Applies allele specific QTL inference from ChIP-seq (chromatinQTL) on prCa data. Uses haplotype-based beta binomial model for the allele specific read counts, and identify the causal variants. Tests individual SNPs for each peak (within 100 Kb of peak center). It was proposed in [Gusev et al. bioRxiv 2019](https://www.biorxiv.org/content/10.1101/631150v1) and is also used in [Grishin et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35697866/). 
 
 
 
