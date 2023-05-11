@@ -33,6 +33,9 @@
 
 [Dynamic eQTL - Strober et al. Science 2019](https://pubmed.ncbi.nlm.nih.gov/31249060/) presents dynamic eQTLs significant in different time points of the cell differentiation trajectory.
 
+[eQTLEnrich - Gamazon et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/29955180/) Tests wheteher eQTLs for a given tissue are enriched for a specific trait. Uses best eQTL per gene concept, and permutation based GWAS-eQTL enrichment method.
+
+
 
 ## QTL - Polygenic Risk Scores (PRS)
 
@@ -41,6 +44,7 @@
 [TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
 
 [VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) Approximates Bayesian computation of PRS by replacing MCMC with variational inference (VI), a deterministic class of algorithms replacing the posterior inference by an optimization problem (applied to LMM, Fine-mapping, association, enrichment).
+
 
 
 ## QTL - TWAS
@@ -66,4 +70,6 @@ Supports multiple functional annotations. Computes gradient boosting and tree ba
 [stratAS - Shetty et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/34699744/) Applies allele specific QTL inference from ChIP-seq (chromatinQTL) on prCa data. Uses haplotype-based beta binomial model for the allele specific read counts, and identify the causal variants. Tests individual SNPs for each peak (within 100 Kb of peak center). It was proposed in [Gusev et al. bioRxiv 2019](https://www.biorxiv.org/content/10.1101/631150v1) and is also used in [Grishin et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35697866/). 
 
 [Jeong et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.29.534582v1) employed colocalization between GWAS and transcription factor binding QTL (bQTL), and employed motif analysis to prioritize the causal variants.
+
+[e-MAGMA: Gerring et al. Bioinformatics 2021](https://pubmed.ncbi.nlm.nih.gov/33624746/) assigns SNPs to genes by employing tissue specific eQTL statistics from GTEx data, to identify disease-risk genes. Extends MAGMA which assigns SNPs to genes by proximity and infers meta p-values per gene.
 
