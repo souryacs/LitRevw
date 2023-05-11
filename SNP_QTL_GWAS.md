@@ -31,6 +31,7 @@
 
 [DECAF - Kalita et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35804456/) estimates cell-fraction enriched eQTLs - variants whose effect on gene expression vary across bulk samples according to the cell fraction. Performs linear regression using cell fraction and gene expression.
 
+[Dynamic eQTL - Strober et al. Science 2019](https://pubmed.ncbi.nlm.nih.gov/31249060/) presents dynamic eQTLs significant in different time points of the cell differentiation trajectory.
 
 
 ## QTL - Polygenic Risk Scores (PRS)
