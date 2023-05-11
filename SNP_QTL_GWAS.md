@@ -29,7 +29,7 @@
 
 [ieQTL and isQTL - Kim-Hellmuth et al. Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913075/) As a part of GTEx v8, they devised cell type specific enriched eQTLs and sQTLs, and showed that they correspond to better tissue specificity and colocalization with GWAS. These cell-specific enriched eQTLs are obtained by linear regression between genotypes and cell-specific gene expression values.
 
-
+[DECAF - Kalita et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35804456/) estimates cell-fraction enriched eQTLs - variants whose effect on gene expression vary across bulk samples according to the cell fraction. Performs linear regression using cell fraction and gene expression.
 
 
 
