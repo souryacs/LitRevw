@@ -39,7 +39,7 @@
 
 [eQTLEnrich - Gamazon et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/29955180/) Tests wheteher eQTLs for a given tissue are enriched for a specific trait. Uses best eQTL per gene concept, and permutation based GWAS-eQTL enrichment method.
 
-
+[GoShifter - Trynka et al. AJHG 2015](https://pubmed.ncbi.nlm.nih.gov/26140449/) Enrichment of eQTLs for specific regulatory annotations using permutation based controls.
 
 ## QTL - Polygenic Risk Scores (PRS)
 
