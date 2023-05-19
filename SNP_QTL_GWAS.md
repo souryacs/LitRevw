@@ -43,6 +43,8 @@
 
 [MESC - Yao et al. Nat Genet 2021](https://pubmed.ncbi.nlm.nih.gov/32424349/) Quantifying heritability by the effect of cis gene expression. Uses regression.
 
+[SNP-SELEX - Yan et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33505025/) Presents experimental method + enrichment of TF binding SNPs on a set of regulatory sequences. Tests the method on T2D GWAS SNPs.
+
 ## QTL - Polygenic Risk Scores (PRS)
 
 [Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants.
