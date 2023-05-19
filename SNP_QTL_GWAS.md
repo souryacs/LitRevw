@@ -18,6 +18,10 @@
 
 [BaseQTL - Vigorito et al. Nat Comp Sc 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) derives eQTL without genotype information. Specifically, they infer haplotypes from the reference genome panel, by estimating phase using TreCASE method, corrects reference mapping bias by applying modified WASP.
 
+[WASP - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/) integrates ASE and total read count for QTL inference. Performs combined haplotype test (CHT) and eliminates reference bias by discarding mis-mapped reads.
+
+[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) QTL inference by NB distribution of total reads and beta binomial distribution of ASE.
+
 ## Genotyping
 
 [Meta Imputation - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
