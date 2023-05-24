@@ -40,4 +40,8 @@
 [ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
 
 
+## Drug target prediction
+
+[NETTAG - Xu et al. 2022](https://pubmed.ncbi.nlm.nih.gov/36450252/) - DL model to predict Alzheimer's disease (AD) risk genes. Integrates mutli-omics information - PPIs, QTLs, TFs, ENCODE, GWAS, GTEx, GO. Utilizes PPI + GO to prioritize putative AD risk genes, and assigns scores based on their regulatory information (QTLs, ENCODE, etc).
+
 
