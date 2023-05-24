@@ -14,7 +14,7 @@
 
 [DeepCOMBI - Mieth et al. NAR Genomics Bioinformatics](https://pubmed.ncbi.nlm.nih.gov/34296082/) adopts layer-wise relevance propagation (LRP) to attribute SNP relevance scores and selection of significant SNPs in GWAS studies. Replaces conventional p-value thresholding. Extends their earlier work COMBI which uses SVM based method, to a DNN setting.  
 
-[REGLE - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) Representation learning using low dimensional representation of high-dimensional clinical data (HDCD) to perform GWAS on representative traits, and estimate polygenic risk scores (PRS) on individual representative traits.
+[REGLE - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) Representation learning using low dimensional representation of high-dimensional clinical data (HDCD) to perform GWAS on representative traits, and estimate polygenic risk scores (PRS) on individual representative traits. Applied on COPD (chronic obstructive pulmonary disease) and spirograms.
 
 ## Prediction of Regulatory region using DNA sequence
 
