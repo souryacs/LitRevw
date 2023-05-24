@@ -85,3 +85,4 @@ Supports multiple functional annotations. Computes gradient boosting and tree ba
 
 [e-MAGMA: Gerring et al. Bioinformatics 2021](https://pubmed.ncbi.nlm.nih.gov/33624746/) assigns SNPs to genes by employing tissue specific eQTL statistics from GTEx data, to identify disease-risk genes. Extends MAGMA which assigns SNPs to genes by proximity and infers meta p-values per gene. Different from H-MAGMA (https://pubmed.ncbi.nlm.nih.gov/32152537/) which uses Hi-C interactions to assign SNPs to the looped genes.
 
+[S2G - Dey et al. Cell Genomics 2022](https://pubmed.ncbi.nlm.nih.gov/35873673/) Reviews 11 SNP to gene (S2G) linking strategies and tests the corresponding annotations using S-LDSC on 11 autoimmune traits.
