@@ -38,6 +38,7 @@
 
 [Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, and concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
 
+[Sasse et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.16.532969v2) applies Enformer on the personalized reference genome constructed from WGS data and finds that the prediction accuracy of gene expression for Enformer is actually lower than PrediXcan which uses SNVs from individuals to reconstruct individual level gene expression.
 
 ## Prediction of Regulatory region without using DNA sequence 
 
