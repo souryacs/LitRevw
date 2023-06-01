@@ -42,6 +42,10 @@
 
 [Sasse et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.16.532969v2) applies Enformer on the personalized reference genome constructed from WGS data and finds that the prediction accuracy of gene expression for Enformer is actually lower than PrediXcan which uses SNVs from individuals to reconstruct individual level gene expression.
 
+Review paper - Deciphering eukaryotic gene-regulatory logic with 100 million random promoters - Nat Biotech 2020
+
+Review paper - The evolution, evolvability and engineering of gene regulatory DNA - Nature 2022
+
 ## Prediction of Regulatory region without using DNA sequence 
 
 [ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
