@@ -32,4 +32,5 @@
 
 [Fulco et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/31784727/) proposed ABC score to prioritize regulatory enhancers for target genes.
 
+[Sahu et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35190730/) measured transcriptional activity using MPRA and observed using ML models that TFs act in additive manner and enhancers affect promoters without relying on specific TF-TF interactions. Few TFs are strongly active in a cell, and individual TFs may have multiple regulatory activities.
 
