@@ -24,6 +24,8 @@
 
 [Basenji - Kelley et al. Genome Research 2018](https://genome.cshlp.org/content/28/5/739.long): Extends Basset, which only generates peak based chromatin profiles. Predicts epigenomic and transcriptional effects using the ChIP-seq, DNAse seq, ATAC-seq. Also identifies causal variants using GWAS loci. Predicts distal regulatory interactions and finer resolution chromatin profiles. It also identifies sequence variants, TF motifs.
 
+[Expecto - Zhou et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/30013180/) Deep learning framework to predict gene expression from epigenomic tracks. Uses 2002 tracks across 218 cell types, 40 Kb (20 kb in each direction) sequence from TSS, and applies 200 bp sldiding window for constructing the epigenomic features. Then applies spatial operation (basically averaging) to generate 10 features per track (2002 X 10 feature matrix) to predict the tissue-specific gene expression using L2 regularized linear regression models fitted by a gradient boosting algorithm.
+
  **Note** : The input sequencing dataset is processed by a custom pipeline to use the multi-mapping reads and to normalize for GC bias.
 
 [Enformer - Avsec et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34608324/) predicts gene expression from DNA sequences using transformer model and 198 bp receptive field around TSS. Best performing model so far. It also identifies sequence variants, TF motifs, and eQTLs.
