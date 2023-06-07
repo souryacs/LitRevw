@@ -6,6 +6,8 @@ https://github.com/steven2358/awesome-generative-ai Various links related to Gen
 
 https://www.promptingguide.ai/papers AI papers.
 
+https://antoniolonga.github.io/Pytorch_geometric_tutorials/  Pytorch Geometric 
+
 
 
 ## Hi-C / 3C
