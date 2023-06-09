@@ -42,6 +42,8 @@
 
 [Sasse et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.16.532969v2) applies Enformer on the personalized reference genome constructed from WGS data and finds that the prediction accuracy of gene expression for Enformer is actually lower than PrediXcan which uses SNVs from individuals to reconstruct individual level gene expression.
 
+[Zrimec et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/33262328/) mentions that gene expression can be predicted by using both coding and non-coding regions, and deep learnin helps to identify candidate motif regions. Motif co-occurrence helps to decode the gene expression.
+
 Review paper - Deciphering eukaryotic gene-regulatory logic with 100 million random promoters - Nat Biotech 2020
 
 Review paper - The evolution, evolvability and engineering of gene regulatory DNA - Nature 2022
