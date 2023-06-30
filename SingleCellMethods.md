@@ -23,11 +23,13 @@
 
 ## Single Cell RNA-seq
 
-[LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single cell RNA-seq data integration.
+[LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
 
 [MEFISTO - Velten et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35027765/) Uses factor analysis and extends the method MOFA to account for spatio-temporal variation of scRNA-seq data.
 
 [scVI - Lopez et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/30504886/) Models scRNA-seq by ZINB distribution, but uses NN to infer its parameters. Performs batch correction. 
+
+[scissor - Sun et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34764492/) Uses a network regression model to identify the cell populations/clusters associated with a given phenotype. Input: scRNA-seq matrix, bulk RNA-seq matrix, and phenotype matrix/vector (can be binary, continuous, based on that the regression model would be defined). The correlation between single cell expression and bulk RNA-seq gene expression data are computed to produce a correlation matrix which is then applied to a regression framework with respect to the given phenotype.
 
 
 ## Single Cell ATAC-seq
