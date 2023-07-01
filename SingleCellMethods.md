@@ -67,10 +67,6 @@
 [Review paper on integration between ST and scRNA-seq - Li et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35577954/): Considers performance metrics: Pearson correlation coefficients (PCC), structural similarity index (SSIM), RMSE, Jensen-Shannon divergence (JS), accuracy score (AS), robustness score (RS). 1) Tangram and gimVI outperformed the other integration methods on the basis of these metrics. 2) Considering sparse datasets, Tangram, gimVI, and SpaGE outperformed other integration methods in predicting the spatial distribution of transcripts for highly sparse datasets. 3) In predicting cell type composition of spots, Cell2location, SpatialDWLS, RCTD, and STRIDE outperformed the other integration methods. 4) In terms of computational efficiency, Tangram and Seurat are the top two most-efficient methods for processing cell-type deconvolution of spots.
 
 
-
-
-
-
 ## Single cell eQTL, ASE, variant annotation
 
 [g-ChromVAR - Ulirsch et al. Nat Genet 2021](https://pubmed.ncbi.nlm.nih.gov/30858613/) presents g-chromVAR, a method to identify GWAS variant enrichment among closely related tissues/cell types, using scATAC-seq data. The objective is to measure the trait relevance of different cells or tissues, and here scATAC-seq data together with fine-mapped GWAS variants are used to measure such trait relevance scores. It computes the bias-corrected Z-scores to estimate the trait relevance for every single cell by integrating the probability of variant causality and quantitative strength of chromatin accessibility. The trait-peak matrix is a count matrix, which is used to compute the expected number of fragments per peak per sample, which is then multiplied with the fine-mapped variant posterior probabilities. Validated with respect to the S-LDSC method.
@@ -82,4 +78,13 @@
 [scDRS - Zhang et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36050550/) scDRS method. Enrichment of cell types with respect to GWAS trait. First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
 
 [NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) Haplotype aware CNV inference from scRNA-seq data. CNVs are inferred both from expression (expecting AMP and DEL to be associated with up/downregulation - FP for expression changes unrelated to CNV) and allele-specific (deviations of BAF - less affected by sample-specific variation). This method uses haplotype phasing prior to detecting CNVs.
+
+
+## Gene regulatory network (GRN)
+
+[SCENIC - Aibar et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28991892/) GRN from scRNA-seq data. Predicts interactions between TFs and target genes. Coexpression is computed at a very limited distance (~20 Kb) between genes and TFs.
+
+[SCENIC+ - Gonzlez-Blas et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.08.19.504505v1) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks upto 150 Kb distance from the gene.
+
+
 
