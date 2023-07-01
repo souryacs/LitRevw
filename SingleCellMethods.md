@@ -14,7 +14,7 @@
   
   &emsp; [Hao et al. Cell 2021](https://pubmed.ncbi.nlm.nih.gov/34062119/) Proposes WNN for multimodal data integration.
   
-  &emsp; [Hao et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.02.24.481684v1) Dictionary learning for multimodal data integration.
+  &emsp; [Hao et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.02.24.481684v1) Dictionary learning for multimodal data integration. Bridge integration to integrate multiple modalities, like integrating scATAC-seq on the reference cell annotations defined by scRNA-seq data. Then discusses dictionary learning and atomic sketching, inspired by the geometric sketching method from image processing, to select a subset of features from the datasets, integrate and then project back the integrated results on the full set of features. The final alignment between different modalities is implemented by the mnnCorrect algorithm. The computational complexity for handling many cells is reduced by the Laplacian Eigenmaps mechanism (graph eigendecomposition) thereby reducing the number of dimensions from the number of cells to the number of eigenvectors.
 
 [VIMCCA - Wang et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36622018/) Variational inference method - generalizing CCA. Multi-view latent variable. CCA is modeled by multi-view latent variable and variational distribution. Maximizing log-likelihood is modeled as maximizing evidence lower bound (ELBO). It has 2 components - KL divergence, and reconstruction error. SGVB estimator using the monte carlo simulator is used to estimate the ELBO.
 
