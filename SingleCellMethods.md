@@ -49,7 +49,7 @@
 
 [Signac - Stuart et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34725479/) scATAC-seq processing method, and integrates scRNA-seq data. Supports: 1) Peak calling from individual samples and then merging (to retain cell type-specific peaks) and showing that it retains all cell ranger peaks. 2) Dimension reduction using LSI. The TF-IDF matrix is computed using the total counts of a cell, total counts for a peak in a cell, the total number of cells, and the total number of counts for a given peak across all cells. The TF-IDF matrix (after log transformation) is applied to SVD. 3) Integration with scRNA-seq data is done by the FindTransferAnchors function in Seurat. 4) Computes gene activity score and performs peak-to-gene linkage.
 
-[chromVAR - Schep et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28825706/) Using scATAC-seq data, measures the gain/loss of chromatin accessibility within peaks sharing the same motif or annotation.
+[chromVAR - Schep et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28825706/) Using scATAC-seq data, measures the gain/loss of chromatin accessibility within peaks sharing the same motif or annotation. Models the expected number of fragments per peak containing a particular motif and for a particular cell. Thus, variation of chromatin accessibility across cells between highly similar k-mers can be computed.
 
 [CICERO - Pliner et al. Mol Cell 2018](https://pubmed.ncbi.nlm.nih.gov/30078726/) Concept of co-accessibility among peaks.
 
