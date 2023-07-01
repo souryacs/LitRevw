@@ -86,9 +86,18 @@
 
 [SCENIC - Aibar et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28991892/) GRN from scRNA-seq data. Predicts interactions between TFs and target genes. Coexpression is computed at a very limited distance (~20 Kb) between genes and TFs.
 
-[SCENIC+ - Gonzlez-Blas et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.08.19.504505v1) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks upto 150 Kb distance from the gene.
+[SCENIC+ - Gonzlez-Blas et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.08.19.504505v1) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks up to 150 Kb distance from the gene.
 
-[CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) Constructs GRN from multi-omic data and then simulates the effect of dynamic GRN following TF perturbation. Builds a ML model to predict the effect of TF on GRN. *(To read in detail)*
+[CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) Constructs GRN from multi-omic data and then simulates the effect of dynamic GRN following TF perturbation. Builds an ML model to predict the effect of TF on GRN. *(To read in detail)*
 
+## Trajectory analysis /  RNA velocity
+
+[Monocle - Trapnell et al. Nat Biotech 2014](https://pubmed.ncbi.nlm.nih.gov/24658644/) Trajectory analysis from scRNA-seq data. ICA is used for dimensionality reduction, after selecting a subset of genes with respect to the variance explained. Then, the minimum spanning tree (MST) is used to construct the lineage. A PQ-Tree-specific algorithm is used to deal with the branching noise.
+
+[RNA Velocity - La Manno et al. Nature 2018](https://pubmed.ncbi.nlm.nih.gov/30089906/) Concept of RNA velocity using the spliced and unspliced RNA. Provides a toolkit Velocyto. Assumes that the transcriptional regulation parameters are the same for all genes, and each gene has a sufficient time frame to reach the steady state.
+
+[scVelo - Bergen et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/32747759/) scVelo method, extending the RNA velocity concept on scRNA-seq data by modeling the transcriptional regulation parameters in a probabilistic model. Also improves the running time.
+
+[multiVelo - Li et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36229609/) multiVelo approach. Using both scRNA-seq and scATAC-seq data for velocity estimation. Based on the fact that epigenomic changes (like the transition from euchromatin to heterochromatin) have a role in transcriptional regulation and rates. Uses ODE with switch and rate parameters. Inputs: time-varying levels of chromatin accessibility, unspliced pre-RNA, and spliced mature RNA. Parameters: rates of chromatin opening and closing, RNA transcription, RNA splicing, and RNA degradation of nuclear export.
 
 
