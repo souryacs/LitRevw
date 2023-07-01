@@ -22,6 +22,8 @@
 
 [Review paper on data integration - Luecken et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/34949812/) compares various multimodal data integration approaches. Conclusions: 1) Scanorama and scVI perform well, particularly on complex integration tasks. If cell annotations are available, scGen and scANVI outperform most other methods across tasks, and Harmony and LIGER are effective for scATAC-seq data integration on window and peak feature spaces. 2) In more complex integration tasks, there is a tradeoff between batch effect removal and bio-conservation. While methods such as SAUCIE, LIGER, BBKNN, and Seurat v3 tend to favor the removal of batch effects over the conservation of biological variation, DESC, and Conos make the opposite choice, and Scanorama, scVI, and FastMNN (gene) balance these two objectives.
 
+[Review paper - Argelaguet et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/33941931/) discusses about scRNA-seq data integration - horizontal (gene-based), vertical (cell-based) and diagonal.
+
 ## Single Cell RNA-seq
 
 [LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
