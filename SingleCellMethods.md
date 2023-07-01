@@ -24,6 +24,8 @@
 
 [Review paper - Argelaguet et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/33941931/) discusses scRNA-seq data integration - horizontal (gene-based), vertical (cell-based), and diagonal.
 
+[MARIO - Zhu et al. Nat Meth 2023](https://pubmed.ncbi.nlm.nih.gov/36624212/) Appliable for protein-centric multimodal datasets such as CITE-seq, CyTOF, etc. First applies SVD + CCA on individual datasets to find the cell-cell pairing (matching cells). CCA is performed using both shared and unshared features. Then a regularized K-means clustering is performed for the final integration.
+
 ## Single Cell RNA-seq
 
 [LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
