@@ -26,6 +26,8 @@
 
 [MARIO - Zhu et al. Nat Meth 2023](https://pubmed.ncbi.nlm.nih.gov/36624212/) Appliable for protein-centric multimodal datasets such as CITE-seq, CyTOF, etc. First applies SVD + CCA on individual datasets to find the cell-cell pairing (matching cells). CCA is performed using both shared and unshared features. Then a regularized K-means clustering is performed for the final integration.
 
+[GLUE - Cao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35501393/) Integrating multiple omics datasets using graph variational autoencoders and also by using the regulatory interactions between the omics as a prior guided graph. For example, integration between scRNA-seq and scATAC-seq data requires prior edge formation using the peak-to-gene correlation.
+
 ## Single Cell RNA-seq
 
 [LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
