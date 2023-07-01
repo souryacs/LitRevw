@@ -6,9 +6,9 @@
 
   &emsp; [Satija et al. Nat Biotech 2015](https://pubmed.ncbi.nlm.nih.gov/25867923/) First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets.
   
-  &emsp; [Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) Proposes CCA, specially Diagonal CCA to integrate multiple scRNA-seq datasets.
+  &emsp; [Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) Proposes CCA, specially Diagonal CCA to integrate multiple scRNA-seq datasets. The diagonal (or regularized/penalized) CCA is useful since the number of genes (integrating features) is much lower than the number of cells. Partial SVD implementation is used to identify a set of user-defined CCA vectors.
   
-  &emsp; [Stuart et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178118/) Proposes scTransform + VST + IntegrateAnchors and IntegrateFeatures, to integrate scRNA-seq, scATAC-seq or CITE-seq datasets. The VST is used to first estimate the variance from means of individual gene expression, using linear regression, and then standardize the expression by mean and variance normalization. Implement diagonal CCA implementation to maximize the sharing of features among both datasets. MNN concept is used after diagonal CCA and such neighbors are termed anchors. Anchor scoring mechanism is employed using the shared nearest neighbor (SNN) concept to finally use the highest scoring anchors as integration features.
+  &emsp; [Stuart et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178118/) Proposes scTransform + VST + IntegrateAnchors and IntegrateFeatures, to integrate scRNA-seq, scATAC-seq or CITE-seq datasets. The VST is used to first estimate the variance from means of individual gene expression, using linear regression, and then standardize the expression by mean and variance normalization. Implement diagonal CCA implementation to maximize the sharing of features among both datasets. MNN concept is used after diagonal CCA and such neighbors are termed anchors. An anchor scoring mechanism is employed using the shared nearest neighbor (SNN) concept to finally use the highest scoring anchors as integration features.
   
   &emsp; [Stuart et al. Nat Revw Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30696980/) Review paper on Seurat.
   
