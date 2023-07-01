@@ -88,5 +88,7 @@
 
 [SCENIC+ - Gonzlez-Blas et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.08.19.504505v1) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks upto 150 Kb distance from the gene.
 
+[CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) Constructs GRN from multi-omic data and then simulates the effect of dynamic GRN following TF perturbation. Builds a ML model to predict the effect of TF on GRN. *(To read in detail)*
+
 
 
