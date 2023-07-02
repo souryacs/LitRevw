@@ -100,4 +100,6 @@
 
 [multiVelo - Li et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36229609/) multiVelo approach. Using both scRNA-seq and scATAC-seq data for velocity estimation. Based on the fact that epigenomic changes (like the transition from euchromatin to heterochromatin) have a role in transcriptional regulation and rates. Uses ODE with switch and rate parameters. Inputs: time-varying levels of chromatin accessibility, unspliced pre-RNA, and spliced mature RNA. Parameters: rates of chromatin opening and closing, RNA transcription, RNA splicing, and RNA degradation of nuclear export.
 
+## Disease-specific
 
+[Dohmen et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35637521/) Presents ikarus, an ML framework to identify and annotate tumor cells from normal cells using single-cell data. Identifies a marker gene set signature to identify the set of cells.
