@@ -61,5 +61,5 @@ Review paper - The evolution, evolvability and engineering of gene regulatory DN
 
 [Elmarakeby et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34552244/) Proposed an interpretable DL model using DEEPLIFT framework to understand the molecular mechanisms of cancer. The input is genes, pathways, and biological processes. Their relationships are prior known and downloaded from Reactome pathway datasets (https://reactome.org/). These relationships are provided as the edges in the neural network architecture.
 
-
+[Dig - Sherman et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35726091/) Developed by PCAWG consortium, this tool creates a list of genome-wide neutral somatic mutation maps using a DL model (CNN for dimensionality reduction and feature selection + Gaussian process modeling) and then develops a positive selection test to detect the potential cancer driver somatic mutations. *To read in detail*
 
