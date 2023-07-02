@@ -53,8 +53,13 @@ Review paper - The evolution, evolvability and engineering of gene regulatory DN
 [ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
 
 
-## Drug target prediction
+## Drug target prediction / disease-specific analysis
 
 [NETTAG - Xu et al. 2022](https://pubmed.ncbi.nlm.nih.gov/36450252/) - DL model to predict Alzheimer's disease (AD) risk genes. Integrates mutli-omics information - PPIs, QTLs, TFs, ENCODE, GWAS, GTEx, GO. Utilizes PPI + GO to prioritize putative AD risk genes, and assigns scores based on their regulatory information (QTLs, ENCODE, etc).
+
+[Jha et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35581644/) The authors observed that DEGs between normal and cancer patients do not overlap between multiple datasets. So they used the expressions of protein-coding genes, lncRNA, and splicing junctions in an interpretable deep-learning model.
+
+[Elmarakeby et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34552244/) Proposed an interpretable DL model using DEEPLIFT framework to understand the molecular mechanisms of cancer. The input is genes, pathways, and biological processes. Their relationships are prior known and downloaded from Reactome pathway datasets (https://reactome.org/). These relationships are provided as the edges in the neural network architecture.
+
 
 
