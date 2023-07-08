@@ -81,6 +81,8 @@
 
 [NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) Haplotype aware CNV inference from scRNA-seq data. CNVs are inferred both from expression (expecting AMP and DEL to be associated with up/downregulation - FP for expression changes unrelated to CNV) and allele-specific (deviations of BAF - less affected by sample-specific variation). This method uses haplotype phasing prior to detecting CNVs.
 
+[GASPACHO - Kumasaka et al. Nat Genet 2023](https://pubmed.ncbi.nlm.nih.gov/37308670/) Presents GASPACHO, a Gaussian Process + Latent Variable based model to infer the eQTLs associated with dynamic cell states obtained from immune response/stimuli. Test their method on Fibroblast scRNA-seq data and also colocalizes with COVID-19 GWAS data to identify colocalized sc-eQTLs associated with OAS1 and OAS3 genes.
+
 
 ## Gene regulatory network (GRN)
 
