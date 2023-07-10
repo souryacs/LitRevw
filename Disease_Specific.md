@@ -10,3 +10,5 @@
 
 [Review: Johnston et al. Frontiers in Oncology 2023](https://pubmed.ncbi.nlm.nih.gov/37081990/) Discusses fragment features from circulating cell-free DNA (ccfDNA): fragment lengths, fragment end sequence alterations, altered nucleosome positioning, fragmentation patterns downstream of TSS, read depth coverage, nucleosome spacing footprints around DNAse-I hypersensitive sites, nucleosome linker DNA lengths, etc.
 
+[HIFI - Li et al. EBioMedicine 2023](https://pubmed.ncbi.nlm.nih.gov/37027928/) Feature-based ML to detect MRD from lung cancer (LC). Considers WGS data and generates motifs (4-mers), bin count (modified feature counts), length of insertion fragments, short/long fragments, and methylated haplotype diversity (MHD) by considering the number of methylated reads per haplotype (reference haplotype information for methylation data was obtained from TCGA), co-methylation statistics and differentially methylated region, etc. SVM was used as the classifier.
+
