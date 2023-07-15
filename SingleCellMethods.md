@@ -83,6 +83,7 @@
 
 [GASPACHO - Kumasaka et al. Nat Genet 2023](https://pubmed.ncbi.nlm.nih.gov/37308670/) Presents GASPACHO, a Gaussian Process + Latent Variable based model to infer the eQTLs associated with dynamic cell states obtained from immune response/stimuli. Test their method on Fibroblast scRNA-seq data and also colocalizes with COVID-19 GWAS data to identify colocalized sc-eQTLs associated with OAS1 and OAS3 genes.
 
+[POPS - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) PoPs method for prioritizing gene sets from GWAS summary statistics and LD matrix. Uses MAGMA to first compute the gene-based scores. Also uses pathways, PPIs, etc. to prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics, using a multivariate normal (MVN) distribution-based regression strategy. 
 
 ## Gene regulatory network (GRN)
 
