@@ -68,6 +68,12 @@
 
 [Review paper on integration between ST and scRNA-seq - Li et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35577954/): Considers performance metrics: Pearson correlation coefficients (PCC), structural similarity index (SSIM), RMSE, Jensen-Shannon divergence (JS), accuracy score (AS), robustness score (RS). 1) Tangram and gimVI outperformed the other integration methods on the basis of these metrics. 2) Considering sparse datasets, Tangram, gimVI, and SpaGE outperformed other integration methods in predicting the spatial distribution of transcripts for highly sparse datasets. 3) In predicting cell type composition of spots, Cell2location, SpatialDWLS, RCTD, and STRIDE outperformed the other integration methods. 4) In terms of computational efficiency, Tangram and Seurat are the top two most-efficient methods for processing cell-type deconvolution of spots.
 
+[HMRF - Zhu et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/30371680/) First paper using spatial information for ST data clustering. After HVG selection and feature reduction, uses HMRF for spatial data. KNN is used for initial clustering using gene expression. Then spatial prior for HMRF is initialized by Potts model. The multinomial distribution is employed to decide the membership of individual cells/spots in a cluster, and the cluster refinement is done by the EM algorithm. Implemented in the Giotto toolbox framework [Dries et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33685491/).
+
+[BayesSpace - Zhao et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/34083791/) Implements BayesSpace to model ST data. Minor adjustments of HMRF by implementing MCMC instead of EM algorithm in the spatial refinement. Also, employs a fixed precision matrix (similar across individual clusters for less parameter estimation).
+
+
+
 
 ## Single cell eQTL, ASE, variant annotation
 
