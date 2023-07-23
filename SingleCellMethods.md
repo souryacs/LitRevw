@@ -1,5 +1,7 @@
 # Computational approaches for Single Cell Data
 
+Check [This GitHub page](https://github.com/OmicsML/awesome-deep-learning-single-cell-papers) for a comprehensive summary of deep learning and single-cell papers.
+
 ## Multimodal Data Integration/pipelines
 
 [Satija et al. Nat Biotech 2015](https://pubmed.ncbi.nlm.nih.gov/25867923/) First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets.
