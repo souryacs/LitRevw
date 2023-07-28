@@ -18,7 +18,7 @@
 
 [Yang et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.01.18.23284383v1) Also talks about HDCD. First, they introduce GWAX, GWA using proxy. Includes persons as cases whose one of the family members has the disease of interest. Modification of CC GWAS study. Shown to retrive new GWAS risk loci. Performs AI based modeling (their pre-trained DL framework POPDx) on the input HDCD GWAS trait, and the generated GWAS trait features are known as disease liability scores, which are used as the GWAS trait features. They show that these liability scores perform better in GWAS trait mapping.
 
-## Prediction of Regulatory region using DNA sequence
+## Prediction of Regulatory region / gene expression using DNA sequence
 
 [Basset - Kelley et al. Genome Research 2016](https://genome.cshlp.org/content/26/7/990.long): Predicts regulatory DNA sequences and sequence activities (chomatin accessibility). Uses DNase-seq, DHS and peaks, and applies to deep CNN. CNNs learn relevant sequence motifs and regulatory logic. Assigns GWAS variants and cell-type-scores to predict chromatin accessibility difference between alleles, and predicts causal SNPs. It also identifies sequence variants, TF motifs.
 
