@@ -24,7 +24,7 @@
 
 ## CRISPR / experimental validation of E-P contacts, regulatory regions
 
-[CRISPRQTL - Gasperini et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/30612741/) validated E-P pairs by high throughput CRISPR purturbations in thousands of cells.
+[CRISPRQTL - A Genome-wide Framework for Mapping Gene Regulation via Cellular Genetic Screens - Gasperini et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/30612741/) validated E-P pairs by high throughput CRISPR perturbations in thousands of cells. Tested 1119 candidate enhancers in K562. Enhancers were intergenic DHS - H3K27ac, P300, GATA, and RNA PolII binding sites. 5611 of 12984 genes expressed in K562 fell within 1 Mb of the tested enhancers.
 
 [Bergman et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/35594906/) proposed Exp-STARRseq - compatibility rule between enhancer and promoter sequences.
 
