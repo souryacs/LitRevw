@@ -2,25 +2,27 @@
 
 ## QTL / ASE inference
 
-[fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) QTL inference by population model and efficient permutation. Default model in GTEx. Also implemented in TensorQTL framework (including conditional eQTL analysis).
+[fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) QTL inference by population model and efficient permutation. Default model in GTEx. Also implemented in the TensorQTL framework (including conditional eQTL analysis).
 
-[geoP - Zhabotynsky et al. PLOS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35286297/) is an efficient method to compute permutation based p-values for ASE, used in TreCASE and RASQUAL.
+[geoP - Zhabotynsky et al. PLOS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35286297/) is an efficient method to compute permutation-based p-values for ASE, used in TreCASE and RASQUAL.
 
 [MixQTL - Liang et al. Nat Comm 2021](https://pubmed.ncbi.nlm.nih.gov/33658504/) models ASE using allelic fold change. The total read count and haplotype-specific read counts are separately modeled using linear regression, to provide an approximate fast QTL inference. Validated using GTEx v8 data. Implemented in tensorQTL. Appropriate for large sample sizes, but for smaller sample sizes (~100), RASQUAL is better.
 
-[GTEx v8 - Castel et al. Genome Biology 2020](https://pubmed.ncbi.nlm.nih.gov/32912332/) Repository of haplotype specific expression for GTEx v8 tissues. Allelic log fold change count is used for comparing SNP and haplotype-level ASE data. WASP filtering is recommended for ASE inference. 
+[GTEx v8 - Castel et al. Genome Biology 2020](https://pubmed.ncbi.nlm.nih.gov/32912332/) Repository of haplotype-specific expression for GTEx v8 tissues. Allelic log fold change count is used for comparing SNP and haplotype-level ASE data. WASP filtering is recommended for ASE inference. 
 
-[PLASMA - Wang et al. AJHG 2020](https://pubmed.ncbi.nlm.nih.gov/32004450/) uses both QTL and AS statistics to infer QTLs. Total expression (y) is modeled by allelic dosage (x) while the allelic imbalance (w) is determined by phasing (v). Two association statistics for QTL and AS are computed. Also performs fine-mapping by using genotype-LD matrix, and returns a credible causal set using shotgun stochastic search (SSS). Compares with fine-mapping approaches CAVIAR, AS-Meta and RASQUAL (by converting the chi-sq statistics to z-scores and putting them as input to fine map approachses).
+[PLASMA - Wang et al. AJHG 2020](https://pubmed.ncbi.nlm.nih.gov/32004450/) uses both QTL and AS statistics to infer QTLs. Total expression (y) is modeled by allelic dosage (x) while the allelic imbalance (w) is determined by phasing (v). Two association statistics for QTL and AS are computed. Also performs fine mapping by using a genotype-LD matrix, and returns a credible causal set using shotgun stochastic search (SSS). Compares with fine-mapping approaches CAVIAR, AS-Meta, and RASQUAL (by converting the chi-sq statistics to z-scores and putting them as input to fine-map approaches).
 
-[ASEP - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) uses mixture model to estimate ASE across individuals, and also computes differential ASE between conditions among groups of individuals.
+[ASEP - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) uses a mixture model to estimate ASE across individuals, and also computes differential ASE between conditions among groups of individuals.
 
-[HiC-QTL: Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) First interaction-QTL paper. Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. Rather, it focusses on Hi-C specific FIRE-QTLs, etc.
+[HiC-QTL: Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) First interaction-QTL paper. Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
 
-[BaseQTL - Vigorito et al. Nat Comp Sc 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) derives eQTL without genotype information. Specifically, they infer haplotypes from the reference genome panel, by estimating phase using TreCASE method, corrects reference mapping bias by applying modified WASP.
+[BaseQTL - Vigorito et al. Nat Comp Sc 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) derives eQTL without genotype information. Specifically, they infer haplotypes from the reference genome panel, by estimating phase using the TreCASE method, and corrects reference mapping bias by applying modified WASP.
 
 [WASP - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/) integrates ASE and total read count for QTL inference. Performs combined haplotype test (CHT) and eliminates reference bias by discarding mis-mapped reads.
 
-[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) QTL inference by NB distribution of total reads and beta binomial distribution of ASE.
+[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) QTL inference by NB distribution of total reads and beta-binomial distribution of ASE.
+
+[Shared and distinct molecular effects of regulatory genetic variants provide insight into mechanisms of distal enhancer-promoter communication - Helen Ray-Jones et al. bioRxiv 2023] Uses CHi-C data to identify the contact QTL. Uses two different approaches: 1) Modifies BaseQTL by adapting it to both ATAC-seq and CHi-C contacts, but finds only 14 contact QTLs. 2) Adapts another Bayesian method GUESS, to identify 614 trimodal QTLs - associated with both gene expression, ATAC-seq, and CHi-C contacts. Overall, these combined 627 contact QTLs are then overlapped with REMAP ChIP-seq database for their enrichment with TF binding, tested with the Enformer method for their putative TF binding, and are also benchmarked with reference GWAS studies.  
 
 ## Genotyping
 
