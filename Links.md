@@ -13,9 +13,13 @@ https://antoniolonga.github.io/Pytorch_geometric_tutorials/  Pytorch Geometric
 A few tutorials by Aman Chadha:
 
   https://aman.ai/primers/ai/gnn/
+  
   https://aman.ai/recsys/gnn/
+  
   https://aman.ai/primers/ai/transformers/
+  
   https://aman.ai/primers/ai/bert/
+  
   https://aman.ai/primers/ai/gpt/
 
 ## AI / ML / DL models
