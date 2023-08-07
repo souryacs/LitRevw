@@ -2,6 +2,9 @@
 
 Check [This GitHub page](https://github.com/OmicsML/awesome-deep-learning-single-cell-papers) for a comprehensive summary of deep learning and single-cell papers.
 
+Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/preamble.html) about the best practices in single cell data analysis.
+
+
 ## Multimodal Data Integration/pipelines
 
 [Satija et al. Nat Biotech 2015](https://pubmed.ncbi.nlm.nih.gov/25867923/) First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets.
