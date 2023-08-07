@@ -35,7 +35,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Single Cell RNA-seq
 
-## Integration
+## Integration / modeling
 
 [LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
 
@@ -45,7 +45,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [scVI - Lopez et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/30504886/) Models scRNA-seq by ZINB distribution, but uses NN to infer its parameters. Performs batch correction. 
 
-[scPoli - Population-level integration of single-cell datasets enables multi-scale analysis across samples - Donno et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.28.517803v1) Multiple scRNA-seq data integration using generative AI, specifically a modification of CVAE method. It integrates multiple samples and simultaneously annotates the cells, similar to Seurat and scANVI. Implements this framework inside scArches. Performs both reference building and reference mapping.
+[scFormer: A Universal Representation Learning Approach for Single-Cell Data Using Transformers - Cui et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.20.517285v1) Transformer based modeling of scRNA-seq data, gene expression, optimizing cell and gene embeddings in unsupervised manner.
 
 ## Batch correction
 
@@ -57,6 +57,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [scBERT - scBERT as a large-scale pre-trained deep language model for cell type annotation of single-cell RNA-seq data - Fan Yang et al. Nature Machine Intelligence 2022](https://www.nature.com/articles/s42256-022-00534-z) Applies BERT together with performer (a modified transformer encoder model with higher receptive field) to annotate scRNA-seq cells.
 
+[scPoli - Population-level integration of single-cell datasets enables multi-scale analysis across samples - Donno et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.28.517803v1) Multiple scRNA-seq data integration using generative AI, specifically a modification of CVAE method. It integrates multiple samples and simultaneously annotates the cells, similar to Seurat and scANVI. Implements this framework inside scArches. Performs both reference building and reference mapping.
 
 
 ## Single Cell ATAC-seq
