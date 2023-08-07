@@ -47,7 +47,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [HARMONY - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) Batch correction method. First performs modified K-means soft clustering to assign cells to potential candidate clusters (1 cell is assigned to multiple clusters). Then define batch-specific parameters are used to compute the penalty of cluster assignments. Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
 
-[scPoli - Donno et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.28.517803v1) Multiple scRNA-seq data integration usin geneta 
+[scPoli - Donno et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.28.517803v1) Multiple scRNA-seq data integration using generative AI, specifically a modification of CVAE method. It integrates multiple samples and simultaneously annotates the cells, similar to Seurat and scANVI. Implements this framework inside scArches. Performs both reference building and reference mapping.
 
 ## Single Cell ATAC-seq
 
