@@ -61,6 +61,10 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [SNP-SELEX - Yan et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33505025/) Presents experimental method + enrichment of TF binding SNPs on a set of regulatory sequences. Tests the method on T2D GWAS SNPs.
 
+[Deep learning predicts the impact of regulatory variants on cell-type-specific enhancers in the brain - Zheng et al. Bioinformatics Advances 2023](https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad002/6986158) Predicts cell specific enhancers by first using DeepSea framework followed by fine-tuning using RESNET. Then uses GRAD-CAM framework to obtain nucleotide importance score profiles. Augments with 6-mer based motif scoring and also employs TFmotifDisco to get the nucleotide importance scores. These scores are used to characterize the cell specific enhancers, and then fine-mapped GWAS SNPs are overlapped with them to predict the putative functional and cell-specific variants.
+
+
+
 ## QTL - Polygenic Risk Scores (PRS)
 
 [Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants.
