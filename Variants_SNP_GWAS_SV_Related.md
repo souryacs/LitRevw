@@ -39,7 +39,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [EMS - Leveraging supervised learning for functionally informed fine-mapping of cis-eQTLs identifies an additional 20,913 putative causal eQTLs - Wang et al. Nat Comm 2021](https://www.nature.com/articles/s41467-021-23134-8) Work from David Kelley, Hillary Finucane etc. Presents EMS (expression modifier score) to predict fine-mapped causal variants. Trains data using fine-mapped variants derived by SUSIE + FINEMAP, using 49 tissues GTEX v8 data. Then uses annotation features like TSS distance, tissue and non-tissue specific binary annotations, DL features (Basenji scores), and trains a random forest classifier. Feature importance scores mention that Basenji scores and TSS distance are informative features. Using these EMS scores as prior, then they define a functional annotation based fine-mapping (PIP) across 95 traits.  ** Note: check Enformer performance. See the detailed feature list. Use motif binding information. 
 
-
+[INTERACT - Deep learning predicts DNA methylation regulatory variants in the human brain and elucidates the genetics of psychiatric disorders - Zhou et al. PNAS 2022](https://www.pnas.org/doi/10.1073/pnas.2206069119) Presents a transformer based learning model to predict the changes in DNA methylation level from variants (mQTLs). Trains the data on SUSIE-derived fine-mapped mQTLs.
 
 
 
