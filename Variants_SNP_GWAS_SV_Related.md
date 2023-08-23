@@ -73,7 +73,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) Approximates Bayesian computation of PRS by replacing MCMC with variational inference (VI), a deterministic class of algorithms replacing the posterior inference by an optimization problem (applied to LMM, Fine-mapping, association, enrichment).
 
-
+[REGLE - Unsupervised representation learning improves genomic discovery for lung function and respiratory disease prediction - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) From Google Research. Proposes low dimensional representation learning of high-dimensional clinical data (HDCD) and utilizes these low-dimensional embeddings to compute PRS. Applies on lung and respiratory data.
 
 ## QTL - TWAS
 
