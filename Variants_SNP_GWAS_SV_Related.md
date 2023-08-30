@@ -35,6 +35,8 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 ## Colocalization / Fine-mapping
 
+[FINEMAP: efficient variable selection using summary data from genome-wide association studies - Benner et al. Bioinformatics 2016](https://academic.oup.com/bioinformatics/article/32/10/1493/1743040) Presents a shotgun stochastic search approach to identify the causal variants much quicker than CAVIAR, CAVIARBF, and PAINTOR. Applies SSS on top of Bayesian algorithm to compute the PIPs and credible sets.
+
 [SusieRSS - Fine-mapping from summary data with the “Sum of Single Effects” model Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) Implements the sum of single effects ([SUSiE](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)) model for fine mapping, and describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common - SusieRSS approach - regression with summary statistics). Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
 
 [Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) Integrates GWAS with chromatin annotations + PCHiC and also performs annotation based fine mapping to prioritize GWAS SNPs. Applies on hypertension and blood pressure GWAS SNPs.
