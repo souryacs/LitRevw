@@ -16,8 +16,7 @@
 
 [HiC-QTL: Common DNA sequence variation influences 3-dimensional conformation of the human genome - Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) First interaction-QTL paper. Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
 
-[HTAL - Haplotype associated loops - Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression
- - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. Although subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, the study did not identify specific regulatory variants or SNPs since these HTALs were too few and limited to imprinted and CNV regions.
+[HTAL - Haplotype associated loops - Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. Although subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, the study did not identify specific regulatory variants or SNPs since these HTALs were too few and limited to imprinted and CNV regions.
 
 [BaseQTL - Vigorito et al. Nat Comp Sc 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) derives eQTL without genotype information. Specifically, they infer haplotypes from the reference genome panel, by estimating phase using the TreCASE method, and corrects reference mapping bias by applying modified WASP.
 
@@ -44,6 +43,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [INTERACT - Deep learning predicts DNA methylation regulatory variants in the human brain and elucidates the genetics of psychiatric disorders - Zhou et al. PNAS 2022](https://www.pnas.org/doi/10.1073/pnas.2206069119) Presents a transformer based learning model to predict the changes in DNA methylation level from variants (mQTLs). Trains the data on SUSIE-derived fine-mapped mQTLs.
 
+[BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) In contrast to the sampling methods (Bayesian approaches using MCMC etc.) here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution, whose parameters are estimated by a deep neural network. Such NN formulation helps to use computatioally efficient gradient-based optimization to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
 
 
 ## QTL / SNP enrichment analysis
