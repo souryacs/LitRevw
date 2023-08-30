@@ -48,6 +48,8 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 [BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) In contrast to the sampling methods (Bayesian approaches using MCMC etc.) here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution, whose parameters are estimated by a deep neural network. Such NN formulation helps to use computatioally efficient gradient-based optimization to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
 
 
+
+
 ## QTL / SNP enrichment analysis
 
 [Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) Tissue-of-action (TOA) scores of T2D GWAS, using fine-mapped variants, independent fine-mapped GWAS loci, reference coding annotations. A weighted sum of annotations for all fine-mapped SNPs are used for tissue-specific enrichment computation.
@@ -68,6 +70,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [Deep learning predicts the impact of regulatory variants on cell-type-specific enhancers in the brain - Zheng et al. Bioinformatics Advances 2023](https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad002/6986158) Predicts cell specific enhancers by first using DeepSea framework followed by fine-tuning using RESNET. Then uses GRAD-CAM framework to obtain nucleotide importance score profiles. Augments with 6-mer based motif scoring and also employs TFmotifDisco to get the nucleotide importance scores. These scores are used to characterize the cell specific enhancers, and then fine-mapped GWAS SNPs are overlapped with them to predict the putative functional and cell-specific variants.
 
+[Redefining tissue specificity of genetic regulation of gene expression in the presence of allelic heterogeneity - Arvanitis et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.002) CAFEH method. Uses tissue-specificity and allelic heterogeneity to call eQTLs. Tissue specific colocalization is computed by COLOC and eCAVIAR (2 variants per locus) to identify the causal variants shared between two tissues. In addition, variants shared between GTEx and other datasets are also derived by colocalization - pairwise colocalization analysis for all genes. In addition, matrixQTL was used with the cell decomposition (CIBERSORT) and other covariates as input. Finally, eGenes without colocalization between tissues / datasets were prioritized.
 
 
 ## QTL - Polygenic Risk Scores (PRS)
