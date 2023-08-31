@@ -94,6 +94,8 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [INTACT: Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) - Integration of TWAS and colocalization to identify causal genes. Posterior probability of a gene being causal : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
 
+[Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation - Baca et al.Nat Gen 2022](https://www.nature.com/articles/s41588-022-01168-y) Presents CWAS, analogous to TWAS, where imputed ChIP-seq data together with the phasing haplotype information is used to infer the ChIP-seq peak - trait association.
+
 
 ## Identifying disease-risk / causal variants (and) target genes
 
