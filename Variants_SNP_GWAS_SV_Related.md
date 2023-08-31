@@ -47,7 +47,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) In contrast to the sampling methods (Bayesian approaches using MCMC etc.) here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution, whose parameters are estimated by a deep neural network. Such NN formulation helps to use computatioally efficient gradient-based optimization to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
 
-
+[A more accurate method for colocalisation analysis allowing for multiple causal variants - Wallace, PLoS Genetics 2021](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009440) Presents coloc-susie, uses SUSIE to fine map and decompose the input summary statistics (of 2 traits) into multiple independent signals (and fine-mapped variants), runs coloc on these pairs of signals, to identify the colocalized variants. Free from the assumption of single colocalized variant per locus. When SUSIE does not return any credible set, recommends to use the single variant version of coloc.
 
 
 ## QTL / SNP enrichment analysis
