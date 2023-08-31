@@ -5,7 +5,7 @@
 [IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) TF binding Motif based approach to identify the cell-specific regulatory elements, using regulatory (ChIP-seq) profile. Can be further augmented by DeepLift related apporoaches. Applied this work on another work [Amariuta et al. Nat Gen 2020](https://www.nature.com/articles/s41588-020-00740-8) to predict TF binding motifs across 245 cell types, particularly to prioritize TF binding motifs and regulatory variants across multi-ancestry settings.
 
 
-## QTL / ASE inference
+## QTL / ASE / GWAS inference
 
 [fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) QTL inference by population model and efficient permutation. Default model in GTEx. Also implemented in the TensorQTL framework (including conditional eQTL analysis).
 
@@ -35,6 +35,8 @@
 Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. In fact, the asthma locus mentions the CTCF binding SNP rs12936231, which is a caQTL. The utility of loop QTL is not evident. Did not find a specific analysis focused on loopQTLs or any motif analysis.
 
 [DeepWAS: Multivariate genotype-phenotype associations by directly integrating regulatory information using deep learning - Arloth et al. PLoS comp biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007616) Derives GWAS SNPs by using regulatory annotations a prior. Uses DEEPSEA to first define the regulatory annotation score and filter the SNPs with score exceeding a certain threshold. These filtered SNPs are then subjected to a LASSO regression to call the significant GWAS entries.
+
+[GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) 
 
 ## Genotyping
 
