@@ -1,5 +1,10 @@
 # SNP / QTL / GWAS and functional variants
 
+## Regulatory regions, motifs
+
+[IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) TF binding Motif based approach to identify the cell-specific regulatory elements, using regulatory (ChIP-seq) profile. Can be further augmented by DeepLift related apporoaches.
+
+
 ## QTL / ASE inference
 
 [fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) QTL inference by population model and efficient permutation. Default model in GTEx. Also implemented in the TensorQTL framework (including conditional eQTL analysis).
