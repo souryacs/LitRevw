@@ -36,8 +36,6 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [DeepWAS: Multivariate genotype-phenotype associations by directly integrating regulatory information using deep learning - Arloth et al. PLoS comp biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007616) Derives GWAS SNPs by using regulatory annotations a prior. Uses DEEPSEA to first define the regulatory annotation score and filter the SNPs with score exceeding a certain threshold. These filtered SNPs are then subjected to a LASSO regression to call the significant GWAS entries.
 
-[GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) 
-
 ## Genotyping
 
 [Meta Imputation - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
@@ -80,6 +78,9 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 [Deep learning predicts the impact of regulatory variants on cell-type-specific enhancers in the brain - Zheng et al. Bioinformatics Advances 2023](https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad002/6986158) Predicts cell specific enhancers by first using DeepSea framework followed by fine-tuning using RESNET. Then uses GRAD-CAM framework to obtain nucleotide importance score profiles. Augments with 6-mer based motif scoring and also employs TFmotifDisco to get the nucleotide importance scores. These scores are used to characterize the cell specific enhancers, and then fine-mapped GWAS SNPs are overlapped with them to predict the putative functional and cell-specific variants.
 
 [Redefining tissue specificity of genetic regulation of gene expression in the presence of allelic heterogeneity - Arvanitis et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.002) CAFEH method. Uses tissue-specificity and allelic heterogeneity to call eQTLs. Tissue specific colocalization is computed by COLOC and eCAVIAR (2 variants per locus) to identify the causal variants shared between two tissues. In addition, variants shared between GTEx and other datasets are also derived by colocalization - pairwise colocalization analysis for all genes. In addition, matrixQTL was used with the cell decomposition (CIBERSORT) and other covariates as input. Finally, eGenes without colocalization between tissues / datasets were prioritized.
+
+[GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) Peforms GWAS enrichment analysis of regulatory regions. Uses p-values of SNPs, LD matrix, regulatory annotations, and SNP distance from TSS. First performs LD-based pruning of SNPs (r2 > 0.1), then does LD tagging (R2 > 0.8) annotation overlap (basically assigning a variant an annotation if the variant itself or any variant in LD with it overlaps with the annotation), and then fits a logistic regression model between the TSS distance (Y and the variants (and LD variants).
+
 
 
 ## QTL - Polygenic Risk Scores (PRS)
