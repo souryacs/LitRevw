@@ -2,7 +2,7 @@
 
 ## Regulatory regions, motifs
 
-[IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) TF binding Motif based approach to identify the cell-specific regulatory elements, using regulatory (ChIP-seq) profile. Can be further augmented by DeepLift related apporoaches.
+[IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) TF binding Motif based approach to identify the cell-specific regulatory elements, using regulatory (ChIP-seq) profile. Can be further augmented by DeepLift related apporoaches. Applied this work on another work [Amariuta et al. Nat Gen 2020](https://www.nature.com/articles/s41588-020-00740-8) to predict TF binding motifs across 245 cell types.
 
 
 ## QTL / ASE inference
