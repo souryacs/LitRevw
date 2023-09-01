@@ -81,6 +81,8 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) Peforms GWAS enrichment analysis of regulatory regions. Uses p-values of SNPs, LD matrix, regulatory annotations, and SNP distance from TSS. First performs LD-based pruning of SNPs (r2 > 0.1), then does LD tagging (R2 > 0.8) annotation overlap (basically assigning a variant an annotation if the variant itself or any variant in LD with it overlaps with the annotation), and then fits a logistic regression model between the TSS distance (Y and the variants (and LD variants).
 
+[Partitioning heritability by functional annotation using genome-wide association summary statistics - S-LDSC - Finucane et al. Nat Gen 2015](https://www.nature.com/articles/ng.3404) Proposes S-LDSC method, to identify the functional annotation (category) of SNPs enriched for disease heritability. The idea is that for polygenic traits, a heritability information (chi-sq statistic) of a SNP is also accumulated by its tagged (LD) SNPs.
+
 
 
 ## QTL - Polygenic Risk Scores (PRS)
@@ -97,7 +99,8 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [METRO - Li et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35334221/) TWAS using multi-ancestry (population) data - different allele frequencies and LD matrix.
 
-[INTACT: Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) - Integration of TWAS and colocalization to identify causal genes. Posterior probability of a gene being causal : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
+[Probabilistic integration of transcriptome-wide association studies and colocalization analysis identifies key molecular pathways of complex
+traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) - Integration of TWAS and colocalization to identify causal genes. Posterior probability of a gene being causal is approximated as : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
 
 [Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation - Baca et al.Nat Gen 2022](https://www.nature.com/articles/s41588-022-01168-y) Presents CWAS, analogous to TWAS, where imputed ChIP-seq data together with the phasing haplotype information is used to infer the ChIP-seq peak - trait association.
 
