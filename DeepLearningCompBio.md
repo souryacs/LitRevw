@@ -10,7 +10,7 @@
 
 [TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
 
-[Annotating functional effects of non-coding variants in neuropsychiatric cell types by deep transfer learning - MetaChrom - Lai et al. PLOS Comp Biol. 2022](https://pubmed.ncbi.nlm.nih.gov/35576194/) - similar to the DeepSEA framework, it predicts the epigenomic tracks (histone and chromatin accessibility) from DNA sequences. Uses RESNET architecture and transfer learning to predict the epigenomic tracks.
+[Annotating functional effects of non-coding variants in neuropsychiatric cell types by deep transfer learning - MetaChrom - Lai et al. PLOS Comp Biol. 2022](https://pubmed.ncbi.nlm.nih.gov/35576194/) - Although the title is about annotating functional variants, the approach is similar to the DeepSEA framework, it predicts the epigenomic tracks (histone and chromatin accessibility) from DNA sequences. Uses RESNET architecture and transfer learning to predict the epigenomic tracks.
 
 [DeepCOMBI - Mieth et al. NAR Genomics Bioinformatics](https://pubmed.ncbi.nlm.nih.gov/34296082/) adopts layer-wise relevance propagation (LRP) to attribute SNP relevance scores and selection of significant SNPs in GWAS studies. Replaces conventional p-value thresholding. Extends their earlier work COMBI which uses SVM based method, to a DNN setting.  
 
