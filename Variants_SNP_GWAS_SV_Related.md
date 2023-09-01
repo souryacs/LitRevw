@@ -101,6 +101,8 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation - Baca et al.Nat Gen 2022](https://www.nature.com/articles/s41588-022-01168-y) Presents CWAS, analogous to TWAS, where imputed ChIP-seq data together with the phasing haplotype information is used to infer the ChIP-seq peak - trait association.
 
+[GCSC - Leveraging gene co-regulation to identify gene sets enriched for disease heritability - Siewert-Rocks et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.005) Uses TWAS to first get the gene score for the trait (TWAS chi-sq statistics) and then detemines the gene co-regulation score (caused by shared eQTLs or eQTLs in LD). GCSC defines a gene set with higher disease heritability if the genes with high co-regulation to the gene set have higher TWAS chi-sq statistics than the genes with low co-regulation to the gene set.
+
 
 ## Identifying disease-risk / causal variants (and) target genes
 
