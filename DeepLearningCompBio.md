@@ -2,7 +2,7 @@
 
 ## Variant Calling:
 
-[DeepVariant - Poplin et al. Nat Biotech 2018](https://www.nature.com/articles/nbt.4235): Uses samtools read pileups + known genotype calls for training. Uses CNN + Stochastic gradient descent model.
+[A universal SNP and small-indel variant caller using deep neural networks - DeepVariant - Poplin et al. Nat Biotech 2018](https://www.nature.com/articles/nbt.4235): Uses samtools read pileups + known genotype calls for training. Uses CNN + Stochastic gradient descent model.
 
 [CancerVar: Li et al. Science Advances 2022](https://pubmed.ncbi.nlm.nih.gov/35544644/): AI based cancer somatic mutation caller.
 
