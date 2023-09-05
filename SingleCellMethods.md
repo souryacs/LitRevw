@@ -53,9 +53,9 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Cell annotation
 
-[Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) scRNA-seq cell annotation with SGD and logistic model. Supports hierarchical cell annotation (coarse and fine levels). Tested with immune cells, but may require manual data curation.
+[Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
 
-[Semisupervised adversarial neural networks for single-cell classification - scNym - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) scRNA-seq cell annotation with CNN + adversarial loss. Uses pseudo-labeled samples (mix of labeled and unlabeled samples).
+[Semisupervised adversarial neural networks for single-cell classification - scNym - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) Cell annotation using domain adversarial neural network. Uses both training data (with labels) and target data (to learn the embeddings). Uses a mix-match scheme to permute the input data and labels and the domain adversarial network predicts the domain of origin (training/test data). Classifier is updated by the inverse of adversarial gradients.
 
 [scissor - Sun et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34764492/) Uses a network regression model to identify the cell populations/clusters associated with a given phenotype. Input: scRNA-seq matrix, bulk RNA-seq matrix, and phenotype matrix/vector (can be binary, continuous, based on that the regression model would be defined). The correlation between single-cell expression and bulk RNA-seq gene expression data is computed to produce a correlation matrix which is then applied to a regression framework with respect to the given phenotype.
 
@@ -63,6 +63,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [scPoli - Population-level integration of single-cell datasets enables multi-scale analysis across samples - Donno et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.28.517803v1) Multiple scRNA-seq data integration using generative AI, specifically a modification of CVAE method. It integrates multiple samples and simultaneously annotates the cells, similar to Seurat and scANVI. Implements this framework inside scArches. Performs both reference building and reference mapping.
 
+[scANVI - Xu et al. Molecular System Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33491336/) Cell annotation on top of scVI framework. Uses harmonization (similar to batch effect correction, but extended to support datasets even from multiple technologies) and automatic cell annotation. Uses probabilistic cell annotation (generative model) in 2 steps: 1) First annotates a subset of cells with high confidence, 2) Then annotates the remaining cells using the annotations of the previous set of cells.
 
 ## Single Cell ATAC-seq
 
@@ -75,15 +76,6 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 [CICERO - Pliner et al. Mol Cell 2018](https://pubmed.ncbi.nlm.nih.gov/30078726/) Concept of co-accessibility among peaks.
 
 [Episcanpy - Danese et al. Nat Comm 2021](https://pubmed.ncbi.nlm.nih.gov/34471111/) Episcanpy processes both scATAC-seq and sc DNA methylation data, and performs cell-level clustering. Based on the Scanpy framework.
-
-## Cell Annotation
-
-[CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
-
-[scNym - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) Cell annotation using domain adversarial neural network. Uses both training data (with labels) and target data (to learn the embeddings). Uses a mix-match scheme to permute the input data and labels and the domain adversarial network predicts the domain of origin (training/test data). Classifier is updated by the inverse of adversarial gradients.
-
-[scANVI - Xu et al. Molecular System Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33491336/) Cell annotation on top of scVI framework. Uses harmonization (similar to batch effect correction, but extended to support datasets even from multiple technologies) and automatic cell annotation. Uses probabilistic cell annotation (generative model) in 2 steps: 1) First annotates a subset of cells with high confidence, 2) Then annotates the remaining cells using the annotations of the previous set of cells.
-
 
 ## Spatial Transcriptomics
 
