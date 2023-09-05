@@ -23,7 +23,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [TotalVI - Gayoso et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/33589839/) scVI on multi-omic setting (CITE-seq), its joint low dimensional representations and the parameters are inferred by VAE framework.
 
-[Kriebel et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/35140223/) LIGER v2. UINMF using both shared and unshared features to integrate multiple multi-omic datasets.
+[UINMF performs mosaic integration of single-cell multi-omic datasets using nonnegative matrix factorization - Kriebel et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/35140223/) LIGER v2. UINMF using both shared and unshared features to integrate multiple multi-omic datasets.
 
 [Review paper on data integration - Luecken et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/34949812/) compares various multimodal data integration approaches. Conclusions: 1) Scanorama and scVI perform well, particularly on complex integration tasks. If cell annotations are available, scGen and scANVI outperform most other methods across tasks, and Harmony and LIGER are effective for scATAC-seq data integration on window and peak feature spaces. 2) In more complex integration tasks, there is a tradeoff between batch effect removal and bio-conservation. While methods such as SAUCIE, LIGER, BBKNN, and Seurat v3 tend to favor the removal of batch effects over the conservation of biological variation, DESC, and Conos make the opposite choice, and Scanorama, scVI, and FastMNN (gene) balance these two objectives.
 
@@ -37,9 +37,9 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Integration / modeling
 
-[LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
+[Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity - LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
 
-[Liu et al. Nat Protocol 2020](https://pubmed.ncbi.nlm.nih.gov/33046898/) LIGER paper - running protocol.
+[Jointly defining cell types from multiple single-cell datasets using LIGER - Liu et al. Nat Protocol 2020](https://pubmed.ncbi.nlm.nih.gov/33046898/) LIGER paper - running protocol.
 
 [MEFISTO - Velten et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35027765/) Uses factor analysis and extends the method MOFA to account for spatiotemporal variation of scRNA-seq data.
 
