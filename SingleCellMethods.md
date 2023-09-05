@@ -7,7 +7,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Multimodal Data Integration/pipelines
 
-[Satija et al. Nat Biotech 2015](https://pubmed.ncbi.nlm.nih.gov/25867923/) First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets.
+[Spatial reconstruction of single-cell gene expression data - Satija et al. Nat Biotech 2015](https://pubmed.ncbi.nlm.nih.gov/25867923/) First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets.
   
 [Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) Second Seurat paper. Proposes CCA, specially Diagonal CCA to integrate multiple scRNA-seq datasets. The diagonal (or regularized/penalized) CCA is useful since the number of genes (integrating features) is much lower than the number of cells. Partial SVD implementation is used to identify a set of user-defined CCA vectors.
   
