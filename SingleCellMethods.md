@@ -45,7 +45,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Deep generative modeling for single-cell transcriptomics - scVI - Lopez et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/30504886/) Models scRNA-seq observed counts by ZINB distribution, conditioned on the batch and additional Gaussian parameters, but uses NN to infer its parameters. Performs batch correction. 
 
-[scFormer: A Universal Representation Learning Approach for Single-Cell Data Using Transformers - Cui et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.20.517285v1) Transformer based modeling of scRNA-seq data, gene expression, optimizing cell and gene embeddings in unsupervised manner. Simultaneously model cell-level and gene-level information.
+[scFormer: A Universal Representation Learning Approach for Single-Cell Data Using Transformers - Cui et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.20.517285v1) Transformer based modeling of scRNA-seq data, gene expression, optimizing cell and gene embeddings in unsupervised manner. Simultaneously model cell-level and gene-level information. Gene expression is applied a value binning approach after conventional normalization (to create gene tokens and solve scaling issues from different batches / experiments). External tokens are used to store meta information. Complete gene representations are used to create cell representation.
 
 ## Batch correction
 
