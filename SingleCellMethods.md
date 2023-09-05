@@ -49,13 +49,17 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Batch correction
 
-[HARMONY - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) Batch correction method. First performs modified K-means soft clustering to assign cells to potential candidate clusters (1 cell is assigned to multiple clusters). Then define batch-specific parameters are used to compute the penalty of cluster assignments. Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
+[Fast, sensitive and accurate integration of single-cell data with Harmony - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) Batch correction method. First performs modified K-means soft clustering to assign cells to potential candidate clusters (1 cell is assigned to multiple clusters). Then define batch-specific parameters are used to compute the penalty of cluster assignments. Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
 
 ## Cell annotation
 
+[Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) scRNA-seq cell annotation with SGD and logistic model. Supports hierarchical cell annotation (coarse and fine levels). Tested with immune cells, but may require manual data curation.
+
+[Semisupervised adversarial neural networks for single-cell classification - scNym - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) scRNA-seq cell annotation with CNN + adversarial loss. Uses pseudo-labeled samples (mix of labeled and unlabeled samples).
+
 [scissor - Sun et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34764492/) Uses a network regression model to identify the cell populations/clusters associated with a given phenotype. Input: scRNA-seq matrix, bulk RNA-seq matrix, and phenotype matrix/vector (can be binary, continuous, based on that the regression model would be defined). The correlation between single-cell expression and bulk RNA-seq gene expression data is computed to produce a correlation matrix which is then applied to a regression framework with respect to the given phenotype.
 
-[scBERT - scBERT as a large-scale pre-trained deep language model for cell type annotation of single-cell RNA-seq data - Fan Yang et al. Nature Machine Intelligence 2022](https://www.nature.com/articles/s42256-022-00534-z) Applies BERT together with performer (a modified transformer encoder model with higher receptive field) to annotate scRNA-seq cells.
+[scBERT - scBERT as a large-scale pre-trained deep language model for cell type annotation of single-cell RNA-seq data - Fan Yang et al. Nature Machine Intelligence 2022](https://www.nature.com/articles/s42256-022-00534-z) Applies BERT (a transformer model with bidirectional encoder architecture, pre-trained for NLP) together with performer (a modified transformer encoder model with higher receptive field) to annotate scRNA-seq cells.
 
 [scPoli - Population-level integration of single-cell datasets enables multi-scale analysis across samples - Donno et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.28.517803v1) Multiple scRNA-seq data integration using generative AI, specifically a modification of CVAE method. It integrates multiple samples and simultaneously annotates the cells, similar to Seurat and scANVI. Implements this framework inside scArches. Performs both reference building and reference mapping.
 
