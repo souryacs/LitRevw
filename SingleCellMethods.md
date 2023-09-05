@@ -31,7 +31,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Robust single-cell matching and multimodal analysis using shared and distinct features - MARIO - Zhu et al. Nat Meth 2023](https://pubmed.ncbi.nlm.nih.gov/36624212/) Not targeted for transcriptomic data (scRNA-seq) but applied to protein-centric multimodal datasets such as CITE-seq, CyTOF, etc. First applies SVD + CCA on individual datasets to find the cell-cell pairing (matching cells). CCA is performed using both shared and unshared features. Then a regularized K-means clustering is performed for the final integration.
 
-[GLUE - Cao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35501393/) Integrating multiple omics datasets using graph variational autoencoders and also by using the regulatory interactions between the omics as a prior guided graph. For example, integration between scRNA-seq and scATAC-seq data requires prior edge formation using the peak-to-gene correlation.
+[Multi-omics single-cell data integration and regulatory inference with graph-linked embedding - GLUE - Cao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35501393/) Integrating multiple omics datasets using graph variational autoencoders and also by using the regulatory interactions between the omics as a prior guided graph (knowledge graph - vertices: features of different omics layers, edges: regulatory interactions). For example, integration between scRNA-seq and scATAC-seq data requires prior edge formation using the peak-to-gene correlation. First creates low-dimensional cell embeddings for individual modalities using VAE (scVI).  
 
 ## Single Cell RNA-seq
 
