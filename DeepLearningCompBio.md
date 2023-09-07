@@ -8,11 +8,11 @@
 
 ## QTL / SNP / GWAS etc.
 
-[TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
+[The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
 
 [Annotating functional effects of non-coding variants in neuropsychiatric cell types by deep transfer learning - MetaChrom - Lai et al. PLOS Comp Biol. 2022](https://pubmed.ncbi.nlm.nih.gov/35576194/) - Although the title is about annotating functional variants, the approach is similar to the DeepSEA framework, it predicts the epigenomic tracks (histone and chromatin accessibility) from DNA sequences. Uses RESNET architecture and transfer learning to predict the epigenomic tracks.
 
-[DeepCOMBI - Mieth et al. NAR Genomics Bioinformatics](https://pubmed.ncbi.nlm.nih.gov/34296082/) adopts layer-wise relevance propagation (LRP) to attribute SNP relevance scores and selection of significant SNPs in GWAS studies. Replaces conventional p-value thresholding. Extends their earlier work COMBI which uses SVM based method, to a DNN setting.  
+[DeepCOMBI: explainable artificial intelligence for the analysis and discovery in genome-wide association studies - Mieth et al. NAR Genomics Bioinformatics](https://pubmed.ncbi.nlm.nih.gov/34296082/) adopts layer-wise relevance propagation (LRP) to attribute SNP relevance scores and selection of significant SNPs in GWAS studies. Replaces conventional p-value thresholding. Extends their earlier work COMBI which uses SVM based method, to a DNN setting.  
 
 [REGLE - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) Representation learning using low dimensional representation of high-dimensional clinical data (HDCD) to perform GWAS on representative traits, and estimate polygenic risk scores (PRS) on individual representative traits. Applied on COPD (chronic obstructive pulmonary disease) and spirograms.
 
