@@ -40,8 +40,6 @@
 
 [Deep learning suggests that gene expression is encoded in all parts of a co-evolving interacting gene regulatory structure - Zrimec et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/33262328/) mentions that gene expression can be predicted by using both coding and non-coding regions, and deep learning helps to identify candidate motif regions. Motif co-occurrence helps to decode the gene expression.
 
-Review paper - The evolution, evolvability and engineering of gene regulatory DNA - Nature 2022
-
 ## Prediction of Regulatory region without using DNA sequence 
 
 [ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
@@ -51,16 +49,15 @@ Review paper - The evolution, evolvability and engineering of gene regulatory DN
 [BIONIC: biological network integration using convolutions - Forster et al. Nat Meth 2022](https://www.nature.com/articles/s41592-022-01616-x): Biological network integration. Uses GAT. **Note** : Modifies GAT to consider a priori network edge weights (Methods, eqs. 1-2). Uses 3 GAT layers, 10 attention heads per GAT encoder, each with a hidden dimension of 68, as per their hyperparameter optimization results.
 
 
-
 ## Drug target prediction / disease-specific analysis
 
-[NETTAG - Xu et al. 2022](https://pubmed.ncbi.nlm.nih.gov/36450252/) - DL model to predict Alzheimer's disease (AD) risk genes. Integrates mutli-omics information - PPIs, QTLs, TFs, ENCODE, GWAS, GTEx, GO. Utilizes PPI + GO to prioritize putative AD risk genes, and assigns scores based on their regulatory information (QTLs, ENCODE, etc).
+[Interpretable deep learning translation of GWAS and multi-omics findings to identify pathobiology and drug repurposing in Alzheimer's disease - NETTAG - Xu et al. 2022](https://pubmed.ncbi.nlm.nih.gov/36450252/) - DL model to predict Alzheimer's disease (AD) risk genes. Integrates mutli-omics information - PPIs, QTLs, TFs, ENCODE, GWAS, GTEx, GO. Utilizes PPI + GO to prioritize putative AD risk genes, and assigns scores based on their regulatory information (QTLs, ENCODE, etc).
 
-[Jha et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35581644/) The authors observed that DEGs between normal and cancer patients do not overlap between multiple datasets. So they used the expressions of protein-coding genes, lncRNA, and splicing junctions in an interpretable deep-learning model.
+[Identifying common transcriptome signatures of cancer by interpreting deep learning models - Jha et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35581644/) The authors observed that DEGs between normal and cancer patients do not overlap between multiple datasets. So they used the expressions of protein-coding genes, lncRNA, and splicing junctions in an interpretable deep-learning model.
 
-[Elmarakeby et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34552244/) Proposed an interpretable DL model using DEEPLIFT framework to understand the molecular mechanisms of cancer. The input is genes, pathways, and biological processes. Their relationships are prior known and downloaded from Reactome pathway datasets (https://reactome.org/). These relationships are provided as the edges in the neural network architecture.
+[Biologically informed deep neural network for prostate cancer discovery - Elmarakeby et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34552244/) Proposed an interpretable DL model (named P-NET) using DEEPLIFT framework to understand the molecular mechanisms of cancer. The input is genes, pathways, and biological processes (molecular profile). Their relationships are prior known and downloaded from Reactome pathway datasets (https://reactome.org/). These relationships are provided as the edges in the neural network architecture.
 
-[Dig - Sherman et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35726091/) Developed by PCAWG consortium, this tool creates a list of genome-wide neutral somatic mutation maps using a DL model (CNN for dimensionality reduction and feature selection + Gaussian process modeling) and then develops a positive selection test to detect the potential cancer driver somatic mutations. *To read in detail*
+[Genome-wide mapping of somatic mutation rates uncovers drivers of cancer - Dig - Sherman et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35726091/) Developed by PCAWG consortium, this tool creates a list of genome-wide neutral somatic mutation maps using a DL model (CNN for dimensionality reduction and feature selection + Gaussian process modeling) and then develops a positive selection test to detect the potential cancer driver somatic mutations. *To read in detail*
 
 [Discovery of drug-omics associations in type 2 diabetes with generative deep-learning models - MOVE - Allesoe et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36593394/) Defines MOVE - Multi-omics variational autoencoder including data from multiple omics from 789 sample cohort (vertical integration) and applies VAE, and defines the association between T2D with the latent space features. Significance is computed by t-test, and by feature purturbation (0/1) technique.
 
