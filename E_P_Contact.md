@@ -40,4 +40,6 @@
 
 [Deciphering eukaryotic gene-regulatory logic with 100 million random promoters - de Boer et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/31792407/) Predicts TF binding from sequence using ML. Aplies on Yeast. Develops GPRA (Gigantic parallel reporter assay). 
 
+[The evolution, evolvability and engineering of gene regulatory DNA - Vaishnav et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/31792407/) Work from the same goup. Predicts sequence to gene expression, using DL, and using promoter characteristics, fitness scores etc. Mostly biophysical model is used in a DL framework.
+
 
