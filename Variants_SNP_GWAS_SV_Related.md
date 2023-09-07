@@ -8,7 +8,7 @@
 
 ## QTL / ASE / GWAS inference
 
-[fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) QTL inference by population model and efficient permutation. Default model in GTEx. Also implemented in the TensorQTL framework (including conditional eQTL analysis).
+[Fast and efficient QTL mapper for thousands of molecular phenotypes - fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) QTL inference by population model and efficient permutation. Default model in GTEx. Also implemented in the TensorQTL framework (including conditional eQTL analysis). Uses permutation and an adaptive permutation scheme. Approximate p-values at any significance levels without requiring the full set of permutations is performed by an approximate beta distribution (because order statistics of iid random variables are beta distributed). The second step uses FDR not from BH correction but from ST method (Storey and Tibshirani) to report higher number of significant entries, corresponding to testing thousands of molecular phenotypes (here gene expression for thousands of genes) genome-wide.
 
 [geoP - Zhabotynsky et al. PLOS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35286297/) is an efficient method to compute permutation-based p-values for ASE, used in TreCASE and RASQUAL.
 
