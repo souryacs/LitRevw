@@ -38,3 +38,6 @@
 
 [Endogenous fine-mapping of functional regulatory elements in complex genetic loci - Zhao et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.06.539696v1) Single cell CRISPR inhibition and activation on the CREs linked to fine-mapped eQTLs from GTEX v8, Geuvadis, Blueprint databases to identify the fine-mapped causal variants. Tested only those loci which have multiple lead QTLs with the same p-value, and they are in perfect LD.
 
+[Deciphering eukaryotic gene-regulatory logic with 100 million random promoters - de Boer et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/31792407/) Predicts TF binding from sequence using ML. Aplies on Yeast. Develops GPRA (Gigantic parallel reporter assay). 
+
+
