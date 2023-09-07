@@ -41,7 +41,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 ## Genotyping
 
-[Meta Imputation - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
+[Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
 
 ## Colocalization / Fine-mapping
 
@@ -49,7 +49,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [SusieRSS - Fine-mapping from summary data with the “Sum of Single Effects” model Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) Implements the sum of single effects ([SUSiE](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)) model for fine mapping, and describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common - SusieRSS approach - regression with summary statistics). Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
 
-[Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) Integrates GWAS with chromatin annotations + PCHiC and also performs annotation based fine mapping to prioritize GWAS SNPs. Applies on hypertension and blood pressure GWAS SNPs.
+[Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension - Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) Integrates GWAS with chromatin annotations + PCHiC and also performs annotation based fine mapping to prioritize GWAS SNPs. Applies on hypertension and blood pressure (CVD) GWAS SNPs. Uses regulatory annotations, fine-mapped GWAS SNPs (99% PIP causal set), genomic enrichment (GREAT), colocalization with GTEx eQTLs, and identified target genes via inetrating capture Hi-C loops. Also uses EpiMap analysis (from Kellis group) to associate the gene expression with CREs.
 
 [EMS - Leveraging supervised learning for functionally informed fine-mapping of cis-eQTLs identifies an additional 20,913 putative causal eQTLs - Wang et al. Nat Comm 2021](https://www.nature.com/articles/s41467-021-23134-8) Work from David Kelley, Hillary Finucane etc. Presents EMS (expression modifier score) to predict fine-mapped causal variants. Trains data using fine-mapped variants derived by SUSIE + FINEMAP, using 49 tissues GTEX v8 data. Then uses annotation features like TSS distance, tissue and non-tissue specific binary annotations, DL features (Basenji scores), and trains a random forest classifier. Feature importance scores mention that Basenji scores and TSS distance are informative features. Using these EMS scores as prior, then they define a functional annotation based fine-mapping (PIP) across 95 traits.  ** Note: check Enformer performance. See the detailed feature list. Use motif binding information. 
 
