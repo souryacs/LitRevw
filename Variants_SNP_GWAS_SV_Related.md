@@ -132,6 +132,8 @@ Supports multiple functional annotations, and develops functional gradient based
 
 [SNP-to-gene linking strategies reveal contributions of enhancer-related and candidate master-regulator genes to autoimmune disease - Dey et al. Cell Genomics 2022](https://pubmed.ncbi.nlm.nih.gov/35873673/) Reviews 11 SNP to gene (S2G) linking strategies and tests the corresponding annotations using S-LDSC on 11 autoimmune traits.
 
+[A catalog of GWAS fine-mapping efforts in autoimmune disease - Caliskan et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33798443/) Integrates fine-mapping studies for various immune diseases, and defines a weighted gene prioritization score to assign the candidate risk genes.
+
 ## Structural variants
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. Requires 2 lists: 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) Performs a combined p-value analysis to return the most significant genes. Developed by PCAWG consortium.
