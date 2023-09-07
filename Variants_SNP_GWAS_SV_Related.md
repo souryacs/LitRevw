@@ -76,7 +76,7 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [Quantifying genetic effects on disease mediated by assayed gene expression levels - MESC - Yao et al. Nat Genet 2020](https://pubmed.ncbi.nlm.nih.gov/32424349/) Quantifying heritability by the effect of _cis_ gene expression. Uses regression.
 
-[Systematic analysis of binding of transcription factors to noncoding variants - SNP-SELEX - Yan et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33505025/) Characterizing effects of SNPs on binding TF. Presents experimental method by extending their previous method HT-SELEX which uses random DNA sequences as input, here they provide 40 bp DNA from human genome. Enrichment of TF binding SNPs on a set of regulatory sequences is tested, and applied T2D GWAS SNPs. Defines oligonucelotide binding score (OBS) and preferential binding score (PBS) for the SNPs with respect to TF binding, and corresponding SNPs are denoted as preferential binding SNPs (pbSNP). Also evaluates the PWMs by predicting differential binding of TFs, and finds the pbSNPs perform better in predicting differential TF binding. DeltaSVM franework using gkm-SVM is used to quantify the variant effect size.
+[Systematic analysis of binding of transcription factors to noncoding variants - SNP-SELEX - Yan et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33505025/) Characterizing effects of SNPs on binding TF. Presents experimental method by extending their previous method HT-SELEX which uses random DNA sequences as input, here they provide 40 bp DNA from human genome. Enrichment of TF binding SNPs on a set of regulatory sequences is tested, and applied T2D GWAS SNPs. Defines oligonucelotide binding score (OBS) and preferential binding score (PBS) for the SNPs with respect to TF binding, and corresponding SNPs are denoted as preferential binding SNPs (pbSNP). Also evaluates the PWMs by predicting differential binding of TFs, and finds the pbSNPs perform better in predicting differential TF binding. DeltaSVM franework using gkm-SVM is used to quantify the variant effect size. **** Note: Supplementary is useful - shows phasing of haplotypes, motif finding, allelic fold change, and haplotype estimation from HiC data.
 
 [Deep learning predicts the impact of regulatory variants on cell-type-specific enhancers in the brain - Zheng et al. Bioinformatics Advances 2023](https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad002/6986158) Predicts cell specific enhancers by first using DeepSea framework followed by fine-tuning using RESNET. Then uses GRAD-CAM framework to obtain nucleotide importance score profiles. Augments with 6-mer based motif scoring and also employs TFmotifDisco to get the nucleotide importance scores. These scores are used to characterize the cell specific enhancers, and then fine-mapped GWAS SNPs are overlapped with them to predict the putative functional and cell-specific variants.
 
@@ -92,17 +92,17 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 ## QTL - Polygenic Risk Scores (PRS)
 
-[Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants.
+[Integration of rare expression outlier-associated variants improves polygenic risk prediction - Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants. *** Note: the methods section, GTEx v8 data shows how to infer the rare variants and associated statisitcs from variants, and calculate PRS.
 
-[TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
+[The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
 
-[VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) Approximates Bayesian computation of PRS by replacing MCMC with variational inference (VI), a deterministic class of algorithms replacing the posterior inference by an optimization problem (applied to LMM, Fine-mapping, association, enrichment).
+[Fast and accurate Bayesian polygenic risk modeling with variational inference - VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) Approximates Bayesian computation of PRS by replacing MCMC with variational inference (VI), a deterministic class of algorithms replacing the posterior inference by an optimization problem (applied to LMM, Fine-mapping, association, enrichment).
 
 [REGLE - Unsupervised representation learning improves genomic discovery for lung function and respiratory disease prediction - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) From Google Research. Proposes low dimensional representation learning of high-dimensional clinical data (HDCD) and utilizes these low-dimensional embeddings to compute PRS. Applies on lung and respiratory data.
 
 ## QTL - TWAS
 
-[METRO - Li et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35334221/) TWAS using multi-ancestry (population) data - different allele frequencies and LD matrix.
+[METRO: Multi-ancestry transcriptome-wide association studies for powerful gene-trait association detection - Li et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35334221/) TWAS using multi-ancestry (population) data - different allele frequencies and LD matrix.
 
 [Probabilistic integration of transcriptome-wide association studies and colocalization analysis identifies key molecular pathways of complex
 traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) - Integration of TWAS and colocalization to identify causal genes. Posterior probability of a gene being causal is approximated as : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
@@ -112,16 +112,15 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 [GCSC - Leveraging gene co-regulation to identify gene sets enriched for disease heritability - Siewert-Rocks et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.005) Uses TWAS to first get the gene score for the trait (TWAS chi-sq statistics) and then detemines the gene co-regulation score (caused by shared eQTLs or eQTLs in LD). GCSC defines a gene set with higher disease heritability if the genes with high co-regulation to the gene set have higher TWAS chi-sq statistics than the genes with low co-regulation to the gene set.
 
 
+
 ## Identifying disease-risk / causal variants (and) target genes
 
-[3DFAACTS-SNP: Liu et al. Epigenomics and Chromatin 2022](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-022-00456-5) proposed T1D causal variant identification pipeline: 1) Bayesian fine mapping, 2) Overlap with ATAC-seq peaks (open chromatin region), 3) HiC ineractions, 4) FOXP3 binding sites.
+[3DFAACTS-SNP: using regulatory T cell-specific epigenomics data to uncover candidate mechanisms of type 1 diabetes (T1D) risk - Liu et al. Epigenomics and Chromatin 2022](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-022-00456-5) proposed T1D causal variant identification pipeline: 1) Bayesian fine mapping, 2) Overlap with ATAC-seq peaks (open chromatin region), 3) HiC ineractions, 4) FOXP3 binding sites.
 
-[MA-FOCUS - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) - Fine mapping and TWAS using multiple ancestry information. Integrates GWAS, eQTL and LD information, and assumes that causal genes are shared across ancestry.
+[Multi-ancestry fine-mapping improves precision to identify causal genes in transcriptome-wide association studies - MA-FOCUS - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) - Fine mapping and TWAS using multiple ancestry information. Integrates GWAS, eQTL and LD information, and assumes that causal genes are shared across ancestry.
 
-[PALM: a powerful and adaptive latent model for prioritizing risk variants with functional annotations - Yu et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36744920/) Uses functional annotations to prioritize GWAS variants.
-Supports multiple functional annotations. Computes gradient boosting and tree based likelihood to prioritize the GWAS SNPs.
-
-[MOVE - Allesoe et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36593394/) Defines MOVE - Multi-omics variational autoencoder including data from multiple omics from 789 sample cohort (vertical integration) and applies VAE, and defines the association between T2D with the latent space features. Significance is computed by t-test, and by feature purturbation (0/1) technique.
+[PALM: a powerful and adaptive latent model for prioritizing risk variants with functional annotations - Yu et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36744920/) Powerful and adaptive latent model (PALM). Uses functional annotations to prioritize GWAS variants.
+Supports multiple functional annotations, and develops functional gradient based EM algorithm. Computes gradient boosting and tree based likelihood to prioritize the GWAS SNPs. Applies on 30 GWAS data with 127 functional annotations.
 
 [Hierarchical Poisson model - He et al. Transl. Psychiatry 2022](https://pubmed.ncbi.nlm.nih.gov/35436980/) derives allele-specific QTLs and applies on AD. It employs hierarchical poisson model by prioritizing the heterozygous SNPs. Does not consider the total counts.
 
