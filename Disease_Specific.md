@@ -12,3 +12,7 @@
 
 [HIFI - Li et al. EBioMedicine 2023](https://pubmed.ncbi.nlm.nih.gov/37027928/) Feature-based ML to detect MRD from lung cancer (LC). Considers WGS data and generates motifs (4-mers), bin count (modified feature counts), length of insertion fragments, short/long fragments, and methylated haplotype diversity (MHD) by considering the number of methylated reads per haplotype (reference haplotype information for methylation data was obtained from TCGA), co-methylation statistics and differentially methylated region, etc. SVM was used as the classifier.
 
+## Somatic mutations, CNVs, Loops, Chromatin organization
+
+[Candidate Cancer Driver Mutations in Distal Regulatory Elements and Long-Range Chromatin Interaction Networks, Zhu et al. Mol Cell 2020](https://doi.org/10.1016/j.molcel.2019.12.027) Presents ActiveDriverWGS, to identify the mutations and corresponding regulatory regions enriched (more mutated) compared to the background mutation model, using a Poisson regression. 
+
