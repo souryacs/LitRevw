@@ -14,5 +14,7 @@
 
 ## Somatic mutations, CNVs, Loops, Chromatin organization
 
-[Candidate Cancer Driver Mutations in Distal Regulatory Elements and Long-Range Chromatin Interaction Networks, Zhu et al. Mol Cell 2020](https://doi.org/10.1016/j.molcel.2019.12.027) Presents ActiveDriverWGS, to identify the mutations and corresponding regulatory regions enriched (more mutated) compared to the background mutation model, using a Poisson regression. 
+[Candidate Cancer Driver Mutations in Distal Regulatory Elements and Long-Range Chromatin Interaction Networks, Zhu et al. Mol Cell 2020](https://doi.org/10.1016/j.molcel.2019.12.027) Presents ActiveDriverWGS, to identify the mutations and corresponding regulatory regions enriched (more mutated) compared to the background mutation model, using a Poisson regression.
+
+[A pan-cancer compendium of chromosomal instability - Drews et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/35705807/) Defines 17 mutational signatures of chromosomal instability (CIN), an umbrella term used to define all sorts of chromosomal rearrangements. Applies mixture modeling to define distinct mixture components, and probabilistically assigns copy number events to these components. Bayesian NMF is used to identify the copy number signatures. The input feature set: 5 types of mutational signatures, 14 molecular features, 11 DNA repair specific features.
 
