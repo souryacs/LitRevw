@@ -35,7 +35,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Single Cell RNA-seq
 
-## Integration / modeling
+### Integration / modeling
 
 [Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity - LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
 
@@ -49,7 +49,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Decomposing Cell Identity for Transfer Learning across Cellular Measurements, Platforms, Tissues, and Species - scCoGAPS method - Stein O Brien et al. Cell System 2019](https://pubmed.ncbi.nlm.nih.gov/31121116/) Extension of NMF (which requires nonnegative entries in decomposed matrices) to introduce Bayesian NMF - the decomposed matrix elements are either 0 or follow gamma distributions with normal prior, and a global poisson prior. Extends their previously published COGAPS method. The gamma distribution is represented as a sum of exponentials for efficient Gibbs sampling. Suited for sparse scRNA-seq datasets. Also implements ProjectR projection, a transfer learning framework to project data in to latent spaces and transfer annotations.
 
-## Batch correction
+### Batch correction
 
 [Fast, sensitive and accurate integration of single-cell data with Harmony - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) Batch correction method. First performs modified K-means soft clustering to assign cells to potential candidate clusters (1 cell is assigned to multiple clusters). Then define batch-specific parameters are used to compute the penalty of cluster assignments. Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
 
@@ -79,7 +79,15 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Spatial Transcriptomics
 
+### Reviews
+
 [Benchmarking spatial and single-cell transcriptomics integration methods for transcript distribution prediction and cell type deconvolution - Review paper on integration between ST and scRNA-seq - Li et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35577954/): Considers performance metrics: Pearson correlation coefficients (PCC), structural similarity index (SSIM), RMSE, Jensen-Shannon divergence (JS), accuracy score (AS), robustness score (RS). 1) Tangram and gimVI outperformed the other integration methods on the basis of these metrics. 2) Considering sparse datasets, Tangram, gimVI, and SpaGE outperformed other integration methods in predicting the spatial distribution of transcripts for highly sparse datasets. 3) In predicting cell type composition of spots, Cell2location, SpatialDWLS, RCTD, and STRIDE outperformed the other integration methods. 4) In terms of computational efficiency, Tangram and Seurat are the top two most-efficient methods for processing cell-type deconvolution of spots.
+
+### Alignment between ST and scRNA-seq (or multi-omic data like SHARE-seq)
+
+[Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram - Biancalani et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/34711971/) TANGRAM method for alignment between ST and scRNA-seq / snRNA-seq / multi-omic data, collected from the same origin, and at least having shared marker genes. Identifies the gene expression patterns and the spatial coordinates at cell resolution. Supports various protocols like MERFISH, STARmap, smFISH, Visium, and images. Objective function is to mimic the spatial correlation between each gene in the sc/snRNA-seq data and the spatial data. Cell density is compared by KL divergence, gene expression is assessed by cosine similarity. Assumes that cell segmentation is already done, using tools like ilastik or nucleAIzer. A few hundred marker genes are recommended for alignment.
+
+### Clustering using gene expression and spatial location
 
 [Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data - HMRF - Zhu et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/30371680/) First paper using spatial information for ST data clustering. After HVG selection and feature reduction, uses HMRF for spatial data. KNN is used for initial clustering using gene expression. Then spatial prior for HMRF is initialized by Potts model. The multinomial distribution is employed to decide the membership of individual cells/spots in a cluster, and the cluster refinement is done by the EM algorithm. Implemented in the Giotto toolbox framework [Dries et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33685491/).
 
