@@ -53,7 +53,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Fast, sensitive and accurate integration of single-cell data with Harmony - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) Batch correction method. First performs modified K-means soft clustering to assign cells to potential candidate clusters (1 cell is assigned to multiple clusters). Then define batch-specific parameters are used to compute the penalty of cluster assignments. Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
 
-## Cell annotation
+### Cell annotation
 
 [Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
 
