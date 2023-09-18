@@ -93,7 +93,11 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data - HMRF - Zhu et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/30371680/) First paper using spatial information for ST data clustering. After HVG selection and feature reduction, uses HMRF for spatial data. KNN is used for initial clustering using gene expression. Then spatial prior for HMRF is initialized by Potts model. The multinomial distribution is employed to decide the membership of individual cells/spots in a cluster, and the cluster refinement is done by the EM algorithm. Implemented in the Giotto toolbox framework [Dries et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33685491/).
 
-[Spatial transcriptomics at subspot resolution with BayesSpace - Zhao et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/34083791/) Implements BayesSpace to model ST data. Minor adjustments of HMRF by implementing MCMC instead of EM algorithm in the spatial refinement. Also, employs a fixed precision matrix (similar across individual clusters for less parameter estimation).
+[Spatial transcriptomics at subspot resolution with BayesSpace - Zhao et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/34083791/) Implements BayesSpace to model ST data. Minor adjustments of HMRF by implementing MCMC instead of EM algorithm in the spatial refinement. Also, employs a fixed precision matrix (similar across individual clusters for less parameter estimation). ** To Do: Understand the generative model, compare with scVI, and also understand the metagene identification and compare with the trendsceek and other marker gene identifiers.
+
+### Imaging based methods
+
+[Super-resolved spatial transcriptomics by deep data fusion - Bergenstråhle et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34845373) Integrates spatial gene expression data with histology image data to predict the gene expression at cellular levels. Implements a deep generative model. Also uses evidence lower bound (ELBO) to define max 40 marker genes (denoted at metagenes).
 
 ## Single cell eQTL, ASE, variant annotation, cell type enrichment
 
