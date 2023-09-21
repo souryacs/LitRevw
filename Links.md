@@ -26,6 +26,9 @@ A few tutorials by Aman Chadha:
 
 https://modelzoo.co/  Model Zoo - a collection of pre-trained DL models, preferable for transfer learning.
 
+## LLM agents
+
+https://github.com/WooooDyy/LLM-Agent-Paper-List
 
 
 ## Hi-C / 3C
