@@ -42,4 +42,6 @@
 
 [The evolution, evolvability and engineering of gene regulatory DNA - Vaishnav et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/31792407/) Work from the same goup. Predicts sequence to gene expression, using DL, and using promoter characteristics, fitness scores etc. Mostly biophysical model is used in a DL framework.
 
+[Genome-wide analysis of CRISPR perturbations indicates that enhancers act multiplicatively and without epistatic-like interactions - Zhou et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.04.26.538501v1) Presents GLiMMIRS, a generalized linear model for measuring interactions between regulatory sequences, uses CRISPRi data from the CRISPRQTL work, and presents a multiplicative model of enhancer interactions.
+
 
