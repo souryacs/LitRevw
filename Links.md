@@ -30,6 +30,8 @@ https://modelzoo.co/  Model Zoo - a collection of pre-trained DL models, prefera
 
 https://github.com/WooooDyy/LLM-Agent-Paper-List
 
+https://www.youtube.com/watch?v=jkrNMKz9pWU&t=4s (LLM model tutorial)
+
 
 ## Hi-C / 3C
 
