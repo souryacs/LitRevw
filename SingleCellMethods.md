@@ -121,7 +121,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [SCENIC - Aibar et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28991892/) GRN from scRNA-seq data. Predicts interactions between TFs and target genes. Coexpression is computed at a very limited distance (~20 Kb) between genes and TFs.
 
-[SCENIC+ - Gonzlez-Blas et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.08.19.504505v1) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks up to 150 Kb distance from the gene.
+[SCENIC+ - Gonzlez-Blas et al. Nature Methods 2023](https://www.nature.com/articles/s41592-023-01938-4) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks up to 150 Kb distance from the gene.
 
 [CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) Constructs GRN from multi-omic data and then simulates the effect of dynamic GRN following TF perturbation. Builds an ML model to predict the effect of TF on GRN. *(To read in detail)*
 
