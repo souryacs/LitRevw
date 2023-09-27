@@ -32,6 +32,10 @@ https://github.com/WooooDyy/LLM-Agent-Paper-List
 
 Practical deep learning: https://course.fast.ai/ (also check the video tutorial - https://www.youtube.com/watch?v=jkrNMKz9pWU&t=4s (LLM model tutorial))
 
+## Lectures 
+
+Efficient AI - MIT: https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB
+
 
 ## Hi-C / 3C
 
