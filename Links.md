@@ -34,7 +34,13 @@ Practical deep learning: https://course.fast.ai/ (also check the video tutorial 
 
 ## Lectures 
 
+### AI
+
 Efficient AI - MIT: https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB
+
+### Computational Biology 
+
+Computational Biology by Lior Pachter: https://github.com/pachterlab/Bi-BE-CS-183-2023/
 
 
 ## Hi-C / 3C
@@ -53,6 +59,8 @@ COVID-19 GWAS https://www.covid19hg.org/results/
 DIAMANTE - Diabetes consortium (GWAS)  https://kp4cd.org/node/169
 
 DIAGRAM - Diabetes Consortium (GWAS) https://diagram-consortium.org/
+
+
 
 
 
