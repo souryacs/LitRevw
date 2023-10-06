@@ -44,4 +44,5 @@
 
 [Genome-wide analysis of CRISPR perturbations indicates that enhancers act multiplicatively and without epistatic-like interactions - Zhou et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.04.26.538501v1) Presents GLiMMIRS, a generalized linear model for measuring interactions between regulatory sequences, uses CRISPRi data from the CRISPRQTL work, and presents a multiplicative model of enhancer interactions.
 
+[Discovery of target genes and pathways at GWAS loci by pooled single-cell CRISPR screens - Morris et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37141313/) Presents base editing STING-seq to purturb CREs using CRISPRi based on target fine-mapped GWAS variants. Applies on single cells. Candidate CREs are derived by fine-mapping. In addition, for differential expression testing, the authors used a recent work [SCEPTRE - Barry et al. Genome Biology 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02545-2) which connects CRISPR purturbations with changes in gene and protein expression. Most of the cis target genes were proximal to the variants. K562 cell type and HiChIP data was used for validation.
 
