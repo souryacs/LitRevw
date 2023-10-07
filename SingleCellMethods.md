@@ -123,7 +123,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [SCENIC+ - Gonzlez-Blas et al. Nature Methods 2023](https://www.nature.com/articles/s41592-023-01938-4) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks up to 150 Kb distance from the gene.
 
-[CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) Constructs GRN from multi-omic data and then simulates the effect of dynamic GRN following TF perturbation. Builds an ML model to predict the effect of TF on GRN. *(To read in detail)*
+[Dissecting cell identity via network inference and in silico gene perturbation - CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) CellOracle method. Constructs GRN from multi-omic data and then simulates the effect of dynamic GRN following TF perturbation (basically effect of purturbation on GRN). Builds an ML model to predict the effect of TF on GRN. Applies to systematically purturb TFs across Zebrafish development.
 
 ## Trajectory analysis /  RNA velocity
 
