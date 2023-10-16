@@ -38,6 +38,8 @@ Practical deep learning: https://course.fast.ai/ (also check the video tutorial 
 
 Efficient AI - MIT: https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB
 
+Understanding deep learning: https://udlbook.github.io/udlbook/
+
 ### Computational Biology 
 
 Computational Biology by Lior Pachter: https://github.com/pachterlab/Bi-BE-CS-183-2023/
