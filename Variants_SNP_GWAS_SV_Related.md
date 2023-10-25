@@ -134,6 +134,8 @@ Supports multiple functional annotations, and develops functional gradient based
 
 [A catalog of GWAS fine-mapping efforts in autoimmune disease - Caliskan et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33798443/) Integrates fine-mapping studies for various immune diseases, and defines a weighted gene prioritization score to assign the candidate risk genes.
 
+[Cell type and condition specific functional annotation of schizophrenia associated non-coding genetic variants - Rummel et al.bioRxiv 2023](https://pubmed.ncbi.nlm.nih.gov/37425902/) Presents SCZ and brain disorder related causal variant (specifically emVAR - expression modulating variant) identification methods using MPRA assays, and shows that they overlap with causal variants.
+
 ## Structural variants
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. Requires 2 lists: 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) Performs a combined p-value analysis to return the most significant genes. Developed by PCAWG consortium.
