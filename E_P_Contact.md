@@ -1,7 +1,13 @@
 # Papers discussing / utilizing enhancer - promoter contacts / loops / interactions
 
 
-## Loop Callers
+## Loop Callers / Assays / multi-way chromatin contacts
+
+[Cell-type specialization is encoded by specific chromatin topologies - Winick-Ng et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34789882/) ImmunoGAM + scRNA-seq + scATAC-seq assay to capture multi-way chromatin contacts. Brain related cell-specific multi-way chromatin organization, based on the GAM assay. Also propose a "melting gene" identification pipeline - identifying long stretch genes (~200 Kb) having contact loss between conditions. Also discusses about TAD and compartment changes detected by the ImmunoGAM assay.
+
+
+
+
 
 
 
@@ -49,5 +55,5 @@
 
 [Discovery of target genes and pathways at GWAS loci by pooled single-cell CRISPR screens - Morris et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37141313/) Presents base editing STING-seq to purturb CREs using CRISPRi based on target fine-mapped GWAS variants. Applies on single cells. Candidate CREs are derived by fine-mapping. In addition, for differential expression testing, the authors used a recent work [SCEPTRE - Barry et al. Genome Biology 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02545-2) which connects CRISPR purturbations with changes in gene and protein expression. Most of the cis target genes were proximal to the variants. K562 cell type and HiChIP data was used for validation.
 
-[Complementary Alu sequences mediate enhancer–promoter selectivity - Liang et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37438529/) Presents RIC-seq to understand the E-P RNA interactions (EPRI) between ALU and non-ALU complementary sequences. Using CRISPRi type validation, they showed that ALU RNA sequences are crucial for E-P interaction selectivity. 
+[Complementary Alu sequences mediate enhancer–promoter selectivity - Liang et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37438529/) Presents RIC-seq to understand the E-P RNA interactions (EPRI) between ALU and non-ALU complementary sequences. Using CRISPRi type validation, they showed that ALU RNA sequences are crucial for E-P interaction selectivity.
 
