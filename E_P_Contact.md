@@ -57,3 +57,11 @@
 
 [Complementary Alu sequences mediate enhancer–promoter selectivity - Liang et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37438529/) Presents RIC-seq to understand the E-P RNA interactions (EPRI) between ALU and non-ALU complementary sequences. Using CRISPRi type validation, they showed that ALU RNA sequences are crucial for E-P interaction selectivity.
 
+
+## Applications to disease / cell type based models
+
+[Cell-type-specific 3D epigenomes in the developing human cortex - Song et al. Nature 2020](https://pubmed.ncbi.nlm.nih.gov/33057195/) Human Cortex and different cell-specific gene identification using H3K4me3 PLAC-seq loops. Concept of super interacting promoters (SIP) and human gained enhancers (HGE). SIPs are shown to be cell-specific and lineage determining. QTL and GWAS annotations are enriched in SIPs by S-LDSC and H-MAGMA. Developed CRISPRView to validate cell-specific promoters and regulatory elements.
+
+
+
+
