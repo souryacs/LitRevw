@@ -70,6 +70,8 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [Dynamic genetic regulation of gene expression during cellular differentiation - Dynamic eQTL - Strober et al. Science 2019](https://pubmed.ncbi.nlm.nih.gov/31249060/) presents dynamic eQTLs significant in different time points of the cell differentiation trajectory.
 
+[Functional dynamic genetic effects on gene regulation are specific to particular cell types and environmental conditions - Findley et al. eLife 2021](https://pubmed.ncbi.nlm.nih.gov/33988505/) From the same group. GXE specific (context specific) eQTLs according to different cell-specific conditions. Also, integrates with ASE.
+
 [Using an atlas of gene regulation across 44 human tissues to inform complex disease- and trait-associated variation - eQTLEnrich - Gamazon et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/29955180/) Tests wheteher eQTLs for a given tissue are enriched for a specific trait. Uses best eQTL per gene concept, and permutation based GWAS-eQTL enrichment method.
 
 [Disentangling the Effects of Colocalizing Genomic Annotations to Functionally Prioritize Non-coding Variants within Complex-Trait Loci - GoShifter - Trynka et al. AJHG 2015](https://pubmed.ncbi.nlm.nih.gov/26140449/) Enrichment of eQTLs for specific regulatory annotations using permutation based controls. Now a days mostly replaced by S-LDSC method.
