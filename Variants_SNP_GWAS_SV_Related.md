@@ -138,6 +138,8 @@ Supports multiple functional annotations, and develops functional gradient based
 
 [Cell type and condition specific functional annotation of schizophrenia associated non-coding genetic variants - Rummel et al.bioRxiv 2023](https://pubmed.ncbi.nlm.nih.gov/37425902/) Presents SCZ and brain disorder related causal variant (specifically emVAR - expression modulating variant) identification methods using MPRA assays, and shows that they overlap with causal variants.
 
+[Genetic Control of Expression and Splicing in Developing Human Brain Informs Disease Mechanisms - Walker et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31626773/) Integrates eQTL, splicing QTL, GWAS, TWAS, S-LDSC, WGCNA, ATAC-seq and Hi-C to prioritize the gene modules and interacting variants, for Human Cortex prenatal development.
+
 ## Structural variants
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. Requires 2 lists: 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) Performs a combined p-value analysis to return the most significant genes. Developed by PCAWG consortium.
