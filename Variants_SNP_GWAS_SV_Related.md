@@ -113,7 +113,7 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [GCSC - Leveraging gene co-regulation to identify gene sets enriched for disease heritability - Siewert-Rocks et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.005) Uses TWAS to first get the gene score for the trait (TWAS chi-sq statistics) and then detemines the gene co-regulation score (caused by shared eQTLs or eQTLs in LD). GCSC defines a gene set with higher disease heritability if the genes with high co-regulation to the gene set have higher TWAS chi-sq statistics than the genes with low co-regulation to the gene set.
 
-
+[Integrating transcription factor occupancy with transcriptome-wide association analysis identifies susceptibility genes in human cancers - He et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/36402776/) Proposes sTF-TWAS. Uses prior knowledge of TF binding sites. Performs regression on the chi-sq statistics (from GWAS summary) of SNPs (variants) with their TF binding status and selects the top-K variants and uses only these variants to impute gene expression and perform TWAS.
 
 ## Identifying disease-risk / causal variants (and) target genes
 
