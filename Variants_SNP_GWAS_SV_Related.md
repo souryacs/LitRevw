@@ -142,7 +142,7 @@ Supports multiple functional annotations, and develops functional gradient based
 
 [Genetic Control of Expression and Splicing in Developing Human Brain Informs Disease Mechanisms - Walker et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31626773/) Integrates eQTL, splicing QTL, GWAS, TWAS, S-LDSC, WGCNA, ATAC-seq and Hi-C to prioritize the gene modules and interacting variants, for Human Cortex prenatal development.
 
-[Integrative analyses highlight functional regulatory variants associated with neuropsychiatric diseases - Guo et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37857935/) Integrates SNPs from 10 Brain disorders, MPRA validated variants, epigenomic annotations (ATAC-seq peaks and cell-specific annotations), S-LDSC enrichment, TF motif information, and eQTLs, to prioritize putative causal variants. Uses eQTL-eGene links to assign to their nearest genes.
+[Integrative analyses highlight functional regulatory variants associated with neuropsychiatric diseases - Guo et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37857935/) Integrates SNPs from 10 Brain disorders, MPRA validated variants, epigenomic annotations (ATAC-seq peaks and cell-specific annotations), S-LDSC enrichment, TF motif information, and eQTLs, to prioritize putative causal variants. Uses eQTL-eGene links to assign to their nearest genes. Integrates multiple other databases (GO, CMAP, UK BioBank, PsychENCODE, etc.)
 
 ## Structural variants
 
