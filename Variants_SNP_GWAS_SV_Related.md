@@ -142,6 +142,8 @@ Supports multiple functional annotations, and develops functional gradient based
 
 [Genetic Control of Expression and Splicing in Developing Human Brain Informs Disease Mechanisms - Walker et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31626773/) Integrates eQTL, splicing QTL, GWAS, TWAS, S-LDSC, WGCNA, ATAC-seq and Hi-C to prioritize the gene modules and interacting variants, for Human Cortex prenatal development.
 
+[Integrative analyses highlight functional regulatory variants associated with neuropsychiatric diseases - Guo et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37857935/) Integrates SNPs from 10 Brain disorders, MPRA validated variants, epigenomic annotations (ATAC-seq peaks and cell-specific annotations), S-LDSC enrichment, TF motif information, and eQTLs, to prioritize putative causal variants. Uses eQTL-eGene links to assign to their nearest genes.
+
 ## Structural variants
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. Requires 2 lists: 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) Performs a combined p-value analysis to return the most significant genes. Developed by PCAWG consortium.
