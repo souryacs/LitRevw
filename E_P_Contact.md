@@ -57,6 +57,8 @@
 
 [Complementary Alu sequences mediate enhancer–promoter selectivity - Liang et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37438529/) Presents RIC-seq to understand the E-P RNA interactions (EPRI) between ALU and non-ALU complementary sequences. Using CRISPRi type validation, they showed that ALU RNA sequences are crucial for E-P interaction selectivity.
 
+[Determinants of Base Editing Outcomes from Target Library Analysis and Machine Learning - Arbab et al. Cell 2020] Be-Hive method. ML based technique to predict the regulatory effects of CRISPRI or other base editing approaches. Specifically it considers edits of A and C bases.(https://pubmed.ncbi.nlm.nih.gov/32533916/) 
+
 
 ## Applications to disease / cell type based models
 
