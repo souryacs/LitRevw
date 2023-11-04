@@ -6,7 +6,7 @@
 
 [CancerVar: Li et al. Science Advances 2022](https://pubmed.ncbi.nlm.nih.gov/35544644/): AI based cancer somatic mutation caller.
 
-[Accurate proteome-wide missense variant effect prediction with AlphaMissense - Cheng et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37733863/) DL based protein missense variant identification. Uses Evoformer architecture, same as alphafold2. 
+[Accurate proteome-wide missense variant effect prediction with AlphaMissense - Cheng et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37733863/) AlphaMissense approach. DL based protein missense variant identification. Uses Evoformer architecture, same as alphafold2. 
 
 ## QTL / SNP / GWAS etc.
 
