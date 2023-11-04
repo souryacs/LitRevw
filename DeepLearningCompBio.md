@@ -48,7 +48,8 @@
 
 ## Regulatory Networks
 
-[BIONIC: biological network integration using convolutions - Forster et al. Nat Meth 2022](https://www.nature.com/articles/s41592-022-01616-x): Biological network integration. Uses GAT. **Note** : Modifies GAT to consider a priori network edge weights (Methods, eqs. 1-2). Uses 3 GAT layers, 10 attention heads per GAT encoder, each with a hidden dimension of 68, as per their hyperparameter optimization results.
+[BIONIC: biological network integration using convolutions - Forster et al. Nat Meth 2022](https://www.nature.com/articles/s41592-022-01616-x): Biological network integration. Uses GAT. **Note** : Modifies GAT to consider a priori network edge weights (Methods, eqs. 1-2). Uses 3 GAT layers, 10 attention heads per GAT encoder, each with a hidden dimension of 68, as per their hyperparameter optimization results. Uses static attention. After Exp() function, multiplies the numerator with the edge weights, and then row normalizes. The network specific node features are then combined by a weighted stochastically masked attention.
+
 
 [Transfer learning enables predictions in network biology - Theodoris et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37258680/) Presents Geneformer - a trabnsfer learning based method for gene regulatory network inference. The training is performed on a huge single cell dataset collections. The gene expression is transformed into a ranking based measure, to prioritize the cell-specific expressed genes and deprioritize the ubiquitous expressed housekeeping genes. The training is done by masking 15% genes and predicting their presence in the GRN. Huggingface transformer library is used to implement the transformer architecture.
 
