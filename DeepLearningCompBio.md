@@ -36,6 +36,8 @@
   
 [BindSpace decodes transcription factor binding signals by large-scale sequence embedding - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model). Uses HT-SELEX TF database as input, and learns embedding space where TFs with similar binding profiles are closer. Uses one-vs-all LASSO framework on the TF k-mers as used in StarSpace.
 
+[Base-resolution models of transcription-factor binding reveal soft motif syntax - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) BPNet method - CNN based TF binding motif prediction from DNA sequence. DNA binding profiles are obtained from ChIP-Nexus profiles. Also tests how the distance between motif pairs affects TF cooperativity.
+
 [Current sequence-based models capture gene expression determinants in promoters but mostly ignore distal enhancers - Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, and concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
 
 [How far are we from personalized gene expression prediction using sequence-to-expression deep neural networks? - Sasse et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.16.532969v2) applies Enformer on the personalized reference genome constructed from WGS data and finds that the prediction accuracy of gene expression for Enformer is actually lower than PrediXcan which uses SNVs from individuals to reconstruct individual level gene expression.
