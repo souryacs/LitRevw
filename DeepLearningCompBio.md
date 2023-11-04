@@ -4,7 +4,7 @@
 
 [A universal SNP and small-indel variant caller using deep neural networks - DeepVariant - Poplin et al. Nat Biotech 2018](https://www.nature.com/articles/nbt.4235): Uses samtools read pileups + known genotype calls for training. Uses CNN + Stochastic gradient descent model.
 
-[CancerVar: Li et al. Science Advances 2022](https://pubmed.ncbi.nlm.nih.gov/35544644/): AI based cancer somatic mutation caller.
+[CancerVar- An artificial intelligence–empowered platform for clinical interpretation of somatic mutations in cancer - Li et al. Science Advances 2022](https://pubmed.ncbi.nlm.nih.gov/35544644/): AI based cancer somatic mutation caller.
 
 [Accurate proteome-wide missense variant effect prediction with AlphaMissense - Cheng et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37733863/) AlphaMissense approach. DL based protein missense variant identification. Uses Evoformer architecture, same as alphafold2. 
 
@@ -36,7 +36,7 @@
   
 [BindSpace decodes transcription factor binding signals by large-scale sequence embedding - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model). Uses HT-SELEX TF database as input, and learns embedding space where TFs with similar binding profiles are closer. Uses one-vs-all LASSO framework on the TF k-mers as used in StarSpace.
 
-[Base-resolution models of transcription-factor binding reveal soft motif syntax - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) BPNet method - CNN based TF binding motif prediction from DNA sequence. DNA binding profiles are obtained from ChIP-Nexus profiles. Also tests how the distance between motif pairs affects TF cooperativity.
+[Base-resolution models of transcription-factor binding reveal soft motif syntax - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) BPNet method - CNN based TF binding motif prediction from DNA sequence. DNA binding profiles are obtained from ChIP-Nexus profiles. Also tests how the distance between motif pairs affects TF cooperativity. Uses their earlier devleoped method TF-MoDisco and DeepLIFT to understand the base-level contributions to motif scores (or predicted TF binding outputs). Developed a new motif representation called contribution weight matrix (CWM) and also compared with the traditional position frequency matrix (PFM) representation. Validates the motifs by performing targeted point-mutations in mapped motifs and comparing the observed changes in ChIP-Nexus profiles to those predicted by BPNet.
 
 [Current sequence-based models capture gene expression determinants in promoters but mostly ignore distal enhancers - Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, and concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
 
