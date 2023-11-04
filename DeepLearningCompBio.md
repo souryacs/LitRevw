@@ -34,7 +34,7 @@
 
 [CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data - Thibodeau et al. Plos Comp Biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009670) Prediction of *cis*-CREs using ATAC-seq data. Uses CNN + max pooling. Can not predict chromHMM annotations but predicts top 3 functional annotations.
   
-[BindSpace decodes transcription factor binding signals by large-scale sequence embedding - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model).
+[BindSpace decodes transcription factor binding signals by large-scale sequence embedding - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model). Uses HT-SELEX TF database as input, and learns embedding space where TFs with similar binding profiles are closer. Uses one-vs-all LASSO framework on the TF k-mers as used in StarSpace.
 
 [Current sequence-based models capture gene expression determinants in promoters but mostly ignore distal enhancers - Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, and concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
 
