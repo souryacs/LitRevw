@@ -44,6 +44,10 @@
 
 [Deep learning suggests that gene expression is encoded in all parts of a co-evolving interacting gene regulatory structure - Zrimec et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/33262328/) mentions that gene expression can be predicted by using both coding and non-coding regions, and deep learning helps to identify candidate motif regions. Motif co-occurrence helps to decode the gene expression.
 
+[CodonBERT: Large Language Models for mRNA design and optimization - Li et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1) Deep learning (BERT) model to predict the mRNA expression from codon occurrence, and codon usage bias. Uses mRNA sequence, masked sequence representation.
+
+
+
 ## Prediction of Regulatory region without using DNA sequence 
 
 [ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
