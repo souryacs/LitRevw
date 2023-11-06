@@ -8,6 +8,8 @@
 
 [Accurate proteome-wide missense variant effect prediction with AlphaMissense - Cheng et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37733863/) AlphaMissense approach. DL based protein missense variant identification. Uses Evoformer architecture, same as alphafold2. 
 
+[DeepConsensus improves the accuracy of sequences with a gap-aware sequence transformer - Baid et al. Nature Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/36050551/) DeepConsensus - utilized for PACBIO long-read HiFi Sequencing read alignment and minimizing alignment errors, using GAP (INDEL) aware encoder-only transformer model. Utilizes DeepVariant for variant calling, and shows improved accuracy of variant calling.
+
 ## QTL / SNP / GWAS etc.
 
 [The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
