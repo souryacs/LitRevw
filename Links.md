@@ -69,3 +69,7 @@ DIAGRAM - Diabetes Consortium (GWAS) https://diagram-consortium.org/
 VISTA enhancer browser https://enhancer.lbl.gov
 
 Autism related genes: http://gene.sfari.org
+
+Human Gene Mutation Database, 
+
+GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database 
