@@ -49,8 +49,9 @@
 [CodonBERT: Large Language Models for mRNA design and optimization - Li et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1) Deep learning (BERT) model to predict the mRNA expression from codon occurrence, and codon usage bias. Uses mRNA sequence, masked sequence representation.
 
 
-
 ## Prediction of Regulatory region without using DNA sequence 
+
+[Predicting effects of noncoding variants with deep learning-based sequence model - Zhou et al. Nature Methods 2015](https://pubmed.ncbi.nlm.nih.gov/26301843/) DEEPSEA deep learning framework to predict DNAse-seq and TF binding from sequence. Also implements in-silico mutagenesis approach for variant effect prediction, used in Enformer. Uses Human Gene Mutation Database, GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database and GWAS catalog.
 
 [ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
 
