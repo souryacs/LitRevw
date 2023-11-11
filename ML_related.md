@@ -2,8 +2,49 @@
 
 Model based machine learning: https://www.mbmlbook.com/
 
+## AI / ML / DL tutorials
 
-## ML / DL models 
+https://d2l.ai/index.html  Deep learning tutorial.
+
+https://github.com/steven2358/awesome-generative-ai Various links related to Generative AI literature
+
+https://www.promptingguide.ai/papers AI papers.
+
+https://antoniolonga.github.io/Pytorch_geometric_tutorials/  Pytorch Geometric 
+
+A few tutorials by Aman Chadha:
+
+  https://aman.ai/primers/ai/gnn/
+  
+  https://aman.ai/recsys/gnn/
+  
+  https://aman.ai/primers/ai/transformers/
+  
+  https://aman.ai/primers/ai/bert/
+  
+  https://aman.ai/primers/ai/gpt/
+
+## AI / ML / DL models
+
+https://modelzoo.co/  Model Zoo - a collection of pre-trained DL models, preferable for transfer learning.
+
+## LLM agents
+
+https://github.com/WooooDyy/LLM-Agent-Paper-List
+
+Practical deep learning: https://course.fast.ai/ (also check the video tutorial - https://www.youtube.com/watch?v=jkrNMKz9pWU&t=4s (LLM model tutorial))
+
+## Lectures 
+
+### AI
+
+Efficient AI - MIT: https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB
+
+Understanding deep learning: https://udlbook.github.io/udlbook/
+
+
+
+## ML / DL Seminal papers
 
 ### 2017
 
