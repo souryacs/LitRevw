@@ -1,3 +1,8 @@
+## Books
+
+Model based machine learning: https://www.mbmlbook.com/
+
+
 ## ML / DL models 
 
 ### 2017
