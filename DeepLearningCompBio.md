@@ -10,6 +10,8 @@
 
 [DeepConsensus improves the accuracy of sequences with a gap-aware sequence transformer - Baid et al. Nature Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/36050551/) DeepConsensus - utilized for PACBIO long-read HiFi Sequencing read alignment and minimizing alignment errors, using GAP (INDEL) aware encoder-only transformer model. Utilizes DeepVariant for variant calling, and shows improved accuracy of variant calling.
 
+[Genome-wide mapping of somatic mutation rates uncovers drivers of cancer - Sherman et al. Nature Biotechnology 2022](https://pubmed.ncbi.nlm.nih.gov/35726091/) Dig method. Deep learning based identification of cancer driver mutations among a set of putative mutations. Supports multiple types of SNV. Implements CNN based method to detect the variants and then a probabilistic model to detect the positive mutations.
+
 ## QTL / SNP / GWAS etc.
 
 [The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
