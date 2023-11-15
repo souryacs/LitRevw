@@ -33,3 +33,6 @@ Autism related genes: http://gene.sfari.org
 Human Gene Mutation Database, 
 
 GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database 
+
+Insulin resistance phenotype: (http://www.bigc.online/fnSNP-IR) 
+
