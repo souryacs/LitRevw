@@ -36,3 +36,7 @@ GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) datab
 
 Insulin resistance phenotype: (http://www.bigc.online/fnSNP-IR) 
 
+Single cell ATAC-seq CRE Atlas CATLAS (www.catlas.org)
+
+HDBR Atlas (https://hdbratlas.org).
+
