@@ -42,6 +42,9 @@ Efficient AI - MIT: https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53
 
 Understanding deep learning: https://udlbook.github.io/udlbook/
 
+Deep learning using Pytorch - Washington University - [Course Webpage](https://sites.wustl.edu/jeffheaton/t81-558/), [GitHub](https://github.com/jeffheaton/app_deep_learning) [Youtube](https://www.youtube.com/watch?v=r7eExQWKzdc&list=PLjy4p-07OYzuy_lHcRW8lPTLPTTOmUpmi)
+
+
 
 
 ## ML / DL Seminal papers
