@@ -28,6 +28,9 @@
 
 ## Prediction of Regulatory region / gene expression using DNA sequence
 
+[Predicting effects of noncoding variants with deep learning-based sequence model - Zhou et al. Nature Methods 2015](https://pubmed.ncbi.nlm.nih.gov/26301843/) DEEPSEA deep learning framework. *Input*: DNA Sequence. 200 bp length sequences with at least one TF binding events from 919 chromatin features. Each such 200 bp sequence is used as the center to generate 1000 bp sequence with (1X919) label vector (one label for each chromatin feature and TF binding event). *Output*: 1. Predict DNAse-seq and TF binding from sequence. Allele-specific TF binding and chromatin activity. 2. Implements in-silico mutagenesis approach for variant effect prediction, used in Enformer.
+3. Validates functional SNPs using Human Gene Mutation Database, GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database and GWAS catalog.
+
 [Basset - Kelley et al. Genome Research 2016](https://genome.cshlp.org/content/26/7/990.long): Predicts regulatory DNA sequences and sequence activities (chomatin accessibility). Uses DNase-seq, DHS and peaks, and applies to deep CNN. CNNs learn relevant sequence motifs and regulatory logic. Assigns GWAS variants and cell-type-scores to predict chromatin accessibility difference between alleles, and predicts causal SNPs. It also identifies sequence variants, TF motifs.
 
 [Sequential regulatory activity prediction across chromosomes with convolutional neural networks - Basenji - Kelley et al. Genome Research 2018](https://genome.cshlp.org/content/28/5/739.long): Extends Basset, which only generates peak based chromatin profiles. Predicts epigenomic and transcriptional effects using the ChIP-seq, DNAse seq, ATAC-seq. Also identifies causal variants using GWAS loci. Predicts distal regulatory interactions and finer resolution chromatin profiles. Predicts a signed profile of distal regulatory regions to indicate if those are enhancers or silencers. Similarly, for a given SNP, it predicts the SNP expression difference (SED) score to characterize if these are eQTLs. Also reports a disease-specific variant scores, and tests with input PICS fine-mapped variants. **Implementation details** : 1) The input sequencing dataset is processed by a custom pipeline to use the multi-mapping reads and to normalize for GC bias. 2) Weight values are initialized by Glorot initialization. 3) GPyOpt python package is used for Bayesian optimization and hyperparameter tuning. 4) Data augmentation is done by either using reverse complement DNA sequences in every alternate epoch, and minor sequence shifts.
@@ -58,8 +61,6 @@
 
 
 ## Prediction of Regulatory region without using DNA sequence 
-
-[Predicting effects of noncoding variants with deep learning-based sequence model - Zhou et al. Nature Methods 2015](https://pubmed.ncbi.nlm.nih.gov/26301843/) DEEPSEA deep learning framework to predict DNAse-seq and TF binding from sequence. Also implements in-silico mutagenesis approach for variant effect prediction, used in Enformer. Uses Human Gene Mutation Database, GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database and GWAS catalog.
 
 [ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
 
