@@ -1,14 +1,5 @@
 # Important links
 
-## Lectures - Computational Biology 
-
-Computational Biology by Lior Pachter: https://github.com/pachterlab/Bi-BE-CS-183-2023/
-
-## Hi-C / 3C related studies
-
-https://github.com/mdozmorov/HiC_tools Collection of important Hi-C tools
-
-
 ## Consortiums/collaborations 
 
 ENCODE https://www.encodeproject.org/
