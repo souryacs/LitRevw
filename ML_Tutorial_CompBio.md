@@ -58,4 +58,11 @@ Deep learning using Pytorch - Washington University - [Course Webpage](https://s
 [Graph Attention Networks](https://arxiv.org/abs/1710.10903) Concept of GAT. Uses binary edge connectivity (neighborhood) information, without edge features. Discusses the limitations of spectral approaches which uses graph laplacians (i.e. adjacency matrix representations and eigendecompostion, where the trained model heavily depends on the graph structure and cannot be applied on the graphs with different structure). Attention is useful since arbitrary neighborhood and graph structure (with different weights) can be supported, resulting in an inductive learning.
 
 
+## Lectures - Computational Biology 
+
+Computational Biology by Lior Pachter: https://github.com/pachterlab/Bi-BE-CS-183-2023/
+
+## Hi-C / 3C related studies
+
+https://github.com/mdozmorov/HiC_tools Collection of important Hi-C tools
 
