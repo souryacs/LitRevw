@@ -4,6 +4,11 @@ Check [This GitHub page](https://github.com/OmicsML/awesome-deep-learning-single
 
 Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/preamble.html) about the best practices in single cell data analysis.
 
+## Data Simulation
+
+[scDesign3 generates realistic in silico data for multimodal single-cell and spatial omics - Song et al. Nat Biotech 2023](https://www.nature.com/articles/s41587-023-01772-1) Simulates scRNA-seq, scATAC-seq, multi-omic (CITE-seq) data, and spatial transcriptomic data. Benchmarked against data simulators from individual data categories. Extends their earlier works scDesign1 and scDesign2. Also uses their another work scReadSim for simulating single cell reads.
+
+
 
 ## Multimodal Data Integration/pipelines
 
