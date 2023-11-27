@@ -38,6 +38,8 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Multi-omics single-cell data integration and regulatory inference with graph-linked embedding - GLUE - Cao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35501393/) Integrating multiple omics datasets using graph variational autoencoders and also by using the regulatory interactions between the omics as a prior guided graph (knowledge graph - vertices: features of different omics layers, edges: regulatory interactions). For example, integration between scRNA-seq and scATAC-seq data requires prior edge formation using the peak-to-gene correlation. First creates low-dimensional cell embeddings for individual modalities using VAE (scVI).  
 
+[CMOT- Cross-Modality Optimal Transport for multimodal inference - Alatkar et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/37434182/) Integration of multiple single or multi-omic datasets where individual datasets may not have the same set of cells. *Input*: Multiple multi-omic or single omic single cell datasets. All datasets may not have same set of cells, i.e. there may be partial coverage. *Output*: Integrated multi-omic data. *Method*: Optimal transport based integration. Alignment of multi-omic data to single cell data, for the missing cells.
+
 ## Single Cell RNA-seq
 
 ### Integration / modeling
