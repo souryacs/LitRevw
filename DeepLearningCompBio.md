@@ -12,7 +12,9 @@
 
 [Genome-wide mapping of somatic mutation rates uncovers drivers of cancer - Sherman et al. Nature Biotechnology 2022](https://pubmed.ncbi.nlm.nih.gov/35726091/) Dig method. Deep learning based identification of cancer driver mutations among a set of putative mutations. Supports multiple types of SNV. Implements CNN based method to detect the variants and then a probabilistic model to detect the positive mutations.
 
-[Rare penetrant mutations confer severe risk of common diseases - Fiziev et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37262146/) Using their previusly published primateAI-3D [The landscape of tolerated genetic variation in humans and primates - Gao et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37262156/) model which identifies benign and missense variants, including rare variants (MAF >= 0.1%), they identify the gene-phenotype associations and compare with the conventional GWAS studies which only include common variants.
+[The landscape of tolerated genetic variation in humans and primates - Gao et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37262156/) primateAI-3D model.
+
+[Rare penetrant mutations confer severe risk of common diseases - Fiziev et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37262146/) Using their previusly published primateAI-3D model which identifies benign and pathogenic variants, including rare variants (MAF >= 0.1%), they identify the gene-phenotype associations and compare with the conventional GWAS studies which only include common variants.
 They benchmark with another rare variant specific method Backman et al. Nature 2021, and finds more GWAS supported genes. Also derives one polygenic risk score (PRS) prediction method using the rare variants and compare with the conventional PRS prediction methods employing common variants.
 
 ## QTL / SNP / GWAS etc.
