@@ -6,6 +6,10 @@ ENCODE https://www.encodeproject.org/
 
 4DN https://www.4dnucleome.org/
 
+BrainGVEX Cohort
+
+PsychENCODE cohort:  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4675669/
+
 ## Browsers / databases
 
 VISTA enhancer browser https://enhancer.lbl.gov
