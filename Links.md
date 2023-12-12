@@ -6,6 +6,8 @@ ENCODE https://www.encodeproject.org/
 
 4DN https://www.4dnucleome.org/
 
+Human Pangenome reference consortium
+
 BrainGVEX Cohort
 
 PsychENCODE cohort:  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4675669/
