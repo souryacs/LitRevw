@@ -12,6 +12,8 @@
 
 [Rundquist et al. Frontiers Immunology 2022](https://www.frontiersin.org/articles/10.3389/fimmu.2022.835625/full) discussed marker genes for T cell differentiation to Th1 (Fig. 2) and also the progesteron hormone during pregnancy and its effect on MS and RA.
 
+[Tracking DNA-based antigen-specific T cell receptors during progression to type 1 diabetes - Mitchell et al. Science Advances 2023](https://pubmed.ncbi.nlm.nih.gov/38064552/) Deep sequencing of TCR alpha and beta receptor sequences and identifying the differences of antigen specific TCR receptors between T1D cohorts and control. To Do: Can we design a ML framework which can identify such differences?
+
 ## SNPs
 
 [Soskic et al. Nat Genet 2022](https://www.nature.com/articles/s41588-022-01066-3) derived single cell eQTLs and in particular, time-dependent dynamic eQTLs for T cell differentiation (Suppl. Table 8). They used both linear and nonlinear dynamic eQTL model and derived FDR for both. They highlighted IL7R, CD69, IL2RA, IRF1, TOP2A as important genes.
