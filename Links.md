@@ -38,6 +38,8 @@ Insulin resistance phenotype: (http://www.bigc.online/fnSNP-IR)
 
 GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database 
 
+Diabetes Autoimmunity Study in the Young (DAISY)
+
 ## Single cell databases
 
 Single cell ATAC-seq CRE Atlas CATLAS (www.catlas.org)
