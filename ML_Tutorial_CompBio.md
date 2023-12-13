@@ -2,6 +2,8 @@
 
 Model based machine learning: https://www.mbmlbook.com/
 
+Machine Learning book: https://harvard-edge.github.io/cs249r_book/
+
 ## AI / ML / DL tutorials
 
 https://d2l.ai/index.html  Deep learning tutorial.
