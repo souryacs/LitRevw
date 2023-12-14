@@ -14,6 +14,8 @@
 
 [Tracking DNA-based antigen-specific T cell receptors during progression to type 1 diabetes - Mitchell et al. Science Advances 2023](https://pubmed.ncbi.nlm.nih.gov/38064552/) Deep sequencing of TCR alpha and beta receptor sequences and identifying the differences of antigen specific TCR receptors between T1D cohorts and control. To Do: Can we design a ML framework which can identify such differences?
 
+[Base-editing mutagenesis maps alleles to tune human T cell functions - Schmidt et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/38093011/) Proposes multiplexed parallel CRISPR screen based base editing scheme (mutagenesis) to validate the functional genes and variants.
+
 ## SNPs
 
 [Soskic et al. Nat Genet 2022](https://www.nature.com/articles/s41588-022-01066-3) derived single cell eQTLs and in particular, time-dependent dynamic eQTLs for T cell differentiation (Suppl. Table 8). They used both linear and nonlinear dynamic eQTL model and derived FDR for both. They highlighted IL7R, CD69, IL2RA, IRF1, TOP2A as important genes.
