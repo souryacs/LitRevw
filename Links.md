@@ -22,6 +22,8 @@ VISTA enhancer browser https://enhancer.lbl.gov
 
 Cancer: TCGA
 
+ChEMBL database (https://www.ebi.ac.uk/chembl/) - drug target
+
 Leukemia: https://propel.stjude.cloud/login
 
 COVID-19 GWAS https://www.covid19hg.org/results/
