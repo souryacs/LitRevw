@@ -12,6 +12,8 @@ BrainGVEX Cohort
 
 PsychENCODE cohort:  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4675669/
 
+Psychiatric Genome Consortium (PGC)
+
 ## Browsers / databases
 
 VISTA enhancer browser https://enhancer.lbl.gov
