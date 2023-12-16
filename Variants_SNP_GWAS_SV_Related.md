@@ -140,6 +140,8 @@ Supports multiple functional annotations, and develops functional gradient based
 
 [Integrative analyses highlight functional regulatory variants associated with neuropsychiatric diseases - Guo et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37857935/) Integrates SNPs from 10 Brain disorders, MPRA validated variants, epigenomic annotations (ATAC-seq peaks and cell-specific annotations), S-LDSC enrichment, TF motif information, and eQTLs, to prioritize putative causal variants. Uses eQTL-eGene links to assign to their nearest genes. Integrates multiple other databases (GO, CMAP, UK BioBank, PsychENCODE, etc.)
 
+[Massively parallel functional dissection of schizophrenia-associated noncoding genetic variants - Rummel et al. Cell 2023](https://pubmed.ncbi.nlm.nih.gov/37852259/) MVAP - Massively parallel association based variant annotation. Identifies putative causal variant for SCZ. Uses eQTL, GWAS, regulatory annotations, HiC, colocalization, partitioned heritability. Performs MPRA and emVAR experiment (allele-specific expression change) to identify the causal SNPs. The pipeline is a mixture of bioinformatics and wet-lab validation (MPRA + emVAR).
+
 ## Structural variants
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. Requires 2 lists: 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) Performs a combined p-value analysis to return the most significant genes. Developed by PCAWG consortium.
