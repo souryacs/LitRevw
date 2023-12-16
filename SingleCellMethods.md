@@ -60,6 +60,10 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Fast, sensitive and accurate integration of single-cell data with Harmony - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) Batch correction method. First performs modified K-means soft clustering to assign cells to potential candidate clusters (1 cell is assigned to multiple clusters). Then define batch-specific parameters are used to compute the penalty of cluster assignments. Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
 
+### Differential Analysis
+
+[A new Bayesian factor analysis method improves detection of genes and biological processes affected by perturbations in single-cell CRISPR screening - Zhou et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37770710/) Guided Sparse Factor Analysis (GSFA). Input: 1) scRNA-seq expression matrix (Y), 2) perturbation matrix  (G) - gRNA perturbations per cell. Method: Decomposes Y into latent factors (matrix Z) and derives the weights of genes onto factors (W). Then computes the dependencies of factors onto perturbation matrix via multivariate linear regression. Also performs differential analysis between control and perturbation conditions with respect to these factors to identify DEGs. These DEGs are better powered compared to DE analysis on standard scRNA-seq data.
+
 ### Cell annotation
 
 [Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
