@@ -40,6 +40,8 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [CMOT- Cross-Modality Optimal Transport for multimodal inference - Alatkar et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/37434182/) Integration of multiple single or multi-omic datasets where individual datasets may not have the same set of cells. *Input*: Multiple multi-omic or single omic single cell datasets. All datasets may not have same set of cells, i.e. there may be partial coverage. *Output*: Integrated multi-omic data. *Method*: Optimal transport based integration. Alignment of multi-omic data to single cell data, for the missing cells.
 
+[MultiVI: deep generative model for the integration of multimodal data - Ashuach et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37386189/) MultiVI - from scVI tools. Integrating scRNA-seq and scATAC-seq data. Uses VAE. Similar approach is described in Cobolt [Cobolt: integrative analysis of multimodal single-cell sequencing data - Gong et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/34963480/) method.
+
 ## Single Cell RNA-seq
 
 ### Integration / modeling
