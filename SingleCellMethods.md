@@ -112,6 +112,8 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Super-resolved spatial transcriptomics by deep data fusion - Bergenstråhle et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34845373) Integrates spatial gene expression data with histology image data to predict the gene expression at cellular levels. Implements a deep generative model. Also uses evidence lower bound (ELBO) to define max 40 marker genes (denoted at metagenes).
 
+[Learning consistent subcellular landmarks to quantify changes in multiplexed protein maps - Spitzer et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37248388/) CAMPA method. Profiling ST data using conditional variational autoencoder (cVAE). Uses scanpy and squidpy frameworks. Using the ST data and molecular imaging, performs segmentation at subcellular levels.
+
 ## Single cell eQTL, ASE, variant annotation, cell type enrichment
 
 [Identifying phenotype-associated subpopulations by integrating bulk and single-cell sequencing data - scissor - Sun et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34764492/) Uses a network regression model to identify the cell populations/clusters associated with a given phenotype. Input: scRNA-seq matrix, bulk RNA-seq matrix, and phenotype matrix/vector (can be binary, continuous, based on that the regression model would be defined). The correlation between single-cell expression and bulk RNA-seq gene expression data is computed to produce a correlation matrix which is then applied to a regression framework with respect to the given phenotype.
