@@ -66,6 +66,9 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Isolating salient variations of interest in single-cell data with contrastiveVI - Weinberger et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37550579/) ContrastiveVI approach. Modeling scRNA-seq data using scVI type approach. The change is, they model shared and unique latent factors specific to control and treatment conditions. Uses control and treatment condition scRNA-seq data and model their differences, using the inferred latent factors.
 
+[Learning single-cell perturbation responses using neural optimal transport - Bunne et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37770709/) CellOT method. *Input*: Separate sets of single cell observations in control and perturbed sets. *Method*: Predict perturbation responses by learning the control and perturbed cell states. Uses optimal transport method. *Schema*:
+Models the transition between control population p_c and perturbation population p_k by means of perturbation treatment k by learning the map t_k.
+
 ### Cell annotation
 
 [Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
