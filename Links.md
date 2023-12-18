@@ -6,7 +6,7 @@ ENCODE https://www.encodeproject.org/
 
 4DN https://www.4dnucleome.org/
 
-Human Pangenome reference consortium
+Human Pangenome reference consortium (HPRC)
 
 BrainGVEX Cohort
 
@@ -43,6 +43,8 @@ Human Gene Mutation Database (HGMD) https://www.hgmd.cf.ac.uk/
 ASD de-novo mutations: https://hb.flatironinstitute.org/ASDbrowser/
 
 Autism related genes: http://gene.sfari.org
+
+Brain: North American Brain Expression Consortium (NABEC) cohort
 
 Autism SSC WGS data: https://www.sfari.org/resource/sfari-base/
 
