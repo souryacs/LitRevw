@@ -64,6 +64,8 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [A new Bayesian factor analysis method improves detection of genes and biological processes affected by perturbations in single-cell CRISPR screening - Zhou et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37770710/) Guided Sparse Factor Analysis (GSFA). Input: 1) scRNA-seq expression matrix (Y), 2) perturbation matrix  (G) - gRNA perturbations per cell. Method: Decomposes Y into latent factors (matrix Z) and derives the weights of genes onto factors (W). Then computes the dependencies of factors onto perturbation matrix via multivariate linear regression. Also performs differential analysis between control and perturbation conditions with respect to these factors to identify DEGs. These DEGs are better powered compared to DE analysis on standard scRNA-seq data.
 
+[Isolating salient variations of interest in single-cell data with contrastiveVI - Weinberger et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37550579/) ContrastiveVI approach. Modeling scRNA-seq data using scVI type approach. The change is, they model shared and unique latent factors specific to control and treatment conditions. Uses control and treatment condition scRNA-seq data and model their differences, using the inferred latent factors.
+
 ### Cell annotation
 
 [Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
