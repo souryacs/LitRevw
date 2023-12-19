@@ -77,6 +77,8 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 [Learning single-cell perturbation responses using neural optimal transport - Bunne et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37770709/) CellOT method. *Input*: Separate sets of single cell observations in control and perturbed sets. *Method*: Predict perturbation responses by learning the control and perturbed cell states. Uses optimal transport method. *Schema*:
 Models the transition between control population p_c and perturbation population p_k by means of perturbation treatment k by learning the map t_k.
 
+[Causal identification of single-cell experimental perturbation effects with CINEMA-OT - Dong et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37919419/) Another optimal transport based single cell perturbation response prediction method.
+
 ### Cell annotation
 
 [Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
