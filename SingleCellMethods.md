@@ -42,6 +42,8 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [MultiVI: deep generative model for the integration of multimodal data - Ashuach et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37386189/) MultiVI - from scVI tools. Integrating scRNA-seq and scATAC-seq data. Uses VAE. Similar approach is described in Cobolt [Cobolt: integrative analysis of multimodal single-cell sequencing data - Gong et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/34963480/) method.
 
+[SIMBA: single-cell embedding along with features - Chen et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37248389/) SIMBA method. Multi-omic single cell data embedding using graph. However, graph nodes can be both genes and cells, and their mutual relation is determined by: 1) Gene expression, 2) TF motif, 3) k-mer, 4) ATAC peaks etc. The objective is to learn the embedding using all features, and then generate the marker features independent of clustering. Question: How these marker features are computed before embedding and clustering? Need to check in detail.
+
 ## Single Cell RNA-seq
 
 ### Clustering
