@@ -44,6 +44,10 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ## Single Cell RNA-seq
 
+### Clustering
+
+[Significance analysis for clustering with single-cell RNA-sequencing data - Grabski et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37429993/) Analyzes various scRNA-seq clustering methods theoretically in terms of significance analysis. Whether overconfidence in discovering cell types. Model based hypothesis testing approach. Extends their earlier method on significance of hierarchical clustering.
+
 ### Integration / modeling
 
 [Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity - LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
@@ -118,6 +122,8 @@ Models the transition between control population p_c and perturbation population
 [Super-resolved spatial transcriptomics by deep data fusion - Bergenstråhle et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34845373) Integrates spatial gene expression data with histology image data to predict the gene expression at cellular levels. Implements a deep generative model. Also uses evidence lower bound (ELBO) to define max 40 marker genes (denoted at metagenes).
 
 [Learning consistent subcellular landmarks to quantify changes in multiplexed protein maps - Spitzer et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37248388/) CAMPA method. Profiling ST data using conditional variational autoencoder (cVAE). Uses scanpy and squidpy frameworks. Using the ST data and molecular imaging, performs segmentation at subcellular levels.
+
+[SCS: cell segmentation for high-resolution spatial transcriptomics - Chen et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37429992) SCS: ST data subcellular segmentation using both sequence and imaging data. Uses imaging data for initial segmentation, and then uses transformer framework to refine the foreground and background subcellular information.
 
 ## Single cell eQTL, ASE, variant annotation, cell type enrichment
 
