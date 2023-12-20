@@ -68,6 +68,10 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [CodonBERT: Large Language Models for mRNA design and optimization - Li et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1) Deep learning (BERT) model to predict the mRNA expression from codon occurrence, and codon usage bias. Uses mRNA sequence, masked sequence representation.
 
+[Chromatin interaction-aware gene regulatory modeling with graph attention networks - Karbalayghareh et al. Genome Research 2022](https://pubmed.ncbi.nlm.nih.gov/35396274/) GraphReg method. Developed from HiCDC+ group. Proposes 2 models to predict gene expression from epigenomic data: 1) Epi-GraphReg - uses both epigenomic 1D annotations + 3D interactions (HiC, HiChIP) to predict gene expression. Also optionally predicts 1D tracks (methylation, acetylation). 2) Seq-GraphReg: Uses DNA sequence. Uses GAT (Graph Attention Network) instead of GCN for modeling chromatin interactions.
+
+[CREaTor: zero-shot cis-regulatory pattern modeling with attention mechanisms - Li et al. Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-03103-8) CREATOR method. Uses CREs from ENCODE for multiple human cell types (DNA sequences) and applies transformer-based model to predict gene expression. Uses K562 with test chromosomes 8, 9 for performance evaluation. Also uses the attention scores to predict the regulatory importance of CREs (up to 2 Mb from TSS). benchmarks with the reference CRISPR datasets as well (such as Gasperini, Fulco et al.) and also evaluates the importance of CREs up to 2 Mb by testing with different models where CREs are within 500 Kb, 1 Mb, 2 Mb etc. * They use RNA-seq data to model the gene expression - use sum of transcript TPM with log1p transformation as the input gene expression *.
+
 
 ## Prediction of Regulatory region without using DNA sequence 
 
