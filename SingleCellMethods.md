@@ -44,6 +44,9 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [SIMBA: single-cell embedding along with features - Chen et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37248389/) SIMBA method. Multi-omic single cell data embedding using graph. However, graph nodes can be both genes and cells, and their mutual relation is determined by: 1) Gene expression, 2) TF motif, 3) k-mer, 4) ATAC peaks etc. The objective is to learn the embedding using all features, and then generate the marker features independent of clustering. Question: How these marker features are computed before embedding and clustering? Need to check in detail.
 
+[scGPT: Towards Building a Foundation Model for Single-Cell Multi-omics Using Generative AI - Cui et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.04.30.538439v2) scGPT: Generative pre-trained transformer model on many single cell datasets. The pre-trained model is then fne-tuned foe specific tasks: 1) Clustering, 2) Batch correction, 3) GRN inference, 4) Perturbation response modeling.
+
+
 ## Single Cell RNA-seq
 
 ### Clustering
