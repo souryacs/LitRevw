@@ -69,7 +69,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data - Gong et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534055v1) Efficient representation of scRNA-seq large scale training data and gene expression matrix by masking, storing only nonzero entries into separate gene expression and gene level embeddings. Also proposes assymetric encoder decoder architecture based transformer model to represent scRNA-seq data, and compares with the method [scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data - Fang et al. Nature Machine Intelligence](https://www.nature.com/articles/s42256-022-00534-z).
 
-
+[Biologically informed deep learning to query gene programs in single-cell atlases - Lotfollahi et al. Nature Cell Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36732632/) expiMap method. Biologically interpretable DL method to find the gene programs, using reference single cell atlases. 1. From reference single cell atlase with gene expression and biological conditions, constructs interpretable DL framework to find the gene programs. 2. Then identifies the gene programs responsible / differential between conditions. 3. Constructing gene programs for a collection of data is performed by fine-tuning and architectural surgery, similar to the scArches method.
 
 ### Batch correction
 
