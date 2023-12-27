@@ -72,6 +72,8 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [CREaTor: zero-shot cis-regulatory pattern modeling with attention mechanisms - Li et al. Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-03103-8) CREATOR method. Uses CREs from ENCODE for multiple human cell types (DNA sequences) and applies transformer-based model to predict gene expression. Uses K562 with test chromosomes 8, 9 for performance evaluation. Also uses the attention scores to predict the regulatory importance of CREs (up to 2 Mb from TSS). benchmarks with the reference CRISPR datasets as well (such as Gasperini, Fulco et al.) and also evaluates the importance of CREs up to 2 Mb by testing with different models where CREs are within 500 Kb, 1 Mb, 2 Mb etc. * They use RNA-seq data to model the gene expression - use sum of transcript TPM with log1p transformation as the input gene expression *.
 
+[scBasset: sequence-based modeling of single-cell ATAC-seq using convolutional neural networks - Han Yuan et al. Nature Methods 2022](https://pubmed.ncbi.nlm.nih.gov/35941239/) Single cell ATAC-seq track inference and TF binding signature from DNA sequence, using CNN.
+
 
 ## Prediction of Regulatory region without using DNA sequence 
 
