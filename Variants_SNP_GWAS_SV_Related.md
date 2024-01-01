@@ -86,8 +86,6 @@ Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. I
 
 [Leveraging molecular quantitative trait loci to understand the genetic architecture of diseases and complex traits - Hormozdiari et al. Nat Gen 2018](https://www.nature.com/articles/s41588-018-0148-2) Constructs a fine-mapped set of eQTLs, hQTLs and splicing QTLs and show their disease-specific heritability enrichment using s-LDSC.
 
-
-
 ## QTL - Polygenic Risk Scores (PRS)
 
 [Integration of rare expression outlier-associated variants improves polygenic risk prediction - Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants. *** Note: the methods section, GTEx v8 data shows how to infer the rare variants and associated statisitcs from variants, and calculate PRS.
