@@ -59,6 +59,8 @@
 
 [Determinants of Base Editing Outcomes from Target Library Analysis and Machine Learning - Arbab et al. Cell 2020](https://pubmed.ncbi.nlm.nih.gov/32533916/) Be-Hive method. ML based technique to predict the regulatory effects of CRISPRI or other base editing approaches. Specifically it considers edits of A and C bases. 
 
+[3D Enhancer-promoter networks provide predictive features for gene expression and coregulation in early embryonic lineages - Murphy et al. Nat Struct and Mol Biol 2023](https://pubmed.ncbi.nlm.nih.gov/38053013/) 3D EPI of early embryonic lineages, gene expression regulated by using EPI and Enhancer Hubs. Uses HiChIP. Also proposes 3D-HiChAT method, to predict gene expression (high vs low) and absolute expression levels (correlation) using 1D and 3D epigenomic features and random forest ML method. Also tests perturbation experimental results and show comparable performance with ABC score. Finally, presents experimentally validated loci in ESC cell line.
+
 
 ## Applications to disease / cell type based models
 
