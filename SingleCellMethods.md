@@ -17,6 +17,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
     First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets. 
     
 [Integrating single-cell transcriptomic data across different conditions, technologies, and species - Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) 
+    
     - Second Seurat paper. 
     - *Input* Multiple scRNA-seq datasets.
     - *Output* Integrated scRNA-seq data + cluster.
