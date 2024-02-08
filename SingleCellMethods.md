@@ -67,11 +67,35 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
     - The final alignment between different modalities is implemented by the mnnCorrect algorithm. 
     - The computational complexity for handling many cells is reduced by the Laplacian Eigenmaps mechanism (graph eigendecomposition) thereby reducing the number of dimensions from the number of cells to the number of eigenvectors.
 
-[A multi-view latent variable model reveals cellular heterogeneity in complex tissues for paired multimodal single-cell data - VIMCCA - Wang et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36622018/) VIMCCA method to integrate paired multimodal single cell data. Variational inference method - generalizing CCA. Multi-view latent variable. Reason: 1) although Seurat integrates multiple data, it does not mention a statistical model thus not account for the underlying sources of variation within each modality. 2) factor analysis models like MOFA are not scalable for large-scale data. Objective: In VIMCCA, CCA is modeled by multi-view latent variable and variational distribution. Observed data [X,Y] where X = scRNA-seq, Y = scATAC-seq (or ADT) is modeled by a latent factor Z. Mapping between Z to X and Y are modeled by two non-linear functions whose parameters are estimated by NN. This non-linear function replaces the conventional CCA. Implementation: These non-linear functions are approximated by variational inference (VI) for linearity. Maximizing log-likelihood is modeled as maximizing evidence lower bound (ELBO). It has 2 components - KL divergence, and reconstruction error. SGVB estimator using the monte carlo simulator is used to estimate the ELBO.
+[A multi-view latent variable model reveals cellular heterogeneity in complex tissues for paired multimodal single-cell data - VIMCCA - Wang et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36622018/) 
+
+    - VIMCCA method to integrate paired multimodal single cell datasets. 
+    - Variational inference method - generalizing CCA. 
+    - Multi-view latent variable. 
+        - Reasons: 
+            - 1) although Seurat integrates multiple data, it does not mention a statistical model thus not account for the underlying sources of variation within each modality. 
+            - 2) factor analysis models like MOFA are not scalable for large-scale data. 
+        - Objective: 
+            - In VIMCCA, CCA is modeled by multi-view latent variable and variational distribution. 
+            - Observed data [X,Y] where X = scRNA-seq, Y = scATAC-seq (or ADT) is modeled by a latent factor Z. 
+            - Mapping between Z to X and Y are modeled by two non-linear functions whose parameters are estimated by NN. 
+            - This non-linear function replaces the conventional CCA. 
+        - Implementation: 
+            - These non-linear functions are approximated by variational inference (VI) for linearity. 
+            - Maximizing log-likelihood is modeled as maximizing evidence lower bound (ELBO). 
+                - It has 2 components - KL divergence, and reconstruction error. 
+                - SGVB estimator using the monte carlo simulator is used to estimate the ELBO.
 
 [Joint probabilistic modeling of single-cell multi-omic data with totalVI - Gayoso et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/33589839/) scVI on multi-omic setting (CITE-seq). Probabilistic latent variable model. Joint low dimensional representations and the parameters are inferred by VAE framework. Compared against factor analysis (FA), single cell hierarchical poisson factorization (scHPF) and scVI. To check the model fitting, they used posterior predictive check (PPC) by simulating replicated datasets, and comparing the statistical significance between the coefficients of variation (CV) per gene and protein. To benchmark the single cell integration, they propose 4 different metrics, and compare against Seurat, Harmony, Scanorama.
 
-[UINMF performs mosaic integration of single-cell multi-omic datasets using nonnegative matrix factorization - Kriebel et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/35140223/) LIGER v2. UINMF using both shared and unshared features to integrate multiple multi-omic datasets. Can integrate datasets with neither the same number of features (genes / peaks / bins) nor the same number of cells.
+[UINMF performs mosaic integration of single-cell multi-omic datasets using nonnegative matrix factorization - Kriebel et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/35140223/) 
+
+    - LIGER v2. 
+    - UINMF using both shared and unshared features to integrate multiple multi-omic datasets. 
+    - Can integrate datasets with neither the same number of features (genes / peaks / bins) nor the same number of cells.
+    - Each dataset (Ei) is decomposed into shared metagenes (W), dataset specific metagenes constructed from shared features (Vi), unshared metagenes (Ui) and cell factor loadings (Hi).
+    - Adjusts the ANLS (adjusted non-negative least square) method and uses coordinate block descent (CBD) algorithm for solving the UINMF optimization problem. 
+        - CBD divides the parameters into blocks and then finds the optimal parameters for one block while fixing the others.
 
 [Benchmarking atlas-level data integration in single-cell genomics - Review paper on data integration - Luecken et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/34949812/) compares various multimodal data integration approaches. Conclusions: 1) Scanorama and scVI perform well, particularly on complex integration tasks. If cell annotations are available, scGen and scANVI outperform most other methods across tasks, and Harmony and LIGER are effective for scATAC-seq data integration on window and peak feature spaces. 2) In more complex integration tasks, there is a tradeoff between batch effect removal and bio-conservation. While methods such as SAUCIE, LIGER, BBKNN, and Seurat v3 tend to favor the removal of batch effects over the conservation of biological variation, DESC, and Conos make the opposite choice, and Scanorama, scVI, and FastMNN (gene) balance these two objectives.
 
