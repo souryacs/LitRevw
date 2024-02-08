@@ -19,9 +19,9 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 [Integrating single-cell transcriptomic data across different conditions, technologies, and species - Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) 
     
     - Second Seurat paper. 
-    - *Input* Multiple scRNA-seq datasets.
-    - *Output* Integrated scRNA-seq data + cluster.
-    - *Method* 
+    - **Input** Multiple scRNA-seq datasets.
+    - **Output** Integrated scRNA-seq data + cluster.
+    - **Method** 
         - HVG selection by dispersion (variance to mean ratio) and selecting top 1000 genes with highest dispersion
         - CCA - projections of two data such that the correlation between these two projections get maximized.
         - As the number of genes are much smaller than the number of cells, to handle the sparsity, they treat the covariance matrix as diagonal (Diagonal CCA). 
