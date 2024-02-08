@@ -97,11 +97,26 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
     - Adjusts the ANLS (adjusted non-negative least square) method and uses coordinate block descent (CBD) algorithm for solving the UINMF optimization problem. 
         - CBD divides the parameters into blocks and then finds the optimal parameters for one block while fixing the others.
 
-[Benchmarking atlas-level data integration in single-cell genomics - Review paper on data integration - Luecken et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/34949812/) compares various multimodal data integration approaches. Conclusions: 1) Scanorama and scVI perform well, particularly on complex integration tasks. If cell annotations are available, scGen and scANVI outperform most other methods across tasks, and Harmony and LIGER are effective for scATAC-seq data integration on window and peak feature spaces. 2) In more complex integration tasks, there is a tradeoff between batch effect removal and bio-conservation. While methods such as SAUCIE, LIGER, BBKNN, and Seurat v3 tend to favor the removal of batch effects over the conservation of biological variation, DESC, and Conos make the opposite choice, and Scanorama, scVI, and FastMNN (gene) balance these two objectives.
+[Benchmarking atlas-level data integration in single-cell genomics - Review paper on data integration - Luecken et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/34949812/) 
 
-[Computational principles and challenges in single-cell data integration - Review paper - Argelaguet et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/33941931/) discusses scRNA-seq data integration - horizontal (gene-based), vertical (cell-based), and diagonal.
+    - Compares various multimodal data integration approaches. 
+    - Conclusions: 
+        - Scanorama and scVI perform well, particularly on complex integration tasks. 
+        - If cell annotations are available, scGen and scANVI outperform most other methods across tasks, and Harmony and LIGER are effective for scATAC-seq data integration on window and peak feature spaces. 
+        - In more complex integration tasks, there is a tradeoff between batch effect removal and bio-conservation. 
+        - While methods such as SAUCIE, LIGER, BBKNN, and Seurat v3 tend to favor the removal of batch effects over the conservation of biological variation, DESC, and Conos make the opposite choice, and Scanorama, scVI, and FastMNN (gene) balance these two objectives.
 
-[Robust single-cell matching and multimodal analysis using shared and distinct features - MARIO - Zhu et al. Nat Meth 2023](https://pubmed.ncbi.nlm.nih.gov/36624212/) Not targeted for transcriptomic data (scRNA-seq) but applied to protein-centric multimodal datasets such as CITE-seq, CyTOF, etc. First applies SVD + CCA on individual datasets to find the cell-cell pairing (matching cells). CCA is performed using both shared and unshared features. Then a regularized K-means clustering is performed for the final integration.
+[Computational principles and challenges in single-cell data integration - Review paper - Argelaguet et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/33941931/) 
+
+    - Discusses and categorizes various approaches for scRNA-seq data integration - horizontal (gene-based), vertical (cell-based), and diagonal.
+
+[Robust single-cell matching and multimodal analysis using shared and distinct features - MARIO - Zhu et al. Nat Meth 2023](https://pubmed.ncbi.nlm.nih.gov/36624212/) 
+
+    - Input: 
+    - Not targeted for transcriptomic data (scRNA-seq) but applied to protein-centric multimodal datasets such as CITE-seq, CyTOF, etc. 
+    - First applies SVD + CCA on individual datasets to find the cell-cell pairing (matching cells). 
+    - CCA is performed using both shared and unshared features. 
+    - Then a regularized K-means clustering is performed for the final integration.
 
 [Multi-omics single-cell data integration and regulatory inference with graph-linked embedding - GLUE - Cao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35501393/) Integrating multiple omics datasets using graph variational autoencoders and also by using the regulatory interactions between the omics as a prior guided graph (knowledge graph - vertices: features of different omics layers, edges: regulatory interactions). For example, integration between scRNA-seq and scATAC-seq data requires prior edge formation using the peak-to-gene correlation. First creates low-dimensional cell embeddings for individual modalities using VAE (scVI).  
 
