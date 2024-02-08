@@ -44,9 +44,28 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
   
 [Integrative single-cell analysis - Stuart et al. Nat Revw Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30696980/) Review paper on Seurat.
   
-[Integrated analysis of multimodal single-cell data - Hao et al. Cell 2021](https://pubmed.ncbi.nlm.nih.gov/34062119/) Fourth Seurat paper. Proposes WNN for multimodal data integration. Applied on CITE-seq data, and integrated scRNA-seq + scATAC-seq multimodal data. 1) Constructs independent KNN graph on both modalities, 2) Perform within and across-modality prediction, 3) Cell-specific modality weights and similarity between the observed and the predicted RNA and protein profile, using exponential distribution (approach large margin nearest neighbors), 4) WNN graph construction. scRNA-seq data is processed by Seurat, protein data is normalized by centered log-ratio (CLR) transform (all proteins are used as features without any feature selection). scATAC-seq data is processed according to the Signac package, by applying TF-IDF + log transformation on the peak matrix, and then applying SVD, which returns the final LSI (latent semantic indexing) components. Within-modality prediction means predicting cell profile from the neighbors using the same modality, while cross-modality prediction indicates predicting cell profile from the neighbors using the other modality information.
+[Integrated analysis of multimodal single-cell data - Hao et al. Cell 2021](https://pubmed.ncbi.nlm.nih.gov/34062119/) 
+
+    - Fourth Seurat paper. 
+    - Input: multi-omic (CITE-seq or scRNA-seq + scATAC-seq data)
+    - Output: Merged object + downstream dimensionality reduction + clusters
+    - Method:
+        - Proposes WNN for multimodal data integration. 
+            - Constructs independent KNN graph on both modalities,
+            - Perform within and across-modality prediction, 
+            - Cell-specific modality weights and similarity between the observed and the predicted RNA and protein profile, using exponential distribution (approach large margin nearest neighbors), 
+            - WNN graph construction. 
+            - scRNA-seq data is processed by Seurat, protein data is normalized by centered log-ratio (CLR) transform (all proteins are used as features without any feature selection). scATAC-seq data is processed according to the Signac package, by applying TF-IDF + log transformation on the peak matrix, and then applying SVD, which returns the final LSI (latent semantic indexing) components. 
+            - Within-modality prediction means predicting cell profile from the neighbors using the same modality, while cross-modality prediction indicates predicting cell profile from the neighbors using the other modality information.
   
-[Dictionary learning for integrative, multimodal, and scalable single-cell analysis - Hao et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.02.24.481684v1) Fifth Seurat paper. Dictionary learning for multimodal data integration. Bridge integration to integrate multiple modalities, like integrating scATAC-seq on the reference cell annotations defined by scRNA-seq data. Then discusses dictionary learning and atomic sketching, inspired by the geometric sketching method from image processing, to select a subset of features from the datasets, integrate and then project back the integrated results on the full set of features. The final alignment between different modalities is implemented by the mnnCorrect algorithm. The computational complexity for handling many cells is reduced by the Laplacian Eigenmaps mechanism (graph eigendecomposition) thereby reducing the number of dimensions from the number of cells to the number of eigenvectors.
+[Dictionary learning for integrative, multimodal, and scalable single-cell analysis - Hao et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.02.24.481684v1) 
+
+    - Fifth Seurat paper. 
+    - Dictionary learning for multimodal data integration. 
+    - Bridge integration to integrate multiple modalities, like integrating scATAC-seq on the reference cell annotations defined by scRNA-seq data. 
+    - Then discusses dictionary learning and atomic sketching, inspired by the geometric sketching method from image processing, to select a subset of features from the datasets, integrate and then project back the integrated results on the full set of features. 
+    - The final alignment between different modalities is implemented by the mnnCorrect algorithm. 
+    - The computational complexity for handling many cells is reduced by the Laplacian Eigenmaps mechanism (graph eigendecomposition) thereby reducing the number of dimensions from the number of cells to the number of eigenvectors.
 
 [A multi-view latent variable model reveals cellular heterogeneity in complex tissues for paired multimodal single-cell data - VIMCCA - Wang et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36622018/) VIMCCA method to integrate paired multimodal single cell data. Variational inference method - generalizing CCA. Multi-view latent variable. Reason: 1) although Seurat integrates multiple data, it does not mention a statistical model thus not account for the underlying sources of variation within each modality. 2) factor analysis models like MOFA are not scalable for large-scale data. Objective: In VIMCCA, CCA is modeled by multi-view latent variable and variational distribution. Observed data [X,Y] where X = scRNA-seq, Y = scATAC-seq (or ADT) is modeled by a latent factor Z. Mapping between Z to X and Y are modeled by two non-linear functions whose parameters are estimated by NN. This non-linear function replaces the conventional CCA. Implementation: These non-linear functions are approximated by variational inference (VI) for linearity. Maximizing log-likelihood is modeled as maximizing evidence lower bound (ELBO). It has 2 components - KL divergence, and reconstruction error. SGVB estimator using the monte carlo simulator is used to estimate the ELBO.
 
