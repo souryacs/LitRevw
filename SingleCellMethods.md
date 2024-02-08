@@ -19,9 +19,9 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 [Integrating single-cell transcriptomic data across different conditions, technologies, and species - Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) 
     
     - Second Seurat paper. 
-    - **Input** Multiple scRNA-seq datasets.
-    - **Output** Integrated scRNA-seq data + cluster.
-    - **Method** 
+    - Input: Multiple scRNA-seq datasets.
+    - Output: Integrated scRNA-seq data + cluster.
+    - Method: 
         - HVG selection by dispersion (variance to mean ratio) and selecting top 1000 genes with highest dispersion
         - CCA - projections of two data such that the correlation between these two projections get maximized.
         - As the number of genes are much smaller than the number of cells, to handle the sparsity, they treat the covariance matrix as diagonal (Diagonal CCA). 
@@ -30,7 +30,17 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
         - Compare CCA with PCA to show that CCA retrieves a group of features shared between different datasets.
         - Also compares the integration to the conventional batch correction methods Combat and Limma.
   
-[Comprehensive Integration of Single-Cell Data - Stuart et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178118/) Third Seurat paper. Proposes scTransform + VST + IntegrateAnchors and IntegrateFeatures, to integrate scRNA-seq, scATAC-seq, or CITE-seq datasets. The VST is used to first estimate the variance from means of individual gene expression, using linear regression, and then standardize the expression by mean and variance normalization. Implement diagonal CCA implementation to maximize the sharing of features among both datasets. MNN concept is used after diagonal CCA and such neighbors are termed anchors. An anchor scoring mechanism followd by anchor weighting using the nearest anchor cells in the query dataset is employed using the shared nearest neighbor (SNN) concept to finally use the highest scoring anchors as integration features (implemented in the function IntegrateData()).
+[Comprehensive Integration of Single-Cell Data - Stuart et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178118/) 
+
+    - Third Seurat paper. 
+    - Input: multi-omic (CITE-seq or scRNA-seq + scATAC-seq data)
+    - Output: Merged object + downstream dimensionality reduction + clusters
+    - Method:
+        - Proposes scTransform + VST + IntegrateAnchors and IntegrateFeatures, to integrate scRNA-seq, scATAC-seq, or CITE-seq datasets. 
+        - VST is used to first estimate the variance from means of individual gene expression, using linear regression, and then standardize the expression by mean and variance normalization. 
+        - Implements diagonal CCA to maximize the sharing of features among both datasets. 
+        - MNN is used after diagonal CCA and such neighbors are termed anchors. 
+        - An anchor scoring mechanism followd by anchor weighting using the nearest anchor cells in the query dataset is employed using the shared nearest neighbor (SNN) concept to finally use the highest scoring anchors as integration features (implemented in the function IntegrateData()).
   
 [Integrative single-cell analysis - Stuart et al. Nat Revw Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30696980/) Review paper on Seurat.
   
