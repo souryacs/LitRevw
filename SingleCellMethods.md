@@ -13,10 +13,21 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 ## Multimodal Data Integration/pipelines
 
 [Spatial reconstruction of single-cell gene expression data - Satija et al. Nat Biotech 2015](https://pubmed.ncbi.nlm.nih.gov/25867923/) 
+    
     First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets. 
     
-  
-[Integrating single-cell transcriptomic data across different conditions, technologies, and species - Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) Second Seurat paper. Proposes CCA, specially Diagonal CCA to integrate multiple scRNA-seq datasets. The diagonal (or regularized/penalized) CCA is useful since the number of genes (integrating features) is much lower than the number of cells. Aligning two CCA vectors (also called metagenes) is done by dynamic time warping (DTW) algorithm. Partial SVD implementation is used to identify a set of user-defined CCA vectors. Compares CCA with PCA to show that CCA retrieves group of features shared between different datasets. Also compares the integration to the conventional batch correction methods Combat and Limma.
+[Integrating single-cell transcriptomic data across different conditions, technologies, and species - Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) 
+    - Second Seurat paper. 
+    - *Input* Multiple scRNA-seq datasets.
+    - *Output* Integrated scRNA-seq data + cluster.
+    - *Method* 
+        - HVG selection by dispersion (variance to mean ratio) and selecting top 1000 genes with highest dispersion
+        - CCA - projections of two data such that the correlation between these two projections get maximized.
+        - As the number of genes are much smaller than the number of cells, to handle the sparsity, they treat the covariance matrix as diagonal (Diagonal CCA). 
+        - Aligning two CCA vectors (also called metagenes) is done by dynamic time warping (DTW) algorithm.
+        - Canonical correlation vectors are computed using partial SVD - left and right singular vectors with a user-defined number K, to get a subset of the canonical correlation vectors.
+        - Compare CCA with PCA to show that CCA retrieves a group of features shared between different datasets.
+        - Also compares the integration to the conventional batch correction methods Combat and Limma.
   
 [Comprehensive Integration of Single-Cell Data - Stuart et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178118/) Third Seurat paper. Proposes scTransform + VST + IntegrateAnchors and IntegrateFeatures, to integrate scRNA-seq, scATAC-seq, or CITE-seq datasets. The VST is used to first estimate the variance from means of individual gene expression, using linear regression, and then standardize the expression by mean and variance normalization. Implement diagonal CCA implementation to maximize the sharing of features among both datasets. MNN concept is used after diagonal CCA and such neighbors are termed anchors. An anchor scoring mechanism followd by anchor weighting using the nearest anchor cells in the query dataset is employed using the shared nearest neighbor (SNN) concept to finally use the highest scoring anchors as integration features (implemented in the function IntegrateData()).
   
