@@ -248,13 +248,33 @@ Models the transition between control population p_c and perturbation population
 
 [Interrogation of human hematopoiesis at single-cell and single-variant resolution - g-ChromVAR - Ulirsch et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30858613/) presents g-chromVAR, a method to identify GWAS variant enrichment among closely related tissues/cell types, using scATAC-seq data. The objective is to measure the trait relevance of different cells or tissues, and here scATAC-seq data together with fine-mapped GWAS variants are used to measure such trait relevance scores (and causal variants). It computes the bias-corrected Z-scores to estimate the trait relevance for every single cell by integrating the probability of variant causality and quantitative strength of chromatin accessibility. The trait-peak matrix is a count matrix, which is used to compute the expected number of fragments per peak per sample, which is then multiplied with the fine-mapped variant posterior probabilities. Validated with respect to the S-LDSC method.
 
-[Variant to function mapping at single-cell resolution through network propagation - scAVENGE - Yu et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35668323/) Uses network propagation on causal variants to identify their relevant cell types using single-cell resolution. Using the g-chromVAR output, i.e. single cell-based trait-relevance scores, we rank the cells and select the top cells as seed cells, which are used for the network propagation algorithm. Using the random walk algorithm, we reach the stationary state of network connectivity among these cells, and the final trait relevance scores (TRS) are computed for each cell.
+[Variant to function mapping at single-cell resolution through network propagation - scAVENGE - Yu et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35668323/) 
 
-[Identifying disease-critical cell types and cellular processes by integrating single-cell RNA-sequencing and human genetics - scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) Integrates GWAS summary statistics, epigenomics, and scRNA-seq data from multiple tissue types, diseases, individuals, and cells. The authors transform gene programs to SNP annotations using tissue-specific enhancer–gene links, standard gene window-based linking strategies such as MAGMA, RSS-E, and linkage disequilibrium score regression (LDSC)-specifically expressed genes. Then they link SNP annotations to diseases by applying stratified LDSC (S-LDSC) to the resulting SNP annotations. Cell-type gene programs are computed by converting the p-values of the DE genes (between the target cell type to others) using a chi-sq distribution and applying o-1 range normalization. Similar work was done for disease-relevant gene programs. NMF was used to define cellular process gene programs. 
+    - Objective: Determine the trait relevance specific scoring for each cell in single cell data.
+    - Uses network propagation on causal variants to identify their relevant cell types using single-cell resolution. 
+    - Using the g-chromVAR output, i.e. single cell-based trait-relevance scores, they rank the cells and select the top cells as seed cells, which are used for the network propagation algorithm. 
+    - Using the random walk algorithm, the authors showed how to reach the stationary state of network connectivity among these cells, and the final trait relevance scores (TRS) are computed for each cell.
 
-[Polygenic enrichment distinguishes disease associations of individual cells in single-cell RNA-seq data - scDRS - Zhang et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36050550/) scDRS method. Enrichment of cell types with respect to GWAS trait. First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
+[Identifying disease-critical cell types and cellular processes by integrating single-cell RNA-sequencing and human genetics - scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) 
 
-[NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
+    - Objective: Identifying marker cell types for different diseases.
+    - Integrates GWAS summary statistics, epigenomics, and scRNA-seq data from multiple tissue types, diseases, individuals, and cells. 
+    - The authors transform gene programs to SNP annotations using: 
+        - tissue-specific enhancer–gene links, 
+        - standard gene window-based linking strategies such as MAGMA, RSS-E, and linkage disequilibrium score regression (LDSC)-specifically expressed genes. 
+    - Then they link SNP annotations to diseases by applying stratified LDSC (S-LDSC) to the resulting SNP annotations. 
+    - Cell-type gene programs are computed by converting the p-values of the DE genes (between the target cell type to others) using a chi-sq distribution and applying 0-1 range normalization. 
+    - Similar work was done for disease-relevant gene programs. 
+        - NMF was used to define cellular process gene programs. 
+
+[Polygenic enrichment distinguishes disease associations of individual cells in single-cell RNA-seq data - scDRS - Zhang et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36050550/) 
+
+    - scDRS method. 
+    - Enrichment of cell types with respect to GWAS trait, using scRNA-seq data. 
+    - First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. 
+    - Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
+
+[Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
     
     - Haplotype aware CNV inference from scRNA-seq data. 
     - CNVs are inferred both from expression 
