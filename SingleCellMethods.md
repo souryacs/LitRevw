@@ -274,7 +274,15 @@ Models the transition between control population p_c and perturbation population
 
 ## Disease-specific
 
-[Dohmen et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35637521/) Presents ikarus, an ML framework to identify and annotate tumor cells from normal cells using single-cell data. Identifies a marker gene set signature to identify the set of cells.
+[Identifying tumor cells at the single-cell level using machine learning - Dohmen et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35637521/) 
+
+    - Presents ikarus, an ML framework to identify and annotate tumor cells from normal cells using single-cell data. 
+    - Method:
+        - Identifies a marker (signature) gene set to identify the tumor cell signature. Based on DEGs and intersection among cancer-specific datasets. Total 162 genes significantly enriched in cancer cells across multiple datasets.
+        - Logistic regression classifier for discriminating tumor and normal cells. AUCell method is used for cell scoring using marker genes.
+        - Network based propagation of cell labels using cell-cell network.
+        - CNV scores are also used for improved classifcation of tumor cells.
+        - Additionally, bulk RNA-seq specific marker genes were also tested and their gene signature scores were computed using ssGSEA. Published gene sets from mSigDB, CancerSEA were also used for validation.
 
 [Epigenomic dissection of Alzheimer’s disease pinpoints causal variants and reveals epigenome erosion - Xiong et al. Cell 2023](https://www.cell.com/cell/pdf/S0092-8674(23)00974-1.pdf) Alzheimer's disease (control, early and late) snRNA-seq and snATAC-seq data. Contributions: 1) Iterative approach of data integration and updating peak to gene links (using ArchR based scores) by analyzing subset of cells and re-estimation of gene score matrices (using ArchR), 2) chromVAR (in ArchR) to identify TFs enriched for different group of cells, 3) Identifying peak modules using modified BB-kNN approach, 4) Differential accessible peaks, 5) AD GWAS heritability enrichment analysis using S-LDSC, 6) single cell ATAC QTLs using SVD + pseudo-bulk gene expression profile and multivariate regression, 7) Colocalization between ATAC-QTLs and GWAS (PP4 > 0.1 ?? ) 8) Cell-type sharing of ATAC-QTLs using directionality-dependent method, 8) Propeller method to understand the cell-type composition changes in single-cell data.
 
@@ -282,5 +290,11 @@ Models the transition between control population p_c and perturbation population
 
 [Chromatin and gene-regulatory dynamics of the developing human cerebral cortex at single-cell resolution - Trevino et al. Cell 2021](https://pubmed.ncbi.nlm.nih.gov/34390642/) scRNA-seq + scATAC-seq atlas on cortical development, for modeling neurodevelopmental disorders. CREs are linked with gene expression using co-accessibility, genes with predictive chromatin (GPC), gene expression - regulatory element linkage analysis, etc. GSEA and TF motif enrichment analysis are carried out, and trajectory analysis is used to link GPCs to cell fates and cell states, using a cell cycle signature (MSigDB) + projection of ATAC-seq pseudobulks and multi-omics (scRNA + scATAC) into fuzzy c-means clustering space. Finally, BPNET is used to prioritize cluster (cell type or cell state) specific variant enrichment and scoring analysis, using a deep learning framework. 
 
-[Pathformer: a biological pathway informed Transformer integrating multi-omics data for disease diagnosis and prognosis - Liu et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.23.541554v6.full) Pathformer method. Integrates multi-modal single cell data to first produce gene level embedding (multi-modality representative vector) which are then transfomed to pathway embeddings. These embeddings are then fed into a transformer framework with pathway crosstalk serving as attention, to interpret the disease outcome. Also uses Shap values to identify the genes relevant to pathways  and disease. Applied to Cancer and liquid biopsy for early cancer prediction.
+[Pathformer: a biological pathway informed Transformer integrating multi-omics data for disease diagnosis and prognosis - Liu et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.23.541554v6.full) 
+    
+    - Pathformer method. 
+    - Integrates multi-modal single cell data to first produce gene level embedding (multi-modality representative vector) which are then transfomed to pathway embeddings.
+    - These embeddings are then fed into a transformer framework with pathway crosstalk serving as attention, to interpret the disease outcome. 
+    - Also uses Shap values to identify the genes relevant to pathways and disease. 
+    Applied to Cancer and liquid biopsy for early cancer prediction.
 
