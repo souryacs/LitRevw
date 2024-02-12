@@ -158,9 +158,18 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Biologically informed deep learning to query gene programs in single-cell atlases - Lotfollahi et al. Nature Cell Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36732632/) expiMap method. Biologically interpretable DL method to find the gene programs, using reference single cell atlases. 1. From reference single cell atlase with gene expression and biological conditions, constructs interpretable DL framework to find the gene programs. 2. Then identifies the gene programs responsible / differential between conditions. 3. Constructing gene programs for a collection of data is performed by fine-tuning and architectural surgery, similar to the scArches method.
 
-### Batch correction
+### Normalization / Batch correction
 
-[Fast, sensitive and accurate integration of single-cell data with Harmony - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) Batch correction method. First performs modified K-means soft clustering to assign cells to potential candidate clusters (1 cell is assigned to multiple clusters). Then define batch-specific parameters are used to compute the penalty of cluster assignments. Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
+[A general and flexible method for signal extraction from single-cell RNA-seq data - Risso et al. Nat Comm 2018](https://pubmed.ncbi.nlm.nih.gov/29348443/) ZINB-WAVE method for scRNA-seq normalization.
+
+[Fast, sensitive and accurate integration of single-cell data with Harmony - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) 
+
+    - Batch correction method. 
+    - Method:
+        - Uses PCA embedded count matrix representation.
+        - Maximum diversity clustering: Objective is to put maximum diversity among batches. Modified K-means soft clustering (added diversity maximizing regularization term to this objective function) to assign cells to potential candidate clusters (one cell can be assigned to multiple clusters). 
+        - Mixture model based linear batch correction: Then defines batch-specific parameters are used to compute the penalty of cluster assignments. 
+            - Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
 
 ### Differential Analysis
 
