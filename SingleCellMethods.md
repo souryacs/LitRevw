@@ -55,7 +55,8 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
             - Perform within and across-modality prediction, 
             - Cell-specific modality weights and similarity between the observed and the predicted RNA and protein profile, using exponential distribution (approach large margin nearest neighbors), 
             - WNN graph construction. 
-            - scRNA-seq data is processed by Seurat, protein data is normalized by centered log-ratio (CLR) transform (all proteins are used as features without any feature selection). scATAC-seq data is processed according to the Signac package, by applying TF-IDF + log transformation on the peak matrix, and then applying SVD, which returns the final LSI (latent semantic indexing) components. 
+            - scRNA-seq data is processed by Seurat, protein data is normalized by centered log-ratio (CLR) transform (all proteins are used as features without any feature selection). 
+            - scATAC-seq data is processed according to the Signac package, by applying TF-IDF + log transformation on the peak matrix, and then applying SVD, which returns the final LSI (latent semantic indexing) components. 
             - Within-modality prediction means predicting cell profile from the neighbors using the same modality, while cross-modality prediction indicates predicting cell profile from the neighbors using the other modality information.
   
 [Dictionary learning for integrative, multimodal, and scalable single-cell analysis - Hao et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.02.24.481684v1) 
