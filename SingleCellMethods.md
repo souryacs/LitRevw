@@ -228,7 +228,16 @@ Models the transition between control population p_c and perturbation population
 
 ### Cell-Cell Communication
 
-[Screening cell-cell communication in spatial transcriptomics via collective optimal transport - Cang et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/36690742) COMMOT method. Cell-Cell communication (Ligand Receptor) using ST data and optimal transport. *Input*: ST matrix - specifically cell-cell (ligand receptor) interaction matrix and spatial information for multiple species. *Method*: Presents an optimal transport based optimization (collective optimal transport) to select the putative Ligand-Receptor pairs. *To Do*: Check the eq 1 and supplementary methods. How these kind of optimization can be used in 1) Fine mapping of SNP? Here distance matrix: LD score.  And SNP-Gene pair specific Summary statistics score. 
+[Screening cell-cell communication in spatial transcriptomics via collective optimal transport - Cang et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/36690742) 
+
+    - COMMOT method. 
+    - Cell-Cell communication (Ligand Receptor) using ST data and optimal transport. 
+    - *Input*: ST matrix - specifically cell-cell (ligand receptor) interaction matrix and spatial information for multiple species. 
+    - *Method*: Presents an optimal transport based optimization (collective optimal transport) to select the putative Ligand-Receptor pairs. 
+    - *To Do*: Check the eq 1 and supplementary methods. 
+        - How these kind of optimization can be used in: 
+            - 1) Fine mapping of SNP? Here distance matrix: LD score. 
+            - 2) And SNP-Gene pair specific Summary statistics score. 
 
 ## Single cell eQTL, ASE, variant annotation, cell type enrichment
 
@@ -244,16 +253,31 @@ Models the transition between control population p_c and perturbation population
     - *Check*: how the genotype effect is determined for individual cell types or clusters? 
         - Can we better model the cell-type or cluster-specific effects, using velocity or trajectory analysis? 
 
-[Identifying phenotype-associated subpopulations by integrating bulk and single-cell sequencing data - scissor - Sun et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34764492/) Uses a network regression model to identify the cell populations/clusters associated with a given phenotype. Input: scRNA-seq matrix, bulk RNA-seq matrix, and phenotype matrix/vector (can be binary, continuous, based on that the regression model would be defined). The correlation between single-cell expression and bulk RNA-seq gene expression data is computed to produce a correlation matrix which is then applied to a regression framework with respect to the given phenotype.
+[Identifying phenotype-associated subpopulations by integrating bulk and single-cell sequencing data - scissor - Sun et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34764492/) 
 
-[Interrogation of human hematopoiesis at single-cell and single-variant resolution - g-ChromVAR - Ulirsch et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30858613/) presents g-chromVAR, a method to identify GWAS variant enrichment among closely related tissues/cell types, using scATAC-seq data. The objective is to measure the trait relevance of different cells or tissues, and here scATAC-seq data together with fine-mapped GWAS variants are used to measure such trait relevance scores (and causal variants). It computes the bias-corrected Z-scores to estimate the trait relevance for every single cell by integrating the probability of variant causality and quantitative strength of chromatin accessibility. The trait-peak matrix is a count matrix, which is used to compute the expected number of fragments per peak per sample, which is then multiplied with the fine-mapped variant posterior probabilities. Validated with respect to the S-LDSC method.
+    - Uses a network regression model to identify the cell populations/clusters associated with a given phenotype. 
+    - *Input*: scRNA-seq matrix, bulk RNA-seq matrix, and phenotype matrix/vector 
+        - Phenotype matrix can be binary, continuous, based on that the regression model would be defined. 
+    - The correlation between single-cell expression and bulk RNA-seq gene expression data is computed to produce a correlation matrix 
+        - which is then applied to a regression framework with respect to the given phenotype.
+
+[Interrogation of human hematopoiesis at single-cell and single-variant resolution - g-ChromVAR - Ulirsch et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30858613/) 
+
+    - presents g-chromVAR, a method to identify GWAS variant enrichment among closely related tissues/cell types, using scATAC-seq data. 
+    - *Objective*: measure the trait relevance of different cells or tissues, 
+        - here scATAC-seq data together with fine-mapped GWAS variants are used to measure such trait relevance scores (and causal variants). 
+        - Computes the bias-corrected Z-scores to estimate the trait relevance for every single cell 
+            - by integrating the probability of variant causality and quantitative strength of chromatin accessibility. 
+        - The trait-peak matrix is a count matrix, which is used to compute the expected number of fragments per peak per sample, 
+            - which is then multiplied with the fine-mapped variant posterior probabilities. 
+        - Validated with respect to the S-LDSC method.
 
 [Variant to function mapping at single-cell resolution through network propagation - scAVENGE - Yu et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35668323/) 
 
     - Objective: Determine the trait relevance specific scoring for each cell in single cell data.
     - Uses network propagation on causal variants to identify their relevant cell types using single-cell resolution. 
     - Using the g-chromVAR output, i.e. single cell-based trait-relevance scores, they rank the cells and select the top cells as seed cells, which are used for the network propagation algorithm. 
-    - Using the random walk algorithm, the authors showed how to reach the stationary state of network connectivity among these cells, and the final trait relevance scores (TRS) are computed for each cell.
+    - Using the random walk algorithm, the authors showed how to reach the stationary state of network connectivity among these cells, and the final trait relevance scores (TRS) are computed for each group of cells or clusters or cell types.
 
 [Identifying disease-critical cell types and cellular processes by integrating single-cell RNA-sequencing and human genetics - scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) 
 
