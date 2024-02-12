@@ -262,15 +262,58 @@ Models the transition between control population p_c and perturbation population
 
 ## Trajectory analysis /  RNA velocity
 
-[Monocle - Trapnell et al. Nat Biotech 2014](https://pubmed.ncbi.nlm.nih.gov/24658644/) Trajectory analysis from scRNA-seq data. ICA is used for dimensionality reduction, after selecting a subset of genes with respect to the variance explained. Then, the minimum spanning tree (MST) is used to construct the lineage. A PQ-Tree-specific algorithm is used to deal with the branching noise.
+[Monocle - Trapnell et al. Nat Biotech 2014](https://pubmed.ncbi.nlm.nih.gov/24658644/) 
 
-[RNA Velocity - La Manno et al. Nature 2018](https://pubmed.ncbi.nlm.nih.gov/30089906/) Concept of RNA velocity using the spliced and unspliced RNA. Provides a toolkit Velocyto. Assumes that the transcriptional regulation parameters are the same for all genes, and each gene has a sufficient time frame to reach the steady state.
+    - Trajectory analysis from scRNA-seq data. 
+    - ICA is used for dimensionality reduction, after selecting a subset of genes with respect to the variance explained. 
+    - Then, the minimum spanning tree (MST) is used to connect the clusters and construct the lineage. 
+    - A PQ-Tree-specific algorithm is used to deal with the branching noise.
 
-[scVelo - Bergen et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/32747759/) scVelo method, extending the RNA velocity concept on scRNA-seq data by modeling the transcriptional regulation parameters in a probabilistic model. Also improves the running time.
+[RNA Velocity - La Manno et al. Nature 2018](https://pubmed.ncbi.nlm.nih.gov/30089906/) 
 
-[multiVelo - Li et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36229609/) multiVelo approach. Using both scRNA-seq and scATAC-seq data for velocity estimation. Based on the fact that epigenomic changes (like the transition from euchromatin to heterochromatin) have a role in transcriptional regulation and rates. Uses ODE with switch and rate parameters. Inputs: time-varying levels of chromatin accessibility, unspliced pre-RNA, and spliced mature RNA. Parameters: rates of chromatin opening and closing, RNA transcription, RNA splicing, and RNA degradation of nuclear export.
+    - Concept of RNA velocity using the spliced and unspliced RNA. Identifying spliced and unspliced reads and modeling change in the spliced RNA.
+    - Provides a toolkit Velocyto. 
+    - Assumes gene specific models of spliced and unspliced reads according to the transcription rate, splicing rate, and degradation rate.
+    - Assumes that the transcriptional regulation parameters are the same for all genes, and each gene has a sufficient time frame to reach the steady state. Also assumes gene independence.  
+    - Assumes (1) kinetics reached their equilibrium, (2) rates are constant, and (3) there is a single, common splicing rate across all genes.
+        - Steady-states: phase portrait (induction phase) and its origin (repression phase).
+        - Steady-state model estimates the steady-state ratio with a linear regression fit. RNA velocity is then defined as the residual to this fit.
+        - Even though the steady-state model can successfully recover the developmental direction in some systems, it is inherently limited by its model assumptions. 
+        - These two assumptions readily violated are the common splicing rate across genes and that the equilibria are observed during the experiment. Consequently, inference in these cases will yield incorrect results. 
+        - Additionally, the steady-state model only considers a subset of the data, and only the steady-state ratio but not each model parameter is inferred.
 
-[https://www.nature.com/articles/s41592-021-01346-6 - Lange et al. Nature Methods 2022](https://www.nature.com/articles/s41592-021-01346-6) Combines RNA velocity and trajectory inferernce methods. Automatically defines the root and terminal cells. *Input*: gene expression matrix, and RNA velocity matrix (or any vector field with a direction measure). *Method*: Computes transition probabilities, using: 1) RNA velocity, 2) Gene expression similarity of cells. Applies a weighted mixing - correlation of expression to the neighboring cells, and to the cells implied by the RNA velocity vector. Formulates markov chain and transition matrix accordingly. Assigns cells to macrostates (group of cells) and computes direction according to the states. Computing macrostates is done by generalized perron cluster cluster analysis (GPCCA). Identification of terminal states: Stability Index (SI), initial state: coarse grained stationary distribution. *Output*: 1) Cluster membership matrix, 2) Transition matrix, 3) Fate matrix.
+[scVelo - Bergen et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/32747759/) 
+
+    - scVelo method, extending the RNA velocity concept on scRNA-seq data by modeling the transcriptional regulation parameters in a probabilistic model. 
+    - No longer assumes that steady-states have been reached or that genes share a common splicing rate. 
+    - Additionally, all data points are used to infer the full set of parameters as well as a gene and cell specific latent time of the splicing model. 
+    - Uses an expectation-maximization (EM) framework to estimate parameters. 
+        - The unobserved variables found in the E-step consist of each cell’s time and state (induction, repression, or steady-state). 
+        - All other model parameters are inferred during the M-step.
+    - Also improves the running time.
+
+[multiVelo - Li et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36229609/) 
+
+    - multiVelo approach. 
+    - Using both scRNA-seq and scATAC-seq data for velocity estimation. 
+    - Based on the fact that epigenomic changes (like the transition from euchromatin to heterochromatin) have a role in transcriptional regulation and rates. 
+    - Uses ODE with switch and rate parameters. 
+    - *Inputs*: time-varying levels of chromatin accessibility, unspliced pre-RNA, and spliced mature RNA. 
+    - *Parameters*: rates of chromatin opening and closing, RNA transcription, RNA splicing, and RNA degradation of nuclear export.
+
+[CellRank for directed single-cell fate mapping - Lange et al. Nature Methods 2022](https://www.nature.com/articles/s41592-021-01346-6) 
+
+    - Combines RNA velocity and trajectory inferernce methods. 
+    - Automatically defines the root and terminal cells. 
+    - *Input*: gene expression matrix, and RNA velocity matrix (or any vector field with a direction measure). 
+    - *Method*: 
+        - Computes transition probabilities, using: 1) RNA velocity, 2) Gene expression similarity of cells. 
+        - Applies a weighted mixing - correlation of expression to the neighboring cells, and to the cells implied by the RNA velocity vector. 
+        - Formulates markov chain and transition matrix accordingly. 
+        - Assigns cells to macrostates (group of cells) and computes direction according to the states. 
+        - Computing macrostates is done by generalized perron cluster cluster analysis (GPCCA). 
+        - Identification of terminal states: Stability Index (SI), initial state: coarse grained stationary distribution. 
+    - *Output*: 1) Cluster membership matrix, 2) Transition matrix, 3) Fate matrix.
 
 ## Disease-specific
 
