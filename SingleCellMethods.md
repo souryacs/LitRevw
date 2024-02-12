@@ -254,11 +254,32 @@ Models the transition between control population p_c and perturbation population
 
 [Polygenic enrichment distinguishes disease associations of individual cells in single-cell RNA-seq data - scDRS - Zhang et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36050550/) scDRS method. Enrichment of cell types with respect to GWAS trait. First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
 
-[NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) Haplotype aware CNV inference from scRNA-seq data. CNVs are inferred both from expression (expecting AMP and DEL to be associated with up/downregulation - FP for expression changes unrelated to CNV) and allele-specific (deviations of BAF - less affected by sample-specific variation). This method uses haplotype phasing prior to detecting CNVs.
+[NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
+    
+    - Haplotype aware CNV inference from scRNA-seq data. 
+    - CNVs are inferred both from expression 
+        - (expecting AMP and DEL to be associated with up/downregulation - FP for expression changes unrelated to CNV) 
+    - and allele-specific changes
+        - (deviations of BAF - less affected by sample-specific variation). 
+    - This method uses haplotype phasing prior to detecting CNVs.
 
-[Mapping interindividual dynamics of innate immune response at single-cell resolution - Kumasaka et al. Nat Genet 2023](https://pubmed.ncbi.nlm.nih.gov/37308670/) Presents GASPACHO, a Gaussian Process + Latent Variable based model to infer the single cell eQTLs associated with dynamic cell states obtained from immune response/stimuli. Test their method on Fibroblast scRNA-seq data and also colocalizes with COVID-19 GWAS data to identify colocalized sc-eQTLs associated with OAS1 and OAS3 genes. Models eQTLs without pseudobulk generation. Generates cell-state specific eQTLs by considering the technical batches and donor specific variations as covariates. Classifies eQTLs as static and dynamic eQTLs. eGenes are depleted in differential genes but enriched in highly expressed genes. sc-eQTLs are also applied fine mapping using epigenomic data. Colocalization reveals enrichment of autoimmune GWAS traits.
+[Mapping interindividual dynamics of innate immune response at single-cell resolution - Kumasaka et al. Nat Genet 2023](https://pubmed.ncbi.nlm.nih.gov/37308670/) 
 
-[POPS - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) PoPs method for prioritizing gene sets from GWAS summary statistics and LD matrix. Uses MAGMA to first compute the gene-based scores. Also uses pathways, PPIs, etc. to prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics, using a multivariate normal (MVN) distribution-based regression strategy. 
+    - Presents GASPACHO, a Gaussian Process + Latent Variable based model to infer the single cell eQTLs associated with dynamic cell states obtained from immune response/stimuli. 
+    - Test their method on Fibroblast scRNA-seq data and also colocalizes with COVID-19 GWAS data to identify colocalized sc-eQTLs associated with OAS1 and OAS3 genes. 
+    - Models eQTLs without pseudobulk generation. 
+    - Generates cell-state specific eQTLs by considering the technical batches and donor specific variations as covariates. 
+    - Classifies eQTLs as static and dynamic eQTLs. 
+    - eGenes are depleted in differential genes but enriched in highly expressed genes. 
+    - sc-eQTLs are also applied fine mapping using epigenomic data. 
+    - Colocalization reveals enrichment of autoimmune GWAS traits.
+
+[POPS - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) 
+
+    - PoPs method for prioritizing gene sets from GWAS summary statistics and LD matrix. 
+    - Uses MAGMA to first compute the gene-based scores. 
+    - Also uses pathways, PPIs, etc. to prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics 
+        - using a multivariate normal (MVN) distribution-based regression strategy. 
 
 ## Gene regulatory network (GRN)
 
@@ -370,11 +391,37 @@ Models the transition between control population p_c and perturbation population
         - CNV scores are also used for improved classifcation of tumor cells.
         - Additionally, bulk RNA-seq specific marker genes were also tested and their gene signature scores were computed using ssGSEA. Published gene sets from mSigDB, CancerSEA were also used for validation.
 
-[Epigenomic dissection of Alzheimer’s disease pinpoints causal variants and reveals epigenome erosion - Xiong et al. Cell 2023](https://www.cell.com/cell/pdf/S0092-8674(23)00974-1.pdf) Alzheimer's disease (control, early and late) snRNA-seq and snATAC-seq data. Contributions: 1) Iterative approach of data integration and updating peak to gene links (using ArchR based scores) by analyzing subset of cells and re-estimation of gene score matrices (using ArchR), 2) chromVAR (in ArchR) to identify TFs enriched for different group of cells, 3) Identifying peak modules using modified BB-kNN approach, 4) Differential accessible peaks, 5) AD GWAS heritability enrichment analysis using S-LDSC, 6) single cell ATAC QTLs using SVD + pseudo-bulk gene expression profile and multivariate regression, 7) Colocalization between ATAC-QTLs and GWAS (PP4 > 0.1 ?? ) 8) Cell-type sharing of ATAC-QTLs using directionality-dependent method, 8) Propeller method to understand the cell-type composition changes in single-cell data.
+[Epigenomic dissection of Alzheimer’s disease pinpoints causal variants and reveals epigenome erosion - Xiong et al. Cell 2023](https://www.cell.com/cell/pdf/S0092-8674(23)00974-1.pdf) 
 
-[Spatially resolved multiomics of human cardiac niches - Kanemaru et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37438528/) Single cell and spatial transcriptomics for cardiac data. Uses CellPhoneDB to model cell-cell interactions. Also develops a pipeline **drug2cell** which integrates drug–target interactions from the ChEMBL database with user-provided single-cell data to comprehensively evaluate drug-target expression in single cells.
+    - Alzheimer's disease (control, early and late) snRNA-seq and snATAC-seq data. 
+    - *Contributions*: 
+        - 1) Iterative approach of data integration and updating peak to gene links (using ArchR based scores) by analyzing subset of cells and re-estimation of gene score matrices (using ArchR), 
+        - 2) chromVAR (in ArchR) to identify TFs enriched for different group of cells, 
+        - 3) Identifying peak modules using modified BB-kNN approach, 
+        - 4) Differential accessible peaks, 
+        - 5) AD GWAS heritability enrichment analysis using S-LDSC, 
+        - 6) single cell ATAC QTLs using SVD + pseudo-bulk gene expression profile and multivariate regression, 
+        - 7) Colocalization between ATAC-QTLs and GWAS (PP4 > 0.1 ?? ) 
+        - 8) Cell-type sharing of ATAC-QTLs using directionality-dependent method, 
+        - 9) Propeller method to understand the cell-type composition changes in single-cell data.
 
-[Chromatin and gene-regulatory dynamics of the developing human cerebral cortex at single-cell resolution - Trevino et al. Cell 2021](https://pubmed.ncbi.nlm.nih.gov/34390642/) scRNA-seq + scATAC-seq atlas on cortical development, for modeling neurodevelopmental disorders. CREs are linked with gene expression using co-accessibility, genes with predictive chromatin (GPC), gene expression - regulatory element linkage analysis, etc. GSEA and TF motif enrichment analysis are carried out, and trajectory analysis is used to link GPCs to cell fates and cell states, using a cell cycle signature (MSigDB) + projection of ATAC-seq pseudobulks and multi-omics (scRNA + scATAC) into fuzzy c-means clustering space. Finally, BPNET is used to prioritize cluster (cell type or cell state) specific variant enrichment and scoring analysis, using a deep learning framework. 
+[Spatially resolved multiomics of human cardiac niches - Kanemaru et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37438528/) 
+
+    - Single cell and spatial transcriptomics for cardiac data. 
+    - Uses CellPhoneDB to model cell-cell interactions. 
+    - Also develops a pipeline **drug2cell**  
+        - integrates drug–target interactions from the ChEMBL database with user-provided single-cell data
+        - Comprehensively evaluates drug-target expression in single cells.
+
+[Chromatin and gene-regulatory dynamics of the developing human cerebral cortex at single-cell resolution - Trevino et al. Cell 2021](https://pubmed.ncbi.nlm.nih.gov/34390642/) 
+
+    - scRNA-seq + scATAC-seq atlas on cortical development, for modeling neurodevelopmental disorders. 
+    - CREs are linked with gene expression using co-accessibility, genes with predictive chromatin (GPC), gene expression - regulatory element linkage analysis, etc. 
+    - GSEA and TF motif enrichment analysis 
+    - trajectory analysis is used to link GPCs to cell fates and cell states 
+        - using a cell cycle signature (MSigDB) 
+        - also performs projection of ATAC-seq pseudobulks and multi-omics (scRNA + scATAC) into fuzzy c-means clustering space. 
+    - Finally, BPNET is used to prioritize cluster (cell type or cell state) specific variant enrichment and scoring analysis, using a deep learning framework. 
 
 [Pathformer: a biological pathway informed Transformer integrating multi-omics data for disease diagnosis and prognosis - Liu et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.23.541554v6.full) 
     
