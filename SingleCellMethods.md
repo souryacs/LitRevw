@@ -252,11 +252,34 @@ Models the transition between control population p_c and perturbation population
 
 ## Gene regulatory network (GRN)
 
-[SCENIC: single-cell regulatory network inference and clustering - Aibar et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28991892/) GRN from scRNA-seq data. Predicts interactions between TFs and target genes. Coexpression is computed at a very limited distance (~20 Kb) between genes and TFs. 1) Co-expressed TF and gene by GENIE3, 2) Putative TFs by RCisTarget (motif discovery), 3) AUCell algorithm for cell-specific regulons.
+[SCENIC: single-cell regulatory network inference and clustering - Aibar et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28991892/) 
 
-[SCENIC+: single-cell multiomic inference of enhancers and gene regulatory networks - Gonzlez-Blas et al. Nature Methods 2023](https://www.nature.com/articles/s41592-023-01938-4) Extends SCENIC by using  scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks up to 150 Kb distance from the gene. Uses GRNBoost2 to quantify the importance of both TFs and enhancer candidates for target genes and it infers the direction of regulation (activating/repressing) using linear correlation. Benchmarks GRNs with those from reference methods, by checking coverage of biological cell states (PCA), recovery of differentially expressed TFs, overlap of TF ChIP-seq peaks, Hi-C contacts, comparing TF perturbation scores per genes (regression model). Also implements a ranking of TFs, regions and genes.
+    - GRN from scRNA-seq data. Predicts interactions between TFs and target genes. 
+    - Co-expression is computed at a very limited distance (~20 Kb) between genes and TFs. 
+        - 1) Co-expressed TF and gene by GENIE3, 
+        - 2) Putative TFs by RCisTarget (motif discovery), 
+        - 3) AUCell algorithm for cell-specific regulons.
 
-[Dissecting cell identity via network inference and in silico gene perturbation - CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) CellOracle method. Uses DNA sequence, co-accessibility and gene expression clusters. Overview: 1) Constructs GRN from multi-omic data and generates cell-state specific GRN models. 2) Simulates the effect of dynamic GRN (or cell states) following TF perturbation (basically effect of purturbation on GRN). 3) Applies to systematically purturb TFs across Zebrafish development. 4) Models the "shift" in gene expression rather than its absolute values. 5) Uses genomic sequences and TF binding motifs to infer the base GRN structure and dimensionality. Step 1: The base GRN contains unweighted directional edges between a TF and a gene (co-accessibility peaks with max 500 Kb distance computed by Cicero, and using HOMER CRE database). Without using sample specific scATAC-seq data, it uses base / average mouse scATAC-seq atlas. Step 2: Uses scRNA-seq data to identify active connections in the base GRN by a regularized linear ML model.
+[SCENIC+: single-cell multiomic inference of enhancers and gene regulatory networks - Gonzlez-Blas et al. Nature Methods 2023](https://www.nature.com/articles/s41592-023-01938-4) 
+
+    - Extends SCENIC by using scATAC-seq data to identify the enhancers associated with candidate TFs and identify their correlation with the candidate gene expression. 
+    - The co-accessibility of peaks helps to identify and examine the TFs related to selective peaks up to 150 Kb distance from the gene. 
+    - Uses GRNBoost2 to quantify the importance of both TFs and enhancer candidates for target genes and it infers the direction of regulation (activating/repressing) using linear correlation. 
+    - Benchmarks GRNs with those from reference methods, by checking coverage of biological cell states (PCA), recovery of differentially expressed TFs, overlap of TF ChIP-seq peaks, Hi-C contacts, comparing TF perturbation scores per genes (regression model). 
+    - Also implements a ranking of TFs, regions and genes.
+
+[Dissecting cell identity via network inference and in silico gene perturbation - CellOracle - Kamimoto et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/36755098/) 
+
+    - CellOracle method. Uses DNA sequence, co-accessibility and gene expression clusters. 
+    - *Overview*: 
+        - 1) Constructs GRN from multi-omic data and generates cell-state specific GRN models. 
+        - 2) Simulates the effect of dynamic GRN (or cell states) following TF perturbation (basically effect of purturbation on GRN). 
+        - 3) Applies to systematically purturb TFs across Zebrafish development. 
+        - 4) Models the "shift" in gene expression rather than its absolute values. 
+        - 5) Uses genomic sequences and TF binding motifs to infer the base GRN structure and dimensionality. 
+            - Step 1: The base GRN contains unweighted directional edges between a TF and a gene (co-accessibility peaks with max 500 Kb distance computed by Cicero, and using HOMER CRE database). 
+            - Without using sample specific scATAC-seq data, it uses base / average mouse scATAC-seq atlas. 
+            - Step 2: Uses scRNA-seq data to identify active connections in the base GRN by a regularized linear ML model.
 
 [Dictys: dynamic gene regulatory network dissects developmental continuum with single-cell multiomics - Wang et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37537351/) Dictys method for GRN inference. Input: scRNA-seq, scATAC-seq data, ChIP-seq / regulatory annotations to define context specific regulatory elements. Novelty: Context specific GRN using gene expression and regulatory activity for dfferent contexts. Also infers dynamic GRNs using the velocity or trajectory.
 
