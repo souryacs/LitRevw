@@ -167,9 +167,13 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
     - Batch correction method. 
     - Method:
         - Uses PCA embedded count matrix representation.
-        - Maximum diversity clustering: Objective is to put maximum diversity among batches. Modified K-means soft clustering (added diversity maximizing regularization term to this objective function) to assign cells to potential candidate clusters (one cell can be assigned to multiple clusters). 
-        - Mixture model based linear batch correction: Then defines batch-specific parameters are used to compute the penalty of cluster assignments. 
+        - Maximum diversity clustering: Objective is to put maximum diversity among batches. 
+            - Modified K-means soft/ fuzzy clustering (added diversity maximizing regularization term to this objective function) to assign cells to potential candidate clusters (one cell can be assigned to multiple clusters). 
+            - Penalty / regularization term ensures that the diversity of batches / dataset types are maximized within each dataset.
+        - Mixture model based linear batch correction: batch-specific parameters are used to compute the penalty of cluster assignments. 
             - Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
+    - Metric: local inverse Simpson index 
+        - Gaussian kernel–based distributions of neighbourhoods for distance-based neighbourhood weighting to be sensitive towards local batch diversification within the knns.
 
 ### Differential Analysis
 
@@ -198,9 +202,27 @@ Models the transition between control population p_c and perturbation population
 
 ## Single Cell ATAC-seq
 
-[ArchR is a scalable software package for integrative single-cell chromatin accessibility analysis - Granja et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33633365/) scATAC-seq processing method, and integrates scRNA-seq data. Supports: 1) Doublet detection by first synthesizing artificial doublets and then using their nearest neighbors as estimated doublets (similar to Scrublet), 2) Optimized iterative LSI for dimension reduction by applying LSI on most variable features and a selective subset of cells and then projecting the results on the complete set of cells, 3) Gene scores using ATAC-seq and TSS information to predict dummy of gene expression. 4) Also implements both Slingshot and Monocle3 for trajectory inference.
+[ArchR is a scalable software package for integrative single-cell chromatin accessibility analysis - Granja et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33633365/) 
 
-[Single-cell chromatin state analysis with Signac - Stuart et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34725479/) scATAC-seq processing method, and integrates scRNA-seq data. Supports: 1) Peak calling from individual samples and then merging (to retain cell type-specific peaks) and showing that it retains all cell ranger peaks. 2) Dimension reduction using LSI. The TF-IDF matrix is computed using the total counts of a cell, total counts for a peak in a cell, the total number of cells, and the total number of counts for a given peak across all cells. The TF-IDF matrix (after log transformation) is applied to SVD. 3) Integration with scRNA-seq data is done by the FindTransferAnchors function in Seurat. 4) Computes gene activity score and performs peak-to-gene linkage.
+    - Integrated abalysis of scATAC-seq and scRNA-seq data. 
+    - Features: 
+        - 1) Doublet detection by first synthesizing artificial doublets and then using their nearest neighbors as estimated doublets (similar to Scrublet), 
+        - 2) Optimized iterative LSI for dimension reduction by applying LSI on most variable features and a selective subset of cells. 
+            - then projecting the results on the complete set of cells, 
+            - Also compares with landmark diffusion maps in SnapATAC
+        - 3) Gene scores using ATAC-seq and TSS information to predict dummy of gene expression. Evaluates 42 different models.
+        - 4) Also implements both Slingshot and Monocle3 for trajectory inference.
+
+[Single-cell chromatin state analysis with Signac - Stuart et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34725479/) 
+
+    - Integrated abalysis of scATAC-seq and scRNA-seq data. 
+    - Features: 
+        - 1) Peak calling from individual samples and then merging (to retain cell type-specific peaks) and showing that it retains all cell ranger peaks. 
+        - 2) Dimension reduction using LSI. 
+            - The TF-IDF matrix is computed using the total counts of a cell, total counts for a peak in a cell, the total number of cells, and the total number of counts for a given peak across all cells. 
+            - The TF-IDF matrix (after log transformation) is applied to SVD. 
+        - 3) Integration with scRNA-seq data is done by the FindTransferAnchors function in Seurat. 
+        - 4) Computes gene activity score and performs peak-to-gene linkage (correlation between gene expression and chromatin accessibility).
 
 [chromVaR inferring transcription factor associated accessibility from single cell epigenomic data - Schep et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28825706/) Using scATAC-seq data, measures the gain/loss of chromatin accessibility within peaks sharing the same motif or annotation. Models the expected number of fragments per peak containing a particular motif and for a particular cell. Thus, variation of chromatin accessibility across cells between highly similar k-mers can be computed.
 
@@ -273,7 +295,7 @@ Models the transition between control population p_c and perturbation population
 
 [Interrogation of human hematopoiesis at single-cell and single-variant resolution - g-ChromVAR - Ulirsch et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30858613/) 
 
-    - presents g-chromVAR, a method to identify GWAS variant enrichment among closely related tissues/cell types, using scATAC-seq data. 
+    - Presents g-chromVAR, a method to identify GWAS variant enrichment among closely related tissues/cell types, using scATAC-seq data. 
     - *Objective*: measure the trait relevance of different cells or tissues, 
         - here scATAC-seq data together with fine-mapped GWAS variants are used to measure such trait relevance scores (and causal variants). 
         - Computes the bias-corrected Z-scores to estimate the trait relevance for every single cell 
@@ -308,6 +330,15 @@ Models the transition between control population p_c and perturbation population
     - First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. 
     - Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
 
+[Leveraging polygenic enrichments of gene features to predict genes underlying complex traits and diseases - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) 
+
+    - polygenic priority score (PoPS) method for prioritizing gene sets from GWAS summary statistics and LD matrix. 
+    - learns trait-relevant gene features, such as cell-type-specific expression, to prioritize genes at GWAS loci.
+    - Uses MAGMA to first compute the gene-based scores. 
+    - Also uses pathways, PPIs, etc. to prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics 
+        - using a multivariate normal (MVN) distribution-based regression strategy. 
+    - Shows PoPS and the closest gene individually outperform other gene prioritization methods.
+
 [Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
     
     - Haplotype aware CNV inference from scRNA-seq data. 
@@ -327,13 +358,6 @@ Models the transition between control population p_c and perturbation population
     - eGenes are depleted in differential genes but enriched in highly expressed genes. 
     - sc-eQTLs are also applied fine mapping using epigenomic data. 
     - Colocalization reveals enrichment of autoimmune GWAS traits.
-
-[POPS - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) 
-
-    - PoPs method for prioritizing gene sets from GWAS summary statistics and LD matrix. 
-    - Uses MAGMA to first compute the gene-based scores. 
-    - Also uses pathways, PPIs, etc. to prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics 
-        - using a multivariate normal (MVN) distribution-based regression strategy. 
 
 ## Gene regulatory network (GRN)
 
@@ -362,8 +386,9 @@ Models the transition between control population p_c and perturbation population
         - 3) Applies to systematically purturb TFs across Zebrafish development. 
         - 4) Models the "shift" in gene expression rather than its absolute values. 
         - 5) Uses genomic sequences and TF binding motifs to infer the base GRN structure and dimensionality. 
-            - Step 1: The base GRN contains unweighted directional edges between a TF and a gene (co-accessibility peaks with max 500 Kb distance computed by Cicero, and using HOMER CRE database). 
-            - Without using sample specific scATAC-seq data, it uses base / average mouse scATAC-seq atlas. 
+            - Step 1: The base GRN contains unweighted directional edges between a TF and a gene 
+                - co-accessibility peaks with max 500 Kb distance computed by Cicero, and using HOMER CRE database. 
+                - Without using sample specific scATAC-seq data, it uses base / average mouse scATAC-seq atlas. 
             - Step 2: Uses scRNA-seq data to identify active connections in the base GRN by a regularized linear ML model.
 
 [Dictys: dynamic gene regulatory network dissects developmental continuum with single-cell multiomics - Wang et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37537351/) 
