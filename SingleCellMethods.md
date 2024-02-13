@@ -387,7 +387,7 @@ Models the transition between control population p_c and perturbation population
     - Then, the minimum spanning tree (MST) is used to connect the clusters and construct the lineage. 
     - A PQ-Tree-specific algorithm is used to deal with the branching noise.
 
-[RNA Velocity - La Manno et al. Nature 2018](https://pubmed.ncbi.nlm.nih.gov/30089906/) 
+[RNA velocity of single cells - La Manno et al. Nature 2018](https://pubmed.ncbi.nlm.nih.gov/30089906/) 
 
     - Concept of RNA velocity using the spliced and unspliced RNA. Identifying spliced and unspliced reads and modeling change in the spliced RNA.
     - Provides a toolkit Velocyto. 
@@ -400,7 +400,7 @@ Models the transition between control population p_c and perturbation population
         - These two assumptions readily violated are the common splicing rate across genes and that the equilibria are observed during the experiment. Consequently, inference in these cases will yield incorrect results. 
         - Additionally, the steady-state model only considers a subset of the data, and only the steady-state ratio but not each model parameter is inferred.
 
-[scVelo - Bergen et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/32747759/) 
+[Generalizing RNA velocity to transient cell states through dynamical modeling - Bergen et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/32747759/) 
 
     - scVelo method, extending the RNA velocity concept on scRNA-seq data by modeling the transcriptional regulation parameters in a probabilistic model. 
     - No longer assumes that steady-states have been reached or that genes share a common splicing rate. 
@@ -410,14 +410,17 @@ Models the transition between control population p_c and perturbation population
         - All other model parameters are inferred during the M-step.
     - Also improves the running time.
 
-[multiVelo - Li et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36229609/) 
+[Multi-omic single-cell velocity models epigenome–transcriptome interactions and improves cell fate prediction - Li et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36229609/)
 
     - multiVelo approach. 
-    - Using both scRNA-seq and scATAC-seq data for velocity estimation. 
-    - Based on the fact that epigenomic changes (like the transition from euchromatin to heterochromatin) have a role in transcriptional regulation and rates. 
-    - Uses ODE with switch and rate parameters. 
-    - *Inputs*: time-varying levels of chromatin accessibility, unspliced pre-RNA, and spliced mature RNA. 
+    - *Inputs*: time-varying levels of chromatin accessibility (scATAC-seq), unspliced pre-RNA, and spliced mature RNA (scRNA-seq). 
     - *Parameters*: rates of chromatin opening and closing, RNA transcription, RNA splicing, and RNA degradation of nuclear export.
+    - *Method*:
+        - ODE with switch and rate parameters. 
+        - Uses the fact that transcription rate is proportional to the chromatin accessibility.
+            - Epigenomic changes (like the transition from euchromatin to heterochromatin) have a role in transcriptional regulation and rates.
+        - Two states are defined each for chromatin accessibility (c) and RNA (u,s) : chromatin opening, chromatin closing, transcriptional induction and transcriptional repression (priming and decoupling).
+            - Each gene uses 3D phase portraits (c,u,s), and defines two different models M1 and M2 based on two potential orderings of chromatin and RNA state changes.
 
 [CellRank for directed single-cell fate mapping - Lange et al. Nature Methods 2022](https://www.nature.com/articles/s41592-021-01346-6) 
 
@@ -439,11 +442,15 @@ Models the transition between control population p_c and perturbation population
 
     - Presents ikarus, an ML framework to identify and annotate tumor cells from normal cells using single-cell data. 
     - Method:
-        - Identifies a marker (signature) gene set to identify the tumor cell signature. Based on DEGs and intersection among cancer-specific datasets. Total 162 genes significantly enriched in cancer cells across multiple datasets.
-        - Logistic regression classifier for discriminating tumor and normal cells. AUCell method is used for cell scoring using marker genes.
+        - Identifies a marker (signature) gene set to identify the tumor cell signature. 
+            - Based on DEGs and intersection among cancer-specific datasets. 
+            - Total 162 genes significantly enriched in cancer cells across multiple datasets.
+        - Logistic regression classifier for discriminating tumor and normal cells. 
+            - AUCell method is used for cell scoring using marker genes.
         - Network based propagation of cell labels using cell-cell network.
         - CNV scores are also used for improved classifcation of tumor cells.
-        - Additionally, bulk RNA-seq specific marker genes were also tested and their gene signature scores were computed using ssGSEA. Published gene sets from mSigDB, CancerSEA were also used for validation.
+        - Additionally, bulk RNA-seq specific marker genes were also tested and their gene signature scores were computed using ssGSEA. 
+            - Published gene sets from mSigDB, CancerSEA were also used for validation.
 
 [Epigenomic dissection of Alzheimer’s disease pinpoints causal variants and reveals epigenome erosion - Xiong et al. Cell 2023](https://www.cell.com/cell/pdf/S0092-8674(23)00974-1.pdf) 
 
@@ -480,8 +487,13 @@ Models the transition between control population p_c and perturbation population
 [Pathformer: a biological pathway informed Transformer integrating multi-omics data for disease diagnosis and prognosis - Liu et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.23.541554v6.full) 
     
     - Pathformer method. 
-    - Integrates multi-modal single cell data to first produce gene level embedding (multi-modality representative vector) which are then transfomed to pathway embeddings.
-    - These embeddings are then fed into a transformer framework with pathway crosstalk serving as attention, to interpret the disease outcome. 
-    - Also uses Shap values to identify the genes relevant to pathways and disease. 
-    Applied to Cancer and liquid biopsy for early cancer prediction.
+    - *Input*: For cancer tissue datasets from Cancer Genome Atlas (TCGA) includes gene-level RNA expression, fragment-level DNA methylation, and both fragment-level and gene-level DNA CNV. These are all concatenated as gene level embedding features.
+        - Also inputs are the pathways from different databases, which are used for validation.
+    - *Output*: Integrated multi-modal single cell gene level embeddings (multi-modality representative vector) which are then transfomed to pathway embeddings.
+        - These embeddings are then fed into a transformer framework with pathway crosstalk serving as attention, to interpret the disease outcome. 
+        - Applied to Cancer and liquid biopsy for early cancer prediction.
+    - Method:
+        - Employs a sparse neural network architecture to deal with multimodal vectors of high dimension.
+        - Also uses Shap values to identify the genes relevant to pathways and disease. 
+        - Benchmarks with 18 other integration methods in various classification tasks using mutiple cancer tissue datasets from TCGA.
 
