@@ -14,6 +14,27 @@ PsychENCODE cohort:  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4675669/
 
 Psychiatric Genome Consortium (PGC)
 
+
+## Genetic variants - consortiums
+
+deCODE Genetics
+
+the Estonian Biobank
+
+Biobank Japan
+
+China Kadoori Biobank
+
+FinnGen
+
+Lifelines in the Netherlands
+
+The Million Veteran Program in the USA
+
+All of US research program in USA
+
+
+
 ## Browsers / databases
 
 VISTA enhancer browser https://enhancer.lbl.gov
