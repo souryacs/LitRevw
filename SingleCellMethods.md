@@ -203,6 +203,7 @@ Models the transition between control population p_c and perturbation population
 
 [scBERT - scBERT as a large-scale pre-trained deep language model for cell type annotation of single-cell RNA-seq data - Fan Yang et al. Nature Machine Intelligence 2022](https://www.nature.com/articles/s42256-022-00534-z) 
 
+    - Objective: scRNA-seq representation by gene embeddings, and annotation of cells from reference cell labels.
     - Applies BERT (a transformer model with bidirectional encoder architecture, pre-trained for NLP). 
         - together with performer (a matrix decomposition version of transformer model
         - Classic transformer model has a limited input sequence length (usually max 512)
