@@ -190,13 +190,26 @@ Models the transition between control population p_c and perturbation population
 
 [Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) 
 
-    - CellTypise method. Cell annotation using SGD + logistic regression. 
+    - CellTypist method. Cell annotation using SGD + logistic regression. 
     - Applied on immune cell types. 
     - Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
 
-[Semisupervised adversarial neural networks for single-cell classification - scNym - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) Cell annotation using domain adversarial neural network. Uses both training data (with labels) and target data (to learn the embeddings). Uses a mix-match scheme to permute the input data and labels and the domain adversarial network predicts the domain of origin (training/test data). Classifier is updated by the inverse of adversarial gradients.
+[Semisupervised adversarial neural networks for single-cell classification - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) 
 
-[scBERT - scBERT as a large-scale pre-trained deep language model for cell type annotation of single-cell RNA-seq data - Fan Yang et al. Nature Machine Intelligence 2022](https://www.nature.com/articles/s42256-022-00534-z) Applies BERT (a transformer model with bidirectional encoder architecture, pre-trained for NLP) together with performer (a matrix decomposition version of transformer model to capture high receptive fields with lower number of feature dimensions) to annotate scRNA-seq cells. scRNA-seq annotation is benchmarked with classic methods like Seurat and ML methods like scNym.
+    - scNym method. Cell annotation using domain adversarial neural network. 
+    - Uses both training data (with labels) and target data (to learn the embeddings). 
+    - Uses a mix-match scheme to permute the input data and labels and the domain adversarial network predicts the domain of origin (training/test data). 
+    - Classifier is updated by the inverse of adversarial gradients.
+
+[scBERT - scBERT as a large-scale pre-trained deep language model for cell type annotation of single-cell RNA-seq data - Fan Yang et al. Nature Machine Intelligence 2022](https://www.nature.com/articles/s42256-022-00534-z) 
+
+    - Applies BERT (a transformer model with bidirectional encoder architecture, pre-trained for NLP). 
+        - together with performer (a matrix decomposition version of transformer model
+        - Classic transformer model has a limited input sequence length (usually max 512)
+        - Performer uses full scale gene-level interpretation
+        - to capture high receptive fields with lower number of feature dimensions) to annotate scRNA-seq cells. 
+    - scRNA-seq annotation is benchmarked with classic methods like Seurat and ML methods like scNym.
+    - Instead of positional embeddings, use gene2vec for gene embeddings.
 
 [scPoli - Population-level integration of single-cell datasets enables multi-scale analysis across samples - Donno et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.28.517803v1) Multiple scRNA-seq data integration using generative AI, specifically a modification of CVAE method. It integrates multiple samples and simultaneously annotates the cells, similar to Seurat and scANVI. Implements this framework inside scArches. Performs both reference building and reference mapping. Unlike scArches, the architectural surgery (transfer learning) is performed by first freezing the weights of the trained model and then include the new set of embeddings to accomodate in the query data conditions.
 
