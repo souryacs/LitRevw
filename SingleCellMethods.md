@@ -313,7 +313,7 @@ Models the transition between control population p_c and perturbation population
 
 [Identifying disease-critical cell types and cellular processes by integrating single-cell RNA-sequencing and human genetics - scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) 
 
-    - Objective: Identifying marker cell types for different diseases.
+    - Objective: Identifying marker cell types for different diseases. scLinker method.
     - Integrates GWAS summary statistics, epigenomics, and scRNA-seq data from multiple tissue types, diseases, individuals, and cells. 
     - The authors transform gene programs to SNP annotations using: 
         - tissue-specific enhancer–gene links, 
@@ -323,6 +323,12 @@ Models the transition between control population p_c and perturbation population
     - Similar work was done for disease-relevant gene programs. 
         - NMF was used to define cellular process gene programs. 
 
+[Leveraging single-cell ATAC-seq and RNA-seq to identify disease-critical fetal and adult brain cell types - Kim et al. Nature Communications 2024](https://pubmed.ncbi.nlm.nih.gov/38233398/)
+
+    - Objective: Identifying GWAS SNPs and their brain-cell-specific enrichment scores for different neurological diseases.
+    - Uses scRNA-seq and scLinker pipeline to obtain per-SNP enrichment in terms of their S2G links with the cell-specific enhancers.
+    - Uses scATAC-seq peaks (MACS2) to obtain per-SNP enrichment  by TF binding statistics.
+    
 [Polygenic enrichment distinguishes disease associations of individual cells in single-cell RNA-seq data - scDRS - Zhang et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36050550/) 
 
     - scDRS method. 
