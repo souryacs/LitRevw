@@ -345,14 +345,14 @@ Models the transition between control population p_c and perturbation population
         - using a multivariate normal (MVN) distribution-based regression strategy. 
     - Shows PoPS and the closest gene individually outperform other gene prioritization methods.
 
-[Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - NumBat - Gao et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
+[Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - NumBat - Gao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
     
-    - Haplotype aware CNV inference from scRNA-seq data. 
+    - Haplotype aware CNV inference from scRNA-seq data.
     - CNVs are inferred both from expression 
         - (expecting AMP and DEL to be associated with up/downregulation - FP for expression changes unrelated to CNV) 
     - and allele-specific changes
         - (deviations of BAF - less affected by sample-specific variation). 
-    - This method uses haplotype phasing prior to detecting CNVs.
+    - This method uses haplotype phasing (population phasing) and an iterative algorithm to detect the subclonal (group of single cells with similar) CNV profiles.
 
 [Mapping interindividual dynamics of innate immune response at single-cell resolution - Kumasaka et al. Nat Genet 2023](https://pubmed.ncbi.nlm.nih.gov/37308670/) 
 
