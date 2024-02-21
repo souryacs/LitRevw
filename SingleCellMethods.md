@@ -188,7 +188,11 @@ Models the transition between control population p_c and perturbation population
 
 ### Cell annotation
 
-[Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) Cell annotation using SGD + logistic regression. Applied on immune cell types. Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
+[Cross-tissue immune cell analysis reveals tissue-specific features in humans - CellTypist - Conde et al. Science 2022](https://pubmed.ncbi.nlm.nih.gov/35549406/) 
+
+    - CellTypise method. Cell annotation using SGD + logistic regression. 
+    - Applied on immune cell types. 
+    - Supports both low and high-resolution cell annotation, but may require manual curation of datasets.
 
 [Semisupervised adversarial neural networks for single-cell classification - scNym - Kimmel et al. Genome Research 2021](https://pubmed.ncbi.nlm.nih.gov/33627475/) Cell annotation using domain adversarial neural network. Uses both training data (with labels) and target data (to learn the embeddings). Uses a mix-match scheme to permute the input data and labels and the domain adversarial network predicts the domain of origin (training/test data). Classifier is updated by the inverse of adversarial gradients.
 
@@ -198,7 +202,13 @@ Models the transition between control population p_c and perturbation population
 
 [Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models - scANVI - Xu et al. Molecular System Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33491336/) Cell annotation on top of scVI framework. Uses harmonization (similar to batch effect correction, but extended to support datasets even from multiple technologies) and automatic cell annotation. Uses probabilistic cell annotation (generative model) in 2 steps: 1) First annotates a subset of cells with high confidence, 2) Then annotates the remaining cells using the annotations of the previous set of cells.
 
-[Automatic cell-type harmonization and integration across Human Cell Atlas datasets - Xu et al. Cell 2023](https://pubmed.ncbi.nlm.nih.gov/38134877/) cellHint method. Integrates single cell data and annotation from multiple studies, resolving the cell type labels, using a guided label tree and by hiearchical tree of class labels. In the CellTypist method, the authors did it manually - here they put a automatic workflow.
+[Automatic cell-type harmonization and integration across Human Cell Atlas datasets - Xu et al. Cell 2023](https://pubmed.ncbi.nlm.nih.gov/38134877/) 
+
+    - cellHint method. 
+    - Integrates single cell (specifically scRNA-seq) data and annotation from multiple studies, resolving the cell type labels. 
+        - using a guided label tree and by hiearchical tree of class labels. 
+    - In the CellTypist method, the authors did it manually - here they put a automatic workflow.
+    - Predictive clustering tree (PCT) using F-test based pruning.
 
 ## Single Cell ATAC-seq
 
@@ -345,14 +355,17 @@ Models the transition between control population p_c and perturbation population
         - using a multivariate normal (MVN) distribution-based regression strategy. 
     - Shows PoPS and the closest gene individually outperform other gene prioritization methods.
 
-[Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - NumBat - Gao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
+[Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - Gao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
     
-    - Haplotype aware CNV inference from scRNA-seq data.
+    - Numbat method. Haplotype aware CNV inference from scRNA-seq data.
     - CNVs are inferred both from expression 
         - (expecting AMP and DEL to be associated with up/downregulation - FP for expression changes unrelated to CNV) 
     - and allele-specific changes
         - (deviations of BAF - less affected by sample-specific variation). 
-    - This method uses haplotype phasing (population phasing) and an iterative algorithm to detect the subclonal (group of single cells with similar) CNV profiles.
+    - Naive HMM: Asignment of alleles to either haplotypes depends only on AF.    
+    - Haplotype-aware HMM modeling: 
+        - Combines population phasing and observed allele data to reconstruct haplotypes a posteriori. 
+        - Iterative algorithm to detect the subclonal (group of single cells with similar) CNV pseudobulk profiles.
 
 [Mapping interindividual dynamics of innate immune response at single-cell resolution - Kumasaka et al. Nat Genet 2023](https://pubmed.ncbi.nlm.nih.gov/37308670/) 
 
