@@ -555,3 +555,15 @@ Models the transition between control population p_c and perturbation population
         - Also uses Shap values to identify the genes relevant to pathways and disease. 
         - Benchmarks with 18 other integration methods in various classification tasks using mutiple cancer tissue datasets from TCGA.
 
+## Deep learning methods
+
+[scGPT: toward building a foundation model for single-cell multi-omics using generative AI](https://www.nature.com/articles/s41592-024-02201-0) 
+
+    - scGPT method. GPT model for single cell embedding and downstream applications (clustering, batch correction, cell annotation).
+    - *Input*: Single cell (33M cells)
+    - *Methodology*:
+        - Gene representation by tokens (gene name vocabulary + special characters)
+        - Gene expression values are applied *value binning* technique to convert into relative values. Usually M HVGs are used for embedding.
+            - Sequence of M embedding vectors in transformer architecture (context information) captures relationship between genes.
+        - 
+
