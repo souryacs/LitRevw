@@ -282,7 +282,11 @@ Models the transition between control population p_c and perturbation population
         - 3) Integration with scRNA-seq data is done by the FindTransferAnchors function in Seurat. 
         - 4) Computes gene activity score and performs peak-to-gene linkage (correlation between gene expression and chromatin accessibility).
 
-[chromVaR inferring transcription factor associated accessibility from single cell epigenomic data - Schep et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28825706/) Using scATAC-seq data, measures the gain/loss of chromatin accessibility within peaks sharing the same motif or annotation. Models the expected number of fragments per peak containing a particular motif and for a particular cell. Thus, variation of chromatin accessibility across cells between highly similar k-mers can be computed.
+[chromVaR inferring transcription factor associated accessibility from single cell epigenomic data - Schep et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28825706/) 
+
+    - Using scATAC-seq data, measures the gain/loss of chromatin accessibility within peaks sharing the same TF binding motif or annotation. 
+    - Models the expected number of fragments per peak containing a particular motif and for a particular cell. 
+    - Thus, variation of chromatin accessibility across cells between highly similar k-mers can be computed.
 
 [Cicero Predicts cis-Regulatory DNA Interactions from Single-Cell Chromatin Accessibility Data - Pliner et al. Mol Cell 2018](https://pubmed.ncbi.nlm.nih.gov/30078726/) Concept of co-accessibility among peaks.
 
