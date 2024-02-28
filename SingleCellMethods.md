@@ -158,9 +158,6 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [SIMBA: single-cell embedding along with features - Chen et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37248389/) SIMBA method. Multi-omic single cell data embedding using graph. However, graph nodes can be both genes and cells, and their mutual relation is determined by: 1) Gene expression, 2) TF motif, 3) k-mer, 4) ATAC peaks etc. The objective is to learn the embedding using all features, and then generate the marker features independent of clustering. Question: How these marker features are computed before embedding and clustering? Need to check in detail.
 
-[scGPT: Towards Building a Foundation Model for Single-Cell Multi-omics Using Generative AI - Cui et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.04.30.538439v2) scGPT: Generative pre-trained transformer model on many single cell datasets. The pre-trained model is then fne-tuned foe specific tasks: 1) Clustering, 2) Batch correction, 3) GRN inference, 4) Perturbation response modeling.
-
-
 ## Single Cell RNA-seq
 
 ### Clustering
@@ -169,15 +166,17 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 ### Integration / modeling
 
-[Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity - LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
+[Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity - LIGER - Welch et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178122/) 
 
-[Jointly defining cell types from multiple single-cell datasets using LIGER - Liu et al. Nat Protocol 2020](https://pubmed.ncbi.nlm.nih.gov/33046898/) LIGER paper - running protocol.
+    - Performs integrative nonnegative matrix factorization (INMF) for single-cell RNA-seq data integration.
+
+[Jointly defining cell types from multiple single-cell datasets using LIGER - Liu et al. Nat Protocol 2020](https://pubmed.ncbi.nlm.nih.gov/33046898/) 
+
+    - LIGER paper - running protocol.
 
 [Identifying temporal and spatial patterns of variation from multimodal data using MEFISTO - Velten et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35027765/) Uses factor analysis and extends the method MOFA to account for spatiotemporal variation of scRNA-seq data.
 
 [Deep generative modeling for single-cell transcriptomics - scVI - Lopez et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/30504886/) Models scRNA-seq observed counts by ZINB distribution, conditioned on the batch and additional Gaussian parameters, but uses NN to infer its parameters. Performs batch correction. 
-
-[scFormer: A Universal Representation Learning Approach for Single-Cell Data Using Transformers - Cui et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.11.20.517285v1) Transformer based modeling of scRNA-seq data, gene expression, optimizing cell and gene embeddings in unsupervised manner. Simultaneously model cell-level and gene-level information. Gene expression is applied a value binning approach after conventional normalization (to create gene tokens and solve scaling issues from different batches / experiments). External tokens are used to store meta information. Complete gene representations are used to create cell representation.
 
 [Decomposing Cell Identity for Transfer Learning across Cellular Measurements, Platforms, Tissues, and Species - scCoGAPS method - Stein O Brien et al. Cell System 2019](https://pubmed.ncbi.nlm.nih.gov/31121116/) Extension of NMF (which requires nonnegative entries in decomposed matrices) to introduce Bayesian NMF - the decomposed matrix elements are either 0 or follow gamma distributions with normal prior, and a global poisson prior. Extends their previously published COGAPS method. The gamma distribution is represented as a sum of exponentials for efficient Gibbs sampling. Suited for sparse scRNA-seq datasets. Also implements ProjectR projection, a transfer learning framework to project data in to latent spaces and transfer annotations.
 
@@ -591,7 +590,8 @@ Models the transition between control population p_c and perturbation population
     - *Input*: Single cell (33M cells)
     - *Methodology*:
         - Gene representation by tokens (gene name vocabulary + special characters)
-        - Gene expression values are applied *value binning* technique to convert into relative values. Usually M HVGs are used for embedding.
+        - Gene expression values are applied *value binning* technique (after normalization) to convert into relative values. Usually M HVGs are used for embedding.
+            - (to create gene tokens and solve scaling issues from different batches / experiments)
             - Sequence of M embedding vectors in transformer architecture (context information) captures relationship between genes.
-        - 
+        - External tokens are used to store meta information.
 
