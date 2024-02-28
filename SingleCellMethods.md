@@ -591,15 +591,4 @@ Models the transition between control population p_c and perturbation population
 
 ## Deep learning methods
 
-[scGPT: toward building a foundation model for single-cell multi-omics using generative AI - Cao et al. Nature Methods 2024](https://www.nature.com/articles/s41592-024-02201-0) 
-
-    - scGPT method. GPT model for single cell embedding and downstream applications 
-        - (fine tuned for clustering, batch correction, cell annotation, GRN inference, Perturbation response modeling).
-    - *Input*: Single cell (33M cells)
-    - *Methodology*:
-        - Gene representation by tokens (gene name vocabulary + special characters)
-        - Gene expression values are applied *value binning* technique (after normalization) to convert into relative values. Usually M HVGs are used for embedding.
-            - (to create gene tokens and solve scaling issues from different batches / experiments)
-            - Sequence of M embedding vectors in transformer architecture (context information) captures relationship between genes.
-        - External tokens are used to store meta information.
 
