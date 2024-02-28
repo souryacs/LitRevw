@@ -180,9 +180,17 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [Decomposing Cell Identity for Transfer Learning across Cellular Measurements, Platforms, Tissues, and Species - scCoGAPS method - Stein O Brien et al. Cell System 2019](https://pubmed.ncbi.nlm.nih.gov/31121116/) Extension of NMF (which requires nonnegative entries in decomposed matrices) to introduce Bayesian NMF - the decomposed matrix elements are either 0 or follow gamma distributions with normal prior, and a global poisson prior. Extends their previously published COGAPS method. The gamma distribution is represented as a sum of exponentials for efficient Gibbs sampling. Suited for sparse scRNA-seq datasets. Also implements ProjectR projection, a transfer learning framework to project data in to latent spaces and transfer annotations.
 
-[xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data - Gong et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534055v1) Efficient representation of scRNA-seq large scale training data and gene expression matrix by masking, storing only nonzero entries into separate gene expression and gene level embeddings. Also proposes assymetric encoder decoder architecture based transformer model to represent scRNA-seq data, and compares with the method [scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data - Fang et al. Nature Machine Intelligence](https://www.nature.com/articles/s42256-022-00534-z).
+[xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data - Gong et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534055v1) Efficient representation of scRNA-seq large scale training data and gene expression matrix by masking, storing only nonzero entries into separate gene expression and gene level embeddings. Also proposes assymetric encoder decoder architecture based transformer model to represent scRNA-seq data, and compares with the method *scBERT*.
 
-[Biologically informed deep learning to query gene programs in single-cell atlases - Lotfollahi et al. Nature Cell Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36732632/) expiMap method. Biologically interpretable DL method to find the gene programs, using reference single cell atlases. 1. From reference single cell atlase with gene expression and biological conditions, constructs interpretable DL framework to find the gene programs. 2. Then identifies the gene programs responsible / differential between conditions. 3. Constructing gene programs for a collection of data is performed by fine-tuning and architectural surgery, similar to the scArches method.
+[Biologically informed deep learning to query gene programs in single-cell atlases - Lotfollahi et al. Nature Cell Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36732632/) 
+
+    - Explainable Programmable Mapper (expiMap) method. Biologically interpretable DL method for single cell reference mapping
+        - (mapping query dataset to a set of reference single cell atlas)
+    - Identifies gene programs (GP) to contextualize the query data and better integration with reference data. 
+        - These GPs are responsible / differential between conditions. 
+    - Single cell atlases (with gene expression and biological conditions). 
+    
+    - Constructing gene programs for a collection of data is performed by fine-tuning and architectural surgery, similar to the scArches method.
 
 ### Normalization / Batch correction
 
