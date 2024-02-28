@@ -2,6 +2,8 @@
 
 [Single cell transformer papers - Theislab](https://github.com/theislab/single-cell-transformer-papers)
 
+[Interpretable ML Book](https://christophm.github.io/interpretable-ml-book/)
+
 ## Variant Calling:
 
 [A universal SNP and small-indel variant caller using deep neural networks - DeepVariant - Poplin et al. Nat Biotech 2018](https://www.nature.com/articles/nbt.4235): Uses samtools read pileups + known genotype calls for training. Uses CNN + Stochastic gradient descent model.
