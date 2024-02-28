@@ -579,16 +579,17 @@ Models the transition between control population p_c and perturbation population
 [Pathformer: a biological pathway informed Transformer integrating multi-omics data for disease diagnosis and prognosis - Liu et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.23.541554v6.full) 
     
     - Pathformer method. 
-    - *Input*: For cancer tissue datasets from Cancer Genome Atlas (TCGA) includes gene-level RNA expression, fragment-level DNA methylation, and both fragment-level and gene-level DNA CNV. These are all concatenated as gene level embedding features.
+    - *Input*: Cancer tissue datasets from Cancer Genome Atlas (TCGA) 
+        - includes gene-level RNA expression, fragment-level DNA methylation, and both fragment-level and gene-level DNA CNV. 
+        - These are all concatenated as gene level embedding features.
         - Also inputs are the pathways from different databases, which are used for validation.
     - *Output*: Integrated multi-modal single cell gene level embeddings (multi-modality representative vector) which are then transfomed to pathway embeddings.
         - These embeddings are then fed into a transformer framework with pathway crosstalk serving as attention, to interpret the disease outcome. 
         - Applied to Cancer and liquid biopsy for early cancer prediction.
     - Method:
         - Employs a sparse neural network architecture to deal with multimodal vectors of high dimension.
-        - Also uses Shap values to identify the genes relevant to pathways and disease. 
+        - Also uses SHAP values to identify the genes relevant to pathways and disease. 
         - Benchmarks with 18 other integration methods in various classification tasks using mutiple cancer tissue datasets from TCGA.
 
-## Deep learning methods
 
 
