@@ -182,19 +182,14 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 [xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data - Gong et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534055v1) Efficient representation of scRNA-seq large scale training data and gene expression matrix by masking, storing only nonzero entries into separate gene expression and gene level embeddings. Also proposes assymetric encoder decoder architecture based transformer model to represent scRNA-seq data, and compares with the method *scBERT*.
 
-[Biologically informed deep learning to query gene programs in single-cell atlases - Lotfollahi et al. Nature Cell Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36732632/) 
-
-    - Explainable Programmable Mapper (expiMap) method. Biologically interpretable DL method for single cell reference mapping
-        - (mapping query dataset to a set of reference single cell atlas)
-    - Identifies gene programs (GP) to contextualize the query data and better integration with reference data. 
-        - These GPs are responsible / differential between conditions. 
-    - Single cell atlases (with gene expression and biological conditions). 
-    
-    - Constructing gene programs for a collection of data is performed by fine-tuning and architectural surgery, similar to the scArches method.
-
 ### Normalization / Batch correction
 
-[A general and flexible method for signal extraction from single-cell RNA-seq data - Risso et al. Nat Comm 2018](https://pubmed.ncbi.nlm.nih.gov/29348443/) ZINB-WAVE method for scRNA-seq normalization.
+[A general and flexible method for signal extraction from single-cell RNA-seq data - Risso et al. Nat Comm 2018](https://pubmed.ncbi.nlm.nih.gov/29348443/) 
+
+    - ZINB-WAVE method for scRNA-seq normalization.
+    - ZINB model accounting for cell and gene level covariates. 
+    - Can replace the PCA step in Seurat, particularly for noisy or low sequencing depth samples.
+    - Other technical batch effects or artifacts may not be removed.
 
 [Fast, sensitive and accurate integration of single-cell data with Harmony - Korsunski et al. Nat Meth 2019](https://pubmed.ncbi.nlm.nih.gov/31740819/) 
 
@@ -291,6 +286,8 @@ Models the transition between control population p_c and perturbation population
 [Cicero Predicts cis-Regulatory DNA Interactions from Single-Cell Chromatin Accessibility Data - Pliner et al. Mol Cell 2018](https://pubmed.ncbi.nlm.nih.gov/30078726/) Concept of co-accessibility among peaks.
 
 [EpiScanpy- integrated single-cell epigenomic analysis - Danese et al. Nat Comm 2021](https://pubmed.ncbi.nlm.nih.gov/34471111/) Episcanpy processes both scATAC-seq and sc DNA methylation data, and performs cell-level clustering. Based on the Scanpy framework.
+
+[SnapATAC2 - A fast, scalable and versatile tool for analysis of single-cell omics data - Zhang et al. Nature Methods 2024](https://www.nature.com/articles/s41592-023-02139-9) SNAPATAC2 method. Uses an optimized Graph Laplacian Eigenvector computation for dimension reduction without storing the entire cell content (or cell level matrix) but rather storing the eigenvector level matrix.
 
 ## Spatial Transcriptomics
 
