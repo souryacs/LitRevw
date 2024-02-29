@@ -107,6 +107,17 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
       - Geneformer's cell embeddings and clustering is also shown to remove batch effects, and performs cell type annotations.
       - Using the network architecture and in-silico treatment, we can reveal candidate therapeutic targets.
 
+[Biologically informed deep learning to query gene programs in single-cell atlases - Lotfollahi et al. Nature Cell Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36732632/) 
+
+    - Explainable Programmable Mapper (expiMap) method. Biologically interpretable DL method for single cell reference mapping
+        - (mapping query dataset to a set of reference single cell atlas)
+    - Identifies gene programs (GP) to contextualize the query data and better integration with reference data. 
+        - These GPs are responsible / differential between conditions. 
+    - Single cell atlases (with gene expression and biological conditions). 
+    
+    - Constructing gene programs for a collection of data is performed by fine-tuning and architectural surgery, similar to the scArches method.
+
+
 ## Single cell embedding + downstream analysis
 
 [scGPT: toward building a foundation model for single-cell multi-omics using generative AI - Cao et al. Nature Methods 2024](https://www.nature.com/articles/s41592-024-02201-0) 
