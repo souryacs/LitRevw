@@ -89,23 +89,23 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [Transfer learning enables predictions in network biology - Theodoris et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/37258680/) 
 
-  - Presents Geneformer - a transfer learning based method for gene regulatory network inference and predicting network dynamics.
-  - *Input*: The training is performed on a huge single cell transcriptomic dataset collection Genecorpus-30M.
-  - *Output*: Pre-trained model predicting dosage-sensitive disease genes and their downstream target genes through a context-aware in-silico deletion approach.
-  - *Method:*    
-    - The gene expression is transformed into a ranking based measure (rank-value encodings)
-      - Ranking genes by (expression within that cell / expression across entire Genecorpus-30M)
-      - to prioritize the cell-specific expressed genes and deprioritize the ubiquitous expressed housekeeping genes.
-    - The rank value encodings were tokenized and stored by HuggingFace transformer library.
+    - Presents Geneformer - a transfer learning based method for gene regulatory network inference and predicting network dynamics.
+    - *Input*: The training is performed on a huge single cell transcriptomic dataset collection Genecorpus-30M.
+    - *Output*: Pre-trained model predicting dosage-sensitive disease genes and their downstream target genes through a context-aware in-silico deletion approach.
+    - *Method:*    
+        - The gene expression is transformed into a ranking based measure (rank-value encodings)
+        - Ranking genes by (expression within that cell / expression across entire Genecorpus-30M)
+        - to prioritize the cell-specific expressed genes and deprioritize the ubiquitous expressed housekeeping genes.
+        - The rank value encodings were tokenized and stored by HuggingFace transformer library.
     - Training: masked learning by masking 15% genes
-      - Predicting which gene should be in each masked position using the context of the remaining unmasked genes.
+        - Predicting which gene should be in each masked position using the context of the remaining unmasked genes.
     - Gene embedding: 256 dimensional space + context awareness. Cell embedding: embedding of genes expressed in that cell.
     - *Applications*:
-      - Fine-tuning this model on a specific disease and related few datasets accurately predicts the disease-specific target genes / dosage sensitive genes.
-      - Predicting bivalent promoters vs unmethylated promoters.
-      - Fine-tuning to distinguish long vs short distance TFs regulating gene expression.
-      - Geneformer's cell embeddings and clustering is also shown to remove batch effects, and performs cell type annotations.
-      - Using the network architecture and in-silico treatment, we can reveal candidate therapeutic targets.
+        - Fine-tuning this model on a specific disease and related few datasets accurately predicts the disease-specific target genes / dosage sensitive genes.
+        - Predicting bivalent promoters vs unmethylated promoters.
+        - Fine-tuning to distinguish long vs short distance TFs regulating gene expression.
+        - Geneformer's cell embeddings and clustering is also shown to remove batch effects, and performs cell type annotations.
+        - Using the network architecture and in-silico treatment, we can reveal candidate therapeutic targets.
 
 [Biologically informed deep learning to query gene programs in single-cell atlases - Lotfollahi et al. Nature Cell Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36732632/) 
 
