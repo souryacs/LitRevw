@@ -40,6 +40,8 @@ Human Gene Mutation Database (HGMD) https://www.hgmd.cf.ac.uk/
 
 GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database 
 
+Gene Transcription Regulation Database (GTRD) 
+
 ## Disease related
 
 ### Cancer
