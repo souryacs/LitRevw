@@ -45,6 +45,8 @@ VISTA enhancer browser https://enhancer.lbl.gov
 
 Cancer: TCGA
 
+Cancer: COSMIC
+
 Aging: Religious Orders Study and Rush Memory and Aging Project (ROSMAP) study
 
 ChEMBL database (https://www.ebi.ac.uk/chembl/) - drug target
