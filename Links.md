@@ -12,6 +12,8 @@ Human Pangenome reference consortium (HPRC)
 
 ## Genetic variants - consortiums
 
+gnomAD database - contains germline variants
+
 deCODE Genetics
 
 the Estonian Biobank
