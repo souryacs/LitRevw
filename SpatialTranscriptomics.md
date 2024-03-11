@@ -35,11 +35,28 @@
 
 [DOT- A flexible multi-objective optimization framework for transferring features across single-cell and spatial omics - Rahimi et al. arXiv 2023](https://arxiv.org/abs/2301.01682) DOT method. Integration between scRNA-seq and ST data. Optimal transport based solution to annotate the ST clusters (and spots) with the gene expression values from scRNA-seq data. Proposes multi-objective optimization, including mattching gene expression, matching cell annotation, matching ST neighborhood spot composition, etc.
 
-## Clustering using gene expression and spatial location
+## Spatial Clustering using gene expression and spatial location
 
-[Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data - HMRF - Zhu et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/30371680/) First paper using spatial information for ST data clustering. After HVG selection and feature reduction, uses HMRF for spatial data. KNN is used for initial clustering using gene expression. Then spatial prior for HMRF is initialized by Potts model. The multinomial distribution is employed to decide the membership of individual cells/spots in a cluster, and the cluster refinement is done by the EM algorithm. Implemented in the Giotto toolbox framework [Dries et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33685491/).
+[Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data - HMRF - Zhu et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/30371680/) 
 
-[Spatial transcriptomics at subspot resolution with BayesSpace - Zhao et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/34083791/) Implements BayesSpace to model ST data. Minor adjustments of HMRF by implementing MCMC instead of EM algorithm in the spatial refinement. Also, employs a fixed precision matrix (similar across individual clusters for less parameter estimation). ** To Do: Understand the generative model, compare with scVI, and also understand the metagene identification and compare with the trendsceek and other marker gene identifiers.
+    - First paper using spatial information for ST data clustering. 
+    - After HVG selection and feature reduction, uses HMRF for spatial data. 
+        - Markov property + Gibbs sampling 
+    - KNN is used for initial clustering using gene expression. 
+    - Then spatial prior for HMRF is initialized by Potts model. 
+    - The multinomial distribution is employed to decide the membership of individual cells/spots in a cluster 
+        - cluster refinement is done by the EM algorithm. 
+    - Implemented in the Giotto toolbox framework [Dries et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33685491/).
+
+[Spatial transcriptomics at subspot resolution with BayesSpace - Zhao et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/34083791/) 
+
+    - Implements BayesSpace to model ST data. 
+    - Minor adjustments of HMRF by implementing MCMC instead of EM algorithm in the spatial refinement. 
+    - Also, employs a fixed precision matrix (similar across individual clusters for less parameter estimation).     
+    - Employs t-distributed error model to identify spatial clusters. Robust against outliers.
+    - Performs resolution enhancement by segmenting each spot into subspots (9 or 6 depending on the platform).
+        - Equal division of spots into subspots based on the diameter, without any quantitative model.
+        - Visium spots contain ~20 cells so subspots contain ~3 cells.
 
 ## Imaging based methods
 
