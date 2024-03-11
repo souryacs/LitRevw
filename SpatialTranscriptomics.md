@@ -41,8 +41,12 @@
         - *resolve* spatial patterns of chromatin accessibility at single-cell resolution by aligning multimodal data.
     - Methodology:
         - nonconvex optimization, by minimizing KL divergence between ST and scRNA-seq, and maximizing cosine similarity of gene expression.
+        - Also defines an entropy regularizer to minimize the entropy of the spatial distribution of each cell.
+        - As the number of cells in spatial data is much lower than scRNA-seq, uses a filter to use only the common cells between the two.
     - Output:
-        - probabilistic mapping, namely, a matrix denoting the probability of finding each cell from the sc/snRNA-seq data in each voxel of the spatial data.
+        - Probabilistic mapping, namely, a matrix M (of dimension *n_{cells} X n_{voxels}*) 
+            - denoting the probability of finding each cell from the sc/snRNA-seq data in each voxel of the spatial data.        
+            - M^{T}S (S = input scRNA-seq matrix): spatial gene expression predicted by M
 
 [Identification of spatial expression trends in single-cell gene expression data - Edsgard et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/29553578/) trendsceek method. Identifies genes whose expressions are significantly associated with spatial pattern, using marked point process based modeling. ** TO Do: These genes can be utilized in the above mentioned Tangram method to align the ST data with scRNA-seq datasets.
 
