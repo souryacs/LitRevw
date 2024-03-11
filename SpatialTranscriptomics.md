@@ -24,12 +24,25 @@
     - Baysor: MRF segmentation, using Bayesian Mixture models.
         - Uses either molecular positions, or auxiliary nuclear staining information.
 
-
-
-
 ## Alignment between ST and scRNA-seq (or multi-omic data like SHARE-seq)
 
-[Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram - Biancalani et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/34711971/) TANGRAM method for alignment between ST and scRNA-seq / snRNA-seq / multi-omic data, collected from the same origin, and at least having shared marker genes. Identifies the gene expression patterns and the spatial coordinates at cell resolution. Supports various protocols like MERFISH, STARmap, smFISH, Visium, and images. Objective function is to mimic the spatial correlation between each gene in the sc/snRNA-seq data and the spatial data. Cell density is compared by KL divergence, gene expression is assessed by cosine similarity. Assumes that cell segmentation is already done, using tools like ilastik or nucleAIzer. A few hundred marker genes are recommended for alignment.
+[Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram - Biancalani et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/34711971/) 
+
+    - Tangram method for alignment between ST and scRNA-seq / snRNA-seq / multi-omic data, collected from the same origin, and at least having shared marker genes. 
+    - Objective: to learn spatial gene expression patterns of the input scRNA-seq / snRNA-seq data, using the reference ST data atlas.
+        - Use sc/snRNA-seq data as puzzle pieces to align in space to match the shape of the spatial data.    
+    - Objective function: Mimic the spatial correlation between each gene in the sc/snRNA-seq data and the spatial data.
+    - Supports various protocols like MERFISH, STARmap, smFISH, Visium, and images. 
+    - Downstream analysis from the mapping function:
+        - *expand* from a measured subset of genes to genome-wide profiles 
+        - *correct* low-quality spatial measurements
+        - *map* the location of cells of different types
+        - *deconvolve* low-resolution measurements to single cells
+        - *resolve* spatial patterns of chromatin accessibility at single-cell resolution by aligning multimodal data.
+    - Methodology:
+        - nonconvex optimization, by minimizing KL divergence between ST and scRNA-seq, and maximizing cosine similarity of gene expression.
+    - Output:
+        - probabilistic mapping, namely, a matrix denoting the probability of finding each cell from the sc/snRNA-seq data in each voxel of the spatial data.
 
 [Identification of spatial expression trends in single-cell gene expression data - Edsgard et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/29553578/) trendsceek method. Identifies genes whose expressions are significantly associated with spatial pattern, using marked point process based modeling. ** TO Do: These genes can be utilized in the above mentioned Tangram method to align the ST data with scRNA-seq datasets.
 
@@ -47,16 +60,21 @@
     - The multinomial distribution is employed to decide the membership of individual cells/spots in a cluster 
         - cluster refinement is done by the EM algorithm. 
     - Implemented in the Giotto toolbox framework [Dries et al. Genome Biology 2021](https://pubmed.ncbi.nlm.nih.gov/33685491/).
+    - scRNA-seq clustering: Top n genes are selected. K means clustering (guide).
+    - Spatial information is modeled by HMRF approach -  refine the clusters and generate the spatial domain.
+        - For HMRF, spatial distance between the nodes is computed using weighted gene expression (based on selected top variable genes).
 
 [Spatial transcriptomics at subspot resolution with BayesSpace - Zhao et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/34083791/) 
 
     - Implements BayesSpace to model ST data. 
     - Minor adjustments of HMRF by implementing MCMC instead of EM algorithm in the spatial refinement. 
     - Also, employs a fixed precision matrix (similar across individual clusters for less parameter estimation).     
+    - Inferred expression values are actually at PC level. So XGBoost prediction model is employed to convert PC values into raw gene expression.
     - Employs t-distributed error model to identify spatial clusters. Robust against outliers.
     - Performs resolution enhancement by segmenting each spot into subspots (9 or 6 depending on the platform).
         - Equal division of spots into subspots based on the diameter, without any quantitative model.
         - Visium spots contain ~20 cells so subspots contain ~3 cells.
+    - DEGs are generated from the gene expression values obtained from enhanced resolution.
 
 ## Imaging based methods
 
