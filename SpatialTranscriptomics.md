@@ -6,6 +6,27 @@
 
 [Benchmarking spatial and single-cell transcriptomics integration methods for transcript distribution prediction and cell type deconvolution - Review paper on integration between ST and scRNA-seq - Li et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/35577954/): Considers performance metrics: Pearson correlation coefficients (PCC), structural similarity index (SSIM), RMSE, Jensen-Shannon divergence (JS), accuracy score (AS), robustness score (RS). 1) Tangram and gimVI outperformed the other integration methods on the basis of these metrics. 2) Considering sparse datasets, Tangram, gimVI, and SpaGE outperformed other integration methods in predicting the spatial distribution of transcripts for highly sparse datasets. 3) In predicting cell type composition of spots, Cell2location, SpatialDWLS, RCTD, and STRIDE outperformed the other integration methods. 4) In terms of computational efficiency, Tangram and Seurat are the top two most-efficient methods for processing cell-type deconvolution of spots.
 
+
+## Imaging based ST data - segmentation
+
+[Cell segmentation in imaging-based spatial transcriptomics](https://pubmed.ncbi.nlm.nih.gov/34650268/) 
+
+    - Baysor method (implemented in Julia). 
+    - Objective: Cell segmentation from imaging based ST data.
+        - Discusses the limitations of segmentation free approaches in imaging based ST datasets.
+    - Segmentation free approaches rely on the cell transcriptional profiles 
+        - Forms a neighborhood composition vector (NCV) using K spatially nearest neighbors, to define the patch like structure.
+        - However, NCVs near cell boundaries may represent mixture of cell types, similar to doublets.
+    - Segmentation / labeling approach:
+        - Determining spatial clustering - MRF priors
+        - Labels are considered as latent variables and inferred from observed data using EM algorithm.
+        - Label probability model: multinomial distribution of observed scRNA-seq cell specific transcriptional profiles.
+    - Baysor: MRF segmentation, using Bayesian Mixture models.
+        - Uses either molecular positions, or auxiliary nuclear staining information.
+
+
+
+
 ## Alignment between ST and scRNA-seq (or multi-omic data like SHARE-seq)
 
 [Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram - Biancalani et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/34711971/) TANGRAM method for alignment between ST and scRNA-seq / snRNA-seq / multi-omic data, collected from the same origin, and at least having shared marker genes. Identifies the gene expression patterns and the spatial coordinates at cell resolution. Supports various protocols like MERFISH, STARmap, smFISH, Visium, and images. Objective function is to mimic the spatial correlation between each gene in the sc/snRNA-seq data and the spatial data. Cell density is compared by KL divergence, gene expression is assessed by cosine similarity. Assumes that cell segmentation is already done, using tools like ilastik or nucleAIzer. A few hundred marker genes are recommended for alignment.
