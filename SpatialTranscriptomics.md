@@ -26,10 +26,20 @@
 
 ## Alignment between ST and scRNA-seq (or multi-omic data like SHARE-seq)
 
+[SpaGE- Spatial Gene Enhancement using scRNA-seq - Abdelaal et al. Nucleic Acids Research 2020](https://pubmed.ncbi.nlm.nih.gov/32955565/)
+
+    - SpaGE method.
+    - Input: scRNA-seq / snRNA-seq data (reference) + ST data (query) from the same region / cell type
+    - Output: predicting expression of the ST data specific unmeasured genes.
+    - Method:
+        - PRECISE is used to compute the principal vectors (PVs), using a combination of PCA and SVD of cosine similarity matrix.
+        - These PVs are used to align the scRNA-seq and ST datasets.
+        - Undetected transcripts are imputed by weighted NN, with only cells having positive cosine similarity with the current cell are considered.
+
 [Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram - Biancalani et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/34711971/) 
 
     - Tangram method for alignment between ST and scRNA-seq / snRNA-seq / multi-omic data, collected from the same origin, and at least having shared marker genes. 
-    - Objective: to learn spatial gene expression patterns of the input scRNA-seq / snRNA-seq data, using the reference ST data atlas.
+    - Objective: to learn map the cells of input scRNA-seq / snRNA-seq data to the ST data, using the reference ST data atlas.
         - Use sc/snRNA-seq data as puzzle pieces to align in space to match the shape of the spatial data.    
     - Objective function: Mimic the spatial correlation between each gene in the sc/snRNA-seq data and the spatial data.
     - Supports various protocols like MERFISH, STARmap, smFISH, Visium, and images. 
@@ -47,6 +57,7 @@
         - Probabilistic mapping, namely, a matrix M (of dimension *n_{cells} X n_{voxels}*) 
             - denoting the probability of finding each cell from the sc/snRNA-seq data in each voxel of the spatial data.        
             - M^{T}S (S = input scRNA-seq matrix): spatial gene expression predicted by M
+        - Using this mapping M, M^{T}A (where A = reference scRNA-seq annotations) is the annotation of the ST data.
 
 [Identification of spatial expression trends in single-cell gene expression data - Edsgard et al. Nat Meth 2018](https://pubmed.ncbi.nlm.nih.gov/29553578/) trendsceek method. Identifies genes whose expressions are significantly associated with spatial pattern, using marked point process based modeling. ** TO Do: These genes can be utilized in the above mentioned Tangram method to align the ST data with scRNA-seq datasets.
 
