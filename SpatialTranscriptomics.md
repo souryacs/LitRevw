@@ -26,6 +26,21 @@
 
 ## Alignment between ST and scRNA-seq (or multi-omic data like SHARE-seq)
 
+[Gene expression cartography - Nitzan et al. Nature 2019](https://pubmed.ncbi.nlm.nih.gov/31748748/) 
+
+    - novoSpaRc method - Optimal transport to map single cell transcriptomics to spatial locations.
+    - Objective: infer the spot locations of the single cells from scRNA-seq data.
+    - Use of reference ST atlas is optional.
+    - Assumption: cells are physically close to share similar transcription profiles.
+    - Weighted average of two measures for optimization modeling: 
+        - D1 = embedding between expression space (scRNA-seq) and physical space (ST) using a quadratic loss function. 
+        - D2 = discrepancy with respect to the reference atlas. 
+    - Also performs entropy regularization.
+
+[Inferring spatial and signaling relationships between cells from single cell transcriptomic data - Cang et al. Nature Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32350282/) 
+
+    - SpaOTsc method - to summarize in detail.
+
 [SpaGE- Spatial Gene Enhancement using scRNA-seq - Abdelaal et al. Nucleic Acids Research 2020](https://pubmed.ncbi.nlm.nih.gov/32955565/)
 
     - SpaGE method.
