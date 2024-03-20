@@ -6,6 +6,10 @@ ENCODE https://www.encodeproject.org/ and the annotations in SCREEN
 
 4DN https://www.4dnucleome.org/
 
+https://hugeamp.org/
+
+https://a2f.hugeamp.org/
+
 ## Pangenome
 
 Human Pangenome reference consortium (HPRC)
