@@ -134,16 +134,16 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [GenePT- A Simple But Effective Foundation Model for Genes and Cells Built From ChatGPT - Chen et al. bioRxiv 2024](https://www.biorxiv.org/content/10.1101/2023.10.16.562533v2)
 
-  - GenePT method for scRNA-seq embedding and downstream analysis.
-  - Uses genes from Geneformer and scGPT.
-  - ChatGPT text description of genes are used to create the gene embeddings (GPT-3.5).
-  - Also tested gene summary embeddings from BioLinkBert, and gene expression derived embeddings such as Gene2vec, Geneformer.
-  - Cell embeddings are created by weighted combination of gene embeddings
-    - Weights are derived by scRNA-seq normalized gene expression
-    - Normalized embeddings by unit L2 norm.
-    - Another approach is to perform sentence embedding, by creating a sequence of gene names,
-      - where the sequence is created by decreasing normalized expression levels, omitting genes with 0 counts.
-    - This sentence representation is then applied to GPT 3.5 to create gene embeddings. 
+    - GenePT method for scRNA-seq embedding and downstream analysis.
+    - Uses genes from Geneformer and scGPT.
+    - ChatGPT text description of genes are used to create the gene embeddings (GPT-3.5).
+    - Also tested gene summary embeddings from BioLinkBert, and gene expression derived embeddings such as Gene2vec, Geneformer.
+    - Cell embeddings are created by weighted combination of gene embeddings
+      - Weights are derived by scRNA-seq normalized gene expression
+      - Normalized embeddings by unit L2 norm.
+      - Another approach is to perform sentence embedding, by creating a sequence of gene names,
+        - where the sequence is created by decreasing normalized expression levels, omitting genes with 0 counts.
+      - This sentence representation is then applied to GPT 3.5 to create gene embeddings. 
 
 ## Drug target prediction / disease-specific analysis
 
