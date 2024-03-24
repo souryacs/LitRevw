@@ -1,5 +1,7 @@
 # Deep Learning in Computational Biology
 
+[LLM Models - review](https://github.com/RUCAIBox/LLMSurvey)
+
 [Single cell transformer papers - Theislab](https://github.com/theislab/single-cell-transformer-papers)
 
 [Interpretable ML Book](https://christophm.github.io/interpretable-ml-book/)
@@ -144,6 +146,15 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
       - Another approach is to perform sentence embedding, by creating a sequence of gene names,
         - where the sequence is created by decreasing normalized expression levels, omitting genes with 0 counts.
       - This sentence representation is then applied to GPT 3.5 to create gene embeddings. 
+
+[Cell2Sentence: Teaching Large Language Models the Language of Biology - Levine et al. bioRxiv 2024](https://www.biorxiv.org/content/10.1101/2023.09.11.557287v3) 
+
+    - Genes are ranked by log transformation of expression.
+    - Ranked list of gene names are the embeddings per cell, fed into LLM.
+    - The inference from LLM is also a ranked list of gene names.
+      - They are converted to expression values using a pre-trained regression between rank and gene expression.
+    - This list of gene expression is used for downstream analysis such as clustering.
+
 
 ## Drug target prediction / disease-specific analysis
 
