@@ -141,11 +141,19 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
     - ChatGPT text description of genes are used to create the gene embeddings (GPT-3.5).
     - Also tested gene summary embeddings from BioLinkBert, and gene expression derived embeddings such as Gene2vec, Geneformer.
     - Cell embeddings are created by weighted combination of gene embeddings
-      - Weights are derived by scRNA-seq normalized gene expression
-      - Normalized embeddings by unit L2 norm.
-      - Another approach is to perform sentence embedding, by creating a sequence of gene names,
-        - where the sequence is created by decreasing normalized expression levels, omitting genes with 0 counts.
-      - This sentence representation is then applied to GPT 3.5 to create gene embeddings. 
+      - Approach 1: GenePT-W (weighted): 
+        - Weights are derived by scRNA-seq normalized gene expression
+        - Normalized embeddings by unit L2 norm.
+      - Approach 2: GenePT-S (sentence): 
+        - Perform sentence embedding, by creating a sequence of gene names.
+        - Sequence is created by decreasing normalized expression levels, omitting genes with 0 counts. 
+        - This sentence representation is then applied to GPT 3.5 to create gene embeddings.
+    - Benchmarking gene embeddings: 
+      - predicting gene functionality and subtypes, predicting gene-gene and protein-protein interactions, from the derived gene embeddings.
+    - Benchmarking cell embeddings: 
+      - Clustering metrics - AMI, ARI, ASW - GenePT-W and scGPT perform better than GeneFormer
+
+
 
 [Cell2Sentence: Teaching Large Language Models the Language of Biology - Levine et al. bioRxiv 2024](https://www.biorxiv.org/content/10.1101/2023.09.11.557287v3) 
 
