@@ -1,5 +1,8 @@
 # Papers discussing / utilizing enhancer - promoter contacts / loops / interactions
 
+[GitHub page collecting Hi-C specific paper list](https://github.com/mdozmorov/HiC_tools)
+
+
 
 ## Loop Callers / Assays / multi-way chromatin contacts
 
