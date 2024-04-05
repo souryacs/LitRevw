@@ -61,24 +61,80 @@
     - Compares with fine-mapping approaches CAVIAR, AS-Meta, and RASQUAL 
         - (by converting the chi-sq statistics to z-scores and putting them as input to fine-map approaches).
 
-[ASEP: Gene-based detection of allele-specific expression across individuals in a population by RNA sequencing - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) uses a mixture model to estimate ASE across individuals, and also computes differential ASE between conditions among groups of individuals.
+[ASEP: Gene-based detection of allele-specific expression across individuals in a population by RNA sequencing - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) 
 
-[HiC-QTL: Common DNA sequence variation influences 3-dimensional conformation of the human genome - Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) First interaction-QTL paper. Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
+    - Uses a mixture model to estimate ASE across individuals 
+    - Also computes differential ASE between conditions among groups of individuals.
 
-[HTAL - Haplotype associated loops - Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. Although subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, the study did not identify specific regulatory variants or SNPs since these HTALs were too few and limited to imprinted and CNV regions.
+[HiC-QTL: Common DNA sequence variation influences 3-dimensional conformation of the human genome - Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) 
 
-[Detection of quantitative trait loci from RNA-seq data with or without genotypes using BaseQTL - Vigorito et al. Nat Computational Science 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) derives eQTL without genotype information. Specifically, they infer haplotypes from the reference genome panel, by estimating phase using the TreCASE method, and corrects reference mapping bias by applying modified WASP.
+    - First interaction-QTL paper. 
+    - Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. 
+    - Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
 
-[WASP allele-specific software for robust molecular quantitative trait locus discovery - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/) integrates ASE and total read count for QTL inference. Performs combined haplotype test (CHT) and eliminates reference bias by discarding mis-mapped reads. CHT models 2 components: allelic imbalance at phased heterozygous SNP, and the total read depth in the target region. Compares between 3 apporoaches: 1) mapping to genome using N masked SNP, 2) mapping to a personalized genome, 3) WASP, where the read mapping for both the alleles of a SNP is checked to overlap the same position.
+[HTAL - Haplotype associated loops - Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) 
 
-[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) QTL inference by NB distribution of total reads and beta-binomial distribution of ASE.
+    - Generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals 
+        - to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. 
+    - Subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, 
+    - Did not identify specific regulatory variants or SNPs since these HTALs were too few and limited to imprinted and CNV regions.
 
-[Shared and distinct molecular effects of regulatory genetic variants provide insight into mechanisms of distal enhancer-promoter communication - Helen Ray-Jones et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.08.04.551251v2) Uses CHi-C data to identify the contact QTL. Uses two different approaches: 1) Modifies BaseQTL by adapting it to both ATAC-seq and CHi-C contacts, but finds only 14 contact QTLs. 2) Adapts another Bayesian method GUESS, to identify 614 trimodal QTLs - associated with both gene expression, ATAC-seq, and CHi-C contacts. Overall, these combined 627 contact QTLs are then overlapped with REMAP ChIP-seq database for their enrichment with TF binding, tested with the Enformer method for their putative TF binding, and are also benchmarked with reference GWAS studies.  
+[Detection of quantitative trait loci from RNA-seq data with or without genotypes using BaseQTL - Vigorito et al. Nat Computational Science 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) 
 
-[Multi-omics analysis in primary T cells elucidates mechanisms behind disease-associated genetic loci - Chenfu Shi et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.07.19.23292550v1) Discusses all sorts of QTLs like eQTLs, caQTLs (ATAC-seq QTLs), insulation score QTLs, loopQTLs (QTLs affecting chromatin contacts), allelic imbalance of caQTLs and allelic imbalance of Hi-C reads (ASLoopQTLs). The results and examples utilize all of them, specifically caQTLs more than IQTLs. The ASLoopQTLs mostly show effects in a similar direction as the loopQTLs. Only 5% of IQTLs are ASLoopQTLs, suggesting the filtering was done during Hi-C mapping (a combination of BWA-MEM, SNP Phasing, and allele-specific HiCPro mapping). Mentioned that sequencing depth is a big issue for not getting a high number of ASLoopQTLs.
-Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. In fact, the asthma locus mentions the CTCF binding SNP rs12936231, which is a caQTL. The utility of loop QTL is not evident. Did not find a specific analysis focused on loopQTLs or any motif analysis.
+    - BaseQTL for ASE analysis, using Bayesian approach.
+    - Initial approach: Uses TRecASE with observed genotypes and fixed phasing. 
+        - Models RNA-seq counts using NB distribution.
+        - ASE is modeled by using haplotype specific reads (phasing)
+    - Extension: Phasing as latent variable.
+        - Infer haplotypes from the reference genome panel (known genotype model)
+    - Extension: unknown genotype model.
+    - Corrects reference mapping bias by applying modified WASP.
 
-[DeepWAS: Multivariate genotype-phenotype associations by directly integrating regulatory information using deep learning - Arloth et al. PLoS comp biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007616) Derives GWAS SNPs by using regulatory annotations a prior. Uses DEEPSEA to first define the regulatory annotation score and filter the SNPs with score exceeding a certain threshold. These filtered SNPs are then subjected to a LASSO regression to call the significant GWAS entries.
+[WASP allele-specific software for robust molecular quantitative trait locus discovery - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/)
+
+    - Integrates ASE and total read count for QTL inference. 
+    - Performs combined haplotype test (CHT) and eliminates reference bias by discarding mis-mapped reads. 
+    - CHT models 2 components: 
+        - allelic imbalance at phased heterozygous SNP, and the total read depth in the target region. 
+    - Compares between 3 apporoaches: 
+        - 1) mapping to genome using N masked SNP, 
+        - 2) mapping to a personalized genome, 
+        - 3) WASP, where the read mapping for both the alleles of a SNP is checked to overlap the same position.
+
+[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) 
+
+    - QTL inference by NB distribution of total reads and beta-binomial distribution of ASE.
+    - Applicable for 1D QTL (ATAC-QTL and ChIP-QTL).
+
+[Shared and distinct molecular effects of regulatory genetic variants provide insight into mechanisms of distal enhancer-promoter communication - Helen Ray-Jones et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.08.04.551251v2) 
+
+    - Uses CHi-C data to identify the contact QTL. 
+    - Uses two different approaches: 
+        - 1) Modifies BaseQTL by adapting it to both ATAC-seq and CHi-C contacts, but finds only 14 contact QTLs. 
+        - 2) Adapts another Bayesian method GUESS, to identify 614 trimodal QTLs 
+            - associated with both gene expression, ATAC-seq, and CHi-C contacts. 
+    - Overall, these combined 627 contact QTLs are then overlapped with REMAP ChIP-seq database for their enrichment with TF binding, 
+    - tested with the Enformer method for their putative TF binding, and are also benchmarked with reference GWAS studies.  
+
+[Multi-omics analysis in primary T cells elucidates mechanisms behind disease-associated genetic loci - Chenfu Shi et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.07.19.23292550v1) 
+
+    - Discusses all sorts of QTLs like eQTLs, caQTLs (ATAC-seq QTLs), 
+        - Also, insulation score QTLs, loopQTLs (QTLs affecting chromatin contacts), allelic imbalance of caQTLs and allelic imbalance of Hi-C reads (ASLoopQTLs). 
+    - The results and examples utilize all of them, specifically caQTLs more than IQTLs. 
+    - The ASLoopQTLs mostly show effects in a similar direction as the loopQTLs. 
+    - Only 5% of IQTLs are ASLoopQTLs, suggesting the filtering was done during Hi-C mapping 
+        - (a combination of BWA-MEM, SNP Phasing, and allele-specific HiCPro mapping). 
+    - Mentioned that sequencing depth is a big issue for not getting a high number of ASLoopQTLs.
+    - Both examples (including ORMDL3 Asthma locus) prioritize caQTLs over loopQTLs. 
+    - In fact, the asthma locus mentions the CTCF binding SNP rs12936231, which is a caQTL. 
+    - The utility of loop QTL is not evident. 
+    - Did not find a specific analysis focused on loopQTLs or any motif analysis.
+
+[DeepWAS: Multivariate genotype-phenotype associations by directly integrating regulatory information using deep learning - Arloth et al. PLoS comp biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007616) 
+
+    - Derives GWAS SNPs by using regulatory annotations a prior. 
+    - Uses DEEPSEA to first define the regulatory annotation score and filter the SNPs with score exceeding a certain threshold. 
+    - These filtered SNPs are then subjected to a LASSO regression to call the significant GWAS entries.
 
 ## Genotyping
 
