@@ -205,25 +205,54 @@
 
 ## QTL / SNP enrichment analysis
 
-[A Multi-omic Integrative Scheme Characterizes Tissues of Action at Loci Associated with Type 2 Diabetes - Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) Tissue-of-action (TOA) scores of T2D GWAS, to understand the relevant tissues and cell types for a given disease (here T2D). Uses tissue-specific gene expression, epigenomic maps, fine-mapped variants (and Bayesian PIPs), independent fine-mapped GWAS loci, reference coding annotations. A weighted sum of annotations for all fine-mapped SNPs are used for tissue-specific enrichment computation. Tissue-specificity of TPM nomalized gene expression was measured by expression specificity scores (ESS). Finally, TOA was computed using fine-mapped variants and using regulatory annotation information.
+[Disentangling the Effects of Colocalizing Genomic Annotations to Functionally Prioritize Non-coding Variants within Complex-Trait Loci - GoShifter - Trynka et al. AJHG 2015](https://pubmed.ncbi.nlm.nih.gov/26140449/) 
 
-[Cell type-specific genetic regulation of gene expression across human tissues - ieQTL and isQTL - Kim-Hellmuth et al. Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913075/) As a part of GTEx v8, they devised cell type specific enriched eQTLs and sQTLs, and showed that they correspond to better tissue specificity and colocalization with GWAS. These cell-specific enriched eQTLs are obtained by linear regression between genotypes and cell-specific gene expression values.
+    - Enrichment of eQTLs for specific regulatory annotations using permutation based controls. 
+    - Now a days mostly replaced by S-LDSC method.
 
-[DeCAF: a novel method to identify cell-type specific regulatory variants and their role in cancer risk - Kalita et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35804456/) estimates cell-fraction enriched eQTLs - variants whose effect on gene expression vary across bulk samples according to the cell fraction. Performs linear regression using cell fraction and gene expression.
+[Cell type-specific genetic regulation of gene expression across human tissues - ieQTL and isQTL - Kim-Hellmuth et al. Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913075/) 
 
-[Dynamic genetic regulation of gene expression during cellular differentiation - Dynamic eQTL - Strober et al. Science 2019](https://pubmed.ncbi.nlm.nih.gov/31249060/) presents dynamic eQTLs significant in different time points of the cell differentiation trajectory.
+    - As a part of GTEx v8, they devised cell type specific enriched eQTLs and sQTLs, 
+    - showed that they correspond to better tissue specificity and colocalization with GWAS. 
+    - These cell-specific enriched eQTLs are obtained by linear regression between genotypes and cell-specific gene expression values.
 
-[Functional dynamic genetic effects on gene regulation are specific to particular cell types and environmental conditions - Findley et al. eLife 2021](https://pubmed.ncbi.nlm.nih.gov/33988505/) From the same group. GXE specific (context specific) eQTLs according to different cell-specific conditions. Also, integrates with ASE.
+[DeCAF: a novel method to identify cell-type specific regulatory variants and their role in cancer risk - Kalita et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35804456/) 
 
-[Using an atlas of gene regulation across 44 human tissues to inform complex disease- and trait-associated variation - eQTLEnrich - Gamazon et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/29955180/) Tests wheteher eQTLs for a given tissue are enriched for a specific trait. Uses best eQTL per gene concept, and permutation based GWAS-eQTL enrichment method.
+    - estimates cell-fraction enriched eQTLs - variants whose effect on gene expression vary across bulk samples according to the cell fraction. 
+    - Performs linear regression using cell fraction and gene expression.
 
-[Disentangling the Effects of Colocalizing Genomic Annotations to Functionally Prioritize Non-coding Variants within Complex-Trait Loci - GoShifter - Trynka et al. AJHG 2015](https://pubmed.ncbi.nlm.nih.gov/26140449/) Enrichment of eQTLs for specific regulatory annotations using permutation based controls. Now a days mostly replaced by S-LDSC method.
+[Dynamic genetic regulation of gene expression during cellular differentiation - Dynamic eQTL - Strober et al. Science 2019](https://pubmed.ncbi.nlm.nih.gov/31249060/) 
 
-[Quantifying genetic effects on disease mediated by assayed gene expression levels - MESC - Yao et al. Nat Genet 2020](https://pubmed.ncbi.nlm.nih.gov/32424349/) Quantifying heritability by the effect of _cis_ gene expression. Uses regression.
+    - presents dynamic eQTLs significant in different time points of the cell differentiation trajectory.
 
-[Systematic analysis of binding of transcription factors to noncoding variants - SNP-SELEX - Yan et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33505025/) Characterizing effects of SNPs on binding TF. Presents experimental method by extending their previous method HT-SELEX which uses random DNA sequences as input, here they provide 40 bp DNA from human genome. Enrichment of TF binding SNPs on a set of regulatory sequences is tested, and applied T2D GWAS SNPs. Defines oligonucelotide binding score (OBS) and preferential binding score (PBS) for the SNPs with respect to TF binding, and corresponding SNPs are denoted as preferential binding SNPs (pbSNP). Also evaluates the PWMs by predicting differential binding of TFs, and finds the pbSNPs perform better in predicting differential TF binding. DeltaSVM franework using gkm-SVM is used to quantify the variant effect size. **** Note: Supplementary is useful - shows phasing of haplotypes, motif finding, allelic fold change, and haplotype estimation from HiC data.
+[Functional dynamic genetic effects on gene regulation are specific to particular cell types and environmental conditions - Findley et al. eLife 2021](https://pubmed.ncbi.nlm.nih.gov/33988505/) 
 
-[Deep learning predicts the impact of regulatory variants on cell-type-specific enhancers in the brain - Zheng et al. Bioinformatics Advances 2023](https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad002/6986158) Predicts cell specific enhancers by first using DeepSea framework followed by fine-tuning using RESNET. Then uses GRAD-CAM framework to obtain nucleotide importance score profiles. Augments with 6-mer based motif scoring and also employs TFmotifDisco to get the nucleotide importance scores. These scores are used to characterize the cell specific enhancers, and then fine-mapped GWAS SNPs are overlapped with them to predict the putative functional and cell-specific variants.
+    - From the same group. 
+    - GXE specific (context specific) eQTLs according to different cell-specific conditions. 
+    - Also, integrates with ASE.
+
+[Using an atlas of gene regulation across 44 human tissues to inform complex disease- and trait-associated variation - eQTLEnrich - Gamazon et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/29955180/) 
+
+    - Tests wheteher eQTLs for a given tissue are enriched for a specific trait. 
+    - Uses best eQTL per gene concept, and permutation based GWAS-eQTL enrichment method.
+
+[Quantifying genetic effects on disease mediated by assayed gene expression levels - MESC - Yao et al. Nat Genet 2020](https://pubmed.ncbi.nlm.nih.gov/32424349/) 
+
+    - Quantifying heritability by the effect of _cis_ gene expression. Uses regression.
+
+[Systematic analysis of binding of transcription factors to noncoding variants - SNP-SELEX - Yan et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33505025/) 
+
+    - Characterizing effects of SNPs on binding TF. 
+    - Presents experimental method by extending their previous method HT-SELEX which uses random DNA sequences as input. 
+    - Here they provide 40 bp DNA from human genome. 
+    - Enrichment of TF binding SNPs on a set of regulatory sequences is tested, and applied on T2D GWAS SNPs. 
+    - Defines oligonucelotide binding score (OBS) and preferential binding score (PBS) for the SNPs with respect to TF binding 
+        - corresponding SNPs are denoted as preferential binding SNPs (pbSNP). 
+    - Also evaluates the PWMs by predicting differential binding of TFs, 
+        - finds the pbSNPs perform better in predicting differential TF binding. 
+    - DeltaSVM franework using gkm-SVM is used to quantify the variant effect size. 
+    - **** Note: Supplementary is useful 
+        - shows phasing of haplotypes, motif finding, allelic fold change, and haplotype estimation from Hi-C data.
 
 [Redefining tissue specificity of genetic regulation of gene expression in the presence of allelic heterogeneity - Arvanitis et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.002) CAFEH method. Uses tissue-specificity and allelic heterogeneity to call eQTLs. Tissue specific colocalization is computed by COLOC and eCAVIAR (2 variants per locus) to identify the causal variants shared between two tissues. In addition, variants shared between GTEx and other datasets are also derived by colocalization - pairwise colocalization analysis for all genes. In addition, matrixQTL was used with the cell decomposition (CIBERSORT) and other covariates as input. Finally, eGenes without colocalization between tissues / datasets were prioritized.
 
@@ -263,6 +292,8 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 [A unified framework for joint-tissue transcriptome-wide association and Mendelian randomization analysis - Zhou et al. Nature Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/33020666/) MR-JTI method - TWAS. 1. TWAS approach, extending PrediXcan, using multi tissue summary statistics. 2. Employs tissue specific gene expression correlation and DHS (regulatory annotation) correlation statistic for the optimization problem.
 
 ## Identifying disease-risk / causal variants (and) target genes
+
+[A Multi-omic Integrative Scheme Characterizes Tissues of Action at Loci Associated with Type 2 Diabetes - Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) Tissue-of-action (TOA) scores of T2D GWAS, to understand the relevant tissues and cell types for a given disease (here T2D). Uses tissue-specific gene expression, epigenomic maps, fine-mapped variants (and Bayesian PIPs), independent fine-mapped GWAS loci, reference coding annotations. A weighted sum of annotations for all fine-mapped SNPs are used for tissue-specific enrichment computation. Tissue-specificity of TPM nomalized gene expression was measured by expression specificity scores (ESS). Finally, TOA was computed using fine-mapped variants and using regulatory annotation information.
 
 [Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension - Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) Integrates GWAS with chromatin annotations + PCHiC and also performs annotation based fine mapping to prioritize GWAS SNPs. Applies on hypertension and blood pressure (CVD) GWAS SNPs. Uses regulatory annotations, fine-mapped GWAS SNPs (99% PIP causal set), genomic enrichment (GREAT), colocalization with GTEx eQTLs, and identified target genes via inetrating capture Hi-C loops. Also uses EpiMap analysis (from Kellis group) to associate the gene expression with CREs.
 
