@@ -29,6 +29,14 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
 
+[Deep learning predicts the impact of regulatory variants on cell-type-specific enhancers in the brain - Zheng et al. Bioinformatics Advances 2023](https://academic.oup.com/bioinformaticsadvances/article/3/1/vbad002/6986158) 
+
+    - Predicts cell specific enhancers by first using DeepSEA framework followed by fine-tuning using RESNET. 
+    - Then uses GRAD-CAM framework to obtain nucleotide importance score profiles. 
+    - Augments with 6-mer based motif scoring and also employs TFmotifDisco to get the nucleotide importance scores. 
+    - These scores are used to characterize the cell specific enhancers, 
+        - then fine-mapped GWAS SNPs are overlapped with them to predict the putative functional and cell-specific variants.
+
 [Annotating functional effects of non-coding variants in neuropsychiatric cell types by deep transfer learning - MetaChrom - Lai et al. PLOS Comp Biol. 2022](https://pubmed.ncbi.nlm.nih.gov/35576194/) - Although the title is about annotating functional variants, the approach is similar to the DeepSEA framework, it predicts the epigenomic tracks (histone and chromatin accessibility) from DNA sequences. Uses RESNET architecture and transfer learning to predict the epigenomic tracks.
 
 [DeepCOMBI: explainable artificial intelligence for the analysis and discovery in genome-wide association studies - Mieth et al. NAR Genomics Bioinformatics](https://pubmed.ncbi.nlm.nih.gov/34296082/) adopts layer-wise relevance propagation (LRP) to attribute SNP relevance scores and selection of significant SNPs in GWAS studies. Replaces conventional p-value thresholding. Extends their earlier work COMBI which uses SVM based method, to a DNN setting.
