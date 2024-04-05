@@ -138,17 +138,36 @@
 
 ## Genotyping
 
-[Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
+[Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
+
+    - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
 
 ## Colocalization / Fine-mapping
 
-[FINEMAP: efficient variable selection using summary data from genome-wide association studies - Benner et al. Bioinformatics 2016](https://academic.oup.com/bioinformatics/article/32/10/1493/1743040) Presents a shotgun stochastic search approach to identify the causal variants much quicker than CAVIAR, CAVIARBF, and PAINTOR. Applies SSS on top of Bayesian algorithm to compute the PIPs and credible sets.
+[FINEMAP: efficient variable selection using summary data from genome-wide association studies - Benner et al. Bioinformatics 2016](https://academic.oup.com/bioinformatics/article/32/10/1493/1743040) 
 
-[Colocalization of GWAS and eQTL Signals Detects Target Genes - Hormozdiari et al. AJHG 2016](https://pubmed.ncbi.nlm.nih.gov/27866706/) eCAVIAR method. For a given variant, multiply the fine mapping posterior for two traits to decide if the variant is colocalized.  Supports multiple causal variants per locus. Drawback: assumes trait independence, traits are from the same population, use of reference LD matrix, and effect sizes are aligned to the effect matrix. Requires effect size and allele information of the SNPs 
+    - Presents a shotgun stochastic search approach to identify the causal variants much quicker than CAVIAR, CAVIARBF, and PAINTOR. 
+    - Applies SSS on top of Bayesian algorithm to compute the PIPs and credible sets.
 
-[SusieRSS - Fine-mapping from summary data with the “Sum of Single Effects” model Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) Implements the sum of single effects ([SUSiE](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)) model for fine mapping, and describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common - SusieRSS approach - regression with summary statistics). Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
+[Colocalization of GWAS and eQTL Signals Detects Target Genes - Hormozdiari et al. AJHG 2016](https://pubmed.ncbi.nlm.nih.gov/27866706/) 
 
-[Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension - Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) Integrates GWAS with chromatin annotations + PCHiC and also performs annotation based fine mapping to prioritize GWAS SNPs. Applies on hypertension and blood pressure (CVD) GWAS SNPs. Uses regulatory annotations, fine-mapped GWAS SNPs (99% PIP causal set), genomic enrichment (GREAT), colocalization with GTEx eQTLs, and identified target genes via inetrating capture Hi-C loops. Also uses EpiMap analysis (from Kellis group) to associate the gene expression with CREs.
+    - eCAVIAR method. For a given variant, multiply the fine mapping posterior for two traits to decide if the variant is colocalized.  
+    - Supports multiple causal variants per locus. 
+    - Drawback: assumes trait independence, traits are from the same population, use of reference LD matrix, and effect sizes are aligned to the effect matrix. 
+    - Requires effect size and allele information of the SNPs 
+
+[SUSiE - Wang et al. 2020 - Journal of Royal Statistics](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)
+
+    - SUSiE model for fine mapping. 
+    - Single effect regression model - in a multiple regression problem, exactly one of the variables have nonzero regression coefficients.
+    - Fine mapping is modeled by Sum of single effects.
+    - Iterative Bayesian Stepwise selection (IBSS).
+
+[SusieRSS - Fine-mapping from summary data with the “Sum of Single Effects” model - Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) 
+
+    - Describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common. 
+    - SusieRSS approach - regression with summary statistics). 
+    - Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
 
 [BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) In contrast to the sampling methods (Bayesian approaches using MCMC etc.) here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution, whose parameters are estimated by a deep neural network. Such NN formulation helps to use computatioally efficient gradient-based optimization to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
 
@@ -219,6 +238,8 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 [A unified framework for joint-tissue transcriptome-wide association and Mendelian randomization analysis - Zhou et al. Nature Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/33020666/) MR-JTI method - TWAS. 1. TWAS approach, extending PrediXcan, using multi tissue summary statistics. 2. Employs tissue specific gene expression correlation and DHS (regulatory annotation) correlation statistic for the optimization problem.
 
 ## Identifying disease-risk / causal variants (and) target genes
+
+[Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension - Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) Integrates GWAS with chromatin annotations + PCHiC and also performs annotation based fine mapping to prioritize GWAS SNPs. Applies on hypertension and blood pressure (CVD) GWAS SNPs. Uses regulatory annotations, fine-mapped GWAS SNPs (99% PIP causal set), genomic enrichment (GREAT), colocalization with GTEx eQTLs, and identified target genes via inetrating capture Hi-C loops. Also uses EpiMap analysis (from Kellis group) to associate the gene expression with CREs.
 
 [3DFAACTS-SNP: using regulatory T cell-specific epigenomics data to uncover candidate mechanisms of type 1 diabetes (T1D) risk - Liu et al. Epigenomics and Chromatin 2022](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-022-00456-5) proposed T1D causal variant identification pipeline: 1) Bayesian fine mapping, 2) Overlap with ATAC-seq peaks (open chromatin region), 3) HiC ineractions, 4) FOXP3 binding sites.
 
