@@ -169,14 +169,39 @@
     - SusieRSS approach - regression with summary statistics). 
     - Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
 
-[BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) In contrast to the sampling methods (Bayesian approaches using MCMC etc.) here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution, whose parameters are estimated by a deep neural network. Such NN formulation helps to use computatioally efficient gradient-based optimization to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
+[BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) 
+    
+    - Here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution 
+        - whose parameters are estimated by a deep neural network. 
+        - Existing methods (sampling methods) use Bayesian approaches using MCMC etc. for parameter estimation.
+    - Such NN formulation helps to use computatioally efficient gradient-based optimization 
+        - to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
 
-[Bayesian test for colocalisation between pairs of genetic association studies using summary statistics - Giambartolomei et al. PLoS Genetics 2014](https://pubmed.ncbi.nlm.nih.gov/24830394/) Bayes factors to decide the posterior of colocalization over all other events Wakefield’s approximation to decide approximate bayes factor. Assumes single causal variant per locus. Note: although not mentioned, one can implement stepwise conditioning by either using reference LD matrix, or using external packages like CoJo (Yang et al. Nat Genet 2012)
+[Bayesian test for colocalisation between pairs of genetic association studies using summary statistics - Giambartolomei et al. PLoS Genetics 2014](https://pubmed.ncbi.nlm.nih.gov/24830394/) 
 
-[Eliciting priors and relaxing the single causal variant assumption in colocalisation analyses - Wallace. PLoS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32310995/) Discusses about prior probabilities of coloc package - must check. Also supports multiple causal variants per locus by masking all SNPs in LD with the lead SNP.
+    - Decribes the various forms of posteriors from h_1 to h_5 - no colocalization vs colocalization
+    - Bayes factors to decide the posterior of colocalization over all other events 
+        - Wakefield’s approximation to decide approximate bayes factor. 
+    - Assumes single causal variant per locus. 
+    - Note: although not mentioned, one can implement stepwise conditioning by 
+        - either using reference LD matrix, 
+        - or using external packages like CoJo (Yang et al. Nat Genet 2012)
 
-[A more accurate method for colocalisation analysis allowing for multiple causal variants - Wallace, PLoS Genetics 2021](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009440) Presents *coloc-susie*, uses SUSIE to fine map and decompose the input summary statistics (of 2 traits) into multiple independent signals (and fine-mapped variants), runs coloc on these pairs of signals, to identify the colocalized variants. Free from the assumption of single colocalized variant per locus. When SUSIE does not return any credible set, recommends to use the single variant version of coloc. Uses SUSIE defined fine-mapped variants (list of L1 and L2 number of variants for two traits) and performs colocalization L1 X L2 times to infer whether a pair of variants are colocalized. Question: Seems maximum 2 variants are supported for colocalization - what if > 2 causal variants? 
+[Eliciting priors and relaxing the single causal variant assumption in colocalisation analyses - Wallace. PLoS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32310995/) 
 
+    - Discusses about prior probabilities of coloc package - must check. 
+    - Also supports multiple causal variants per locus by masking all SNPs in LD with the lead SNP.
+
+[A more accurate method for colocalisation analysis allowing for multiple causal variants - Wallace, PLoS Genetics 2021](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009440) 
+
+    - Presents *coloc-susie*, 
+    - uses SUSIE to fine map and decompose the input summary statistics (of 2 traits) into multiple independent signals (and fine-mapped variants), 
+    - runs coloc on these pairs of signals, to identify the colocalized variants. 
+    - Free from the assumption of single colocalized variant per locus. 
+    - When SUSIE does not return any credible set, recommends to use the single variant version of coloc. 
+    - Uses SUSIE defined fine-mapped variants (list of L1 and L2 number of variants for two traits) and performs colocalization L1 X L2 times 
+        - to infer whether a pair of variants are colocalized. 
+    - Question: Seems maximum 2 variants are supported for colocalization - what if > 2 causal variants? 
 
 ## QTL / SNP enrichment analysis
 
