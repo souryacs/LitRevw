@@ -4,16 +4,16 @@
 
 [IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) 
 
-  - IMPACT method. Uses histone marks, promoter and enhancer marks, for different cell types.
-  - For a candidate TF, first scans the TF binding motifs.
-  - Then learns the TF binding motifs for specific cell types, by using the cell-type-specific regulatory elements as signatures.
-  - Uses a logistic regression model to identify the cell-type-specific active regulatory elements with TF binding motifs.
+    - IMPACT method. Uses histone marks, promoter and enhancer marks, for different cell types.
+    - For a candidate TF, first scans the TF binding motifs.
+    - Then learns the TF binding motifs for specific cell types, by using the cell-type-specific regulatory elements as signatures.
+    - Uses a logistic regression model to identify the cell-type-specific active regulatory elements with TF binding motifs.
 
 [Improving the trans-ancestry portability of polygenic risk scores by prioritizing variants in predicted cell-type-specific regulatory elements - Amariuta et al. Nat Gen 2020](https://www.nature.com/articles/s41588-020-00740-8) 
 
-  - Uses IMPACT to predict TF binding motifs across 245 cell types,
-  - Particularly to prioritize TF binding motifs and regulatory variants across multi-ancestry settings.
-  - **** To Do: Can be further augmented by DeepLift related approaches - prioritizing motif scores using BPNet etc. ** 
+    - Uses IMPACT to predict TF binding motifs across 245 cell types,
+    - Particularly to prioritize TF binding motifs and regulatory variants across multi-ancestry settings.
+    - **** To Do: Can be further augmented by DeepLift related approaches - prioritizing motif scores using BPNet etc. ** 
 
 
 ## QTL / ASE / GWAS inference
