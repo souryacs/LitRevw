@@ -254,19 +254,40 @@
     - **** Note: Supplementary is useful 
         - shows phasing of haplotypes, motif finding, allelic fold change, and haplotype estimation from Hi-C data.
 
-[Redefining tissue specificity of genetic regulation of gene expression in the presence of allelic heterogeneity - Arvanitis et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.002) CAFEH method. Uses tissue-specificity and allelic heterogeneity to call eQTLs. Tissue specific colocalization is computed by COLOC and eCAVIAR (2 variants per locus) to identify the causal variants shared between two tissues. In addition, variants shared between GTEx and other datasets are also derived by colocalization - pairwise colocalization analysis for all genes. In addition, matrixQTL was used with the cell decomposition (CIBERSORT) and other covariates as input. Finally, eGenes without colocalization between tissues / datasets were prioritized.
+[Redefining tissue specificity of genetic regulation of gene expression in the presence of allelic heterogeneity - Arvanitis et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.002) 
 
-[GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) Peforms GWAS enrichment analysis of regulatory regions. Uses p-values of SNPs, LD matrix, regulatory annotations, and SNP distance from TSS. First performs LD-based pruning of SNPs (r2 > 0.1), then does LD tagging (R2 > 0.8) annotation overlap (basically assigning a variant an annotation if the variant itself or any variant in LD with it overlaps with the annotation), and then fits a logistic regression model between the TSS distance (Y and the variants (and LD variants).
+    - CAFEH method. Uses tissue-specificity and allelic heterogeneity to call eQTLs. 
+    - Tissue specific colocalization is computed by COLOC and eCAVIAR (2 variants per locus) to identify the causal variants shared between two tissues. 
+    - Variants shared between GTEx and other datasets are also derived by colocalization - pairwise colocalization analysis for all genes. 
+    - matrixQTL was used with the cell decomposition (CIBERSORT) and other covariates as input. 
+    - Finally, eGenes without colocalization between tissues / datasets were prioritized.
 
-[Partitioning heritability by functional annotation using genome-wide association summary statistics - S-LDSC - Finucane et al. Nat Gen 2015](https://www.nature.com/articles/ng.3404) Proposes S-LDSC method, to identify the functional annotation (category) of SNPs enriched for disease heritability. The idea is that for polygenic traits, a heritability information (chi-sq statistic) of a SNP is also accumulated by its tagged (LD) SNPs.
+[GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) 
 
-[Leveraging molecular quantitative trait loci to understand the genetic architecture of diseases and complex traits - Hormozdiari et al. Nat Gen 2018](https://www.nature.com/articles/s41588-018-0148-2) Constructs a fine-mapped set of eQTLs, hQTLs and splicing QTLs and show their disease-specific heritability enrichment using s-LDSC.
+    - Peforms GWAS enrichment analysis of regulatory regions. 
+    - Uses p-values of SNPs, LD matrix, regulatory annotations, and SNP distance from TSS. 
+    - First performs LD-based pruning of SNPs (r2 > 0.1), then does LD tagging (R2 > 0.8) 
+    - then does annotation overlap (basically assigning a variant an annotation if the variant itself or any variant in LD with it overlaps with the annotation), 
+    - then fits a logistic regression model between the TSS distance (Y and the variants (and LD variants).
+
+[Partitioning heritability by functional annotation using genome-wide association summary statistics - S-LDSC - Finucane et al. Nat Gen 2015](https://www.nature.com/articles/ng.3404) 
+
+    - Proposes S-LDSC method, to identify the functional annotation (category) of SNPs enriched for disease heritability. 
+    - The idea is that for polygenic traits, a heritability information (chi-sq statistic) of a SNP is also accumulated by its tagged (LD) SNPs.
+
+[Leveraging molecular quantitative trait loci to understand the genetic architecture of diseases and complex traits - Hormozdiari et al. Nat Gen 2018](https://www.nature.com/articles/s41588-018-0148-2) 
+
+    - Constructs a fine-mapped set of eQTLs, hQTLs and splicing QTLs and show their disease-specific heritability enrichment using s-LDSC.
 
 ## QTL - Polygenic Risk Scores (PRS)
 
-[Integration of rare expression outlier-associated variants improves polygenic risk prediction - Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants. *** Note: the methods section, GTEx v8 data shows how to infer the rare variants and associated statisitcs from variants, and calculate PRS.
+[Integration of rare expression outlier-associated variants improves polygenic risk prediction - Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) 
 
-[The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) Constructing cross-population polgenic risk scores using transfer learning.
+    - Utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants. *** Note: the methods section, GTEx v8 data shows how to infer the rare variants and associated statisitcs from variants, and calculate PRS.
+
+[The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) 
+
+    - Constructing cross-population polgenic risk scores using transfer learning.
 
 [Fast and accurate Bayesian polygenic risk modeling with variational inference - VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) Approximates Bayesian computation of PRS by replacing MCMC with variational inference (VI), a deterministic class of algorithms replacing the posterior inference by an optimization problem (applied to LMM, Fine-mapping, association, enrichment).
 
