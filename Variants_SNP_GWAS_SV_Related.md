@@ -333,26 +333,69 @@ Supports multiple functional annotations, and develops functional gradient based
 
 [Blood cell traits’ GWAS loci colocalization with variation in PU.1 genomic occupancy prioritizes causal noncoding regulatory variants - Jeong et al. Cell Genomics 2023](https://doi.org/10.1016/j.xgen.2023.100327) employed colocalization between GWAS and transcription factor binding QTL (bQTL), and employed motif analysis to prioritize the causal variants. Uses DeltaSVM using gkm-SVM framework to derive the motif scores. 
 
-[E-MAGMA: an eQTL-informed method to identify risk genes using genome-wide association study summary statistics: Gerring et al. Bioinformatics 2021](https://pubmed.ncbi.nlm.nih.gov/33624746/) assigns SNPs to genes by employing tissue specific eQTL statistics from GTEx data, to identify disease-risk genes. Extends their earlier work [A gene co-expression network-based analysis of multiple brain tissues reveals novel genes and molecular pathways underlying major depression](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008245) [MAGMA: Generalized Gene-Set Analysis of GWAS Data](https://doi.org/10.1371/journal.pcbi.1004219)  which assigns SNPs to genes by proximity and infers meta p-values per gene. Different from [A computational tool (H-MAGMA) for improved prediction of brain-disorder risk genes by incorporating brain chromatin interaction profiles - H-MAGMA](https://pubmed.ncbi.nlm.nih.gov/32152537/) which uses Hi-C interactions to assign SNPs to the looped genes.
+[MAGMA: Generalized Gene-Set Analysis of GWAS Data](https://doi.org/10.1371/journal.pcbi.1004219)
 
-[Identifying enhancer properties associated with genetic risk for complex traits using regulome-wide association studies - Casella et al. PLoS Comp Biol 2022](https://pubmed.ncbi.nlm.nih.gov/36070311/) Proposes RWAS - regulome wide association study - to identify enhancers associated with a given disease / trait. Extends MAGMA package to identify the enhancers (whereas MAGMA finds the genes).
+    - Assigns SNPs to genes by proximity and infers meta p-values per gene.
 
-[SNP-to-gene linking strategies reveal contributions of enhancer-related and candidate master-regulator genes to autoimmune disease - Dey et al. Cell Genomics 2022](https://pubmed.ncbi.nlm.nih.gov/35873673/) Reviews 11 SNP to gene (S2G) linking strategies and tests the corresponding annotations using S-LDSC on 11 autoimmune traits.
+[A gene co-expression network-based analysis of multiple brain tissues reveals novel genes and molecular pathways underlying major depression](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008245)
 
-[A catalog of GWAS fine-mapping efforts in autoimmune disease - Caliskan et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33798443/) Integrates fine-mapping studies for various immune diseases, and defines a weighted gene prioritization score to assign the candidate risk genes.
+    - Application of MAGMA to identify causal genes using GWAS.
 
-[Cell type and condition specific functional annotation of schizophrenia associated non-coding genetic variants - Rummel et al.bioRxiv 2023](https://pubmed.ncbi.nlm.nih.gov/37425902/) Presents SCZ and brain disorder related causal variant (specifically emVAR - expression modulating variant) identification methods using MPRA assays, and shows that they overlap with causal variants.
+[E-MAGMA: an eQTL-informed method to identify risk genes using genome-wide association study summary statistics: Gerring et al. Bioinformatics 2021](https://pubmed.ncbi.nlm.nih.gov/33624746/) 
 
-[Genetic Control of Expression and Splicing in Developing Human Brain Informs Disease Mechanisms - Walker et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31626773/) Integrates eQTL, splicing QTL, GWAS, TWAS, S-LDSC, WGCNA, ATAC-seq and Hi-C to prioritize the gene modules and interacting variants, for Human Cortex prenatal development.
+    - Extension of above two methods.
+    - assigns SNPs to genes by employing tissue specific eQTL statistics from GTEx data, to identify disease-risk genes. 
 
-[Integrative analyses highlight functional regulatory variants associated with neuropsychiatric diseases - Guo et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37857935/) Integrates SNPs from 10 Brain disorders, MPRA validated variants, epigenomic annotations (ATAC-seq peaks and cell-specific annotations), S-LDSC enrichment, TF motif information, and eQTLs, to prioritize putative causal variants. Uses eQTL-eGene links to assign to their nearest genes. Integrates multiple other databases (GO, CMAP, UK BioBank, PsychENCODE, etc.)
+[A computational tool (H-MAGMA) for improved prediction of brain-disorder risk genes by incorporating brain chromatin interaction profiles - H-MAGMA](https://pubmed.ncbi.nlm.nih.gov/32152537/) 
 
-[Massively parallel functional dissection of schizophrenia-associated noncoding genetic variants - Rummel et al. Cell 2023](https://pubmed.ncbi.nlm.nih.gov/37852259/) MVAP - Massively parallel association based variant annotation. Identifies putative causal variant for SCZ. Uses eQTL, GWAS, regulatory annotations, HiC, colocalization, partitioned heritability. Performs MPRA and emVAR experiment (allele-specific expression change) to identify the causal SNPs. The pipeline is a mixture of bioinformatics and wet-lab validation (MPRA + emVAR).
+    - Different method - uses Hi-C interactions to assign SNPs to the looped genes.
+
+[Identifying enhancer properties associated with genetic risk for complex traits using regulome-wide association studies - Casella et al. PLoS Comp Biol 2022](https://pubmed.ncbi.nlm.nih.gov/36070311/) 
+
+    - Proposes RWAS - regulome wide association study - to identify enhancers associated with a given disease / trait. 
+    - Extends MAGMA package to identify the enhancers (whereas MAGMA finds the genes).
+
+[SNP-to-gene linking strategies reveal contributions of enhancer-related and candidate master-regulator genes to autoimmune disease - Dey et al. Cell Genomics 2022](https://pubmed.ncbi.nlm.nih.gov/35873673/) 
+
+    - Reviews 11 SNP to gene (S2G) linking strategies and tests the corresponding annotations using S-LDSC on 11 autoimmune traits.
+
+[A catalog of GWAS fine-mapping efforts in autoimmune disease - Caliskan et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33798443/) 
+
+    - Integrates fine-mapping studies for various immune diseases, and defines a weighted gene prioritization score to assign the candidate risk genes.
+
+[Genetic Control of Expression and Splicing in Developing Human Brain Informs Disease Mechanisms - Walker et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31626773/) 
+
+    - Integrates eQTL, splicing QTL, GWAS, TWAS, S-LDSC, WGCNA, ATAC-seq and Hi-C 
+    - prioritize the gene modules and interacting variants, for Human Cortex prenatal development.
+
+[Integrative analyses highlight functional regulatory variants associated with neuropsychiatric diseases - Guo et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37857935/) 
+
+    - Integrates SNPs from 10 Brain disorders, MPRA validated variants, epigenomic annotations (ATAC-seq peaks and cell-specific annotations) 
+    - S-LDSC enrichment, TF motif information, and eQTLs, to prioritize putative causal variants. 
+    - Uses eQTL-eGene links to assign to their nearest genes. 
+    - Integrates multiple other databases (GO, CMAP, UK BioBank, PsychENCODE, etc.)
+
+[Cell type and condition specific functional annotation of schizophrenia associated non-coding genetic variants - Rummel et al.bioRxiv 2023](https://pubmed.ncbi.nlm.nih.gov/37425902/) 
+
+    - Presents SCZ and brain disorder related causal variant (specifically emVAR - expression modulating variant) identification methods using MPRA assays 
+    - Shows that they overlap with causal variants.
+
+[Massively parallel functional dissection of schizophrenia-associated noncoding genetic variants - Rummel et al. Cell 2023](https://pubmed.ncbi.nlm.nih.gov/37852259/) 
+
+    - MVAP - Massively parallel association based variant annotation. 
+    - Identifies putative causal variant for SCZ. 
+    - Uses eQTL, GWAS, regulatory annotations, Hi-C, colocalization, partitioned heritability. 
+    - Performs MPRA and emVAR experiment (allele-specific expression change) to identify the causal SNPs. 
+    - The pipeline is a mixture of bioinformatics and wet-lab validation (MPRA + emVAR).
 
 ## Structural variants
 
-[Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. Requires 2 lists: 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) Performs a combined p-value analysis to return the most significant genes. Developed by PCAWG consortium.
+[Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) 
 
-
-
-
+    - Developed by PCAWG consortium.
+    - Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. 
+    - Requires 2 lists: 
+        - 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 
+        - 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) 
+    - Performs a combined p-value analysis to return the most significant genes. 
+    
