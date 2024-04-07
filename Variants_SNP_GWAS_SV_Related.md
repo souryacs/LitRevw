@@ -322,16 +322,47 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [Multi-ancestry fine-mapping improves precision to identify causal genes in transcriptome-wide association studies - MA-FOCUS - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) - Fine mapping and TWAS using multiple ancestry information. Integrates GWAS, eQTL and LD information, and assumes that causal genes are shared across ancestry.
 
-[PALM: a powerful and adaptive latent model for prioritizing risk variants with functional annotations - Yu et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36744920/) Powerful and adaptive latent model (PALM). Uses functional annotations to prioritize GWAS variants.
-Supports multiple functional annotations, and develops functional gradient based EM algorithm. Computes gradient boosting and tree based likelihood to prioritize the GWAS SNPs. Applies on 30 GWAS data with 127 functional annotations.
+[PALM: a powerful and adaptive latent model for prioritizing risk variants with functional annotations - Yu et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36744920/) 
 
-[Allele-specific analysis reveals exon- and cell-type-specific regulatory effects of Alzheimer's disease-associated genetic variants - Hierarchical Poisson model - He et al. Transl. Psychiatry 2022](https://pubmed.ncbi.nlm.nih.gov/35436980/) derives allele-specific QTLs and applies on AD. It employs hierarchical poisson model by prioritizing the heterozygous SNPs. Does not consider the total counts.
+    - Powerful and adaptive latent model (PALM). 
+    - Uses functional annotations to prioritize GWAS variants.
+    - Supports multiple functional annotations, and develops functional gradient based EM algorithm. 
+    - Computes gradient boosting and tree based likelihood to prioritize the GWAS SNPs. 
+    - Applies on 30 GWAS data with 127 functional annotations.
 
-[Allele-specific epigenetic activity in prostate cancer and normal prostate tissue implicates prostate cancer risk mechanisms - stratAS - Shetty et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/34699744/) Applies allele specific QTL inference from ChIP-seq (chromatinQTL) on prCa data. Uses haplotype-based beta binomial model for the allele specific read counts, and identify the causal variants. Tests individual SNPs for each peak (within 100 Kb of peak center). It was proposed in [Allelic imbalance reveals widespread germline-somatic regulatory differences and prioritizes risk loci in Renal Cell Carcinoma - Gusev et al. bioRxiv 2019](https://www.biorxiv.org/content/10.1101/631150v1) which converts allele-specific reads to first haplotype-specific reads and then to SNP genotype specific statistics.
+[Allele-specific analysis reveals exon- and cell-type-specific regulatory effects of Alzheimer's disease-associated genetic variants - Hierarchical Poisson model - He et al. Transl. Psychiatry 2022](https://pubmed.ncbi.nlm.nih.gov/35436980/) 
 
-[Allelic imbalance of chromatin accessibility in cancer identifies candidate causal risk variants and their mechanisms - Grishin et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35697866/) RWAS method. 1. Using stratAS, derives Allele specific accessibility QTL (asQTL) on cancer ATAC-seq data. 2. Shows high heritability, motif enrichment, regulatory effect (SURE risk) for asQTLs. 3. Using ATAC-seq peaks, proposes RWAS (similar to TWAS) for predictive model of ATAC-seq accessibility. 4. RWAS shows higher power of detecting association to known GWAS loci compared to TWAS. Also, it identifies many loci which are not significant by GWAS. 5. Combines RWAS with CWAS (cistrome/ChIP-seq specific WAS) to identify candidate causal loci.
+    - Derives allele-specific QTLs and applies on AD. 
+    - It employs hierarchical poisson model by prioritizing the heterozygous SNPs. 
+        - Does not consider the total counts.
 
-[Blood cell traits’ GWAS loci colocalization with variation in PU.1 genomic occupancy prioritizes causal noncoding regulatory variants - Jeong et al. Cell Genomics 2023](https://doi.org/10.1016/j.xgen.2023.100327) employed colocalization between GWAS and transcription factor binding QTL (bQTL), and employed motif analysis to prioritize the causal variants. Uses DeltaSVM using gkm-SVM framework to derive the motif scores. 
+[Allelic imbalance reveals widespread germline-somatic regulatory differences and prioritizes risk loci in Renal Cell Carcinoma - Gusev et al. bioRxiv 2019](https://www.biorxiv.org/content/10.1101/631150v1) 
+
+    - stratAS method..
+    - Converts allele-specific reads to first haplotype-specific reads and then to SNP genotype specific statistics.
+
+[Allele-specific epigenetic activity in prostate cancer and normal prostate tissue implicates prostate cancer risk mechanisms - stratAS - Shetty et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/34699744/) 
+
+    - Extension of stratAS method. 
+    - Applies allele specific QTL inference from ChIP-seq (chromatinQTL) on prCa data. 
+    - Uses haplotype-based beta binomial model for the allele specific read counts, and identify the causal variants. 
+    - Tests individual SNPs for each peak (within 100 Kb of peak center).
+
+[Allelic imbalance of chromatin accessibility in cancer identifies candidate causal risk variants and their mechanisms - Grishin et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35697866/) 
+
+    - RWAS method. Regulome-wide association studies - similar to TWAS but in enhancer level.
+        - 1. Using stratAS, derives Allele specific accessibility QTL (asQTL) on cancer ATAC-seq data. 
+        - 2. Shows high heritability, motif enrichment, regulatory effect (SURE risk) for asQTLs. 
+        - 3. Using ATAC-seq peaks, proposes RWAS (similar to TWAS) for predictive model of ATAC-seq accessibility. 
+        - 4. RWAS shows higher power of detecting association to known GWAS loci compared to TWAS. 
+            - Also, it identifies many loci which are not significant by GWAS. 
+        - 5. Combines RWAS with CWAS (cistrome/ChIP-seq specific WAS) to identify candidate causal loci.
+
+[Blood cell traits’ GWAS loci colocalization with variation in PU.1 genomic occupancy prioritizes causal noncoding regulatory variants - Jeong et al. Cell Genomics 2023](https://doi.org/10.1016/j.xgen.2023.100327) 
+
+    - employed colocalization between GWAS and transcription factor binding QTL (bQTL), 
+    - employed motif analysis to prioritize the causal variants. 
+    - Uses DeltaSVM using gkm-SVM framework to derive the motif scores. 
 
 [MAGMA: Generalized Gene-Set Analysis of GWAS Data](https://doi.org/10.1371/journal.pcbi.1004219)
 
