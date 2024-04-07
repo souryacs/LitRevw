@@ -1,5 +1,9 @@
 # SNP / QTL / GWAS and functional variants
 
+[GWAS tutorial - Github](https://github.com/Cloufield/GWASTutorial)
+
+[GWAS tutorial](https://pbreheny.github.io/adv-gwas-tutorial/quality_control.html)
+
 ## Regulatory regions, motifs
 
 [IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) 
