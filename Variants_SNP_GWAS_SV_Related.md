@@ -289,32 +289,75 @@
 
     - Constructing cross-population polgenic risk scores using transfer learning.
 
-[Fast and accurate Bayesian polygenic risk modeling with variational inference - VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) Approximates Bayesian computation of PRS by replacing MCMC with variational inference (VI), a deterministic class of algorithms replacing the posterior inference by an optimization problem (applied to LMM, Fine-mapping, association, enrichment).
+[Fast and accurate Bayesian polygenic risk modeling with variational inference - VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) 
+    
+    - Approximates Bayesian computation of PRS by replacing MCMC with variational inference (VI)
+        - a deterministic class of algorithms replacing the posterior inference by an optimization problem 
+        - (applied to LMM, Fine-mapping, association, enrichment).
 
-[REGLE - Unsupervised representation learning improves genomic discovery for lung function and respiratory disease prediction - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) From Google Research. Proposes low dimensional representation learning of high-dimensional clinical data (HDCD) and utilizes these low-dimensional embeddings to compute PRS. Applies on lung and respiratory data.
+[A new method for multiancestry polygenic prediction improves performance across diverse populations - Zhang et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37749244/) 
 
-[A new method for multiancestry polygenic prediction improves performance across diverse populations - Zhang et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37749244/) CT-SLEB method. Estmating PRS from EUR and non-EUR populations. Three steps: 1) CT: clump and threshold - select SNPs by 2D p-values (EUR and target populations) 2) EB - empirical bayes method to estimate standardized effect sizes for SNPs considering covariance matrix from all populations and assuming normal prior. 3) SL - Superlearning: tested with CNN and regression methods to estimate PRS. Benchmarked with 23andme datasets, and LDPred2 method.
+    - CT-SLEB method. Estmating PRS from EUR and non-EUR populations. 
+    - Three steps: 
+        - 1) CT: clump and threshold - select SNPs by 2D p-values (EUR and target populations) 
+        - 2) EB - empirical bayes method to estimate standardized effect sizes for SNPs considering covariance matrix from all populations and assuming normal prior. 
+        - 3) SL - Superlearning: tested with CNN and regression methods to estimate PRS. Benchmarked with 23andme datasets, and LDPred2 method.
 
 ## QTL - TWAS
 
-[METRO: Multi-ancestry transcriptome-wide association studies for powerful gene-trait association detection - Li et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35334221/) TWAS using multi-ancestry (population) data - different allele frequencies and LD matrix.
+[METRO: Multi-ancestry transcriptome-wide association studies for powerful gene-trait association detection - Li et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35334221/) 
+
+    - TWAS using multi-ancestry (population) data - different allele frequencies and LD matrix.
 
 [Probabilistic integration of transcriptome-wide association studies and colocalization analysis identifies key molecular pathways of complex
-traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) - Integration of TWAS and colocalization to identify causal genes. Posterior probability of a gene being causal is approximated as : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
+traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) 
 
-[Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation - Baca et al.Nat Gen 2022](https://www.nature.com/articles/s41588-022-01168-y) Presents CWAS, analogous to TWAS, where imputed ChIP-seq data together with the phasing haplotype information is used to infer the ChIP-seq peak - trait association.
+    - Integration of TWAS and colocalization to identify causal genes. 
+    - Posterior probability of a gene being causal is approximated as : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
 
-[GCSC - Leveraging gene co-regulation to identify gene sets enriched for disease heritability - Siewert-Rocks et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.005) Uses TWAS to first get the gene score for the trait (TWAS chi-sq statistics) and then detemines the gene co-regulation score (caused by shared eQTLs or eQTLs in LD). GCSC defines a gene set with higher disease heritability if the genes with high co-regulation to the gene set have higher TWAS chi-sq statistics than the genes with low co-regulation to the gene set.
+[Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation - Baca et al.Nat Gen 2022](https://www.nature.com/articles/s41588-022-01168-y) 
 
-[Integrating transcription factor occupancy with transcriptome-wide association analysis identifies susceptibility genes in human cancers - He et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/36402776/) Proposes sTF-TWAS. Uses prior knowledge of TF binding sites. Performs regression on the chi-sq statistics (from GWAS summary) of SNPs (variants) with their TF binding status and selects the top-K variants and uses only these variants to impute gene expression and perform TWAS.
+    - Presents CWAS, analogous to TWAS, where imputed ChIP-seq data together with the phasing haplotype information is used to infer the ChIP-seq peak - trait association.
 
-[A multi-tissue transcriptome analysis of human metabolites guides the interpretability of associations based on multi-SNP models for gene expression - Ndungu et al. AJHG 2019](https://pubmed.ncbi.nlm.nih.gov/31978332/) Benchmarking single SNP (eQTL) vs multi-SNP (TWAS or LASSO regression) models in predicting gene expression. 1. Shows that LASSO regression, although includes more than one SNP for a single locus / gene, often confounded by LD effect and random selection. 2. TWAS shows higher sensitivity in predicting causal genes, but also can point to the nearby (bystander) genes having similar effects. 3. Shows that multi-SNP model outperforms single SNP model in predicting gene expression. *To Do*: 1) Improve S-PrediXcan by deep learning, in predicting gene expression. 2) How LASSO regression and TWAS analysis can be combined to predict the marker genes? 3) Whether LASSO regression based eQTL and fine-mapping is mentioned in literature.
+[GCSC - Leveraging gene co-regulation to identify gene sets enriched for disease heritability - Siewert-Rocks et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.005) 
 
-[A unified framework for joint-tissue transcriptome-wide association and Mendelian randomization analysis - Zhou et al. Nature Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/33020666/) MR-JTI method - TWAS. 1. TWAS approach, extending PrediXcan, using multi tissue summary statistics. 2. Employs tissue specific gene expression correlation and DHS (regulatory annotation) correlation statistic for the optimization problem.
+    - Uses TWAS to first get the gene score for the trait (TWAS chi-sq statistics) 
+    - then detemines the gene co-regulation score (caused by shared eQTLs or eQTLs in LD). 
+    - GCSC defines a gene set with higher disease heritability if the genes with high co-regulation to the gene set have higher TWAS chi-sq statistics than the genes with low co-regulation to the gene set.
+
+[Integrating transcription factor occupancy with transcriptome-wide association analysis identifies susceptibility genes in human cancers - He et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/36402776/) 
+
+    - Proposes sTF-TWAS. 
+    - Uses prior knowledge of TF binding sites. 
+    - Performs regression on the chi-sq statistics (from GWAS summary) of SNPs (variants) with their TF binding status 
+        - selects the top-K variants and uses only these variants to impute gene expression and perform TWAS.
+
+[A multi-tissue transcriptome analysis of human metabolites guides the interpretability of associations based on multi-SNP models for gene expression - Ndungu et al. AJHG 2019](https://pubmed.ncbi.nlm.nih.gov/31978332/) 
+
+    - Benchmarking single SNP (eQTL) vs multi-SNP (TWAS or LASSO regression) models in predicting gene expression. 
+        - 1. Shows that LASSO regression, although includes more than one SNP for a single locus / gene, often confounded by LD effect and random selection. 
+        - 2. TWAS shows higher sensitivity in predicting causal genes, but also can point to the nearby (bystander) genes having similar effects. 
+        - 3. Shows that multi-SNP model outperforms single SNP model in predicting gene expression. 
+    - *To Do*: 
+        - 1) Improve S-PrediXcan by deep learning, in predicting gene expression. 
+        - 2) How LASSO regression and TWAS analysis can be combined to predict the marker genes? 
+        - 3) Whether LASSO regression based eQTL and fine-mapping is mentioned in literature.
+
+[A unified framework for joint-tissue transcriptome-wide association and Mendelian randomization analysis - Zhou et al. Nature Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/33020666/) 
+
+    - MR-JTI method - TWAS. 
+        - 1. TWAS approach, extending PrediXcan, using multi tissue summary statistics. 
+        - 2. Employs tissue specific gene expression correlation and DHS (regulatory annotation) correlation statistic for the optimization problem.
 
 ## Identifying disease-risk / causal variants (and) target genes
 
-[A Multi-omic Integrative Scheme Characterizes Tissues of Action at Loci Associated with Type 2 Diabetes - Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) Tissue-of-action (TOA) scores of T2D GWAS, to understand the relevant tissues and cell types for a given disease (here T2D). Uses tissue-specific gene expression, epigenomic maps, fine-mapped variants (and Bayesian PIPs), independent fine-mapped GWAS loci, reference coding annotations. A weighted sum of annotations for all fine-mapped SNPs are used for tissue-specific enrichment computation. Tissue-specificity of TPM nomalized gene expression was measured by expression specificity scores (ESS). Finally, TOA was computed using fine-mapped variants and using regulatory annotation information.
+[A Multi-omic Integrative Scheme Characterizes Tissues of Action at Loci Associated with Type 2 Diabetes - Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) 
+
+    - Tissue-of-action (TOA) scores of T2D GWAS, to understand the relevant tissues and cell types for a given disease (here T2D). 
+    - Uses tissue-specific gene expression, epigenomic maps, fine-mapped variants (and Bayesian PIPs), independent fine-mapped GWAS loci, reference coding annotations. 
+    - A weighted sum of annotations for all fine-mapped SNPs are used for tissue-specific enrichment computation. 
+    - Tissue-specificity of TPM nomalized gene expression was measured by expression specificity scores (ESS). 
+    - Finally, TOA was computed using fine-mapped variants and using regulatory annotation information.
 
 [Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension - Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) 
 
