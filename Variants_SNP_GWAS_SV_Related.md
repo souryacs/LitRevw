@@ -316,11 +316,27 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [A Multi-omic Integrative Scheme Characterizes Tissues of Action at Loci Associated with Type 2 Diabetes - Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) Tissue-of-action (TOA) scores of T2D GWAS, to understand the relevant tissues and cell types for a given disease (here T2D). Uses tissue-specific gene expression, epigenomic maps, fine-mapped variants (and Bayesian PIPs), independent fine-mapped GWAS loci, reference coding annotations. A weighted sum of annotations for all fine-mapped SNPs are used for tissue-specific enrichment computation. Tissue-specificity of TPM nomalized gene expression was measured by expression specificity scores (ESS). Finally, TOA was computed using fine-mapped variants and using regulatory annotation information.
 
-[Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension - Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) Integrates GWAS with chromatin annotations + PCHiC and also performs annotation based fine mapping to prioritize GWAS SNPs. Applies on hypertension and blood pressure (CVD) GWAS SNPs. Uses regulatory annotations, fine-mapped GWAS SNPs (99% PIP causal set), genomic enrichment (GREAT), colocalization with GTEx eQTLs, and identified target genes via inetrating capture Hi-C loops. Also uses EpiMap analysis (from Kellis group) to associate the gene expression with CREs.
+[Integration of genetic fine-mapping and multi-omics data reveals candidate effector genes for hypertension - Duijvoden et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.01.26.525702v1) 
 
-[3DFAACTS-SNP: using regulatory T cell-specific epigenomics data to uncover candidate mechanisms of type 1 diabetes (T1D) risk - Liu et al. Epigenomics and Chromatin 2022](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-022-00456-5) proposed T1D causal variant identification pipeline: 1) Bayesian fine mapping, 2) Overlap with ATAC-seq peaks (open chromatin region), 3) HiC ineractions, 4) FOXP3 binding sites.
+    - Integrates GWAS with chromatin annotations + PCHiC 
+    - Also performs annotation based fine mapping to prioritize GWAS SNPs. 
+    - Applies on hypertension and blood pressure (CVD) GWAS SNPs. 
+    - Uses regulatory annotations, fine-mapped GWAS SNPs (99% PIP causal set), genomic enrichment (GREAT), colocalization with GTEx eQTLs,  
+        - identified target genes via inetrating capture Hi-C loops. 
+    - Also uses EpiMap analysis (from Kellis group) to associate the gene expression with CREs.
 
-[Multi-ancestry fine-mapping improves precision to identify causal genes in transcriptome-wide association studies - MA-FOCUS - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) - Fine mapping and TWAS using multiple ancestry information. Integrates GWAS, eQTL and LD information, and assumes that causal genes are shared across ancestry.
+[3DFAACTS-SNP: using regulatory T cell-specific epigenomics data to uncover candidate mechanisms of type 1 diabetes (T1D) risk - Liu et al. Epigenomics and Chromatin 2022](https://epigeneticsandchromatin.biomedcentral.com/articles/10.1186/s13072-022-00456-5) 
+
+    - proposed T1D causal variant identification pipeline: 
+        - 1) Bayesian fine mapping, 
+        - 2) Overlap with ATAC-seq peaks (open chromatin region), 
+        - 3) HiC ineractions, 
+        - 4) FOXP3 binding sites.
+
+[Multi-ancestry fine-mapping improves precision to identify causal genes in transcriptome-wide association studies - MA-FOCUS - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) 
+
+    - Fine mapping and TWAS using multiple ancestry information. 
+    - Integrates GWAS, eQTL and LD information, and assumes that causal genes are shared across ancestry.
 
 [PALM: a powerful and adaptive latent model for prioritizing risk variants with functional annotations - Yu et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36744920/) 
 
