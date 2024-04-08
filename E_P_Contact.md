@@ -48,17 +48,17 @@
 
 [Activity-by-contact model of enhancer-promoter regulation from thousands of CRISPR perturbations - Fulco et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/31784727/) 
 
-  - ABC score to prioritize regulatory enhancers for target genes.
-  - Multiplication of H3K27ac (and DHS) activity with HiC contacts.
-  - Prioritizes nearest enhancers. 84% of genes have regulatory enhancers within 100 Kb.
-  - Equivalent to inverse (power-law) distance weighted score (contact ~ Distance^-1).
-  - Applies on K562 H3K27ac and DHS peaks and the HiC data.
-  - Average Hi-C contact matrix performs similar as cell-type-specific contact matrix.
-  - ABC predictions are highly cell-specific, as using K562 HiC data for predicting E-P pairs in Mouse drops AUPRC from 0.73 to 0.11.
-  - *To Do* Using H3K27ac HiChIP with DHS signal shows better performance than ABC score (Extended data fig. 3).
-    - But capture Hi-C does not perform reasonably.
-  - Developed CRISPRi-FlowFISH to perturb noncoding enhancers.
-  - Although enhancer prioritization works, promoters (DP-G model) are not well characterized. 
+    - ABC score to prioritize regulatory enhancers for target genes.
+    - Multiplication of H3K27ac (and DHS) activity with HiC contacts.
+    - Prioritizes nearest enhancers. 84% of genes have regulatory enhancers within 100 Kb.
+    - Equivalent to inverse (power-law) distance weighted score (contact ~ Distance^-1).
+    - Applies on K562 H3K27ac and DHS peaks and the HiC data.
+    - Average Hi-C contact matrix performs similar as cell-type-specific contact matrix.
+    - ABC predictions are highly cell-specific, as using K562 HiC data for predicting E-P pairs in Mouse drops AUPRC from 0.73 to 0.11.
+    - *To Do* Using H3K27ac HiChIP with DHS signal shows better performance than ABC score (Extended data fig. 3).
+      - But capture Hi-C does not perform reasonably.
+    - Developed CRISPRi-FlowFISH to perturb noncoding enhancers.
+    - Although enhancer prioritization works, promoters (DP-G model) are not well characterized. 
 
 [Sequence determinants of human gene regulatory elements - Sahu et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35190730/) measured transcriptional activity using MPRA and observed using ML models that TFs act in an additive manner and enhancers affect promoters without relying on specific TF-TF interactions. Few TFs are strongly active in a cell, and individual TFs may have multiple regulatory activities. Shows 3 types of enhancers - classical (open chromatin), chromatin-dependent, closed-chromatin. Shows that TSS position and motif position and orientation relative to TSS are highly indicative of the gene expression and presents a CNN model to predict the TSS position from gene expression and sequence information. Also found that E-P interactions are additive - their effects are integrated into total transcriptional activity, suggesting that strong promoters do not need an enhancer, and strong enhancers render weak and strong promoters equally active. A CNN classifier using only promoter sequences outperform that with enhancer sequences for predicting gene expression.
 
