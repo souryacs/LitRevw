@@ -8,6 +8,8 @@ DL Book by Bishop: https://issuu.com/cmb321/docs/deep_learning_ebook
 
 Bayesian data analysis for cognitive science: https://vasishth.github.io/bayescogsci/book/
 
+Graph ML: https://huggingface.co/blog/intro-graphml
+
 ## Review papers - ML in computational Biology
 
 [Machine learning applications for therapeutic tasks with genomics data - Huang et al. Patterns 2021](https://pubmed.ncbi.nlm.nih.gov/34693370/) Very important review paper. Discusses about different domains in genomics for ML application, including sequence specific expression, causal genes, variants, pathways, spatial transcriptomics, drug targets, CRISPR targets, drug response prediction and many more. Can be used for all ML based problem formulation.
