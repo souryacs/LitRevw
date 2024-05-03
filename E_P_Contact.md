@@ -8,7 +8,7 @@
 
 [Cell-type specialization is encoded by specific chromatin topologies - Winick-Ng et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34789882/) ImmunoGAM + scRNA-seq + scATAC-seq assay to capture multi-way chromatin contacts. Brain related cell-specific multi-way chromatin organization, based on the GAM assay. Also propose a "melting gene" identification pipeline - identifying long stretch genes (~200 Kb) having contact loss between conditions. Also discusses about TAD and compartment changes detected by the ImmunoGAM assay.
 
-
+[Comparing chromatin contact maps at scale: methods and insights - Gunsaus et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.04.04.535480v1) Talks about different metrics (MSE, SCC, SSIM, etc.) in identifying differential chromatin contact maps, ROI, and perturbation regions between conditions. Also applies these metrics to Akita and DL prediction of perturbation regions, to identify differential perturbation regions.
 
 
 
