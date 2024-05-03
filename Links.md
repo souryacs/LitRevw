@@ -62,6 +62,8 @@ Leukemia: https://propel.stjude.cloud/login
 
 PCAWG - Pan Cancer Consortium https://dcc.icgc.org/pcawg
 
+DepMap - https://depmap.org/portal/home/#/
+
 ### Diabetes
 
 DIAMANTE - Diabetes consortium (GWAS)  https://kp4cd.org/node/169
