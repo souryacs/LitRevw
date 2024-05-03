@@ -22,6 +22,11 @@
 
 ## Inferring 3D Structure from chromatin contacts
 
+[Topology-informed regulatory element collections coordinate cell identity gene expression programs - Lv et al. bioRxiv 2024](https://www.biorxiv.org/content/10.1101/2024.02.01.578210v1.full) Infers SEs using ROSE and also SE-CREs (super enhancer based chromatin contact hub or community) using HiChIP data.
+
+[Sex-determining 3D regulatory hubs revealed by genome spatial auto-correlation analysis - Meta-Gomez et al. bioRxiv 2022
+](https://www.biorxiv.org/content/10.1101/2022.11.18.516861v1) Presents METAloci - Hi-C TADs and differential regions involving sex determining genes.
+
 [Pastis-NB: Nelle Varoquaux et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36594573/) Modeling overdispersion of HIC data to predict 3D structures, by using NB model instead of Poisson model from their previously published Pastis-PM method.
 
 
