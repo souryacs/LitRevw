@@ -8,16 +8,19 @@
 
 [IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) 
 
-    - IMPACT method. Uses histone marks, promoter and enhancer marks, for different cell types.
-    - For a candidate TF, first scans the TF binding motifs.
-    - Then learns the TF binding motifs for specific cell types, by using the cell-type-specific regulatory elements as signatures.
-    - Uses a logistic regression model to identify the cell-type-specific active regulatory elements with TF binding motifs.
+    - IMPACT (inference and modeling of phenotype related active transcription) method. 
+    - Uses histone marks, promoter and enhancer marks, for different cell types.
+    - Two step approach to infer cell-state specific regulatory elements.
+        - 1. For a candidate TF, first scans the TF binding motifs.
+        - 2. Then learns the TF binding motifs for specific cell types, by using the cell-type-specific regulatory elements as signatures.
+    - Uses a elastic net logistic regression model on 503 cell-type specific epigenomic features (open chromatin, histone marks), and 12 sequence features 
+        - to identify the cell-type-specific active regulatory elements with TF binding motifs.
 
 [Improving the trans-ancestry portability of polygenic risk scores by prioritizing variants in predicted cell-type-specific regulatory elements - Amariuta et al. Nat Gen 2020](https://www.nature.com/articles/s41588-020-00740-8) 
 
     - Uses IMPACT to predict TF binding motifs across 245 cell types,
     - Particularly to prioritize TF binding motifs and regulatory variants across multi-ancestry settings.
-    - **** To Do: Can be further augmented by DeepLift related approaches - prioritizing motif scores using BPNet etc. ** 
+    - **** To Do: Can be further augmented by DeepLIFT related approaches - prioritizing motif scores using BPNet etc. ** 
 
 
 ## QTL / ASE / GWAS inference
@@ -44,7 +47,7 @@
     - Validated using GTEx v8 data. Implemented in tensorQTL. 
     - Appropriate for large sample sizes, but for smaller sample sizes (~100), RASQUAL is better.
 
-[The GTEx Consortium atlas of genetic regulatory effects across human tissues - GTEx v8 release](https://pubmed.ncbi.nlm.nih.gov/32913098/) 
+[The GTEx Consortium atlas of genetic regulatory effects across human tissues - GTEx v8 release - Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913098/) 
 
     - GTEx v8 release. Specifically check the supplementary material for the details of QTL derivation.
 
@@ -58,12 +61,12 @@
 
 [Allele-Specific QTL Fine-Mapping with PLASMA - Wang et al. AJHG 2020](https://pubmed.ncbi.nlm.nih.gov/32004450/) 
 
-    - uses both QTL and AS statistics to infer QTLs. 
+    - uses both genotype and AS statistics to infer the significant SNPs.
     - Total expression (y) is modeled by allelic dosage (x) while the allelic imbalance (w) is determined by phasing (v). 
-    - Two association statistics for QTL and AS are computed. 
+        - Imbalance has both magnitude as well as sign (depending on the phase)
     - Also performs fine mapping by using a genotype-LD matrix, and returns a credible causal set using shotgun stochastic search (SSS). 
     - Compares with fine-mapping approaches CAVIAR, AS-Meta, and RASQUAL 
-        - (by converting the chi-sq statistics to z-scores and putting them as input to fine-map approaches).
+        - (by converting the chi-sq statistics of RASQUAL to z-scores and putting them as input to fine-map approaches).
 
 [ASEP: Gene-based detection of allele-specific expression across individuals in a population by RNA sequencing - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) 
 
@@ -76,8 +79,9 @@
     - Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. 
     - Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
 
-[HTAL - Haplotype associated loops - Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) 
+[Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) 
 
+    - Concept of HTAL - Haplotype associated loops.
     - Generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals 
         - to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. 
     - Subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, 
@@ -94,17 +98,20 @@
     - Extension: unknown genotype model.
     - Corrects reference mapping bias by applying modified WASP.
 
-[WASP allele-specific software for robust molecular quantitative trait locus discovery - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/)
+[WASP: allele-specific software for robust molecular quantitative trait locus discovery - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/)
 
     - Integrates ASE and total read count for QTL inference. 
-    - Performs combined haplotype test (CHT) and eliminates reference bias by discarding mis-mapped reads. 
-    - CHT models 2 components: 
-        - allelic imbalance at phased heterozygous SNP, and the total read depth in the target region. 
+        - Eliminates reference mapping bias by discarding mis-mapped reads, such that both alleles do not map to the same region. 
+    - Performs combined haplotype test (CHT) for cis-QTL doscovery
+        - 2 components: 1) total read depth in the target region, 2) allelic imbalance at phased heterozygous SNP
+    - CHT is a combined likelihood ratio test from two models
+        - Read depth is modeled by NB; allelic imbalance is modeled by beta-binomial distribution
+        - Also accounts for genotyoping errors, by approximating allelic imbalance as a mixture of 2 beta-binomials.
     - Compares between 3 apporoaches: 
         - 1) mapping to genome using N masked SNP, 
         - 2) mapping to a personalized genome, 
         - 3) WASP, where the read mapping for both the alleles of a SNP is checked to overlap the same position.
-
+    
 [RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) 
 
     - QTL inference by NB distribution of total reads and beta-binomial distribution of ASE.
@@ -116,7 +123,7 @@
     - Uses two different approaches: 
         - 1) Modifies BaseQTL by adapting it to both ATAC-seq and CHi-C contacts, but finds only 14 contact QTLs. 
         - 2) Adapts another Bayesian method GUESS, to identify 614 trimodal QTLs 
-            - associated with both gene expression, ATAC-seq, and CHi-C contacts. 
+            - associated with both gene expression, ATAC-seq, and CHi-C contacts.             
     - Overall, these combined 627 contact QTLs are then overlapped with REMAP ChIP-seq database for their enrichment with TF binding, 
     - tested with the Enformer method for their putative TF binding, and are also benchmarked with reference GWAS studies.  
 
