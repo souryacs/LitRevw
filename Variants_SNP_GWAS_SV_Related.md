@@ -155,6 +155,20 @@
 
 ## Colocalization / Fine-mapping
 
+[Identifying causal variants at loci with multiple signals of association - Hormozdiari et al. - Genetics 2014](https://pubmed.ncbi.nlm.nih.gov/25104515/)
+
+    - CAVIAR (CAusal Variants Identification in Associated Regions)
+    - Input: GWAS summary statistics (association p-values or effect sizes)
+    - Likelihood computation: Summary Statistics + LD structure 
+    - Model: CAVIAR assumes that the association statistics of SNPs follow a multivariate normal distribution, 
+        - the mean vector and covariance matrix are determined by the LD structure and effect sizes of the causal variants.
+        - Prior Specification: sparse prior - 
+            - most SNPs are assumed to have null effects, and only a small subset of SNPs are considered to be causal.
+        - Likelihood: evaluating the probability density function of the observed summary statistics under the assumed model. 
+        - integrating over all possible configurations of causal variants and their effect sizes, weighted by their prior probabilities.
+        - Posterior: Bayes' theorem
+            - used to rank SNPs according to their likelihood of being causal.
+
 [FINEMAP: efficient variable selection using summary data from genome-wide association studies - Benner et al. Bioinformatics 2016](https://academic.oup.com/bioinformatics/article/32/10/1493/1743040) 
 
     - Presents a shotgun stochastic search approach to identify the causal variants much quicker than CAVIAR, CAVIARBF, and PAINTOR. 
@@ -164,20 +178,30 @@
 
     - eCAVIAR method. For a given variant, multiply the fine mapping posterior for two traits to decide if the variant is colocalized.  
     - Supports multiple causal variants per locus. 
-    - Drawback: assumes trait independence, traits are from the same population, use of reference LD matrix, and effect sizes are aligned to the effect matrix. 
+    - Drawbacks: 
+        - assumes trait independence, 
+        - traits are from the same population, 
+        - use of reference LD matrix, 
+        - and effect sizes are aligned to the effect matrix. 
     - Requires effect size and allele information of the SNPs 
 
 [SUSiE - Wang et al. 2020 - Journal of Royal Statistics](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)
 
     - SUSiE model for fine mapping. 
-    - Single effect regression model - in a multiple regression problem, exactly one of the variables have nonzero regression coefficients.
-    - Fine mapping is modeled by Sum of single effects.
-    - Iterative Bayesian Stepwise selection (IBSS).
+    - Bayesian variable selection in regression (BVSR)
+    - New formulation: Sum of single effects (SUSIE)
+    - Single effect regression (SER) model - in a multiple regression problem, exactly one of the variables have nonzero regression coefficients.
+    - Iterative Bayesian stepwise selection (IBSS) - Bayesian analogue of traditional stepwise selection methods.
+    - Simple model-fitting algorithm - iterates through the single-effect vectors l = 1, . . ., L, 
+        - at each iteration fitting bl while keeping the other single-effect vectors fixed. 
+        - By construction, each step thus involves fitting an SER (single effect regression). 
+        - IBSS can be understood as computing an approximate posterior distribution p(b1, . . ., bL | X, y, σ2), 
+            - and that the algorithm iteratively optimizes an objective function known as the “evidence lower bound” (ELBO).
 
 [SusieRSS - Fine-mapping from summary data with the “Sum of Single Effects” model - Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) 
 
-    - Describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common. 
-    - SusieRSS approach - regression with summary statistics). 
+    - Describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common). 
+    - SusieRSS approach - regression with summary statistics. 
     - Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
 
 [BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) 
