@@ -333,10 +333,15 @@
 [A new method for multiancestry polygenic prediction improves performance across diverse populations - Zhang et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37749244/) 
 
     - CT-SLEB method. Estmating PRS from EUR and non-EUR populations. 
+    - Requires 3 datasets: GWAS, Tuning dataset (parameter optimization) and validation.
     - Three steps: 
         - 1) CT: clump and threshold - select SNPs by 2D p-values (EUR and target populations) 
+            - SNP ranking by association and clumped using LD estimates - SNPs associated with at least one population - by PLINK.
+            - LDPred2: SNP effect sizes by a shrinkage estimator, combining GWAS summary statistics with a prior on effect sizes.
         - 2) EB - empirical bayes method to estimate standardized effect sizes for SNPs considering covariance matrix from all populations and assuming normal prior. 
+            - SNP coefficient estimation - based on the combination of multiple GWAS summary statistics mean and variance and assuming a normal distribution.
         - 3) SL - Superlearning: tested with CNN and regression methods to estimate PRS. Benchmarked with 23andme datasets, and LDPred2 method.
+    - Benchmarks PRS prediction among 10 methods - 
 
 ## QTL - TWAS
 
