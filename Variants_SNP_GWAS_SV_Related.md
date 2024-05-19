@@ -340,32 +340,25 @@
 
 ## QTL - TWAS
 
-[METRO: Multi-ancestry transcriptome-wide association studies for powerful gene-trait association detection - Li et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35334221/) 
+[Integration of summary data from GWAS and eQTL studies predicts complex trait gene targets - Zhu et al. Nature Genetics 2016](https://pubmed.ncbi.nlm.nih.gov/27019110/)
 
-    - TWAS using multi-ancestry (population) data - different allele frequencies and LD matrix.
+    - SMR method - summary statistics based MR.
+    - A genetic variant (for example, a SNP) is used as an instrumental variable to test for the causative effect of an exposure (for example, gene expression) on an outcome (for example, phenotype).
+    - Discusses about causality (Causal variant -> Transcription -> Phenotype), Pleiotropy (Causal variant is independently associated with transcription and phenotype), and linkage (two causal variants are independently associated with transcription and phenotype).
+    - HEIDI method - distinguishes pleiotropy from linkage. Smaller HEIDI value - higher probability of linkage.
+    - Testing linakge is equivalent to testing whether there is a difference between effect size estimated using the top cis-eQTL and using any other significant SNP.
 
-[Probabilistic integration of transcriptome-wide association studies and colocalization analysis identifies key molecular pathways of complex
-traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) 
+[Integrative approaches for large-scale transcriptome-wide association studies - Gusev et al. Nature Genetics 2016](https://pubmed.ncbi.nlm.nih.gov/26854917/)
 
-    - Integration of TWAS and colocalization to identify causal genes. 
-    - Posterior probability of a gene being causal is approximated as : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
+    - Concept of TWAS. Imputed gene expression from GWAS summary statistics
+    - Association between gene and phenotype.
 
-[Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation - Baca et al.Nat Gen 2022](https://www.nature.com/articles/s41588-022-01168-y) 
+[Exploring the phenotypic consequences of tissue specific gene expression variation inferred from GWAS summary statistics - Barbeira et al. Nat Comm 2018](https://pubmed.ncbi.nlm.nih.gov/29739930/) 
 
-    - Presents CWAS, analogous to TWAS, where imputed ChIP-seq data together with the phasing haplotype information is used to infer the ChIP-seq peak - trait association.
-
-[GCSC - Leveraging gene co-regulation to identify gene sets enriched for disease heritability - Siewert-Rocks et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.005) 
-
-    - Uses TWAS to first get the gene score for the trait (TWAS chi-sq statistics) 
-    - then detemines the gene co-regulation score (caused by shared eQTLs or eQTLs in LD). 
-    - GCSC defines a gene set with higher disease heritability if the genes with high co-regulation to the gene set have higher TWAS chi-sq statistics than the genes with low co-regulation to the gene set.
-
-[Integrating transcription factor occupancy with transcriptome-wide association analysis identifies susceptibility genes in human cancers - He et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/36402776/) 
-
-    - Proposes sTF-TWAS. 
-    - Uses prior knowledge of TF binding sites. 
-    - Performs regression on the chi-sq statistics (from GWAS summary) of SNPs (variants) with their TF binding status 
-        - selects the top-K variants and uses only these variants to impute gene expression and perform TWAS.
+    - S-PrediXcan method. PrediXcan using GWAS summary statistics.
+    - High concordance between PrediXcan and S-PrediXcan, with much more applicability.
+    - Compared with coloc, RTC, eCAVIAR, ENLOC, and S-TWAS (summary based TWAS).
+    - 
 
 [A multi-tissue transcriptome analysis of human metabolites guides the interpretability of associations based on multi-SNP models for gene expression - Ndungu et al. AJHG 2019](https://pubmed.ncbi.nlm.nih.gov/31978332/) 
 
@@ -383,6 +376,38 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     - MR-JTI method - TWAS. 
         - 1. TWAS approach, extending PrediXcan, using multi tissue summary statistics. 
         - 2. Employs tissue specific gene expression correlation and DHS (regulatory annotation) correlation statistic for the optimization problem.
+
+[METRO: Multi-ancestry transcriptome-wide association studies for powerful gene-trait association detection - Li et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35334221/) 
+
+    - TWAS using multi-ancestry (population) data - different allele frequencies and LD matrix.
+
+[Genetic determinants of chromatin reveal prostate cancer risk mediated by context-dependent gene regulation - Baca et al.Nat Gen 2022](https://www.nature.com/articles/s41588-022-01168-y) 
+
+    - Presents CWAS, analogous to TWAS, where imputed ChIP-seq data together with the phasing haplotype is used to infer the ChIP-seq peak - trait association.
+
+[GCSC - Leveraging gene co-regulation to identify gene sets enriched for disease heritability - Siewert-Rocks et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.005) 
+
+    - Uses TWAS to first get the gene score for the trait (TWAS chi-sq statistics) 
+    - then detemines the gene co-regulation score (caused by shared eQTLs or eQTLs in LD). 
+    - GCSC defines a gene set with higher disease heritability if the genes with high co-regulation to the gene set have higher TWAS chi-sq statistics than the genes with low co-regulation to the gene set.
+
+[Integrating transcription factor occupancy with transcriptome-wide association analysis identifies susceptibility genes in human cancers - He et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/36402776/) 
+
+    - Proposes sTF-TWAS. Selecting subset of variants for TWAS.
+    - Uses prior knowledge of TF binding sites. 
+    - Performs regression on the chi-sq statistics (from GWAS summary) of SNPs (variants) with their TF binding status 
+        - selects the top-K variants and uses only these variants to impute gene expression and perform TWAS.
+
+[Probabilistic integration of transcriptome-wide association studies and colocalization analysis identifies key molecular pathways of complex
+traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/36608684/) 
+
+    - Integration of TWAS and colocalization to identify causal genes. 
+    - Posterior probability of a gene being causal is approximated as : prior probability of colocalization * bayes factor (BF) from TWAS * prior of TWAS.
+
+[Modeling tissue co-regulation estimates tissue-specific contributions to disease - Amruita et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/37580597/)
+
+    - TCSC method. Similar to GCSC - here genes are replaced by tissues.
+    - Uses TWAS gene-trait association with tissue-co-regulation score to identify causal tissues, and tissue association with a given trait.
 
 ## Identifying disease-risk / causal variants (and) target genes
 
