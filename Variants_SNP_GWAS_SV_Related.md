@@ -25,6 +25,25 @@
 
 ## QTL / ASE / GWAS inference
 
+[WASP: allele-specific software for robust molecular quantitative trait locus discovery - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/)
+
+    - Integrates ASE and total read count for QTL inference. 
+        - Eliminates reference mapping bias by discarding mis-mapped reads, such that both alleles do not map to the same region. 
+    - Performs combined haplotype test (CHT) for cis-QTL doscovery
+        - 2 components: 1) total read depth in the target region, 2) allelic imbalance at phased heterozygous SNP
+    - CHT is a combined likelihood ratio test from two models
+        - Read depth is modeled by NB; allelic imbalance is modeled by beta-binomial distribution
+        - Also accounts for genotyoping errors, by approximating allelic imbalance as a mixture of 2 beta-binomials.
+    - Compares between 3 apporoaches: 
+        - 1) mapping to genome using N masked SNP, 
+        - 2) mapping to a personalized genome, 
+        - 3) WASP, where the read mapping for both the alleles of a SNP is checked to overlap the same position.
+
+[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) 
+
+    - QTL inference by NB distribution of total reads and beta-binomial distribution of ASE.
+    - Applicable for 1D QTL (ATAC-QTL and ChIP-QTL).
+
 [Fast and efficient QTL mapper for thousands of molecular phenotypes - fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) 
 
     - QTL inference by population model and efficient permutation. 
@@ -35,17 +54,19 @@
     - The second step uses FDR not from BH correction but from ST method (Storey and Tibshirani) to report higher number of significant entries, 
         - corresponding to testing thousands of molecular phenotypes (here gene expression for thousands of genes) genome-wide.
 
-[eQTL mapping using allele-specific count data is computationally feasible, powerful, and provides individual-specific estimates of genetic effects - geoP - Zhabotynsky et al. PLOS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35286297/) 
+[Common DNA sequence variation influences 3-dimensional conformation of the human genome - Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) 
 
-    - Efficient method to compute permutation-based p-values for ASE, used in TreCASE and RASQUAL. 
-    - Detects 20%-100% more eGenes, but whether these are reliable is a question.
+    - First interaction-QTL paper. 
+    - Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. 
+    - Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
 
-[A scalable unified framework of total and allele-specific counts for cis-QTL, fine-mapping, and prediction - MixQTL - Liang et al. Nat Comm 2021](https://pubmed.ncbi.nlm.nih.gov/33658504/) 
+[Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) 
 
-    - Models ASE using allelic fold change. 
-    - The total read count and haplotype-specific read counts are separately modeled using linear regression, to provide an approximate fast QTL inference. 
-    - Validated using GTEx v8 data. Implemented in tensorQTL. 
-    - Appropriate for large sample sizes, but for smaller sample sizes (~100), RASQUAL is better.
+    - Concept of HTAL - Haplotype associated loops.
+    - Generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals 
+        - to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. 
+    - Subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, 
+    - Did not identify specific regulatory variants or SNPs since these HTALs were too few and limited to imprinted and CNV regions.
 
 [The GTEx Consortium atlas of genetic regulatory effects across human tissues - GTEx v8 release - Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913098/) 
 
@@ -68,24 +89,16 @@
     - Compares with fine-mapping approaches CAVIAR, AS-Meta, and RASQUAL 
         - (by converting the chi-sq statistics of RASQUAL to z-scores and putting them as input to fine-map approaches).
 
+[DeepWAS: Multivariate genotype-phenotype associations by directly integrating regulatory information using deep learning - Arloth et al. PLoS comp biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007616) 
+
+    - Derives GWAS SNPs by using regulatory annotations a prior. 
+    - Uses DEEPSEA to first define the regulatory annotation score and filter the SNPs with score exceeding a certain threshold. 
+    - These filtered SNPs are then subjected to a LASSO regression to call the significant GWAS entries.
+
 [ASEP: Gene-based detection of allele-specific expression across individuals in a population by RNA sequencing - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) 
 
     - Uses a mixture model to estimate ASE across individuals 
     - Also computes differential ASE between conditions among groups of individuals.
-
-[HiC-QTL: Common DNA sequence variation influences 3-dimensional conformation of the human genome - Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) 
-
-    - First interaction-QTL paper. 
-    - Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. 
-    - Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
-
-[Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) 
-
-    - Concept of HTAL - Haplotype associated loops.
-    - Generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals 
-        - to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. 
-    - Subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, 
-    - Did not identify specific regulatory variants or SNPs since these HTALs were too few and limited to imprinted and CNV regions.
 
 [Detection of quantitative trait loci from RNA-seq data with or without genotypes using BaseQTL - Vigorito et al. Nat Computational Science 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) 
 
@@ -98,25 +111,18 @@
     - Extension: unknown genotype model.
     - Corrects reference mapping bias by applying modified WASP.
 
-[WASP: allele-specific software for robust molecular quantitative trait locus discovery - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/)
+[A scalable unified framework of total and allele-specific counts for cis-QTL, fine-mapping, and prediction - MixQTL - Liang et al. Nat Comm 2021](https://pubmed.ncbi.nlm.nih.gov/33658504/) 
 
-    - Integrates ASE and total read count for QTL inference. 
-        - Eliminates reference mapping bias by discarding mis-mapped reads, such that both alleles do not map to the same region. 
-    - Performs combined haplotype test (CHT) for cis-QTL doscovery
-        - 2 components: 1) total read depth in the target region, 2) allelic imbalance at phased heterozygous SNP
-    - CHT is a combined likelihood ratio test from two models
-        - Read depth is modeled by NB; allelic imbalance is modeled by beta-binomial distribution
-        - Also accounts for genotyoping errors, by approximating allelic imbalance as a mixture of 2 beta-binomials.
-    - Compares between 3 apporoaches: 
-        - 1) mapping to genome using N masked SNP, 
-        - 2) mapping to a personalized genome, 
-        - 3) WASP, where the read mapping for both the alleles of a SNP is checked to overlap the same position.
+    - Models ASE using allelic fold change. 
+    - The total read count and haplotype-specific read counts are separately modeled using linear regression, to provide an approximate fast QTL inference. 
+    - Validated using GTEx v8 data. Implemented in tensorQTL. 
+    - Appropriate for large sample sizes, but for smaller sample sizes (~100), RASQUAL is better.
+
+[eQTL mapping using allele-specific count data is computationally feasible, powerful, and provides individual-specific estimates of genetic effects - geoP - Zhabotynsky et al. PLOS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35286297/) 
+
+    - Efficient method to compute permutation-based p-values for ASE, used in TreCASE and RASQUAL. 
+    - Detects 20%-100% more eGenes, but whether these are reliable is a question.
     
-[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) 
-
-    - QTL inference by NB distribution of total reads and beta-binomial distribution of ASE.
-    - Applicable for 1D QTL (ATAC-QTL and ChIP-QTL).
-
 [Shared and distinct molecular effects of regulatory genetic variants provide insight into mechanisms of distal enhancer-promoter communication - Helen Ray-Jones et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.08.04.551251v2) 
 
     - Uses CHi-C data to identify the contact QTL. 
@@ -141,12 +147,6 @@
     - The utility of loop QTL is not evident. 
     - Did not find a specific analysis focused on loopQTLs or any motif analysis.
 
-[DeepWAS: Multivariate genotype-phenotype associations by directly integrating regulatory information using deep learning - Arloth et al. PLoS comp biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007616) 
-
-    - Derives GWAS SNPs by using regulatory annotations a prior. 
-    - Uses DEEPSEA to first define the regulatory annotation score and filter the SNPs with score exceeding a certain threshold. 
-    - These filtered SNPs are then subjected to a LASSO regression to call the significant GWAS entries.
-
 ## Genotyping
 
 [Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
@@ -161,13 +161,23 @@
     - Input: GWAS summary statistics (association p-values or effect sizes)
     - Likelihood computation: Summary Statistics + LD structure 
     - Model: CAVIAR assumes that the association statistics of SNPs follow a multivariate normal distribution, 
-        - the mean vector and covariance matrix are determined by the LD structure and effect sizes of the causal variants.
+        - the mean vector and covariance matrix are determined by the effect sizes and LD structure of the GWAS variants.
         - Prior Specification: sparse prior - 
             - most SNPs are assumed to have null effects, and only a small subset of SNPs are considered to be causal.
         - Likelihood: evaluating the probability density function of the observed summary statistics under the assumed model. 
         - integrating over all possible configurations of causal variants and their effect sizes, weighted by their prior probabilities.
         - Posterior: Bayes' theorem
             - used to rank SNPs according to their likelihood of being causal.
+
+[Bayesian test for colocalisation between pairs of genetic association studies using summary statistics - Giambartolomei et al. PLoS Genetics 2014](https://pubmed.ncbi.nlm.nih.gov/24830394/) 
+
+    - Decribes the various forms of posteriors from h_1 to h_5 - no colocalization vs colocalization
+    - Bayes factors to decide the posterior of colocalization over all other events 
+        - Wakefield’s approximation to decide approximate bayes factor. 
+    - Assumes single causal variant per locus. 
+    - Note: although not mentioned, one can implement stepwise conditioning by 
+        - either using reference LD matrix, 
+        - or using external packages like CoJo (Yang et al. Nat Genet 2012)
 
 [FINEMAP: efficient variable selection using summary data from genome-wide association studies - Benner et al. Bioinformatics 2016](https://academic.oup.com/bioinformatics/article/32/10/1493/1743040) 
 
@@ -198,30 +208,6 @@
         - IBSS can be understood as computing an approximate posterior distribution p(b1, . . ., bL | X, y, σ2), 
             - and that the algorithm iteratively optimizes an objective function known as the “evidence lower bound” (ELBO).
 
-[SusieRSS - Fine-mapping from summary data with the “Sum of Single Effects” model - Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) 
-
-    - Describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common). 
-    - SusieRSS approach - regression with summary statistics. 
-    - Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
-
-[BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) 
-    
-    - Here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution 
-        - whose parameters are estimated by a deep neural network. 
-        - Existing methods (sampling methods) use Bayesian approaches using MCMC etc. for parameter estimation.
-    - Such NN formulation helps to use computatioally efficient gradient-based optimization 
-        - to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
-
-[Bayesian test for colocalisation between pairs of genetic association studies using summary statistics - Giambartolomei et al. PLoS Genetics 2014](https://pubmed.ncbi.nlm.nih.gov/24830394/) 
-
-    - Decribes the various forms of posteriors from h_1 to h_5 - no colocalization vs colocalization
-    - Bayes factors to decide the posterior of colocalization over all other events 
-        - Wakefield’s approximation to decide approximate bayes factor. 
-    - Assumes single causal variant per locus. 
-    - Note: although not mentioned, one can implement stepwise conditioning by 
-        - either using reference LD matrix, 
-        - or using external packages like CoJo (Yang et al. Nat Genet 2012)
-
 [Eliciting priors and relaxing the single causal variant assumption in colocalisation analyses - Wallace. PLoS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32310995/) 
 
     - Discusses about prior probabilities of coloc package - must check. 
@@ -237,6 +223,20 @@
     - Uses SUSIE defined fine-mapped variants (list of L1 and L2 number of variants for two traits) and performs colocalization L1 X L2 times 
         - to infer whether a pair of variants are colocalized. 
     - Question: Seems maximum 2 variants are supported for colocalization - what if > 2 causal variants? 
+
+[SusieRSS - Fine-mapping from summary data with the “Sum of Single Effects” model - Zou et al. PLoS Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35853082/) 
+
+    - Describes the differences of fine-mapping techniques when individual level genotype data are available, and when only the summary statistics are available (more common). 
+    - SusieRSS approach - regression with summary statistics. 
+    - Defines the common framework of fine-mapping using summary statistics, as employed by CAVIAR, FINEMAP, and SUSIE.
+
+[BEATRICE: Bayesian Fine-mapping from Summary Data using Deep Variational Inference - Ghoshal et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.03.24.534116v1) 
+    
+    - Here the posterior distribution of causal variants given the GWAS summary statistics is modeled by a concrete distribution 
+        - whose parameters are estimated by a deep neural network. 
+        - Existing methods (sampling methods) use Bayesian approaches using MCMC etc. for parameter estimation.
+    - Such NN formulation helps to use computatioally efficient gradient-based optimization 
+        - to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
 
 ## QTL / SNP enrichment analysis
 
