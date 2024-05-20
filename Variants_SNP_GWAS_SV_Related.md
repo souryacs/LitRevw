@@ -344,6 +344,17 @@
         - 3) SL - Superlearning: tested with CNN and regression methods to estimate PRS. Benchmarked with 23andme datasets, and LDPred2 method.
     - Benchmarks PRS prediction among different methods - CT, LDPred2, PolyPred-S+, XPASS, PRS-CSx, CT-SLEB, and their weighted combinations.
 
+[MUSSEL: Enhanced Bayesian polygenic risk prediction leveraging information across multiple ancestry groups - Jin et al. Cell Genomics 2024](https://pubmed.ncbi.nlm.nih.gov/38604127/)
+
+    - MUSSEL method - multi-ancestry PRS inference.
+    - requires three (ancestry-specific) datasets from each training ancestry group:
+        - (1) GWAS summary data; 
+        - (2) LD reference data; and 
+        - (3) a validation (tuning + testing) dataset with genotype and phenotype data
+    - For each ancestry, LDPred2 is used to compute the SNP effect size priors. 
+    - Multivariate spike-and-slab prior with MCMC sampling is used to model the LD structure.
+    - Multi-ancestry prior and tuning parameters are employed in superlearning (SL) phase.
+
 ## QTL - TWAS
 
 [Integration of summary data from GWAS and eQTL studies predicts complex trait gene targets - Zhu et al. Nature Genetics 2016](https://pubmed.ncbi.nlm.nih.gov/27019110/)
