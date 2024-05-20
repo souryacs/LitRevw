@@ -245,35 +245,47 @@
     - Enrichment of eQTLs for specific regulatory annotations using permutation based controls. 
     - Now a days mostly replaced by S-LDSC method.
 
-[Cell type-specific genetic regulation of gene expression across human tissues - ieQTL and isQTL - Kim-Hellmuth et al. Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913075/) 
+[Partitioning heritability by functional annotation using genome-wide association summary statistics - S-LDSC - Finucane et al. Nat Gen 2015](https://www.nature.com/articles/ng.3404) 
 
-    - As a part of GTEx v8, they devised cell type specific enriched eQTLs and sQTLs, 
-    - showed that they correspond to better tissue specificity and colocalization with GWAS. 
-    - These cell-specific enriched eQTLs are obtained by linear regression between genotypes and cell-specific gene expression values.
-
-[DeCAF: a novel method to identify cell-type specific regulatory variants and their role in cancer risk - Kalita et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35804456/) 
-
-    - estimates cell-fraction enriched eQTLs - variants whose effect on gene expression vary across bulk samples according to the cell fraction. 
-    - Performs linear regression using cell fraction and gene expression.
-
-[Dynamic genetic regulation of gene expression during cellular differentiation - Dynamic eQTL - Strober et al. Science 2019](https://pubmed.ncbi.nlm.nih.gov/31249060/) 
-
-    - presents dynamic eQTLs significant in different time points of the cell differentiation trajectory.
-
-[Functional dynamic genetic effects on gene regulation are specific to particular cell types and environmental conditions - Findley et al. eLife 2021](https://pubmed.ncbi.nlm.nih.gov/33988505/) 
-
-    - From the same group. 
-    - GXE specific (context specific) eQTLs according to different cell-specific conditions. 
-    - Also, integrates with ASE.
+    - Proposes S-LDSC method, to identify the functional annotation (category) of SNPs enriched for disease heritability. 
+    - The idea is that for polygenic traits, a heritability information (chi-sq statistic) of a SNP is also accumulated by its tagged (LD) SNPs.
 
 [Using an atlas of gene regulation across 44 human tissues to inform complex disease- and trait-associated variation - eQTLEnrich - Gamazon et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/29955180/) 
 
     - Tests wheteher eQTLs for a given tissue are enriched for a specific trait. 
     - Uses best eQTL per gene concept, and permutation based GWAS-eQTL enrichment method.
 
+[Leveraging molecular quantitative trait loci to understand the genetic architecture of diseases and complex traits - Hormozdiari et al. Nat Gen 2018](https://www.nature.com/articles/s41588-018-0148-2) 
+
+    - Constructs a fine-mapped set of eQTLs, hQTLs and splicing QTLs and show their disease-specific heritability enrichment using s-LDSC.
+
+[Dynamic genetic regulation of gene expression during cellular differentiation - Dynamic eQTL - Strober et al. Science 2019](https://pubmed.ncbi.nlm.nih.gov/31249060/) 
+
+    - presents dynamic eQTLs significant in different time points of the cell differentiation trajectory.
+
+[GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) 
+
+    - Peforms GWAS enrichment analysis of regulatory regions. 
+    - Uses p-values of SNPs, LD matrix, regulatory annotations, and SNP distance from TSS. 
+    - First performs LD-based pruning of SNPs (r2 > 0.1), then does LD tagging (R2 > 0.8) 
+    - then does annotation overlap (basically assigning a variant an annotation if the variant itself or any variant in LD with it overlaps with the annotation), 
+    - then fits a logistic regression model between the TSS distance (Y and the variants (and LD variants).
+
+[Cell type-specific genetic regulation of gene expression across human tissues - ieQTL and isQTL - Kim-Hellmuth et al. Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913075/) 
+
+    - As a part of GTEx v8, they devised cell type specific enriched eQTLs and sQTLs, 
+    - showed that they correspond to better tissue specificity and colocalization with GWAS. 
+    - These cell-specific enriched eQTLs are obtained by linear regression between genotypes and cell-specific gene expression values.
+
 [Quantifying genetic effects on disease mediated by assayed gene expression levels - MESC - Yao et al. Nat Genet 2020](https://pubmed.ncbi.nlm.nih.gov/32424349/) 
 
     - Quantifying heritability by the effect of _cis_ gene expression. Uses regression.
+
+[Functional dynamic genetic effects on gene regulation are specific to particular cell types and environmental conditions - Findley et al. eLife 2021](https://pubmed.ncbi.nlm.nih.gov/33988505/) 
+
+    - From the same group. 
+    - GXE specific (context specific) eQTLs according to different cell-specific conditions. 
+    - Also, integrates with ASE.
 
 [Systematic analysis of binding of transcription factors to noncoding variants - SNP-SELEX - Yan et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/33505025/) 
 
@@ -289,6 +301,11 @@
     - **** Note: Supplementary is useful 
         - shows phasing of haplotypes, motif finding, allelic fold change, and haplotype estimation from Hi-C data.
 
+[DeCAF: a novel method to identify cell-type specific regulatory variants and their role in cancer risk - Kalita et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35804456/) 
+
+    - estimates cell-fraction enriched eQTLs - variants whose effect on gene expression vary across bulk samples according to the cell fraction. 
+    - Performs linear regression using cell fraction and gene expression.
+
 [Redefining tissue specificity of genetic regulation of gene expression in the presence of allelic heterogeneity - Arvanitis et al. AJHG 2022](https://doi.org/10.1016/j.ajhg.2022.01.002) 
 
     - CAFEH method. Uses tissue-specificity and allelic heterogeneity to call eQTLs. 
@@ -297,28 +314,12 @@
     - matrixQTL was used with the cell decomposition (CIBERSORT) and other covariates as input. 
     - Finally, eGenes without colocalization between tissues / datasets were prioritized.
 
-[GARFIELD classifies disease-relevant genomic features through integration of functional annotations with association signals - Lotchkova et al. Nat Gen 2019](https://www.nature.com/articles/s41588-018-0322-6) 
-
-    - Peforms GWAS enrichment analysis of regulatory regions. 
-    - Uses p-values of SNPs, LD matrix, regulatory annotations, and SNP distance from TSS. 
-    - First performs LD-based pruning of SNPs (r2 > 0.1), then does LD tagging (R2 > 0.8) 
-    - then does annotation overlap (basically assigning a variant an annotation if the variant itself or any variant in LD with it overlaps with the annotation), 
-    - then fits a logistic regression model between the TSS distance (Y and the variants (and LD variants).
-
-[Partitioning heritability by functional annotation using genome-wide association summary statistics - S-LDSC - Finucane et al. Nat Gen 2015](https://www.nature.com/articles/ng.3404) 
-
-    - Proposes S-LDSC method, to identify the functional annotation (category) of SNPs enriched for disease heritability. 
-    - The idea is that for polygenic traits, a heritability information (chi-sq statistic) of a SNP is also accumulated by its tagged (LD) SNPs.
-
-[Leveraging molecular quantitative trait loci to understand the genetic architecture of diseases and complex traits - Hormozdiari et al. Nat Gen 2018](https://www.nature.com/articles/s41588-018-0148-2) 
-
-    - Constructs a fine-mapped set of eQTLs, hQTLs and splicing QTLs and show their disease-specific heritability enrichment using s-LDSC.
-
 ## QTL - Polygenic Risk Scores (PRS)
 
 [Integration of rare expression outlier-associated variants improves polygenic risk prediction - Smail et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35588732/) 
 
-    - Utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants. *** Note: the methods section, GTEx v8 data shows how to infer the rare variants and associated statisitcs from variants, and calculate PRS.
+    - Utilizes rare variants and outlier genes (having Z score expression > certain threshold) to characterize the phenotypic effect of these rare variants. 
+    - *** Note: the methods section, GTEx v8 data shows how to infer the rare variants and associated statisitcs from variants, and calculate PRS.
 
 [The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) 
 
@@ -341,7 +342,7 @@
         - 2) EB - empirical bayes method to estimate standardized effect sizes for SNPs considering covariance matrix from all populations and assuming normal prior. 
             - SNP coefficient estimation - based on the combination of multiple GWAS summary statistics mean and variance and assuming a normal distribution.
         - 3) SL - Superlearning: tested with CNN and regression methods to estimate PRS. Benchmarked with 23andme datasets, and LDPred2 method.
-    - Benchmarks PRS prediction among 10 methods - 
+    - Benchmarks PRS prediction among different methods - CT, LDPred2, PolyPred-S+, XPASS, PRS-CSx, CT-SLEB, and their weighted combinations.
 
 ## QTL - TWAS
 
@@ -363,7 +364,6 @@
     - S-PrediXcan method. PrediXcan using GWAS summary statistics.
     - High concordance between PrediXcan and S-PrediXcan, with much more applicability.
     - Compared with coloc, RTC, eCAVIAR, ENLOC, and S-TWAS (summary based TWAS).
-    - 
 
 [A multi-tissue transcriptome analysis of human metabolites guides the interpretability of associations based on multi-SNP models for gene expression - Ndungu et al. AJHG 2019](https://pubmed.ncbi.nlm.nih.gov/31978332/) 
 
