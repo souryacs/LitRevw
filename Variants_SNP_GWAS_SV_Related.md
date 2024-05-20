@@ -6,6 +6,54 @@
 
 ## Genotyping
 
+[A flexible and accurate genotype imputation method for the next generation of genome-wide association studies - Howie et al. PLoS Comp Biol 2009](https://pubmed.ncbi.nlm.nih.gov/19543373/)
+
+    - Statistical estimation of haplotypes from genetic data 
+        - predicts unobserved genotypes of a study sample from one or more reference panels - such as 1000 Genome Phase 3.
+    - Choosing one of 2^N possible haplotypes from a given set of N bi-allelic SNPs
+    - Assumption: haplotypes matching at set T (typed at both study and reference samples) should also match at set U (untyped at study but present at reference samples).
+    - Cons: accuracy of the study haplotypes phased at SNPs of T determines the accuracy of their matching with the reference panel.
+    - Accounting for the unknown phases of SNPs in T is computationally expensive. Requirement of a phasing algorithm.
+    - Improved imputation at U by improving phasing at T. 
+    - Alternately estimate haplotypes at T, and impute alleles at SNPs in U - separating phasing and imputation by MCMC framework
+        - In fact, U can be U1 and U2 where the untyped SNPs are present in one of multiple reference panels.
+    - Step 1: sample a new haplotype pair for individual samples with respect to SNPs in T.
+        - Using a MCMC conditional distribution, on the reference panel haplotypes and the current study sample haplotypes (excluding the current sample)
+    - Step 2: Impute new alleles for SNPs in the set U. Here the reference panel haplotype information is used.
+        - Li and Stephens based HMM (Genetics 2003) based modeling is used for both IMPUTE1 and IMPUTE2.
+        - Similar to PHASE, but much faster 
+        - iteratively update the haplotype estimates of each sample conditional upon a subset of K haplotype estimates of other samples. 
+        - introduced the idea of carefully choosing which subset of haplotypes to condition on to improve accuracy. 
+        - Accuracy increases with K but with quadratic O(K^2) computational complexity.
+
+[Fast and accurate genotype imputation in genome-wide association studies through pre-phasing - Howie et al. Nat Genet 2012](https://pubmed.ncbi.nlm.nih.gov/22820512/)
+
+    - IMPUTE2 method.
+    - Using the reference HapMap2, 1000 Genome haplotypes, first estimates phased GWAS haplotypes (called pre-phasing) 
+        - and then imputes SNPs using these phased haplotypes.
+    - Pre-phasing is a useful technique for speeding up an imputation run, 
+        - even more useful if you want to impute a single study dataset from different reference panels 
+        - (e.g., successive updates to the reference haplotypes released by the 1,000 Genomes Project). 
+        - Here, you can perform the pre-phasing step just once and save the estimated haplotypes; 
+        - you can then use the same study haplotypes to perform the imputation step with each new reference panel.
+
+[Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank - Hofmeister et al. Nature 2023](https://www.nature.com/articles/s41588-023-01415-w)
+
+    - SHAPEIT5 method to infer the haplotypes underlying your study genotypes
+    - Initial approaches: SHAPEIT to infer the haplotypes - then passing these to IMPUTE2 for imputation (as implemented in SHAPEIT2)
+    - The idea is to sample P(D|H) where D = data, H = haplotype information using a compact graph representation - genotype graph.
+    - SHAPEIT1: advance by introducing a linear O(K) complexity method that operates only on the space of haplotypes (K) consistent with an individual’s genotypes.
+    - SHAPEIT4: Haplotype similarity is modeled by Positional Burrows Wheeler transform (PBWT)
+        - Get P haplotypes sharing the longest prefixes with the current haplotype estimate
+        - Collapses the haplotypes identified across the entire region into a list of K distinct haplotypes.
+        - K varies according to the length of matches found in PBWT
+    - 3 additional layers of phasing information: 
+        - reference panel of haplotypes, 
+        - phase information contained in sequencing reads, using haplotype assembly methods like WhatsHap 
+        - subsets of genotypes where the phase information is known a priori (haplotype scaffolding)
+    - SHAPIET4 complexity is O(K)
+    - SHAPEIT5: follows BEAGLE 5 to first phase the common variants and then the rare variants.
+
 [Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
 
     - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
