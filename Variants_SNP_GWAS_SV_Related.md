@@ -4,6 +4,13 @@
 
 [GWAS tutorial](https://pbreheny.github.io/adv-gwas-tutorial/quality_control.html)
 
+## Genotyping
+
+[Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
+
+    - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
+
+
 ## Regulatory regions, motifs
 
 [IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) 
@@ -71,6 +78,18 @@
 [The GTEx Consortium atlas of genetic regulatory effects across human tissues - GTEx v8 release - Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913098/) 
 
     - GTEx v8 release. Specifically check the supplementary material for the details of QTL derivation.
+    - WGS data processing:
+        - Alignment with BWA-MEM + Duplicate removal by PICARD + Variant Quality Score recalibration 
+        - Detect outliers from WGS BAMs
+        - Mean sequence coverage + percent of chimeric reads + median and standard deviation of insert size + contamination rate (VerifyBAMID)
+        - PCA + Ancestry of donors - Hail
+        - Genome STRiP for WGS CNV identification
+        - Genotype quality scores 
+        - Variant QC by GATK, PLINK and Hail - VQSR, variant in LCR
+        - Variant PCA - PLINK
+        - Phasing - SHAPEIT2
+    - RNA-seq data processing
+        - STAR - alignment - WASP for removing allele-specific read bias
 
 [A vast resource of allelic expression data spanning human tissues - GTEx v8 - Castel et al. Genome Biology 2020](https://pubmed.ncbi.nlm.nih.gov/32912332/) 
 
@@ -147,12 +166,6 @@
     - The utility of loop QTL is not evident. 
     - Did not find a specific analysis focused on loopQTLs or any motif analysis.
 
-## Genotyping
-
-[Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
-
-    - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
-
 ## Colocalization / Fine-mapping
 
 [Identifying causal variants at loci with multiple signals of association - Hormozdiari et al. - Genetics 2014](https://pubmed.ncbi.nlm.nih.gov/25104515/)
@@ -212,6 +225,11 @@
 
     - Discusses about prior probabilities of coloc package - must check. 
     - Also supports multiple causal variants per locus by masking all SNPs in LD with the lead SNP.
+
+[A catalog of GWAS fine-mapping efforts in autoimmune disease - Caliskan et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33798443/)
+
+    - Check if fine-mapped variants are potential loss of variants (pLOF) using the variant effect predictor.
+    - Or if they are missense variant of predicted damaging effect (based on SIFT / PolyPhen)
 
 [A more accurate method for colocalisation analysis allowing for multiple causal variants - Wallace, PLoS Genetics 2021](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009440) 
 
