@@ -4,7 +4,9 @@
 
 ## Regulatory regions, genes
 
-[Nguyen et al. Frontiers 2015](https://pubmed.ncbi.nlm.nih.gov/26441967/) discussed important regulatory regions and genes for T cell differentiation. 1) Th2 lineage: expression of Cytokine IL-4 (and also IL-5, IL-13), RAD50 genes, and differentiation by TF GATA3, STAT6. 2) Th1 specific genes: Ifng and Tbx21. In general, STAT family of TFs are responsible for T cell differentiation.
+[Transcriptional Enhancers in the Regulation of T Cell Differentiation - Nguyen et al. Frontiers in Immunology 2015](https://pubmed.ncbi.nlm.nih.gov/26441967/) 
+
+  - Discussed important regulatory regions and genes for T cell differentiation. 1) Th2 lineage: expression of Cytokine IL-4 (and also IL-5, IL-13), RAD50 genes, and differentiation by TF GATA3, STAT6. 2) Th1 specific genes: Ifng and Tbx21. In general, STAT family of TFs are responsible for T cell differentiation.
 
 [Cano-Gamez et al. Nature Comm 2020](https://www.nature.com/articles/s41467-020-15543-y) derives T cell differentiation lineages using single cell transcriptomics and prioritizes cytokines and genes important for T cell differentiation.
 
