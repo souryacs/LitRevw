@@ -6,17 +6,36 @@
 
 [Transcriptional Enhancers in the Regulation of T Cell Differentiation - Nguyen et al. Frontiers in Immunology 2015](https://pubmed.ncbi.nlm.nih.gov/26441967/) 
 
-  - Discussed important regulatory regions and genes for T cell differentiation. 1) Th2 lineage: expression of Cytokine IL-4 (and also IL-5, IL-13), RAD50 genes, and differentiation by TF GATA3, STAT6. 2) Th1 specific genes: Ifng and Tbx21. In general, STAT family of TFs are responsible for T cell differentiation.
+    - Discussed important regulatory regions and genes for T cell differentiation. 
+      - 1) Th2 lineage: expression of Cytokine IL-4 (and also IL-5, IL-13), RAD50 genes, and differentiation by TF GATA3, STAT6. 
+      - 2) Th1 specific genes: Ifng and Tbx21. 
+      - In general, STAT family of TFs are responsible for T cell differentiation.
 
-[Cano-Gamez et al. Nature Comm 2020](https://www.nature.com/articles/s41467-020-15543-y) derives T cell differentiation lineages using single cell transcriptomics and prioritizes cytokines and genes important for T cell differentiation.
+[Single-cell transcriptomics identifies an effectorness gradient shaping the response of CD4+ T cells to cytokines - Cano-Gamez et al. Nature Comm 2020](https://www.nature.com/articles/s41467-020-15543-y) 
 
-[Andreatta et al. eLife 2022](https://elifesciences.org/articles/76339) used scRNA-seq and TCR to identify key marker genes for T cell differentiation (check figures 1-4 for a complete list of T cell lineage deriving marker genes).
+    - Derives T cell differentiation lineages using single cell transcriptomics and prioritizes cytokines and genes important for T cell differentiation.
+    - Cell type specific gene expression programs in CD4+ T cells.
 
-[Rundquist et al. Frontiers Immunology 2022](https://www.frontiersin.org/articles/10.3389/fimmu.2022.835625/full) discussed marker genes for T cell differentiation to Th1 (Fig. 2) and also the progesteron hormone during pregnancy and its effect on MS and RA.
+[A CD4+ T cell reference map delineates subtype-specific adaptation during acute and chronic viral infections - Andreatta et al. eLife 2022](https://elifesciences.org/articles/76339) 
 
-[Tracking DNA-based antigen-specific T cell receptors during progression to type 1 diabetes - Mitchell et al. Science Advances 2023](https://pubmed.ncbi.nlm.nih.gov/38064552/) Deep sequencing of TCR alpha and beta receptor sequences and identifying the differences of antigen specific TCR receptors between T1D cohorts and control. To Do: Can we design a ML framework which can identify such differences?
+    - Used scRNA-seq and TCR to identify key marker genes for T cell differentiation (check figures 1-4 for a complete list of T cell lineage deriving marker genes).
+    - Models changes of CD4+ T cells in acute and chronic viral infection.
 
-[Base-editing mutagenesis maps alleles to tune human T cell functions - Schmidt et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/38093011/) Proposes multiplexed parallel CRISPR screen based base editing scheme (mutagenesis) to validate the functional genes and variants.
+[Progesterone Inhibits the Establishment of Activation-Associated Chromatin During TH1 Differentiation - Rundquist et al. Frontiers Immunology 2022](https://www.frontiersin.org/articles/10.3389/fimmu.2022.835625/full) 
+
+    - Discussed marker genes for T cell differentiation to Th1 (Fig. 2) and also the progesteron hormone during pregnancy and its effect on MS and RA.
+    - ATAC-seq and RNA-seq time series data on TH1 differentiation.
+
+[Tracking DNA-based antigen-specific T cell receptors during progression to type 1 diabetes - Mitchell et al. Science Advances 2023](https://pubmed.ncbi.nlm.nih.gov/38064552/) 
+
+    - Deep sequencing of TCR alpha and beta receptor sequences and identifying the differences of antigen specific TCR receptors between T1D cohorts and control. 
+    - To Do: Can we design a ML framework which can identify such differences?
+
+[Base-editing mutagenesis maps alleles to tune human T cell functions - Schmidt et al. Nature 2023](https://pubmed.ncbi.nlm.nih.gov/38093011/) 
+
+    - Proposes multiplexed parallel CRISPR screen based base editing scheme (mutagenesis) for human B and T cells, to validate the functional genes and variants.
+    - Identifies mutations effecting activation and cytokine production
+      - These guides are predicted to have high changes in BLOSUM62 scores (protein structure) as predicted by Alphafold.
 
 ## SNPs
 
