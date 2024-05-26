@@ -192,19 +192,54 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - 1) use the enformer derived scores and functional validations to fine-map the GWAS variants (similar to EMS), 
         - 2) Benchmark / use the enhancer prioritization with respect to conventional Hi-C, HiChIP maps.
 
-[Predicting RNA-seq coverage from DNA sequence as a unifying model of gene regulation - Linder et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.08.30.555582v1) Borzoi method. Extension of Enformer. *Input*: RNA Sequence. *Output*: 1. Predicted RNA coverage 2. Gene expression (TSS pr exon specific) 3. Enhancer prioritization by saliency score 4. QTL variant effect *Method*: Transformer + CNN + U-Net architecture (to apply attention at 128bp but predict RNA-seq coverage at 32bp, by repeated upsampling technique employed in image processing). 
+[Predicting RNA-seq coverage from DNA sequence as a unifying model of gene regulation - Linder et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.08.30.555582v1) 
 
-[Deep learning predicts DNA methylation regulatory variants in the human brain and elucidates the genetics of psychiatric disorders - INTERACT - Zhou et al. PNAS 2022](https://pubmed.ncbi.nlm.nih.gov/35969790/) predicts DNA methylation levels from DNA sequences, tissue specific DNA methylation data, TF motifs (validated by TOMTOM motif analysis tool) and also predicts DNA methylation QTLs (sequence variants) which are further integrated to brain GWAS studies. Presents a transformer based learning model to predict the changes in DNA methylation level from variants (mQTLs). Trains the data on SUSIE-derived fine-mapped mQTLs.
+    - Borzoi method. Extension of Enformer. 
+    - *Input*: RNA Sequence. 
+    - *Output*: 
+        - 1. Predicted RNA coverage 
+        - 2. Gene expression (TSS pr exon specific) 
+        - 3. Enhancer prioritization by saliency score 
+        - 4. QTL variant effect 
+    - *Method*: 
+        - Transformer + CNN + U-Net architecture 
+            - (to apply attention at 128bp but predict RNA-seq coverage at 32bp, by repeated upsampling technique employed in image processing). 
 
-[CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data - Thibodeau et al. Plos Comp Biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009670) Prediction of *cis*-CREs using ATAC-seq data. Uses CNN + max pooling. Can not predict chromHMM annotations but predicts top 3 functional annotations.
+[Deep learning predicts DNA methylation regulatory variants in the human brain and elucidates the genetics of psychiatric disorders - INTERACT - Zhou et al. PNAS 2022](https://pubmed.ncbi.nlm.nih.gov/35969790/) 
+
+    - Predicts DNA methylation levels from DNA sequences, tissue specific DNA methylation data, TF motifs (validated by TOMTOM motif analysis tool) 
+    - also predicts DNA methylation QTLs (sequence variants) which are further integrated to brain GWAS studies. 
+    - Presents a transformer based learning model to predict the changes in DNA methylation level from variants (mQTLs). 
+    - Trains the data on SUSIE-derived fine-mapped mQTLs.
+
+[CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data - Thibodeau et al. Plos Comp Biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009670) 
+
+    - Prediction of *cis*-CREs using ATAC-seq data. 
+    - Uses CNN + max pooling. 
+    - Can not predict chromHMM annotations but predicts top 3 functional annotations.
   
-[BindSpace decodes transcription factor binding signals by large-scale sequence embedding - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model). Uses HT-SELEX TF database as input, and learns embedding space where TFs with similar binding profiles are closer. Uses one-vs-all LASSO framework on the TF k-mers as used in StarSpace.
+[BindSpace decodes transcription factor binding signals by large-scale sequence embedding - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) 
 
-[Technical Note on Transcription Factor Motif Discovery from Importance Scores (TF-MoDISco) version 0.5.6.5 - Shrikumar et al. arXiv 2018](https://arxiv.org/abs/1811.00416) Using DeepLIFT framework, designs TF-MoDISCO, a motif discovery framework using the per-base importance score. 
+    - Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model). 
+    - Uses HT-SELEX TF database as input, and learns embedding space where TFs with similar binding profiles are closer. 
+    - Uses one-vs-all LASSO framework on the TF k-mers as used in StarSpace.
 
-[Base-resolution models of transcription-factor binding reveal soft motif syntax - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) BPNet method - CNN based TF binding motif prediction from DNA sequence. DNA binding profiles are obtained from ChIP-Nexus profiles. Also tests how the distance between motif pairs affects TF cooperativity. Uses their earlier devleoped method TF-MoDisco and DeepLIFT to understand the base-level contributions to motif scores (or predicted TF binding outputs). Developed a new motif representation called contribution weight matrix (CWM) and also compared with the traditional position frequency matrix (PFM) representation. Validates the motifs by performing targeted point-mutations in mapped motifs and comparing the observed changes in ChIP-Nexus profiles to those predicted by BPNet.
+[Technical Note on Transcription Factor Motif Discovery from Importance Scores (TF-MoDISco) version 0.5.6.5 - Shrikumar et al. arXiv 2018](https://arxiv.org/abs/1811.00416) 
 
-[Short tandem repeats bind transcription factors to tune eukaryotic gene expression - Horton et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37733848/) Application of BPNet, to get the scores of STRs (short tandem repeats - 1-6 bp) and predict their influence on TF binding.
+    - Using DeepLIFT framework, designs TF-MoDISCO, a motif discovery framework using the per-base importance score. 
+
+[Base-resolution models of transcription-factor binding reveal soft motif syntax - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) 
+
+    - BPNet method - CNN based TF binding motif prediction from DNA sequence. 
+    - DNA binding profiles are obtained from ChIP-Nexus profiles. 
+    - Also tests how the distance between motif pairs affects TF cooperativity. 
+    - Uses their earlier devleoped method TF-MoDisco and DeepLIFT to understand the base-level contributions to motif scores (or predicted TF binding outputs). 
+    - Developed a new motif representation called contribution weight matrix (CWM) and also compared with the traditional position frequency matrix (PFM) representation. 
+    - Validates the motifs by performing targeted point-mutations in mapped motifs and comparing the observed changes in ChIP-Nexus profiles to those predicted by BPNet.
+
+[Short tandem repeats bind transcription factors to tune eukaryotic gene expression - Horton et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37733848/) 
+
+    - Application of BPNet, to get the scores of STRs (short tandem repeats - 1-6 bp) and predict their influence on TF binding.
 
 [DeepSTARR predicts enhancer activity from DNA sequence and enables the de novo design of synthetic enhancers - Almeida et al. Nature Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35551305/) DeepSTARR method. Predicts chromatin regulatory activity from DNA sequence (STARR-seq). Adapts Basset architecture (CNN). Applies on Drosophilla Genome and also human genome. Identifies the motif syntax specific rules to detect the cis-regulatory code by adapting DeepLIFT and TF-MoDisco.
 
