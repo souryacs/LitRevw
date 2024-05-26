@@ -39,8 +39,26 @@
 
 ## SNPs
 
-[Soskic et al. Nat Genet 2022](https://www.nature.com/articles/s41588-022-01066-3) derived single cell eQTLs and in particular, time-dependent dynamic eQTLs for T cell differentiation (Suppl. Table 8). They used both linear and nonlinear dynamic eQTL model and derived FDR for both. They highlighted IL7R, CD69, IL2RA, IRF1, TOP2A as important genes.
+[Regulatory T Cell-Specific Epigenomic Region Variants Are a Key Determinant of Susceptibility to Common Autoimmune Diseases - Ohkura et al. Immunity 2020](https://doi.org/10.1016/j.immuni.2020.04.006) 
 
-[Bossini-Castillo et al. Cell Genomics 2022](https://doi.org/10.1016/j.xgen.2022.100117) identified Treg specific eQTLs, chromatinQTLs, and also colocalized with various immune disease specific GWAS SNPs. Good repository for Treg specific marker genes and SNPs.
+    - Identified Treg specific genes and putative causal genes, specifically in CTLA4 and IL2RA loci. 
+    - They also provided a concept of GWAS LD-SNP group, 
+        - considering all SNPs with LD (R2 > 0.8) and MAF > 0.1 with the lead GWAS fine-mapped SNP (PICS) within 50 Kb, as a LD group of SNPs.
+        - These SNP groups were shown to be enriched for various autoimmune diseases, and Treg specific regulatory regions.
 
-[Ohkura et al. Immunity 2020](https://doi.org/10.1016/j.immuni.2020.04.006) identified Treg specific genes and putative causal genes, specifically in CTLA4 and IL2RA loci. They also provided a concept of GWAS LD-SNP group, by considering all SNPs with LD (R2 > 0.8) and MAF > 0.1 with the lead GWAS fine-mapped SNP (PICS) within 50 Kb, as a LD group of SNPs.
+[Immune disease risk variants regulate gene expression dynamics during CD4+ T cell activation - Soskic et al. Nat Genet 2022](https://www.nature.com/articles/s41588-022-01066-3) 
+
+    - Derived single cell eQTLs and in particular, time-dependent dynamic eQTLs for T cell differentiation (Suppl. Table 8). 
+    - Capturing transcriptional states of unstimulated cells and three time points of cell activation in 119 healthy individuals.
+    - Transient cell states associated with specific time points.
+    - They used both linear and nonlinear dynamic eQTL model and derived FDR for both. 
+        - Used mutivariate adaptive shrinkage (mashR) method to quantify eQTL sharing between timepoints.
+        - eQTL effect sizes, measured by allelic fold changes, were compared between cell states.
+    - Highlighted IL7R, CD69, IL2RA, IRF1, TOP2A as important genes.
+
+[Immune disease variants modulate gene expression in regulatory CD4+ T cells - Bossini-Castillo et al. Cell Genomics 2022](https://doi.org/10.1016/j.xgen.2022.100117) 
+
+    - Identified Treg specific eQTLs, chromatinQTLs, 
+    - colocalized with various immune disease specific GWAS SNPs. 
+    - Good repository for Treg specific marker genes and SNPs.
+
