@@ -59,7 +59,7 @@
 [Rare penetrant mutations confer severe risk of common diseases - Fiziev et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37262146/) Using their previusly published primateAI-3D model which identifies benign and pathogenic variants, including rare variants (MAF >= 0.1%), they identify the gene-phenotype associations and compare with the conventional GWAS studies which only include common variants.
 They benchmark with another rare variant specific method Backman et al. Nature 2021, and finds more GWAS supported genes. Also derives one polygenic risk score (PRS) prediction method using the rare variants and compare with the conventional PRS prediction methods employing common variants.
 
-## QTL / SNP / GWAS etc.
+## QTL / SNP / GWAS / PRS etc.
 
 [The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) 
 
@@ -77,14 +77,37 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
     - Augments with 6-mer based motif scoring and also employs TFmotifDisco to get the nucleotide importance scores. 
     - These scores are used to characterize the cell specific enhancers, 
         - then fine-mapped GWAS SNPs are overlapped with them to predict the putative functional and cell-specific variants.
+    - *To Do:* How knowledge of these cell-specific enhancers can be used to predict cell-specific gene expression?
 
-[Annotating functional effects of non-coding variants in neuropsychiatric cell types by deep transfer learning - MetaChrom - Lai et al. PLOS Comp Biol. 2022](https://pubmed.ncbi.nlm.nih.gov/35576194/) - Although the title is about annotating functional variants, the approach is similar to the DeepSEA framework, it predicts the epigenomic tracks (histone and chromatin accessibility) from DNA sequences. Uses RESNET architecture and transfer learning to predict the epigenomic tracks.
+[Annotating functional effects of non-coding variants in neuropsychiatric cell types by deep transfer learning - MetaChrom - Lai et al. PLOS Comp Biol. 2022](https://pubmed.ncbi.nlm.nih.gov/35576194/) 
 
-[DeepCOMBI: explainable artificial intelligence for the analysis and discovery in genome-wide association studies - Mieth et al. NAR Genomics Bioinformatics](https://pubmed.ncbi.nlm.nih.gov/34296082/) adopts layer-wise relevance propagation (LRP) to attribute SNP relevance scores and selection of significant SNPs in GWAS studies. Replaces conventional p-value thresholding. Extends their earlier work COMBI which uses SVM based method, to a DNN setting.
+    - Although the title is about annotating functional variants, the approach is similar to the DeepSEA framework. 
+    - It predicts the epigenomic tracks (histone and chromatin accessibility) from DNA sequences. 
+    - Uses RESNET architecture and transfer learning to predict the epigenomic tracks.
 
-[REGLE - Unsupervised representation learning improves genomic discovery for lung function and respiratory disease prediction - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) From Google Research. Proposes low dimensional representation learning of high-dimensional clinical data (HDCD) and utilizes these low-dimensional embeddings to compute polygenic risk scores (PRS). Applies on COPD (chronic obstructive pulmonary disease) and spirograms, lung and respiratory data.
+[DeepCOMBI: explainable artificial intelligence for the analysis and discovery in genome-wide association studies - Mieth et al. NAR Genomics Bioinformatics](https://pubmed.ncbi.nlm.nih.gov/34296082/) 
 
-[Genetic association studies using disease liabilities from deep neural networks - Yang et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.01.18.23284383v1) Also talks about HDCD. First, they introduce GWAX, GWA using proxy. Includes persons as cases whose one of the family members has the disease of interest. Modification of CC GWAS study. Shown to retrive new GWAS risk loci. Performs AI based modeling (their pre-trained DL framework POPDx) on the input HDCD GWAS trait, and the generated GWAS trait features are known as disease liability scores, which are used as the GWAS trait features. They show that these liability scores perform better in GWAS trait mapping.
+    - Adopts layer-wise relevance propagation (LRP) to attribute SNP relevance scores and selection of significant SNPs in GWAS studies. 
+    - Replaces conventional p-value thresholding. 
+    - Extends their earlier work COMBI which uses SVM based method, to a DNN setting.
+
+[REGLE - Unsupervised representation learning improves genomic discovery for lung function and respiratory disease prediction - Yun et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.04.28.23289285v1) 
+
+    - From Google Research. 
+    - Proposes low dimensional representation learning of high-dimensional clinical data (HDCD)
+        - utilizes these low-dimensional embeddings to compute polygenic risk scores (PRS). 
+    - Applies on COPD (chronic obstructive pulmonary disease) and spirograms, lung and respiratory data.
+
+[Genetic association studies using disease liabilities from deep neural networks - Yang et al. medRxiv 2023](https://www.medrxiv.org/content/10.1101/2023.01.18.23284383v1) 
+
+    - Also talks about HDCD. 
+    - First, they introduce GWAX, GWA using proxy. 
+        - Includes persons as cases whose one of the family members has the disease of interest. 
+        - Modification of CC GWAS study. 
+        - Shown to retrive new GWAS risk loci. 
+    - Performs AI based modeling (their pre-trained DL framework POPDx) on the input HDCD GWAS trait, 
+        - generated GWAS trait features are known as disease liability scores, which are used as the GWAS trait features. 
+        - They show that these liability scores perform better in GWAS trait mapping.
 
 [EMS - Leveraging supervised learning for functionally informed fine-mapping of cis-eQTLs identifies an additional 20,913 putative causal eQTLs - Wang et al. Nat Comm 2021](https://www.nature.com/articles/s41467-021-23134-8) Work from David Kelley, Hillary Finucane etc. Presents EMS (expression modifier score) to predict fine-mapped causal variants. Trains data using fine-mapped variants derived by SUSIE + FINEMAP, using 49 tissues GTEX v8 data. Then uses annotation features like TSS distance, tissue and non-tissue specific binary annotations, DL features (Basenji scores), and trains a random forest classifier. Feature importance scores mention that Basenji scores and TSS distance are informative features. Using these EMS scores as prior, then they define a functional annotation based fine-mapping (PIP) across 95 traits.  ** Note: check Enformer performance. See the detailed feature list. Use motif binding information. 
 
