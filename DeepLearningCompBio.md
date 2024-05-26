@@ -137,6 +137,7 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         
 [Whole-genome deep-learning analysis identifies contribution of noncoding mutations to autism risk - Zhou et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/31133750/) 
 
+    - Follow up work of DEEPSEA.
     - Finding non-coding mutations relevant to ASD. 
     - *Input*: WGS data from Simons Simplex Collection. 
     - *Output*: 
@@ -144,9 +145,33 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - 2. Putative functional noncoding mutations in ASD. 
         - 3. Underlying genes and pathways related to functional noncoding mutations by developing network neighborhood diferential enrichment analysis (NDEA).
 
-[Basset - learning the regulatory code of the accessible genome with deep convolutional neural networks - Kelley et al. Genome Research 2016](https://genome.cshlp.org/content/26/7/990.long): Basset method. *Input*: DNA sequence. Uses DNase-seq, DHS and peaks. *Output*: 1. CNN based prediction of chromatin accessibility and TF motifs 2. Predicts important GWAS SNPs by calculating the allele-specific differential chromatin accessibility. 3. Predicts regulatory DNA sequences and sequence activities (chomatin accessibility). 4. In silico mutagenesis to find allele-specific changes. 5. Tests with PICS fine-mapped GWAS SNPs. *Method*: Deep CNNs learn relevant sequence motifs and regulatory logic. Assigns GWAS variants and cell-type-scores to predict chromatin accessibility difference between alleles, and predicts causal SNPs. 
+[Basset - learning the regulatory code of the accessible genome with deep convolutional neural networks - Kelley et al. Genome Research 2016](https://genome.cshlp.org/content/26/7/990.long): 
 
-[Sequential regulatory activity prediction across chromosomes with convolutional neural networks - Basenji - Kelley et al. Genome Research 2018](https://genome.cshlp.org/content/28/5/739.long): Extends Basset, which only generates peak based chromatin profiles. Predicts epigenomic and transcriptional effects using the ChIP-seq, DNAse seq, ATAC-seq. Also identifies causal variants using GWAS loci. Predicts distal regulatory interactions and finer resolution chromatin profiles. Predicts a signed profile of distal regulatory regions to indicate if those are enhancers or silencers. Similarly, for a given SNP, it predicts the SNP expression difference (SED) score to characterize if these are eQTLs. Also reports a disease-specific variant scores, and tests with input PICS fine-mapped variants. **Implementation details** : 1) The input sequencing dataset is processed by a custom pipeline to use the multi-mapping reads and to normalize for GC bias. 2) Weight values are initialized by Glorot initialization. 3) GPyOpt python package is used for Bayesian optimization and hyperparameter tuning. 4) Data augmentation is done by either using reverse complement DNA sequences in every alternate epoch, and minor sequence shifts.
+    - *Input*: DNA sequence. Uses DNase-seq, DHS and peaks. 
+    - *Output*: 
+        - 1. CNN based prediction of chromatin accessibility and TF motifs 
+        - 2. Predicts important GWAS SNPs by calculating the allele-specific differential chromatin accessibility. 
+        - 3. Predicts regulatory DNA sequences and sequence activities (chomatin accessibility). 
+        - 4. In silico mutagenesis to find allele-specific changes. 
+        - 5. Tests with PICS fine-mapped GWAS SNPs. 
+    - *Method*: 
+        - Deep CNNs learn relevant sequence motifs and regulatory logic. 
+        - Assigns GWAS variants and cell-type-scores to predict chromatin accessibility difference between alleles, and predicts causal SNPs. 
+
+[Sequential regulatory activity prediction across chromosomes with convolutional neural networks - Basenji - Kelley et al. Genome Research 2018](https://genome.cshlp.org/content/28/5/739.long): 
+
+    - Extends Basset, which only generates peak based chromatin profiles. 
+    - Predicts epigenomic and transcriptional effects using the ChIP-seq, DNAse seq, ATAC-seq. 
+    - Also identifies causal variants using GWAS loci. 
+    - Predicts distal regulatory interactions and finer resolution chromatin profiles. 
+    - Predicts a signed profile of distal regulatory regions to indicate if those are enhancers or silencers. 
+    - Similarly, for a given SNP, it predicts the SNP expression difference (SED) score to characterize if these are eQTLs. 
+    - Also reports a disease-specific variant scores, and tests with input PICS fine-mapped variants. 
+    - **Implementation details** : 
+        - 1) The input sequencing dataset is processed by a custom pipeline to use the multi-mapping reads and to normalize for GC bias. 
+        - 2) Weight values are initialized by Glorot initialization. 
+        - 3) GPyOpt python package is used for Bayesian optimization and hyperparameter tuning. 
+        - 4) Data augmentation is done by either using reverse complement DNA sequences in every alternate epoch, and minor sequence shifts.
 
 [Deep learning sequence-based ab initio prediction of variant effects on expression and disease risk - Expecto - Zhou et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/30013180/) Deep learning framework to predict gene expression from epigenomic tracks. Uses 2002 tracks across 218 cell types, 40 Kb (20 kb in each direction) sequence from TSS, and applies 200 bp sldiding window for constructing the epigenomic features. Then applies spatial operation (basically averaging) to generate 10 features per track (2002 X 10 feature matrix) to predict the tissue-specific gene expression using L2 regularized linear regression models fitted by a gradient boosting algorithm.
 
