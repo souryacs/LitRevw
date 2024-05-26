@@ -109,12 +109,40 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - generated GWAS trait features are known as disease liability scores, which are used as the GWAS trait features. 
         - They show that these liability scores perform better in GWAS trait mapping.
 
-[EMS - Leveraging supervised learning for functionally informed fine-mapping of cis-eQTLs identifies an additional 20,913 putative causal eQTLs - Wang et al. Nat Comm 2021](https://www.nature.com/articles/s41467-021-23134-8) Work from David Kelley, Hillary Finucane etc. Presents EMS (expression modifier score) to predict fine-mapped causal variants. Trains data using fine-mapped variants derived by SUSIE + FINEMAP, using 49 tissues GTEX v8 data. Then uses annotation features like TSS distance, tissue and non-tissue specific binary annotations, DL features (Basenji scores), and trains a random forest classifier. Feature importance scores mention that Basenji scores and TSS distance are informative features. Using these EMS scores as prior, then they define a functional annotation based fine-mapping (PIP) across 95 traits.  ** Note: check Enformer performance. See the detailed feature list. Use motif binding information. 
+[EMS - Leveraging supervised learning for functionally informed fine-mapping of cis-eQTLs identifies an additional 20,913 putative causal eQTLs - Wang et al. Nat Comm 2021](https://www.nature.com/articles/s41467-021-23134-8) 
+
+    - Work from David Kelley, Hillary Finucane etc. 
+    - Presents EMS (expression modifier score) to predict fine-mapped causal variants. 
+    - Trains data using fine-mapped variants derived by SUSIE + FINEMAP, using 49 tissues GTEX v8 data. 
+    - Then uses annotation features like TSS distance, tissue and non-tissue specific binary annotations, DL features (Basenji scores), and trains a random forest classifier. 
+    - Feature importance scores mention that Basenji scores and TSS distance are informative features. 
+    - Using these EMS scores as prior, then they define a functional annotation based fine-mapping (PIP) across 95 traits.  
+    - ** To Do**: check Enformer performance. See the detailed feature list. Use motif binding information. 
 
 ## Prediction of Regulatory region / gene expression using DNA sequence
 
-[Predicting effects of noncoding variants with deep learning-based sequence model - Zhou et al. Nature Methods 2015](https://pubmed.ncbi.nlm.nih.gov/26301843/) DEEPSEA deep learning framework. *Input*: DNA Sequence. 200 bp length sequences with at least one TF binding events from 919 chromatin features. Each such 200 bp sequence is used as the center to generate 1000 bp sequence with (1X919) label vector (one label for each chromatin feature and TF binding event). *Output*: 1. Predict DNAse-seq and TF binding from sequence. Allele-specific TF binding and chromatin activity. 2. Implements in-silico mutagenesis approach for variant effect prediction, used in Enformer.
-3. Validates functional SNPs using Human Gene Mutation Database, GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database and GWAS catalog. [Their follow up work](https://pubmed.ncbi.nlm.nih.gov/31133750/) is an approach for finding non-coding mutations relevant to ASD. *Input*: WGS data from Simons Simplex Collection. *Output*: 1. Categorized variants based on predicted DNA transcriptional impact or RNA binding protein impact 2. Putative functional noncoding mutations in ASD. 3. Underlying genes and pathways related to functional noncoding mutations by developing network neighborhood diferential enrichment analysis (NDEA).
+[Predicting effects of noncoding variants with deep learning-based sequence model - Zhou et al. Nature Methods 2015](https://pubmed.ncbi.nlm.nih.gov/26301843/) 
+
+    - DEEPSEA deep learning framework. 
+    - *Input*: DNA Sequence. 200 bp length sequences with at least one TF binding events from 919 chromatin features. 
+        - Each such 200 bp sequence is used as the center to generate 1000 bp sequence with (1X919) label vector 
+            - (one label for each chromatin feature and TF binding event). 
+    - *Output*: 
+        - 1. Predict DNAse-seq and TF binding from sequence. Allele-specific TF binding and chromatin activity. 
+        - 2. Implements in-silico mutagenesis approach for variant effect prediction, used in Enformer.
+        - 3. Validates functional SNPs using: 
+            - Human Gene Mutation Database, 
+            - GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database 
+            - GWAS catalog. 
+        
+[Whole-genome deep-learning analysis identifies contribution of noncoding mutations to autism risk - Zhou et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/31133750/) 
+
+    - Finding non-coding mutations relevant to ASD. 
+    - *Input*: WGS data from Simons Simplex Collection. 
+    - *Output*: 
+        - 1. Categorized variants based on predicted DNA transcriptional impact or RNA binding protein impact 
+        - 2. Putative functional noncoding mutations in ASD. 
+        - 3. Underlying genes and pathways related to functional noncoding mutations by developing network neighborhood diferential enrichment analysis (NDEA).
 
 [Basset - learning the regulatory code of the accessible genome with deep convolutional neural networks - Kelley et al. Genome Research 2016](https://genome.cshlp.org/content/26/7/990.long): Basset method. *Input*: DNA sequence. Uses DNase-seq, DHS and peaks. *Output*: 1. CNN based prediction of chromatin accessibility and TF motifs 2. Predicts important GWAS SNPs by calculating the allele-specific differential chromatin accessibility. 3. Predicts regulatory DNA sequences and sequence activities (chomatin accessibility). 4. In silico mutagenesis to find allele-specific changes. 5. Tests with PICS fine-mapped GWAS SNPs. *Method*: Deep CNNs learn relevant sequence motifs and regulatory logic. Assigns GWAS variants and cell-type-scores to predict chromatin accessibility difference between alleles, and predicts causal SNPs. 
 
