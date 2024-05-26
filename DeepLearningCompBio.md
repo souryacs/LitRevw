@@ -241,26 +241,77 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
     - Application of BPNet, to get the scores of STRs (short tandem repeats - 1-6 bp) and predict their influence on TF binding.
 
-[DeepSTARR predicts enhancer activity from DNA sequence and enables the de novo design of synthetic enhancers - Almeida et al. Nature Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35551305/) DeepSTARR method. Predicts chromatin regulatory activity from DNA sequence (STARR-seq). Adapts Basset architecture (CNN). Applies on Drosophilla Genome and also human genome. Identifies the motif syntax specific rules to detect the cis-regulatory code by adapting DeepLIFT and TF-MoDisco.
+[DeepSTARR predicts enhancer activity from DNA sequence and enables the de novo design of synthetic enhancers - Almeida et al. Nature Genetics 2022](https://pubmed.ncbi.nlm.nih.gov/35551305/) 
 
-[Current sequence-based models capture gene expression determinants in promoters but mostly ignore distal enhancers - Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, and concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
+    - DeepSTARR method. 
+    - Predicts chromatin regulatory activity from DNA sequence (STARR-seq). 
+    - Adapts Basset architecture (CNN). 
+    - Applies on Drosophilla Genome and also human genome. 
+    - Identifies the motif syntax specific rules to detect the cis-regulatory code by adapting DeepLIFT and TF-MoDisco.
 
-[Benchmarking of deep neural networks for predicting personal gene expression from DNA sequence highlights shortcomings - Sasse et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036778/) applies Enformer on the personalized reference genome constructed from WGS data and finds that the prediction accuracy of gene expression for Enformer is actually lower than PrediXcan which uses SNVs from individuals to reconstruct individual level gene expression. Benchmarks Enformer on personalized genome with different genotypes for predicting genotype-dependent changes in gene expression. Examines locus specific examples and finds that for most of the genes, Enformer predicted gene expression shows different patterns than the true genotype-dependent change of gene expression. Also tests prediXcan which shows better prediction of gene expression. Similar observation is in [Personal transcriptome variation is poorly explained by current genomic deep learning models - Huang et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036790/) tests on GEUVADIS RNA-seq cohort and shows that prediXcan predicts much better individual-specific gene expression variation compared to the DL methods like Enformer, Basenji2, Expecto, etc.
+[Current sequence-based models capture gene expression determinants in promoters but mostly ignore distal enhancers - Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) 
 
-[Deep learning suggests that gene expression is encoded in all parts of a co-evolving interacting gene regulatory structure - Zrimec et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/33262328/) mentions that gene expression can be predicted by using both coding and non-coding regions, and deep learning helps to identify candidate motif regions. Motif co-occurrence helps to decode the gene expression.
+    - Reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, 
+    - concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
 
-[CodonBERT: Large Language Models for mRNA design and optimization - Li et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1) Deep learning (BERT) model to predict the mRNA expression from codon occurrence, and codon usage bias. Uses mRNA sequence, masked sequence representation.
+[Benchmarking of deep neural networks for predicting personal gene expression from DNA sequence highlights shortcomings - Sasse et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036778/) 
 
-[Chromatin interaction-aware gene regulatory modeling with graph attention networks - Karbalayghareh et al. Genome Research 2022](https://pubmed.ncbi.nlm.nih.gov/35396274/) GraphReg method. Developed from HiCDC+ group. Proposes 2 models to predict gene expression from epigenomic data: 1) Epi-GraphReg - uses both epigenomic 1D annotations + 3D interactions (HiC, HiChIP) to predict gene expression. Also optionally predicts 1D tracks (methylation, acetylation). 2) Seq-GraphReg: Uses DNA sequence. Uses GAT (Graph Attention Network) instead of GCN for modeling chromatin interactions.
+    - applies Enformer on the personalized reference genome constructed from WGS data 
+    - finds that the prediction accuracy of gene expression for Enformer is actually lower than PrediXcan 
+        - which uses SNVs from individuals to reconstruct individual level gene expression. 
+    - Benchmarks Enformer on personalized genome with different genotypes for predicting genotype-dependent changes in gene expression. 
+    - Examines locus specific examples 
+        - for most of the genes, Enformer predicted gene expression shows different patterns than the true genotype-dependent change of gene expression. 
+    - Also tests prediXcan which shows better prediction of gene expression. 
+    
+[Personal transcriptome variation is poorly explained by current genomic deep learning models - Huang et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036790/) 
 
-[CREaTor: zero-shot cis-regulatory pattern modeling with attention mechanisms - Li et al. Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-03103-8) CREATOR method. Uses CREs from ENCODE for multiple human cell types (DNA sequences) and applies transformer-based model to predict gene expression. Uses K562 with test chromosomes 8, 9 for performance evaluation. Also uses the attention scores to predict the regulatory importance of CREs (up to 2 Mb from TSS). benchmarks with the reference CRISPR datasets as well (such as Gasperini, Fulco et al.) and also evaluates the importance of CREs up to 2 Mb by testing with different models where CREs are within 500 Kb, 1 Mb, 2 Mb etc. * They use RNA-seq data to model the gene expression - use sum of transcript TPM with log1p transformation as the input gene expression *.
+    - Similar observation.
+    - tests on GEUVADIS RNA-seq cohort 
+    - shows that prediXcan predicts much better individual-specific gene expression variation compared to the DL methods like Enformer, Basenji2, Expecto, etc.
 
-[scBasset: sequence-based modeling of single-cell ATAC-seq using convolutional neural networks - Han Yuan et al. Nature Methods 2022](https://pubmed.ncbi.nlm.nih.gov/35941239/) Single cell ATAC-seq track inference and TF binding signature from DNA sequence, using CNN.
+[Deep learning suggests that gene expression is encoded in all parts of a co-evolving interacting gene regulatory structure - Zrimec et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/33262328/) 
 
+    - mentions that gene expression can be predicted by using both coding and non-coding regions, 
+    - deep learning helps to identify candidate motif regions. 
+    - Motif co-occurrence helps to decode the gene expression.
+
+[CodonBERT: Large Language Models for mRNA design and optimization - Li et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.09.09.556981v1) 
+
+    - Deep learning (BERT) model to predict the mRNA expression from codon occurrence, and codon usage bias. 
+    - Uses mRNA sequence, masked sequence representation.
+
+[Chromatin interaction-aware gene regulatory modeling with graph attention networks - Karbalayghareh et al. Genome Research 2022](https://pubmed.ncbi.nlm.nih.gov/35396274/) 
+
+    - GraphReg method. Developed from HiCDC+ group. 
+    - Proposes 2 models to predict gene expression from epigenomic data: 
+        - 1) Epi-GraphReg - uses both epigenomic 1D annotations + 3D interactions (HiC, HiChIP) to predict gene expression. 
+            - Also optionally predicts 1D tracks (methylation, acetylation). 
+        - 2) Seq-GraphReg: Uses DNA sequence. 
+        - Uses GAT (Graph Attention Network) instead of GCN for modeling chromatin interactions.
+
+[CREaTor: zero-shot cis-regulatory pattern modeling with attention mechanisms - Li et al. Genome Biology 2023](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-023-03103-8) 
+
+    - CREATOR method. 
+    - Uses CREs from ENCODE for multiple human cell types (DNA sequences) and applies transformer-based model to predict gene expression. 
+    - Uses K562 with test chromosomes 8, 9 for performance evaluation. 
+    - Also uses the attention scores to predict the regulatory importance of CREs (up to 2 Mb from TSS). 
+    - benchmarks with the reference CRISPR datasets as well (such as Gasperini, Fulco et al.) 
+    - also evaluates the importance of CREs up to 2 Mb by testing with different models where CREs are within 500 Kb, 1 Mb, 2 Mb etc. 
+    - * They use RNA-seq data to model the gene expression - use sum of transcript TPM with log1p transformation as the input gene expression *.
+
+[scBasset: sequence-based modeling of single-cell ATAC-seq using convolutional neural networks - Han Yuan et al. Nature Methods 2022](https://pubmed.ncbi.nlm.nih.gov/35941239/) 
+
+    - Single cell ATAC-seq track inference and TF binding signature from DNA sequence, using CNN.
 
 ## Prediction of Regulatory region without using DNA sequence 
 
-[ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) Denoising ATAC-seq data and peak calling. Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). Performs denoising and peak calling. Uses ResNet architecture.
+[ATACworks - Lal et al. Nature Comm 2021](https://www.nature.com/articles/s41467-021-21765-5) 
+
+    - Denoising ATAC-seq data and peak calling. 
+    - Does not use DNA sequence but rather employs coverage around individual base pairs (6 Kb region). 
+    - Performs denoising and peak calling. 
+    - Uses ResNet architecture.
 
 ## Regulatory Networks
 
