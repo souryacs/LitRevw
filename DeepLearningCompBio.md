@@ -173,9 +173,24 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - 3) GPyOpt python package is used for Bayesian optimization and hyperparameter tuning. 
         - 4) Data augmentation is done by either using reverse complement DNA sequences in every alternate epoch, and minor sequence shifts.
 
-[Deep learning sequence-based ab initio prediction of variant effects on expression and disease risk - Expecto - Zhou et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/30013180/) Deep learning framework to predict gene expression from epigenomic tracks. Uses 2002 tracks across 218 cell types, 40 Kb (20 kb in each direction) sequence from TSS, and applies 200 bp sldiding window for constructing the epigenomic features. Then applies spatial operation (basically averaging) to generate 10 features per track (2002 X 10 feature matrix) to predict the tissue-specific gene expression using L2 regularized linear regression models fitted by a gradient boosting algorithm.
+[Deep learning sequence-based ab initio prediction of variant effects on expression and disease risk - Expecto - Zhou et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/30013180/) 
 
-[Effective gene expression prediction from sequence by integrating long-range interactions - Enformer - Avsec et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34608324/) predicts gene expression from DNA sequences using transformer model and 198 bp receptive field around TSS. Best performing model so far. Beats earlier models Expecto, Basenji2. It also predicts signed effect of variants (or sequences) to check whether corresponding segment is either enhancer or repressor. Predicts the allele-specific changes in gene expression, motifs and variants. Also predicts the effect of distal regulatory enhancers (saliency score). Future work: 1) use the enformer derived scores and functional validations to fine-map the GWAS variants (similar to EMS), 2) Benchmark / use the enhancer prioritization with respect to conventional Hi-C, HiChIP maps.
+    - Deep learning framework to predict gene expression from epigenomic tracks. 
+    - Uses 2002 tracks across 218 cell types, 40 Kb (20 kb in each direction) sequence from TSS,  
+        - applies 200 bp sldiding window for constructing the epigenomic features. 
+    - Then applies spatial operation (basically averaging) to generate 10 features per track (2002 X 10 feature matrix) 
+    - predicts the tissue-specific gene expression using L2 regularized linear regression models fitted by a gradient boosting algorithm.
+
+[Effective gene expression prediction from sequence by integrating long-range interactions - Enformer - Avsec et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34608324/) 
+
+    - predicts gene expression from DNA sequences using transformer model and 198 bp receptive field around TSS. 
+    - Best performing model so far. Beats earlier models Expecto, Basenji2. 
+    - It also predicts signed effect of variants (or sequences) to check whether corresponding segment is either enhancer or repressor. 
+    - Predicts the allele-specific changes in gene expression, motifs and variants. 
+    - Also predicts the effect of distal regulatory enhancers (saliency score). 
+    - Future work: 
+        - 1) use the enformer derived scores and functional validations to fine-map the GWAS variants (similar to EMS), 
+        - 2) Benchmark / use the enhancer prioritization with respect to conventional Hi-C, HiChIP maps.
 
 [Predicting RNA-seq coverage from DNA sequence as a unifying model of gene regulation - Linder et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.08.30.555582v1) Borzoi method. Extension of Enformer. *Input*: RNA Sequence. *Output*: 1. Predicted RNA coverage 2. Gene expression (TSS pr exon specific) 3. Enhancer prioritization by saliency score 4. QTL variant effect *Method*: Transformer + CNN + U-Net architecture (to apply attention at 128bp but predict RNA-seq coverage at 32bp, by repeated upsampling technique employed in image processing). 
 
