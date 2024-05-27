@@ -396,20 +396,40 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [Interpretable deep learning translation of GWAS and multi-omics findings to identify pathobiology and drug repurposing in Alzheimer's disease - NETTAG - Xu et al. Cell Reports 2022](https://pubmed.ncbi.nlm.nih.gov/36450252/) 
 
-    - DL model to predict Alzheimer's disease (AD) risk genes. 
+    - Network topology based DL model to predict Alzheimer's disease (AD) risk genes. 
     - Integrates mutli-omics information - PPIs, QTLs, TFs, ENCODE, GWAS, GTEx, GO. 
+        - Whereas methods like WGCNA, MEGENA, RWR do not account for multi-omic profiles.
     - Utilizes PPI + GO to prioritize putative AD risk genes, and assigns scores based on their regulatory information (QTLs, ENCODE, etc).
+    - Steps:
+        - 1. Cluster PPIs into multiple functional network modules.
+        - 2. Characterize these modules by linking its nodes (genes) with protein annotations from GO database.
+        - 3. Quantify node (gene) score by integrating its functional similarity with each gene identified by brain-specific gene regulatory evidences.
+            - Prioritized genes by high aggregated gene regulatory feature score.
+        - 4. Evaluate network proximities between AD-risk genes and known drug targets.
 
-[Identifying common transcriptome signatures of cancer by interpreting deep learning models - Jha et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35581644/) The authors observed that DEGs between normal and cancer patients do not overlap between multiple datasets. So they used the expressions of protein-coding genes, lncRNA, and splicing junctions in an interpretable deep-learning model.
+[Identifying common transcriptome signatures of cancer by interpreting deep learning models - Jha et al. Genome Biology 2022](https://pubmed.ncbi.nlm.nih.gov/35581644/) 
 
-[Biologically informed deep neural network for prostate cancer discovery - Elmarakeby et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34552244/) Proposed an interpretable DL model (named P-NET) using DEEPLIFT framework to understand the molecular mechanisms of cancer. The input is genes, pathways, and biological processes (molecular profile). Their relationships are prior known and downloaded from Reactome pathway datasets (https://reactome.org/). These relationships are provided as the edges in the neural network architecture.
+    - The authors observed that DEGs between normal and cancer patients do not overlap between multiple datasets. 
+    - So they used the expressions of protein-coding genes, lncRNA, and splicing junctions in an interpretable deep-learning model.
 
-[Genome-wide mapping of somatic mutation rates uncovers drivers of cancer - Dig - Sherman et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35726091/) Developed by PCAWG consortium, this tool creates a list of genome-wide neutral somatic mutation maps using a DL model (CNN for dimensionality reduction and feature selection + Gaussian process modeling) and then develops a positive selection test to detect the potential cancer driver somatic mutations. *To read in detail*
+[Biologically informed deep neural network for prostate cancer discovery - Elmarakeby et al. Nature 2021](https://pubmed.ncbi.nlm.nih.gov/34552244/) 
 
-Dig method. Deep learning based identification of cancer driver mutations among a set of putative mutations. Supports multiple types of SNV. Implements CNN based method to detect the variants and then a probabilistic model to detect the positive mutations.
+    - Proposed an interpretable DL model (named P-NET) using DEEPLIFT framework to understand the molecular mechanisms of cancer. 
+    - The input is genes, pathways, and biological processes (molecular profile). 
+    - Their relationships are prior known and downloaded from Reactome pathway datasets (https://reactome.org/). 
+    - These relationships are provided as the edges in the neural network architecture.
 
+[Genome-wide mapping of somatic mutation rates uncovers drivers of cancer - Dig - Sherman et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35726091/) 
 
+    - Dig method. Developed by PCAWG consortium
+    - Creates a list of genome-wide neutral somatic mutation maps using a DL model 
+        - (CNN for dimensionality reduction, feature selection, variant detection + Gaussian process modeling) 
+    - Supports multiple types of SNV. 
+    - Develops a positive selection test to detect the potential cancer driver somatic mutations. *To read in detail*
 
-[Discovery of drug-omics associations in type 2 diabetes with generative deep-learning models - MOVE - Allesoe et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36593394/) Defines MOVE - Multi-omics variational autoencoder including data from multiple omics from 789 sample cohort (vertical integration) and applies VAE, and defines the association between T2D with the latent space features. Significance is computed by t-test, and by feature purturbation (0/1) technique.
+[Discovery of drug-omics associations in type 2 diabetes with generative deep-learning models - MOVE - Allesoe et al. Nat Biotech 2023](https://pubmed.ncbi.nlm.nih.gov/36593394/) 
 
-
+    - Defines MOVE - Multi-omics variational autoencoder. 
+    - Data from multiple omics from 789 sample cohort (vertical integration) and applies VAE 
+    - Defines the association between T2D with the latent space features. 
+    - Significance is computed by t-test, and by feature purturbation (0/1) technique.
