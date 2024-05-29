@@ -387,6 +387,14 @@ Models the transition between control population p_c and perturbation population
     - sc-eQTLs are also applied fine mapping using epigenomic data. 
     - Colocalization reveals enrichment of autoimmune GWAS traits.
 
+[Linking regulatory variants to target genes by integrating single-cell multiome methods and genomic distance - Dorans et al. medRxiv 2024](https://www.medrxiv.org/content/10.1101/2024.05.24.24307813v1.full.pdf)
+
+    - eQTL-informed gradient boosting (pgBoost)
+    - integrates linking scores from existing peak-gene linking methods across cell types and data sets with genomic distance
+    - training on fine-mapped eQTL data to assign a single probabilistic score to each candidate SNP-gene link    
+    - Uses single cell ATAC-seq data, eQTL, GWAS, ABC score, CRISPRI
+    - evaluating their enrichment for several sets of SNP-gene links derived from these datasets.
+
 ## Gene regulatory network (GRN)
 
 [SCENIC: single-cell regulatory network inference and clustering - Aibar et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28991892/) 
