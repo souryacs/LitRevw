@@ -37,9 +37,9 @@
         - Here, you can perform the pre-phasing step just once and save the estimated haplotypes; 
         - you can then use the same study haplotypes to perform the imputation step with each new reference panel.
 
-[Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank - Hofmeister et al. Nature 2023](https://www.nature.com/articles/s41588-023-01415-w)
+[Accurate, scalable and integrative haplotype estimation - Delaneau et al. Nature Comm 2019](https://pubmed.ncbi.nlm.nih.gov/31780650/)
 
-    - SHAPEIT5 method to infer the haplotypes underlying your study genotypes
+    - SHAPEIT4 method.
     - Initial approaches: SHAPEIT to infer the haplotypes - then passing these to IMPUTE2 for imputation (as implemented in SHAPEIT2)
     - The idea is to sample P(D|H) where D = data, H = haplotype information using a compact graph representation - genotype graph.
     - SHAPEIT1: advance by introducing a linear O(K) complexity method that operates only on the space of haplotypes (K) consistent with an individual’s genotypes.
@@ -47,11 +47,15 @@
         - Get P haplotypes sharing the longest prefixes with the current haplotype estimate
         - Collapses the haplotypes identified across the entire region into a list of K distinct haplotypes.
         - K varies according to the length of matches found in PBWT
+    - SHAPIET4 complexity is O(K)
+
+[Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank - Hofmeister et al. Nature 2023](https://www.nature.com/articles/s41588-023-01415-w)
+
+    - SHAPEIT5 method to infer the haplotypes underlying your study genotypes
     - 3 additional layers of phasing information: 
         - reference panel of haplotypes, 
         - phase information contained in sequencing reads, using haplotype assembly methods like WhatsHap 
-        - subsets of genotypes where the phase information is known a priori (haplotype scaffolding)
-    - SHAPIET4 complexity is O(K)
+        - subsets of genotypes where the phase information is known a priori (haplotype scaffolding)    
     - SHAPEIT5: follows BEAGLE 5 to first phase the common variants and then the rare variants.
 
 [Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
