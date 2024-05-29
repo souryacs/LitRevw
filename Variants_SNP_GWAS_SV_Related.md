@@ -260,7 +260,7 @@
         - and effect sizes are aligned to the effect matrix. 
     - Requires effect size and allele information of the SNPs 
 
-[SUSiE - Wang et al. 2020 - Journal of Royal Statistics](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)
+[A simple new approach to variable selection in regression, with application to genetic fine mapping - SUSiE - Wang et al. 2020 - Journal of Royal Statistics](https://academic.oup.com/jrsssb/article/82/5/1273/7056114)
 
     - SUSiE model for fine mapping. 
     - Bayesian variable selection in regression (BVSR)
@@ -272,6 +272,9 @@
         - By construction, each step thus involves fitting an SER (single effect regression). 
         - IBSS can be understood as computing an approximate posterior distribution p(b1, . . ., bL | X, y, σ2), 
             - and that the algorithm iteratively optimizes an objective function known as the “evidence lower bound” (ELBO).
+        - IBSS is similar in structure to FS selection, 
+            - but, instead of selecting a single best variable at each step, it computes a distribution on which variable to select by fitting the Bayesian SER model. 
+            - by computing a distribution on variables—rather than choosing a single best variable, IBSS captures uncertainty about which variable should be selected at each step.
 
 [Eliciting priors and relaxing the single causal variant assumption in colocalisation analyses - Wallace. PLoS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32310995/) 
 
