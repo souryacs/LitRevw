@@ -506,6 +506,116 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     - TCSC method. Similar to GCSC - here genes are replaced by tissues.
     - Uses TWAS gene-trait association with tissue-co-regulation score to identify causal tissues, and tissue association with a given trait.
 
+## Single cell eQTL, ASE, variant annotation, cell type enrichment
+
+[Single-cell eQTL models reveal dynamic T cell state dependence of disease loci - Nathan et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/35545678/) 
+
+    - Single cell eQTL inference for T cells, using pseudobulk clustering. 
+    - Also uses top 20 CCA variables as canonical variates (CVs) and models individual cells' contribution in these 20 CVs to model different cell states. 
+    - Individual CVs are observed to be correlated with gene regulatory functions. 
+    - Decomposes for each SNP, the complete genotype-dependent effect (across all cells) as a sum of individual CV-specific genotype effect. 
+    - Uses poisson mixed effect (PME) model and compares with linear mixed effect (LME) regression to compute cell-state-specific eQTLs. 
+        - Shows PME is better. 
+    - Uses genotype and cell specific differential expression as the interaction terms in eQTL inference. 
+    - *Check*: how the genotype effect is determined for individual cell types or clusters? 
+        - Can we better model the cell-type or cluster-specific effects, using velocity or trajectory analysis? 
+
+[Identifying phenotype-associated subpopulations by integrating bulk and single-cell sequencing data - scissor - Sun et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/34764492/) 
+
+    - Uses a network regression model to identify the cell populations/clusters associated with a given phenotype. 
+    - *Input*: scRNA-seq matrix, bulk RNA-seq matrix, and phenotype matrix/vector 
+        - Phenotype matrix can be binary, continuous, based on that the regression model would be defined. 
+    - The correlation between single-cell expression and bulk RNA-seq gene expression data is computed to produce a correlation matrix 
+        - which is then applied to a regression framework with respect to the given phenotype.
+
+[Interrogation of human hematopoiesis at single-cell and single-variant resolution - g-ChromVAR - Ulirsch et al. Nat Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30858613/) 
+
+    - Presents g-chromVAR, a method to identify GWAS variant enrichment among closely related tissues/cell types, using scATAC-seq data. 
+    - *Objective*: measure the trait relevance of different cells or tissues, 
+        - here scATAC-seq data together with fine-mapped GWAS variants are used to measure such trait relevance scores (and causal variants). 
+        - Computes the bias-corrected Z-scores to estimate the trait relevance for every single cell 
+            - by integrating the probability of variant causality and quantitative strength of chromatin accessibility. 
+        - The trait-peak matrix is a count matrix, which is used to compute the expected number of fragments per peak per sample, 
+            - which is then multiplied with the fine-mapped variant posterior probabilities. 
+        - Validated with respect to the S-LDSC method.
+
+[Variant to function mapping at single-cell resolution through network propagation - scAVENGE - Yu et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35668323/) 
+
+    - Objective: Determine the trait relevance specific scoring for each cell in single cell data.
+    - Uses network propagation on causal variants to identify their relevant cell types using single-cell resolution. 
+    - Using the g-chromVAR output, i.e. single cell-based trait-relevance scores, they rank the cells and select the top cells as seed cells, which are used for the network propagation algorithm. 
+    - Using the random walk algorithm, the authors showed how to reach the stationary state of network connectivity among these cells, and the final trait relevance scores (TRS) are computed for each group of cells or clusters or cell types.
+
+[Identifying disease-critical cell types and cellular processes by integrating single-cell RNA-sequencing and human genetics - scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) 
+
+    - Objective: Identifying marker cell types for different diseases. scLinker method.
+    - Integrates GWAS summary statistics, epigenomics, and scRNA-seq data from multiple tissue types, diseases, individuals, and cells. 
+    - The authors transform gene programs to SNP annotations using: 
+        - tissue-specific enhancer–gene links, 
+        - standard gene window-based linking strategies such as MAGMA, RSS-E, and linkage disequilibrium score regression (LDSC)-specifically expressed genes. 
+    - Then they link SNP annotations to diseases by applying stratified LDSC (S-LDSC) to the resulting SNP annotations. 
+    - Cell-type gene programs are computed by converting the p-values of the DE genes (between the target cell type to others) using a chi-sq distribution and applying 0-1 range normalization. 
+    - Similar work was done for disease-relevant gene programs. 
+        - NMF was used to define cellular process gene programs. 
+
+[Leveraging single-cell ATAC-seq and RNA-seq to identify disease-critical fetal and adult brain cell types - Kim et al. Nature Communications 2024](https://pubmed.ncbi.nlm.nih.gov/38233398/)
+
+    - Objective: Identifying GWAS SNPs and their brain-cell-specific enrichment scores for different neurological diseases.
+    - Uses scRNA-seq and scLinker pipeline to obtain per-SNP enrichment in terms of their S2G links with the cell-specific enhancers.
+    - Uses scATAC-seq peaks (MACS2) to obtain per-SNP enrichment  by TF binding statistics.
+    
+[Polygenic enrichment distinguishes disease associations of individual cells in single-cell RNA-seq data - scDRS - Zhang et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36050550/) 
+
+    - scDRS method. 
+    - Enrichment of cell types with respect to GWAS trait, using scRNA-seq data. 
+    - First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. 
+    - Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
+
+[Leveraging polygenic enrichments of gene features to predict genes underlying complex traits and diseases - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) 
+
+    - Gene level polygenic priority score (PoPS) method for prioritizing gene sets from GWAS summary statistics and LD matrix. 
+    - Uses 73 public scRNA-seq datasets.
+    - Features: 1) GWAS summary statistics (z scores), LD reference panel, scRNA-seq, networks, pathways
+        - Feature: genes X z scores (from GWAS summary statistics and LD panel) - computed by MAGMA.
+        - Feature matrix: genes X features (from scRNA-seq cell-type-specific gene expression, PPI network, pathways)
+            - used to compute the polygenic enrichment of gene features.        
+        - Marginal feature selection and generalized least square with ridge penalty, used to compute association statistics (beta).
+    - Also uses pathways, PPIs, etc. to prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics 
+        - using a multivariate normal (MVN) distribution-based regression strategy. 
+    - Shows PoPS and the closest gene individually outperform other gene prioritization methods.
+
+[Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - Gao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
+    
+    - Numbat method. Haplotype aware CNV inference from scRNA-seq data.
+    - CNVs are inferred both from expression 
+        - (expecting AMP and DEL to be associated with up/downregulation - FP for expression changes unrelated to CNV) 
+    - and allele-specific changes
+        - (deviations of BAF - less affected by sample-specific variation). 
+    - Naive HMM: Asignment of alleles to either haplotypes depends only on AF.    
+    - Haplotype-aware HMM modeling: 
+        - Combines population phasing and observed allele data to reconstruct haplotypes a posteriori. 
+        - Iterative algorithm to detect the subclonal (group of single cells with similar) CNV pseudobulk profiles.
+
+[Mapping interindividual dynamics of innate immune response at single-cell resolution - Kumasaka et al. Nat Genet 2023](https://pubmed.ncbi.nlm.nih.gov/37308670/) 
+
+    - Presents GASPACHO, a Gaussian Process + Latent Variable based model to infer the single cell eQTLs associated with dynamic cell states obtained from immune response/stimuli. 
+    - Test their method on Fibroblast scRNA-seq data and also colocalizes with COVID-19 GWAS data to identify colocalized sc-eQTLs associated with OAS1 and OAS3 genes. 
+    - Models eQTLs without pseudobulk generation. 
+    - Generates cell-state specific eQTLs by considering the technical batches and donor specific variations as covariates. 
+    - Classifies eQTLs as static and dynamic eQTLs. 
+    - eGenes are depleted in differential genes but enriched in highly expressed genes. 
+    - sc-eQTLs are also applied fine mapping using epigenomic data. 
+    - Colocalization reveals enrichment of autoimmune GWAS traits.
+
+[Linking regulatory variants to target genes by integrating single-cell multiome methods and genomic distance - Dorans et al. medRxiv 2024](https://www.medrxiv.org/content/10.1101/2024.05.24.24307813v1.full.pdf)
+
+    - eQTL-informed gradient boosting (pgBoost)
+    - integrates linking scores from existing peak-gene linking methods across cell types and data sets with genomic distance
+    - training on fine-mapped eQTL data to assign a single probabilistic score to each candidate SNP-gene link    
+    - Uses single cell ATAC-seq data, eQTL, GWAS, ABC score, CRISPRI
+    - evaluating their enrichment for several sets of SNP-gene links derived from these datasets.
+
+
 ## Identifying disease-risk / causal variants (and) target genes
 
 [A Multi-omic Integrative Scheme Characterizes Tissues of Action at Loci Associated with Type 2 Diabetes - Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) 
