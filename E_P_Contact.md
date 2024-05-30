@@ -81,7 +81,15 @@
 
 [Sequence determinants of human gene regulatory elements - Sahu et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35190730/) measured transcriptional activity using MPRA and observed using ML models that TFs act in an additive manner and enhancers affect promoters without relying on specific TF-TF interactions. Few TFs are strongly active in a cell, and individual TFs may have multiple regulatory activities. Shows 3 types of enhancers - classical (open chromatin), chromatin-dependent, closed-chromatin. Shows that TSS position and motif position and orientation relative to TSS are highly indicative of the gene expression and presents a CNN model to predict the TSS position from gene expression and sequence information. Also found that E-P interactions are additive - their effects are integrated into total transcriptional activity, suggesting that strong promoters do not need an enhancer, and strong enhancers render weak and strong promoters equally active. A CNN classifier using only promoter sequences outperform that with enhancer sequences for predicting gene expression.
 
-[Endogenous fine-mapping of functional regulatory elements in complex genetic loci - Zhao et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.06.539696v1) Single cell CRISPR inhibition and activation on the CREs linked to fine-mapped eQTLs from GTEX v8, Geuvadis, Blueprint databases to identify the fine-mapped causal variants. Tested only those loci which have multiple lead QTLs with the same p-value, and they are in perfect LD.
+[Endogenous fine-mapping of functional regulatory elements in complex genetic loci - Zhao et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.05.06.539696v1) 
+
+    - Multiplexed single cell CRISPR perturbation (inhibition or activation) on the CREs linked to fine-mapped eQTLs. 
+    - eQTLs from GTEX v8, Geuvadis, Blueprint databases are used to identify the fine-mapped causal variants. 
+    - Tested only those loci which have multiple lead QTLs with the same p-value, and they are in perfect LD (ultra-high LD region).
+        - Testing ubiquity of multiple causal CREs in perfect LD (pLD) with independent QTL signals, and to check their regulatory relation with target genes.
+    - Observed ~ 50% causal CREs lack epigenetic markers, potentially influencing gene expression by unique regulatory mechanisms.
+    - Applied framework normalisr to test association between each CRE and nearby expressed genes.
+    - Overall, perturbation screen resolves causal variants where even statistical fine mapping is inconclusive.
 
 [Deciphering eukaryotic gene-regulatory logic with 100 million random promoters - de Boer et al. Nat Biotech 2020](https://pubmed.ncbi.nlm.nih.gov/31792407/) Predicts TF binding from sequence using ML. Aplies on Yeast. Develops GPRA (Gigantic parallel reporter assay). 
 
