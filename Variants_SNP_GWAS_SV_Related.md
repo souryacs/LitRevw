@@ -574,14 +574,13 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 [Leveraging polygenic enrichments of gene features to predict genes underlying complex traits and diseases - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) 
 
     - Gene level polygenic priority score (PoPS) method for prioritizing gene sets from GWAS summary statistics and LD matrix. 
-    - Uses 73 public scRNA-seq datasets.
-    - Features: 1) GWAS summary statistics (z scores), LD reference panel, scRNA-seq, networks, pathways
-        - Feature: genes X z scores (from GWAS summary statistics and LD panel) - computed by MAGMA.
-        - Feature matrix: genes X features (from scRNA-seq cell-type-specific gene expression, PPI network, pathways)
-            - used to compute the polygenic enrichment of gene features.        
+    - Uses 73 public scRNA-seq datasets.    
+    - Feature: genes X z scores (from GWAS summary statistics and LD panel) - gene level association statistics computed by MAGMA.
+    - Uses features from scRNA-seq cell-type-specific gene expression, PPI network, pathways, and computes feature-specific enrichment using MAGMA.
         - Marginal feature selection and generalized least square with ridge penalty, used to compute association statistics (beta).
-    - Also uses pathways, PPIs, etc. to prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics 
         - using a multivariate normal (MVN) distribution-based regression strategy. 
+        - Prioritize groups of genes with similar effects/features and uses them to compute the gene-based enrichment statistics 
+        - GLS method of MAGMA is extended to include the selected features.
     - Shows PoPS and the closest gene individually outperform other gene prioritization methods.
 
 [Haplotype-aware analysis of somatic copy number variations from single-cell transcriptomes - Gao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/36163550/) 
