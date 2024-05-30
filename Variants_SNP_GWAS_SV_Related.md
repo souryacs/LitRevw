@@ -428,6 +428,14 @@
     - Multivariate spike-and-slab prior with MCMC sampling is used to model the LD structure.
     - Multi-ancestry prior and tuning parameters are employed in superlearning (SL) phase.
 
+[Leveraging fine-mapping and multipopulation training data to improve cross-population polygenic risk scores - Weissbrod et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/35393596/) 
+
+    - PRS computing method Polypred+
+    - Integrates two methods:
+        - 1. PolyFun-Pred: applies PolyFun + SUSIE estimates posterior mean causal effects (fine-mapping) for cross population polygenic prediction.
+        - 2. BOLT-LMM: estimates posterior mean tagging effects of common SNPs.
+    - Combines these two approaches - linear combination
+
 ## QTL - TWAS
 
 [Integration of summary data from GWAS and eQTL studies predicts complex trait gene targets - Zhu et al. Nature Genetics 2016](https://pubmed.ncbi.nlm.nih.gov/27019110/)
