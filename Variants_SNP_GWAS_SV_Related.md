@@ -548,13 +548,15 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [Identifying disease-critical cell types and cellular processes by integrating single-cell RNA-sequencing and human genetics - scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) 
 
-    - Objective: Identifying marker cell types for different diseases. scLinker method.
+    - scLinker method. Objective: Identifying marker cell types for different diseases. 
     - Integrates GWAS summary statistics, epigenomics, and scRNA-seq data from multiple tissue types, diseases, individuals, and cells. 
     - The authors transform gene programs to SNP annotations using: 
         - tissue-specific enhancer–gene links, 
         - standard gene window-based linking strategies such as MAGMA, RSS-E, and linkage disequilibrium score regression (LDSC)-specifically expressed genes. 
     - Then they link SNP annotations to diseases by applying stratified LDSC (S-LDSC) to the resulting SNP annotations. 
-    - Cell-type gene programs are computed by converting the p-values of the DE genes (between the target cell type to others) using a chi-sq distribution and applying 0-1 range normalization. 
+    - Cell-type gene programs are computed by 
+        1. converting the p-values of the DE genes (between the target cell type to others) using a chi-sq distribution 
+        2. applying 0-1 range normalization. 
     - Similar work was done for disease-relevant gene programs. 
         - NMF was used to define cellular process gene programs. 
 
@@ -573,6 +575,7 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     - First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. 
         - Inversely weighted by gene-specific technical noise level in scRNA-seq.
     - Aggregate the gene-specific scores for each cell to define the cell-specific score for disease trait.
+        - Background set of control genes with matching expression is used to compute the disease-enrichment score per cell.
     - Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
 
 [Leveraging polygenic enrichments of gene features to predict genes underlying complex traits and diseases - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) 
