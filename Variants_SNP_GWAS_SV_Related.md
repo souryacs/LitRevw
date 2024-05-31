@@ -649,9 +649,12 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
         - 3) HiC ineractions, 
         - 4) FOXP3 binding sites.
 
-[Multi-ancestry fine-mapping improves precision to identify causal genes in transcriptome-wide association studies - MA-FOCUS - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) 
+[Multi-ancestry fine-mapping improves precision to identify causal genes in transcriptome-wide association studies - Lu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35931050/) 
 
+    - MA-FOCUS method. 
     - Fine mapping and TWAS using multiple ancestry information. 
+        - Ancestry specific eQTL and gene expression is modeled by linear combination of genotypes and ancestry-specific eQTL effect size matrix.
+        - TWAS using ancestry specific gene expression uses matched ancestry reference panel and penalized regression
     - Integrates GWAS, eQTL and LD information, and assumes that causal genes are shared across ancestry.
 
 [PALM: a powerful and adaptive latent model for prioritizing risk variants with functional annotations - Yu et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36744920/) 
@@ -686,6 +689,7 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
         - 1. Using stratAS, derives Allele specific accessibility QTL (asQTL) on cancer ATAC-seq data. 
         - 2. Shows high heritability, motif enrichment, regulatory effect (SURE risk) for asQTLs. 
         - 3. Using ATAC-seq peaks, proposes RWAS (similar to TWAS) for predictive model of ATAC-seq accessibility. 
+            - Uses LASSO regression for predicting the accessibility phenotype form all SNPs in the locus
         - 4. RWAS shows higher power of detecting association to known GWAS loci compared to TWAS. 
             - Also, it identifies many loci which are not significant by GWAS. 
         - 5. Combines RWAS with CWAS (cistrome/ChIP-seq specific WAS) to identify candidate causal loci.
