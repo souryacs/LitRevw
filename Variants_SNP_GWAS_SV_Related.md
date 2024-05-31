@@ -753,7 +753,7 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [Gene prioritization in GWAS loci using multimodal evidence - Schipper et al. medRxiv 2024](https://www.medrxiv.org/content/10.1101/2023.12.23.23300360v2)
 
-    - FLAMES method for prioritizing genes from GWAS studies - S2G.
+    - FLAMES method for prioritizing genes from GWAS studies - SNP-to-Gene link (S2G).
         - 1. Uses fine mapping statistics to prioritize genes in a locus.
         - 2. Also uses PoPS method, to identify genes which are GWAS enriched across a given locus.
         - 3. Combines both evidences to report the most causal gene in a locus.
@@ -762,10 +762,14 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) 
 
-    - Developed by PCAWG consortium.
     - Activepathways: integrative pathway analysis from SNPs, WGS, CNVs, and SVs. 
-    - Requires 2 lists: 
+        - Pathway analysis from coding and non-coding mutations of WGS data, and integrating with DNA rearrangments, CNVs, SVs, etc.
+    - Developed by PCAWG consortium. 2658 cancer samples across 38 tumor types.    
+    - Requires 2 input datasets: 
         - 1) p-values related to different experiments and studies (and information of those studies, like DEG, etc.) 
         - 2) Gene sets related to pathways (downloaded from GO or Reactome, etc.) 
-    - Performs a combined p-value analysis to return the most significant genes. 
+    - Performs a combined p-value analysis to return the most significant genes, aggregated significance from multiple omics datasets. 
+        - p-value aggregation is done by Brown's extension of Fisher's combined probability test.
+    - TO Do: Extension with genes listed in pathway databases like MSigDB.
+    - TO DO: Integrate gene and protein interactions - HotNet, PARADIGM, GeneMania
     
