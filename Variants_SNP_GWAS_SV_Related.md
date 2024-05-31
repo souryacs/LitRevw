@@ -696,9 +696,18 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     - employed motif analysis to prioritize the causal variants. 
     - Uses DeltaSVM using gkm-SVM framework to derive the motif scores. 
 
-[MAGMA: Generalized Gene-Set Analysis of GWAS Data](https://doi.org/10.1371/journal.pcbi.1004219)
+[MAGMA: Generalized Gene-Set Analysis of GWAS Data - Leeuw et al. Plos Comp Biol 2015](https://doi.org/10.1371/journal.pcbi.1004219)
 
-    - Assigns SNPs to genes by proximity and infers meta p-values per gene.
+    - Gene set analysis: group of genes are tested for association with trait.
+        - Step 1: compute individual gene association with trait
+            - Uses F test for association testing, using PCA on SNP matrix, optional covariate matrix
+            - Multiple regression method when Y is continuous - for binary Y, linear regression is applicable.
+        - Step 2: Use p-values from individual genes and correlation between genes (matrix) to perform gene set analysis.
+            - Gene level p-values are converted to a z-value (z_g) using a probit function.
+        - Combining z_g for all genes produce Z, the z-scores for all genes
+            - One sided two sample t-test comparing the mean association of genes in the given gene set vs genes not in the gene set.
+        - For SNP level analysis, median or minimum of SNP level association (p-values) can be attributed to a gene-level p-value.
+            - May be biased to the closest SNPs.
 
 [A gene co-expression network-based analysis of multiple brain tissues reveals novel genes and molecular pathways underlying major depression](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008245)
 
@@ -715,16 +724,24 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [Identifying enhancer properties associated with genetic risk for complex traits using regulome-wide association studies - Casella et al. PLoS Comp Biol 2022](https://pubmed.ncbi.nlm.nih.gov/36070311/) 
 
-    - Proposes RWAS - regulome wide association study - to identify enhancers associated with a given disease / trait. 
-    - Extends MAGMA package to identify the enhancers (whereas MAGMA finds the genes).
+    - Proposes RWAS - regulome wide association study - to identify association between SNPs to enhancers (rather than genes)
+    - Uses MAGMA package, but instead of genes, uses enhancers, to identify the enhancers (whereas MAGMA finds the genes) associated with SNPs.
 
 [SNP-to-gene linking strategies reveal contributions of enhancer-related and candidate master-regulator genes to autoimmune disease - Dey et al. Cell Genomics 2022](https://pubmed.ncbi.nlm.nih.gov/35873673/) 
 
-    - Reviews 11 SNP to gene (S2G) linking strategies and tests the corresponding annotations using S-LDSC on 11 autoimmune traits.
+    - Reviews 11 SNP to gene (S2G) linking strategies and tests the corresponding annotations using S-LDSC on 11 autoimmune traits. A few of these are:
+        - 1. ABC-G: genes in top 10% genes of ABC contacts
+        - 2. ATAC-distal: ATAC-seq peaks
+        - 3. eQTL-CTS: cell specific eQTLs
+        - 4. PCHi-C distal: top 10% genes with PCHi-C connection
+        - 5. SEG-GTEx: Specifically expressed genes in GTEx data
+        - 6. TF: TF genes
+        - 7. PPI-enhancer: Genes with high connectivity to enhancer-related genes via STRING network.
 
 [A catalog of GWAS fine-mapping efforts in autoimmune disease - Caliskan et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33798443/) 
 
     - Integrates fine-mapping studies for various immune diseases, and defines a weighted gene prioritization score to assign the candidate risk genes.
+    - Considers ~ 20 different fine-mapping studies and associated scores.
 
 [Genetic Control of Expression and Splicing in Developing Human Brain Informs Disease Mechanisms - Walker et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31626773/) 
 
