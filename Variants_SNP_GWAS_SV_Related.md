@@ -60,7 +60,15 @@
 
 [Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
 
-    - Integrates multiple genotype imputation output. Uses weighted average of meta analysis.
+    - Integrates multiple genotype imputation output (imputed separately from individual reference panels). 
+    - Uses weighted average of meta analysis (reference panels containing that specific marker are only considered).
+    - Masks each observed genotype in turn and then impute based on the information of flanking alleles.
+        - Corresponding genotype emission probability is set to 1.
+    - Assumes target genotype is pre-phased prior to imputation.
+    - Implemented in Minimac4 imputation package, with minor change in HMM
+        - Hidden state S_m: underlying choice of reference panels at marker m
+        - Emission state A_m: observed allele (0: reference, 1: alternate)
+        - Hidden states are modeled by forward backward algorithm.
 
 
 ## Regulatory regions, motifs
