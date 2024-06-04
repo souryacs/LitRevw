@@ -197,12 +197,16 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
     - Method:
         - Uses PCA embedded count matrix representation.
         - Maximum diversity clustering: Objective is to put maximum diversity among batches. 
-            - Modified K-means soft/ fuzzy clustering (added diversity maximizing regularization term to this objective function) to assign cells to potential candidate clusters (one cell can be assigned to multiple clusters). 
+            - Modified K-means soft/ fuzzy clustering 
+            - added diversity maximizing regularization term to this objective function 
+            - assign cells to potential candidate clusters (one cell can be assigned to multiple clusters). 
             - Penalty / regularization term ensures that the diversity of batches / dataset types are maximized within each dataset.
-        - Mixture model based linear batch correction: batch-specific parameters are used to compute the penalty of cluster assignments. 
+        - Mixture model based linear batch correction: 
+            - batch-specific parameters are used to compute the penalty of cluster assignments. 
             - Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
     - Metric: local inverse Simpson index 
-        - Gaussian kernel–based distributions of neighbourhoods for distance-based neighbourhood weighting to be sensitive towards local batch diversification within the knns.
+        - Gaussian kernel–based distributions of neighbourhoods for distance-based neighbourhood weighting 
+        - sensitive towards local batch diversification within the knns.
 
 ### Differential Analysis
 
