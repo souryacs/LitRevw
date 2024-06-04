@@ -265,22 +265,37 @@ Models the transition between control population p_c and perturbation population
     - Integrated abalysis of scATAC-seq and scRNA-seq data. 
     - Features: 
         - 1) Doublet detection by first synthesizing artificial doublets and then using their nearest neighbors as estimated doublets (similar to Scrublet), 
-        - 2) Optimized iterative LSI for dimension reduction by applying LSI on most variable features and a selective subset of cells. 
-            - then projecting the results on the complete set of cells, 
+        - 2) Optimized iterative LSI for dimension reduction 
+            - Initially use highly accessible tiles (genome-wide) to compute the LSI.
+            - Then use the cluster-specific peaks to re-compute LSI.
+            - Iterations compute until batch effects are removed and dimension reduction is satisfactory (convergence)
             - Also compares with landmark diffusion maps in SnapATAC
+        - Also implements Batch effect correction method Harmony.
         - 3) Gene scores using ATAC-seq and TSS information to predict dummy of gene expression. Evaluates 42 different models.
+            - Selecting marker features: identifying groups of cells and bias matched background group of cells.
+        - Clustering using scRNA-seq: Seurat's findClusters function
+        - Integration between scRNA-seq and scATAC-seq
+            - Unconstrained: using all scATAC-seq cells and mapping to the scRNA-seq clusters
+            - Constrained: prior knowledge of the cell types.
         - 4) Also implements both Slingshot and Monocle3 for trajectory inference.
-
+            
 [Single-cell chromatin state analysis with Signac - Stuart et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34725479/) 
 
     - Integrated abalysis of scATAC-seq and scRNA-seq data. 
     - Features: 
         - 1) Peak calling from individual samples and then merging (to retain cell type-specific peaks) and showing that it retains all cell ranger peaks. 
         - 2) Dimension reduction using LSI. 
-            - The TF-IDF matrix is computed using the total counts of a cell, total counts for a peak in a cell, the total number of cells, and the total number of counts for a given peak across all cells. 
+            - The TF-IDF matrix is computed using:
+                - total counts of a cell, 
+                - total counts for a peak in a cell, 
+                - total number of cells, 
+                - total number of counts for a given peak across all cells. 
             - The TF-IDF matrix (after log transformation) is applied to SVD. 
-        - 3) Integration with scRNA-seq data is done by the FindTransferAnchors function in Seurat. 
-        - 4) Computes gene activity score and performs peak-to-gene linkage (correlation between gene expression and chromatin accessibility).
+        - 3) Integration with scRNA-seq data - findIntegrationAnchors function
+            - Uses rLSI - reciprocal LSI projection - projecting each dataset onto other's LSI space
+        - 4) Cell annotation - findTransferAnchors function
+            - mapQuery function specifically maps the ATAC-seq data on the RNA-seq labels.
+        - 5) Computes gene activity score and performs peak-to-gene linkage (correlation between gene expression and chromatin accessibility).
 
 [chromVaR inferring transcription factor associated accessibility from single cell epigenomic data - Schep et al. Nat Meth 2017](https://pubmed.ncbi.nlm.nih.gov/28825706/) 
 
@@ -288,7 +303,8 @@ Models the transition between control population p_c and perturbation population
     - Models the expected number of fragments per peak containing a particular motif and for a particular cell. 
     - Thus, variation of chromatin accessibility across cells between highly similar k-mers can be computed.
 
-[Cicero Predicts cis-Regulatory DNA Interactions from Single-Cell Chromatin Accessibility Data - Pliner et al. Mol Cell 2018](https://pubmed.ncbi.nlm.nih.gov/30078726/) Concept of co-accessibility among peaks.
+[Cicero Predicts cis-Regulatory DNA Interactions from Single-Cell Chromatin Accessibility Data - Pliner et al. Mol Cell 2018](https://pubmed.ncbi.nlm.nih.gov/30078726/) 
+Concept of co-accessibility among peaks.
 
 [EpiScanpy- integrated single-cell epigenomic analysis - Danese et al. Nat Comm 2021](https://pubmed.ncbi.nlm.nih.gov/34471111/) Episcanpy processes both scATAC-seq and sc DNA methylation data, and performs cell-level clustering. Based on the Scanpy framework.
 
@@ -379,7 +395,8 @@ Models the transition between control population p_c and perturbation population
         - ODE with switch and rate parameters. 
         - Uses the fact that transcription rate is proportional to the chromatin accessibility.
             - Epigenomic changes (like the transition from euchromatin to heterochromatin) have a role in transcriptional regulation and rates.
-        - Two states are defined each for chromatin accessibility (c) and RNA (u,s) : chromatin opening, chromatin closing, transcriptional induction and transcriptional repression (priming and decoupling).
+        - Two states are defined each for chromatin accessibility (c) and RNA (u,s) : 
+            - chromatin opening, chromatin closing, transcriptional induction and transcriptional repression (priming and decoupling).
             - Each gene uses 3D phase portraits (c,u,s), and defines two different models M1 and M2 based on two potential orderings of chromatin and RNA state changes.
 
 [CellRank for directed single-cell fate mapping - Lange et al. Nature Methods 2022](https://www.nature.com/articles/s41592-021-01346-6) 
@@ -458,6 +475,3 @@ Models the transition between control population p_c and perturbation population
         - Employs a sparse neural network architecture to deal with multimodal vectors of high dimension.
         - Also uses SHAP values to identify the genes relevant to pathways and disease. 
         - Benchmarks with 18 other integration methods in various classification tasks using mutiple cancer tissue datasets from TCGA.
-
-
-
