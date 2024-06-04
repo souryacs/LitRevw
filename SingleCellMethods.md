@@ -205,6 +205,7 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
             - batch-specific parameters are used to compute the penalty of cluster assignments. 
             - Finally, a weighted sum of these clustering assignments are performed to define the final clusters.
     - Metric: local inverse Simpson index 
+        - inverse of the sum of probabilities from all batches B is defined as inverse Simpson index
         - Gaussian kernel–based distributions of neighbourhoods for distance-based neighbourhood weighting 
         - sensitive towards local batch diversification within the knns.
 
