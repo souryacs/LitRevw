@@ -404,7 +404,8 @@
 
 [The construction of cross-population polygenic risk scores using transfer learning - TL-PRS: Zhao et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/36240765/) 
 
-    - Constructing cross-population polgenic risk scores using transfer learning.
+    - Constructing cross-population polgenic risk scores. 
+    - The difference in ancestry (and according difference of the beta statistics) is modeled by gradient descent.
 
 [Fast and accurate Bayesian polygenic risk modeling with variational inference - VIPRS - Zabad et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/37030289/) 
     
