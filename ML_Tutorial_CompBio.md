@@ -16,6 +16,8 @@ Graph ML: https://huggingface.co/blog/intro-graphml
 
 ## AI / ML / DL tutorials
 
+Transformer tutorial: https://scholar.harvard.edu/binxuw/classes/machine-learning-scratch/materials/transformers
+
 https://d2l.ai/index.html  Deep learning tutorial.
 
 https://github.com/steven2358/awesome-generative-ai Various links related to Generative AI literature
