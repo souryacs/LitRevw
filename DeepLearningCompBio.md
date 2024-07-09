@@ -233,12 +233,15 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
     - Using DeepLIFT framework, designs TF-MoDISCO, a motif discovery framework using the per-base importance score. 
 
-[Base-resolution models of transcription-factor binding reveal soft motif syntax - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) 
+[Base-resolution models of transcription-factor binding reveal soft motif syntax - BPNet method - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) 
 
-    - BPNet method - CNN based TF binding motif prediction from DNA sequence. 
-    - DNA binding profiles are obtained from ChIP-Nexus profiles. 
-    - Also tests how the distance between motif pairs affects TF cooperativity. 
-    - Uses their earlier devleoped method TF-MoDisco and DeepLIFT to understand the base-level contributions to motif scores (or predicted TF binding outputs). 
+    - *Input* ChIP-Nexus / ChIP-seq profile and sequence information (DNA binding profiles) 
+    - *Output* CNN based prediction of TF binding motif information. Does not require peak caller and motif finding methods (such as MEME).
+        - Learns motif syntax promoting TF cooperativity, and test how the distance between motif pairs affects TF cooperativity.
+    - *Method*
+        - Uses TF-MoDisco and DeepLIFT to understand the base-level contributions to motif scores (or predicted TF binding outputs). 
+    
+    - 
     - Developed a new motif representation called contribution weight matrix (CWM) and also compared with the traditional position frequency matrix (PFM) representation. 
     - Validates the motifs by performing targeted point-mutations in mapped motifs and comparing the observed changes in ChIP-Nexus profiles to those predicted by BPNet.
 
