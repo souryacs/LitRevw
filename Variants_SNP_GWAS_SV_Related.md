@@ -633,6 +633,12 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 ## Identifying disease-risk / causal variants (and) target genes
 
+[CADD: predicting the deleteriousness of variants throughout the human genome - Rentzsch et al. NAR 2019](https://pubmed.ncbi.nlm.nih.gov/30371827/)
+
+    - *Input* set of proxy-neutral and proxy-deleterious variants.
+        - Also 60 different annotations of these variants, including VEP, conservation scores, regulatory annotations, transcript information, DNase hypersensitivi-ty, TF binding.
+    - *Output* Variant specific aggregated score and classification framework.
+
 [A Multi-omic Integrative Scheme Characterizes Tissues of Action at Loci Associated with Type 2 Diabetes - Torres et al. AJHG 2021](https://pubmed.ncbi.nlm.nih.gov/33186544/) 
 
     - Tissue-of-action (TOA) scores of T2D GWAS, to understand the relevant tissues and cell types for a given disease (here T2D). 
