@@ -148,28 +148,28 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
     - *Input*: DNA sequence. Uses DNase-seq, DHS and peaks. 
     - *Output*: 
         - 1. CNN based prediction of chromatin accessibility and TF motifs 
-        - 2. Predicts important GWAS SNPs by calculating the allele-specific differential chromatin accessibility. 
-        - 3. Predicts regulatory DNA sequences and sequence activities (chomatin accessibility). 
-        - 4. In silico mutagenesis to find allele-specific changes. 
-        - 5. Tests with PICS fine-mapped GWAS SNPs. 
+        - 2. Predicts important GWAS SNPs by calculating the allele-specific differential chromatin accessibility 
+            - (SNP accessibility difference or SAD). 
+        - 3. In silico mutagenesis to find allele-specific changes of chomatin accessibility. 
     - *Method*: 
         - Deep CNNs learn relevant sequence motifs and regulatory logic. 
         - Assigns GWAS variants and cell-type-scores to predict chromatin accessibility difference between alleles, and predicts causal SNPs. 
+        - Tests with PICS fine-mapped GWAS SNPs. 
 
 [Sequential regulatory activity prediction across chromosomes with convolutional neural networks - Basenji - Kelley et al. Genome Research 2018](https://genome.cshlp.org/content/28/5/739.long): 
 
-    - Extends Basset, which only generates peak based chromatin profiles. 
-    - Predicts epigenomic and transcriptional effects using the ChIP-seq, DNAse seq, ATAC-seq. 
-    - Also identifies causal variants using GWAS loci. 
-    - Predicts distal regulatory interactions and finer resolution chromatin profiles. 
-    - Predicts a signed profile of distal regulatory regions to indicate if those are enhancers or silencers. 
-    - Similarly, for a given SNP, it predicts the SNP expression difference (SED) score to characterize if these are eQTLs. 
-    - Also reports a disease-specific variant scores, and tests with input PICS fine-mapped variants. 
+    - Basenji method. Extends Basset, which only generates peak based chromatin profiles. 
+    - *Input*: DNA sequence, epigenomic data (ChIP-seq, DNAse seq, ATAC-seq)
+    - *Output*:
+        - 1. Cell type specific epigenomic and transcriptional profile.
+        - 2. Saliency map to identify distal regulatory elements and their effect on gene expression.
+        - 3. For a given SNP-gene pair, SNP expression difference (SED) score 
+            - difference of predicted CAGE coverage at that gene's TSS for two alleles.
+        - 4. SED-LD score: Signed LD profile of SED scores - tagged SNP scores correlate with eQTL chi-square statistics.
     - **Implementation details** : 
-        - 1) The input sequencing dataset is processed by a custom pipeline to use the multi-mapping reads and to normalize for GC bias. 
-        - 2) Weight values are initialized by Glorot initialization. 
-        - 3) GPyOpt python package is used for Bayesian optimization and hyperparameter tuning. 
-        - 4) Data augmentation is done by either using reverse complement DNA sequences in every alternate epoch, and minor sequence shifts.
+        - 1) 128 bp sequence bins, processed by custom aligner supporting multi-mapping reads and to normalize for GC bias. 
+        - 2) Dilated CNN specific prediction.
+        - 2) GPyOpt python package is used for Bayesian optimization and hyperparameter tuning. 
 
 [Deep learning sequence-based ab initio prediction of variant effects on expression and disease risk - Expecto - Zhou et al. Nat Genet 2018](https://pubmed.ncbi.nlm.nih.gov/30013180/) 
 
