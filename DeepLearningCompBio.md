@@ -236,13 +236,17 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 [Base-resolution models of transcription-factor binding reveal soft motif syntax - BPNet method - Avsec et al. Nature Genetics 2021](https://pubmed.ncbi.nlm.nih.gov/33603233/) 
 
     - *Input* ChIP-Nexus / ChIP-seq profile and sequence information (DNA binding profiles) 
-    - *Output* CNN based prediction of TF binding motif information. Does not require peak caller and motif finding methods (such as MEME).
+    - *Output* CNN based prediction of TF binding motif information from 1 Kb DNA sequences. 
+        - Does not require peak caller and motif finding methods (such as MEME).
         - Learns motif syntax promoting TF cooperativity, and test how the distance between motif pairs affects TF cooperativity.
+            - Defined by fold change of footprint height as a function of the distance.
     - *Method*
         - Uses TF-MoDisco and DeepLIFT to understand the base-level contributions to motif scores (or predicted TF binding outputs). 
+        - Aggregates "seqlets" (with high base level contribution scores) into motifs, using contribution weight matrix (CWM), and reference position frequency matrix (PFM) representation.
+    - *Validation* 
+        - Shows improved motif detection than MEME or HOMER by virtue of utilizing base contribution scores.
+        - Differential ATAC-seq (Oct4 and Sox2 deletion) - BPNet motifs overlapped with Oct4 and Sox2 motif instances more than MEME and HOMER.
     
-    - 
-    - Developed a new motif representation called contribution weight matrix (CWM) and also compared with the traditional position frequency matrix (PFM) representation. 
     - Validates the motifs by performing targeted point-mutations in mapped motifs and comparing the observed changes in ChIP-Nexus profiles to those predicted by BPNet.
 
 [Short tandem repeats bind transcription factors to tune eukaryotic gene expression - Horton et al. Science 2023](https://pubmed.ncbi.nlm.nih.gov/37733848/) 
