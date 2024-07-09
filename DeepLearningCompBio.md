@@ -190,7 +190,7 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - 1) use the enformer derived scores and functional validations to fine-map the GWAS variants (similar to EMS), 
         - 2) Benchmark / use the enhancer prioritization with respect to conventional Hi-C, HiChIP maps.
 
-[BERT-Promoter: An improved sequence-based predictor of DNA promoter using BERT pre-trained model and SHAP feature selection](https://pubmed.ncbi.nlm.nih.gov/35863177/)
+[BERT-Promoter: An improved sequence-based predictor of DNA promoter using BERT pre-trained model and SHAP feature selection - Le et al. Comp Biol Chem 2022](https://pubmed.ncbi.nlm.nih.gov/35863177/)
 
     - *Input* DNA sequence
     - *Output* Detection of promoter sequence
@@ -224,9 +224,10 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
   
 [BindSpace decodes transcription factor binding signals by large-scale sequence embedding - Yuan et al. Nature Methods 2019](https://pubmed.ncbi.nlm.nih.gov/31406384/) 
 
-    - Predicts TF binding motifs from DNA sequences, using StarSpace framework (a NLP based model). 
-    - Uses HT-SELEX TF database as input, and learns embedding space where TFs with similar binding profiles are closer. 
-    - Uses one-vs-all LASSO framework on the TF k-mers as used in StarSpace.
+    - *Input* DNA sequences and TF labels (provided in HT-SELEX TF database)
+    - *Output* Predicts TF binding motifs using StarSpace framework (a NLP based model). 
+        - Learns embedding space where TFs with similar binding profiles are closer. 
+        - Uses one-vs-all LASSO framework on the TF k-mers as used in StarSpace.
 
 [Technical Note on Transcription Factor Motif Discovery from Importance Scores (TF-MoDISco) version 0.5.6.5 - Shrikumar et al. arXiv 2018](https://arxiv.org/abs/1811.00416) 
 
