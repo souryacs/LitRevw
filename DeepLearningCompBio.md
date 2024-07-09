@@ -190,6 +190,12 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - 1) use the enformer derived scores and functional validations to fine-map the GWAS variants (similar to EMS), 
         - 2) Benchmark / use the enhancer prioritization with respect to conventional Hi-C, HiChIP maps.
 
+[BERT-Promoter: An improved sequence-based predictor of DNA promoter using BERT pre-trained model and SHAP feature selection](https://pubmed.ncbi.nlm.nih.gov/35863177/)
+
+    - *Input* DNA sequence
+    - *Output* Detection of promoter sequence
+    - *Method* BERT model applied on DNA sequence - SHAP value specific top features are applied to ML models.
+
 [Predicting RNA-seq coverage from DNA sequence as a unifying model of gene regulation - Linder et al. bioRxiv 2023](https://www.biorxiv.org/content/10.1101/2023.08.30.555582v1) 
 
     - Borzoi method. Extension of Enformer. 
@@ -254,13 +260,25 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [Benchmarking of deep neural networks for predicting personal gene expression from DNA sequence highlights shortcomings - Sasse et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036778/) 
 
-    - applies Enformer on the personalized reference genome constructed from WGS data 
-    - finds that the prediction accuracy of gene expression for Enformer is actually lower than PrediXcan 
-        - which uses SNVs from individuals to reconstruct individual level gene expression. 
-    - Benchmarks Enformer on personalized genome with different genotypes for predicting genotype-dependent changes in gene expression. 
-    - Examines locus specific examples 
-        - for most of the genes, Enformer predicted gene expression shows different patterns than the true genotype-dependent change of gene expression. 
-    - Also tests prediXcan which shows better prediction of gene expression. 
+    - *Input* WGS + gene expression from 839 ROSMAP individuals. 
+        - Applies Enformer on the personalized reference genome constructed from WGS data.
+    - *Output* 
+        - ISM between allele-specific difference of gene expression, and correlation with eQTLs.
+        - Prediction accuracy of gene expression for Enformer is actually lower than PrediXcan 
+            - which uses SNVs from individuals to reconstruct individual level gene expression.
+            - Requires variants to be present in the training data.
+        - Locus specific examples: Enformer predicted gene expression anticorrelated with true genotype-dependent gene expression. 
+            - SLDP profile of the candidate SNVs contradict with true effect (or predicted by PrediXcan)
+        - Current sequence specific DL models mainly predict gene expression from genomic DNA close to TSS.
+        - In fact, tests a custom DNA sequence specific CNN model and finds anticorrelation with true gene expression trend
+            - using ISM and gradient-input - feature attribution methods.
+    - *Method*
+        - Enformer output track predictions are fine tuned by elastic net model.
+        - Custom sequence CNN model uses 40 Kb sequence surrounding TSS.
+    - *To Do*
+        - Train using paired WGS + gene expression training data
+        - Interpersonal variation - use long range interactions (while cell-specific variation can be modeled by promoter logic)
+        - Account for post transcriptional RNA processing (RNA-protein and RNA-RNA interactions)
     
 [Personal transcriptome variation is poorly explained by current genomic deep learning models - Huang et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036790/) 
 
