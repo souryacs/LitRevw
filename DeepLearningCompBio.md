@@ -209,12 +209,17 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - Transformer + CNN + U-Net architecture 
             - (to apply attention at 128bp but predict RNA-seq coverage at 32bp, by repeated upsampling technique employed in image processing). 
 
-[Deep learning predicts DNA methylation regulatory variants in the human brain and elucidates the genetics of psychiatric disorders - INTERACT - Zhou et al. PNAS 2022](https://pubmed.ncbi.nlm.nih.gov/35969790/) 
+[Deep learning predicts DNA methylation regulatory variants in the human brain and elucidates the genetics of psychiatric disorders - INTERACT method - Zhou et al. PNAS 2022](https://pubmed.ncbi.nlm.nih.gov/35969790/) 
 
-    - Predicts DNA methylation levels from DNA sequences, tissue specific DNA methylation data, TF motifs (validated by TOMTOM motif analysis tool) 
-    - also predicts DNA methylation QTLs (sequence variants) which are further integrated to brain GWAS studies. 
-    - Presents a transformer based learning model to predict the changes in DNA methylation level from variants (mQTLs). 
-    - Trains the data on SUSIE-derived fine-mapped mQTLs.
+    - *Input* DNA sequences
+    - *Output* DNA methylation levels, base level prediction and corresponding motif sequence, variants (allele-specific methylation change)
+    - *Method* CNN + transformer (similar to Basenji2 + Enformer)
+    - *Analysis* 
+        - DNA methylation QTLs (mQTLs; sequence variants) which are further integrated to brain GWAS studies. 
+        - Comparison with SUSIE-derived fine-mapped mQTLs.
+        - Heritability analysis by S-LDSC
+        - PRS computation by top mQTL variants 
+        - Motif validation by TOMTOM motif analysis tool
 
 [CoRE-ATAC: A deep learning model for the functional classification of regulatory elements from single cell and bulk ATAC-seq data - Thibodeau et al. Plos Comp Biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009670) 
 
