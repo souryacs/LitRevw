@@ -557,18 +557,19 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 
 [Identifying disease-critical cell types and cellular processes by integrating single-cell RNA-sequencing and human genetics - scLinker - Jagadeesh et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36175791/) 
 
-    - scLinker method. Objective: Identifying marker cell types for different diseases. 
-    - Integrates GWAS summary statistics, epigenomics, and scRNA-seq data from multiple tissue types, diseases, individuals, and cells. 
-    - The authors transform gene programs to SNP annotations using: 
-        - tissue-specific enhancer–gene links, 
-        - standard gene window-based linking strategies such as MAGMA, RSS-E, and linkage disequilibrium score regression (LDSC)-specifically expressed genes. 
-    - Then they link SNP annotations to diseases by applying stratified LDSC (S-LDSC) to the resulting SNP annotations. 
-    - Cell-type gene programs are computed by 
-        1. converting the p-values of the DE genes (between the target cell type to others) using a chi-sq distribution 
-        2. applying 0-1 range normalization. 
-    - Similar work was done for disease-relevant gene programs. 
-        - NMF was used to define cellular process gene programs. 
-
+    - Input:
+        - 1. GWAS summary statistics 2. scRNA-seq data from multiple tissue types, diseases, individuals. 3. Epigenetic data
+    - Output: 
+        - 1. Gene programs representative of individual cell types, tissues or disease conditions.
+            - Using wilcoxon test specific differential analysis (between cell types, disease conditions, tissue types, etc.) 
+            - converting the p-values of DE analysis using a chi-sq distribution, and applying 0-1 range normalization. 
+            - Cell-type gene programs: converting the p-values of the DE genes (between the target cell type to others) 
+            - disease-relevant gene programs: NMF was used to define cellular process gene programs. 
+        - 2. Transform gene programs to SNP annotations
+            - tissue-specific enhancer–gene links (Roadmap), ABC links.
+            -  Standard gene window-based linking strategies such as MAGMA, RSS-E
+        - 3. Apply S-LDSC to compute the enrichment of the target cell types using the derived SNP annotations.
+            
 [Leveraging single-cell ATAC-seq and RNA-seq to identify disease-critical fetal and adult brain cell types - Kim et al. Nature Communications 2024](https://pubmed.ncbi.nlm.nih.gov/38233398/)
 
     - Objective: Identifying GWAS SNPs and their brain-cell-specific enrichment scores for different neurological diseases.
