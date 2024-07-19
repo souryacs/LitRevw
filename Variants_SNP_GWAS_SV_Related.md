@@ -625,13 +625,17 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
 [Linking regulatory variants to target genes by integrating single-cell multiome methods and genomic distance - Dorans et al. medRxiv 2024](https://www.medrxiv.org/content/10.1101/2024.05.24.24307813v1.full.pdf)
 
     - eQTL-informed gradient boosting (pgBoost)
-    - integrates linking scores from existing peak-gene linking methods across cell types and data sets with genomic distance
-    - training on fine-mapped eQTL data to assign a single probabilistic score to each candidate SNP-gene link    
-    - Uses single cell ATAC-seq data, eQTL, GWAS, ABC score, CRISPRI
-    - evaluating their enrichment for several sets of SNP-gene links derived from these datasets.
+    - Input: 
+        - 1) SNP-gene links, 
+        - 2) linking scores from 4 different peak-gene linking methods (SCENT, Signac, ArchR, CICERO) and their statistical significance from scATAC-eq analysis.
+        - 3) Genomic distance between SNPs and genes.
+        - 4) Fine-mapped eQTL data (SNP-Gene) for training 
     - 11 Features: 4 linking scores from SCENT, Signac, ArchR, CICERO, 3 corresponding significance levels, 4 binary variables indicating whether the candidate link was scored by each method, and 2 distance based features.
-
-
+    - Output:
+         - Assigns a single probabilistic score to each candidate SNP-gene link.
+         - Using leave one out chromosome classification, computes the top ranked SNP-Gene pairs and compares with fine-mapped eQTLs.
+         - Also uses reference GWAS, ABC score, CRISPRI data for validation.
+            - evaluating their enrichment for several sets of SNP-gene links derived from these datasets.
 
 ## Identifying disease-risk / causal variants (and) target genes
 
