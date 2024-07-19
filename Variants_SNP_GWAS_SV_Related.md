@@ -629,6 +629,8 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     - training on fine-mapped eQTL data to assign a single probabilistic score to each candidate SNP-gene link    
     - Uses single cell ATAC-seq data, eQTL, GWAS, ABC score, CRISPRI
     - evaluating their enrichment for several sets of SNP-gene links derived from these datasets.
+    - 11 Features: 4 linking scores from SCENT, Signac, ArchR, CICERO, 3 corresponding significance levels, 4 binary variables indicating whether the candidate link was scored by each method, and 2 distance based features.
+
 
 
 ## Identifying disease-risk / causal variants (and) target genes
