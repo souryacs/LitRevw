@@ -578,15 +578,12 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     
 [Polygenic enrichment distinguishes disease associations of individual cells in single-cell RNA-seq data - scDRS - Zhang et al. Nat Genet 2022](https://pubmed.ncbi.nlm.nih.gov/36050550/) 
 
-    - scDRS method. 
-    - Input: disease GWAS and scRNA-seq data.
+    - Input: 1. disease GWAS 2. scRNA-seq data.
     - Output: individual cell-level p-values for association with the disease.
-    - Enrichment of cell types with respect to GWAS trait, using scRNA-seq data. 
-    - First identifies the putative gene sets for individual GWAS traits or diseases using MAGMA. 
-        - Inversely weighted by gene-specific technical noise level in scRNA-seq.
-    - Aggregate the gene-specific scores for each cell to define the cell-specific score for disease trait.
-        - Background set of control genes with matching expression is used to compute the disease-enrichment score per cell.
-    - Then identifies the cell type and single-cell level correlation between the gene set and cells, and computes the GWAS enrichment of a cell type.
+    - Method:
+        - 1. First get gene sets from GWAS, using methods like MAGMA.
+        - 2. Then get a set of control (background) gene sets (with matching expression and same variance).
+        - 3. Perform enrichment analysis using these gene sets, and get cell-specific p-values for the GWAS trait.
 
 [Leveraging polygenic enrichments of gene features to predict genes underlying complex traits and diseases - Weeks et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01443-6) 
 
