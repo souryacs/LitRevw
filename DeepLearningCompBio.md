@@ -268,7 +268,19 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [Current sequence-based models capture gene expression determinants in promoters but mostly ignore distal enhancers - Review paper: Karollus et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/36973806/) 
 
-    - Reviews the sequence to expression prediction model, particularly Enfomer, using deep learning, 
+    - Reviews the sequence to expression prediction models, particularly Enfomer, using deep learning.
+    - Simulates and uses multiple experimental datasets, perturbation conditions.
+    - Model:
+        - ** Uses summed predictions over three neighboring bins (same as Enformer)
+        - Enformer predictions can be augmented by using additional features - tissue specific exon-intron ratio (weak proxy of RNA stability)
+    - Observations:
+        - Enformer predictions are mostly around TSS. Sequence window 1 Kb explaines 66% variance, 40 Kb explains most of the variations.
+        - Enformer predictions are highly biased for proximal regulators, while experimental data suggests otherwise.
+        - Enformer predicts the regulatory effects for reference ISM, TF motif sequences well, but the prediction slope (linear effect) is highly variable.
+        - Enformer mostly (~90%) attributes promoters for gene expression prediction, and much less importance to the enhancers.
+        - 
+
+    
     - concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
 
 [Benchmarking of deep neural networks for predicting personal gene expression from DNA sequence highlights shortcomings - Sasse et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036778/) 
