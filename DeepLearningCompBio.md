@@ -278,10 +278,9 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
         - Enformer predictions are highly biased for proximal regulators, while experimental data suggests otherwise.
         - Enformer predicts the regulatory effects for reference ISM, TF motif sequences well, but the prediction slope (linear effect) is highly variable.
         - Enformer mostly (~90%) attributes promoters for gene expression prediction, and much less importance to the enhancers.
-        - 
-
-    
-    - concludes that these prediction models mostly do not consider distal enhancers for gene regulation.
+        - Enformer predicted effects of eQTLs were large when close to the TSS, but decayed quickly and proportionally to the inverse of distance.
+        - Enformer still has not reached the level of precision necessary to predict between-condition variation.
+        - Genome-wide rankings of promoter variants based on Enformer may be misleading. 
 
 [Benchmarking of deep neural networks for predicting personal gene expression from DNA sequence highlights shortcomings - Sasse et al. Nature Genetics 2023](https://pubmed.ncbi.nlm.nih.gov/38036778/) 
 
