@@ -181,14 +181,19 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
 
 [Effective gene expression prediction from sequence by integrating long-range interactions - Enformer - Avsec et al. Nature Methods 2021](https://pubmed.ncbi.nlm.nih.gov/34608324/) 
 
-    - predicts gene expression from DNA sequences using transformer model and 198 bp receptive field around TSS. 
+    - Predicts gene expression from DNA sequences using transformer model and 198 bp receptive field around TSS. 
     - Best performing model so far. Beats earlier models Expecto, Basenji2. 
-    - It also predicts signed effect of variants (or sequences) to check whether corresponding segment is either enhancer or repressor. 
+    - Gene expression contribution scores: gradient X input, and attention weights.
+        - ISM and gradient X input are cell / tissue specific
+        - Attention weights are internal to the model and shared across all cell / tissue types.
+    - Predicts signed effect of variants (or sequences) to check whether corresponding segment is either enhancer or repressor. 
+        - Predicts the effect of distal regulatory enhancers (saliency score). 
+        - Validates against reference CRISPRI validated enhancers.
+        - Also, sequences closer to TAD boundaries had higher attention scores.
     - Predicts the allele-specific changes in gene expression, motifs and variants. 
-    - Also predicts the effect of distal regulatory enhancers (saliency score). 
-    - Future work: 
-        - 1) use the enformer derived scores and functional validations to fine-map the GWAS variants (similar to EMS), 
-        - 2) Benchmark / use the enhancer prioritization with respect to conventional Hi-C, HiChIP maps.
+        - Variants are assessed by SLDP Z-scores compared to GTEx, Belluga, Expecto and DeepSEA.
+        - These variant scores achieved 90% classification accuracy for discriminating between SUSiE fine-mapped variants and others.
+        - Lasso regression on Enformer scores classified MPRA validated variants.
 
 [BERT-Promoter: An improved sequence-based predictor of DNA promoter using BERT pre-trained model and SHAP feature selection - Le et al. Comp Biol Chem 2022](https://pubmed.ncbi.nlm.nih.gov/35863177/)
 
