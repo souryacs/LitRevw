@@ -314,6 +314,13 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
     - Similar observation.
     - tests on GEUVADIS RNA-seq cohort 
     - shows that prediXcan predicts much better individual-specific gene expression variation compared to the DL methods like Enformer, Basenji2, Expecto, etc.
+    - In fact, genes with strong eQTLs also show negative correlation with the DL model outputs. 
+    - Modeling distal regulatory effects and predicting regulatory effect directions are two orthogonal research directions.
+    - DL models often strongly disagree with one another on the predicted direction of genetic effects on expression 
+        - agreement between models is greater for the magnitude of cross-individual correlation than the direction of that correlation. 
+    - Assess whether DL models have higher aggrement for predicting chromatin accessibility etc. compared to gene expression.
+    - Assess whether models predict the direction of variant effects even for binding of TFs.
+    
 
 [Deep learning suggests that gene expression is encoded in all parts of a co-evolving interacting gene regulatory structure - Zrimec et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/33262328/) 
 
