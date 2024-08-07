@@ -322,6 +322,12 @@ They benchmark with another rare variant specific method Backman et al. Nature 2
     - Assess whether models predict the direction of variant effects even for binding of TFs.
     
 
+[Deep-learning prediction of gene expression from personal genomes - Drusinsky et. al. 2024](https://www.biorxiv.org/content/10.1101/2024.07.27.605449v1)
+
+    - Fine tunes Enformer by omitting the species-specific heads, using the CAGE value of the middle bin, and then adapting the parameters for unknown GTEx and ROSMAP studies, for personalized gene expression prediction.
+    - Compares with conventional Enformer and Elastic-Net models, but does not check PrediXcan model.
+    - Gene-specific cross-individual training and validation.
+
 [Deep learning suggests that gene expression is encoded in all parts of a co-evolving interacting gene regulatory structure - Zrimec et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/33262328/) 
 
     - mentions that gene expression can be predicted by using both coding and non-coding regions, 
