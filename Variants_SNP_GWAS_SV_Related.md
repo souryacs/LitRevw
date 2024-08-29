@@ -515,6 +515,16 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     - TCSC method. Similar to GCSC - here genes are replaced by tissues.
     - Uses TWAS gene-trait association with tissue-co-regulation score to identify causal tissues, and tissue association with a given trait.
 
+[Adjusting for genetic confounders in transcriptome-wide association studies improves discovery of risk genes of complex traits - Zhao et al. Nature Genetics 2024](https://www.nature.com/articles/s41588-023-01648-9)
+
+    - Proposes CTWAS method. Solves the horizontal pleiotropy problem of TWAS by also incorporating the nearby genes and variants (confounders).
+        - Can be modeled as a two-stage MR method.
+        - For genes with single eQTLs, CTWAS is equivalent to colocalization.
+    - Jointly models the dependence of phenotype on all imputed genes and variants, genome-wide (partitioned into disjoint blocks).
+    - Integrates TWAS based effect size with SUSIE to perform fine-mapping and thereby report causal variant and genes and likely eliminate false positives.
+    - Shows that CTWAS eliminates lots of false positive genes compared to other TWAS methods such as FOCUS, FUSION.
+
+
 ## Single cell eQTL, ASE, variant annotation, cell type enrichment
 
 [Single-cell eQTL models reveal dynamic T cell state dependence of disease loci - Nathan et al. Nature 2022](https://pubmed.ncbi.nlm.nih.gov/35545678/) 
