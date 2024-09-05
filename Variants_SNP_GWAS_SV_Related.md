@@ -319,6 +319,15 @@
     - Such NN formulation helps to use computatioally efficient gradient-based optimization 
         - to minimize the KL divergence between the proposal binary concrete distribution and its posterior distribution of the causal variants.
 
+
+[Systematic differences in discovery of genetic effects on gene expression and complex traits - Mostafavi et al. Nat Genet 2023](https://www.nature.com/articles/s41588-023-01529-1)
+
+    - Shows that eQTL and GWAS are complementary studies
+    - Distance from TSS: eQTLs cluster strongly near TSS, GWAS hits are distal
+    - Functional annotations of genes: genes near GWAS hits are enriched in key functional annotations, genes near eQTLs are depleted of most functional annotations
+    - * To DO* Can we integrate these observations with TWAS / CWAS / CTWAS and colocalization approaches?
+
+
 ## QTL / SNP enrichment analysis
 
 [Disentangling the Effects of Colocalizing Genomic Annotations to Functionally Prioritize Non-coding Variants within Complex-Trait Loci - GoShifter - Trynka et al. AJHG 2015](https://pubmed.ncbi.nlm.nih.gov/26140449/) 
