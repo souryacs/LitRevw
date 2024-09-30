@@ -459,9 +459,15 @@
 [Integration of summary data from GWAS and eQTL studies predicts complex trait gene targets - Zhu et al. Nature Genetics 2016](https://pubmed.ncbi.nlm.nih.gov/27019110/)
 
     - SMR method - summary statistics based MR.
-    - A genetic variant (for example, a SNP) is used as an instrumental variable to test for the causative effect of an exposure (for example, gene expression) on an outcome (for example, phenotype).
-    - Discusses about causality (Causal variant -> Transcription -> Phenotype), Pleiotropy (Causal variant is independently associated with transcription and phenotype), and linkage (two causal variants are independently associated with transcription and phenotype).
-    - HEIDI method - distinguishes pleiotropy from linkage. Smaller HEIDI value - higher probability of linkage.
+    - A genetic variant (for example, a SNP) is used as an instrumental variable to test for the causative effect 
+        - of an exposure (for example, gene expression) 
+        - on an outcome (for example, phenotype).
+    - Discusses about: 
+        - causality (Causal variant -> Transcription -> Phenotype), 
+        - Pleiotropy (Causal variant is independently associated with transcription and phenotype), 
+        - and linkage (two causal variants are independently associated with transcription and phenotype).
+    - HEIDI method - distinguishes pleiotropy from linkage. 
+        - Smaller HEIDI value - higher probability of linkage.
     - Testing linakge is equivalent to testing whether there is a difference between effect size estimated using the top cis-eQTL and using any other significant SNP.
 
 [Integrative approaches for large-scale transcriptome-wide association studies - Gusev et al. Nature Genetics 2016](https://pubmed.ncbi.nlm.nih.gov/26854917/)
