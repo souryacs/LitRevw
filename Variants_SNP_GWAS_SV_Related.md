@@ -833,6 +833,11 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
     - Deep learning approach: Basset
     - Interactions: STRING, Cytoscape, Sequence variants in protein binding sites
 
+[A cis-regulatory element regulates ERAP2 expression through autoimmune disease risk SNPs - Venema et al. Cell Genomics 2024](https://pubmed.ncbi.nlm.nih.gov/38190099/)
+
+    - ERAP2 expression modulating SNP identified from linked eQTLs using GWAS, Hi-C, CRISPR, HDR and MPRA experiments.
+    - Also uses RegulomeDB, reference regulatory information, conditional analysis, Allele-specific 4C contact etc.
+
 ## Structural variants
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) 
