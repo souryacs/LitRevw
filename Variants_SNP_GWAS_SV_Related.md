@@ -823,6 +823,16 @@ traits - INTACT - Okamoto et al. AJHG 2023](https://pubmed.ncbi.nlm.nih.gov/3660
         - 2. Also uses PoPS method, to identify genes which are GWAS enriched across a given locus.
         - 3. Combines both evidences to report the most causal gene in a locus.
 
+[A bioinformatics toolbox to prioritize causal genetic variants in candidate regions - Simon et al. Trends in Genetics 2024](https://pubmed.ncbi.nlm.nih.gov/39414414/)
+
+    - Review paper on prioritizing causal genes and variants.
+    - Phenomic level: PheWAS, exPheWAS
+    - Genomic level: UCSC, Ensembl, VEP, Evolutionary rate profiling, QTL database, GWAS
+    - Transcripmotic: effect of genetic variants in transcriptional and post transcriptional regulation, TargetScan: miRNA biological targets, TFLInk (TF-target gene interactions)
+    - Epigenomic: CpG islands, WashU epigenome browser, methylation (MethPrimer)
+    - Deep learning approach: Basset
+    - Interactions: STRING, Cytoscape, Sequence variants in protein binding sites
+
 ## Structural variants
 
 [Integrative pathway enrichment analysis of multivariate omics data - Paczkowska et al. Nat Comm 2020](https://pubmed.ncbi.nlm.nih.gov/32024846/) 
