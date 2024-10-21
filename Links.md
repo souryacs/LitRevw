@@ -36,6 +36,8 @@ All of US research program in USA
 
 GenomicsDB database (for variant calls)
 
+GWAS Atlas (https://atlas.ctglab.nl)
+
 ## Browsers
 
 VISTA enhancer browser https://enhancer.lbl.gov
