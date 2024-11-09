@@ -52,6 +52,8 @@ GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) datab
 
 Gene Transcription Regulation Database (GTRD) 
 
+Genomics to Proteins portal (https://g2p.broadinstitute.org/)
+
 ## Disease related
 
 ### Cancer
