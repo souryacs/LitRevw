@@ -18,6 +18,8 @@ Human Pangenome reference consortium (HPRC)
 
 gnomAD database - contains germline variants
 
+Genebass (gene biobank association summary statistics) https://genebass.org
+
 deCODE Genetics
 
 the Estonian Biobank
