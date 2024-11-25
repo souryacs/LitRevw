@@ -40,6 +40,8 @@ GenomicsDB database (for variant calls)
 
 GWAS Atlas (https://atlas.ctglab.nl)
 
+ClinVar
+
 ## Browsers
 
 VISTA enhancer browser https://enhancer.lbl.gov
