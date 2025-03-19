@@ -10,16 +10,8 @@ Check [This workshop of Broad Institute](https://broadinstitute.github.io/2020_s
 
 
 
-### Differential Analysis
 
-[A new Bayesian factor analysis method improves detection of genes and biological processes affected by perturbations in single-cell CRISPR screening - Zhou et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37770710/) Guided Sparse Factor Analysis (GSFA). Input: 1) scRNA-seq expression matrix (Y), 2) perturbation matrix  (G) - gRNA perturbations per cell. Method: Decomposes Y into latent factors (matrix Z) and derives the weights of genes onto factors (W). Then computes the dependencies of factors onto perturbation matrix via multivariate linear regression. Also performs differential analysis between control and perturbation conditions with respect to these factors to identify DEGs. These DEGs are better powered compared to DE analysis on standard scRNA-seq data. Applied on ASD data.
 
-[Isolating salient variations of interest in single-cell data with contrastiveVI - Weinberger et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37550579/) ContrastiveVI approach. Modeling scRNA-seq data using scVI type approach. The change is, they model shared and unique latent factors specific to control and treatment conditions. Uses control and treatment condition scRNA-seq data and model their differences, using the inferred latent factors.
-
-[Learning single-cell perturbation responses using neural optimal transport - Bunne et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37770709/) CellOT method. *Input*: Separate sets of single cell observations in control and perturbed sets. *Method*: Predict perturbation responses by learning the control and perturbed cell states. Uses optimal transport method. *Schema*:
-Models the transition between control population p_c and perturbation population p_k by means of perturbation treatment k by learning the map t_k.
-
-[Causal identification of single-cell experimental perturbation effects with CINEMA-OT - Dong et al. Nature Methods 2023](https://pubmed.ncbi.nlm.nih.gov/37919419/) Another optimal transport based single cell perturbation response prediction method.
 
 ### Cell annotation
 
