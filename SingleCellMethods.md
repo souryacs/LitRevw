@@ -6,151 +6,26 @@ Check [This eBook from Fabian Theis group](https://www.sc-best-practices.org/pre
 
 Check [This workshop of Broad Institute](https://broadinstitute.github.io/2020_scWorkshop/index.html) for a detailed overview of single cell data processing.
 
-## Data Simulation
-
-[scDesign3 generates realistic in silico data for multimodal single-cell and spatial omics - Song et al. Nat Biotech 2023](https://www.nature.com/articles/s41587-023-01772-1) Simulates scRNA-seq, scATAC-seq, multi-omic (CITE-seq) data, and spatial transcriptomic data. Benchmarked against data simulators from individual data categories. Extends their earlier works scDesign1 and scDesign2. Also uses their another work scReadSim for simulating single cell reads.
 
 
 
 ## Multimodal Data Integration/pipelines
 
-[Spatial reconstruction of single-cell gene expression data - Satija et al. Nat Biotech 2015](https://pubmed.ncbi.nlm.nih.gov/25867923/) 
     
-    First paper on Seurat. Talks about utilizing spatial and scRNA-seq datasets. 
-    
-[Integrating single-cell transcriptomic data across different conditions, technologies, and species - Butler et al. Nat Biotech 2018](https://pubmed.ncbi.nlm.nih.gov/29608179/) 
-    
-    - Second Seurat paper. 
-    - Input: Multiple scRNA-seq datasets.
-    - Output: Integrated scRNA-seq data + cluster.
-    - Method: 
-        - HVG selection by dispersion (variance to mean ratio) and selecting top 1000 genes with highest dispersion
-        - CCA - projections of two data such that the correlation between these two projections get maximized.
-        - As the number of genes are much smaller than the number of cells, to handle the sparsity, they treat the covariance matrix as diagonal (Diagonal CCA). 
-        - Aligning two CCA vectors (also called metagenes) is done by dynamic time warping (DTW) algorithm.
-        - Canonical correlation vectors are computed using partial SVD - left and right singular vectors with a user-defined number K, to get a subset of the canonical correlation vectors.
-        - Compare CCA with PCA to show that CCA retrieves a group of features shared between different datasets.
-        - Also compares the integration to the conventional batch correction methods Combat and Limma.
+
   
-[Comprehensive Integration of Single-Cell Data - Stuart et al. Cell 2019](https://pubmed.ncbi.nlm.nih.gov/31178118/) 
-
-    - Third Seurat paper. 
-    - Input: multi-omic (CITE-seq or scRNA-seq + scATAC-seq data)
-    - Output: Merged object + downstream dimensionality reduction + clusters
-    - Method:
-        - Proposes scTransform + VST + IntegrateAnchors and IntegrateFeatures, to integrate scRNA-seq, scATAC-seq, or CITE-seq datasets. 
-        - VST is used to first estimate the variance from means of individual gene expression, using linear regression, and then standardize the expression by mean and variance normalization. 
-        - Implements diagonal CCA to maximize the sharing of features among both datasets. 
-        - MNN is used after diagonal CCA and such neighbors are termed anchors. 
-        - An anchor scoring mechanism followd by anchor weighting using the nearest anchor cells in the query dataset is employed using the shared nearest neighbor (SNN) concept to finally use the highest scoring anchors as integration features (implemented in the function IntegrateData()).
   
-[Integrative single-cell analysis - Stuart et al. Nat Revw Genet 2019](https://pubmed.ncbi.nlm.nih.gov/30696980/) Review paper on Seurat.
   
-[Integrated analysis of multimodal single-cell data - Hao et al. Cell 2021](https://pubmed.ncbi.nlm.nih.gov/34062119/) 
 
-    - Fourth Seurat paper. 
-    - Input: multi-omic (CITE-seq or scRNA-seq + scATAC-seq data)
-    - Output: Merged object + downstream dimensionality reduction + clusters
-    - Method:
-        - Proposes WNN for multimodal data integration. 
-            - Constructs independent KNN graph on both modalities,
-            - Perform within and across-modality prediction, 
-            - Cell-specific modality weights and similarity between the observed and the predicted RNA and protein profile 
-                - using exponential distribution (approach large margin nearest neighbors), 
-            - scRNA-seq data is processed by Seurat, 
-            - protein data is normalized by centered log-ratio (CLR) transform (all proteins are used as features without any feature selection). 
-            - scATAC-seq data is processed according to the Signac package, 
-                - TF-IDF + log transformation on the peak matrix, 
-                - then applying SVD, which returns the final LSI (latent semantic indexing) components. 
-            - Within-modality prediction means predicting cell profile from the neighbors using the same modality, 
-            - cross-modality prediction indicates predicting cell profile from the neighbors using the other modality information.
+
   
-[Dictionary learning for integrative, multimodal, and scalable single-cell analysis - Hao et al. bioRxiv 2022](https://www.biorxiv.org/content/10.1101/2022.02.24.481684v1) 
 
-    - Fifth Seurat paper. 
-    - Dictionary learning for multimodal data integration. 
-    - Bridge integration to integrate multiple modalities, 
-        - integrating scATAC-seq on the reference cell annotations defined by scRNA-seq data. 
-    - Then discusses dictionary learning and atomic sketching, 
-        - inspired by the geometric sketching method from image processing, 
-        - to select a subset of features from the datasets, integrate and then project back the integrated results on the full set of features. 
-    - The final alignment between different modalities is implemented by the mnnCorrect algorithm. 
-    - The computational complexity for handling many cells is reduced by the Laplacian Eigenmaps mechanism (graph eigendecomposition) 
-        - thereby reducing the number of dimensions from the number of cells to the number of eigenvectors.
 
-[A multi-view latent variable model reveals cellular heterogeneity in complex tissues for paired multimodal single-cell data - VIMCCA - Wang et al. Bioinformatics 2023](https://pubmed.ncbi.nlm.nih.gov/36622018/) 
 
-    - VIMCCA method to integrate paired multimodal single cell datasets. 
-    - Variational inference method - generalizing CCA. 
-    - Multi-view latent variable. 
-        - Reasons: 
-            - 1) although Seurat integrates multiple data, it does not mention a statistical model thus not account for the underlying sources of variation within each modality. 
-            - 2) factor analysis models like MOFA are not scalable for large-scale data. 
-        - Objective: 
-            - In VIMCCA, CCA is modeled by multi-view latent variable and variational distribution. 
-            - Observed data [X,Y] where X = scRNA-seq, Y = scATAC-seq (or ADT) is modeled by a latent factor Z. 
-            - Mapping between Z to X and Y are modeled by two non-linear functions whose parameters are estimated by NN. 
-            - This non-linear function replaces the conventional CCA. 
-        - Implementation: 
-            - These non-linear functions are approximated by variational inference (VI) for linearity. 
-            - Maximizing log-likelihood is modeled as maximizing evidence lower bound (ELBO). 
-                - It has 2 components - KL divergence, and reconstruction error. 
-                - SGVB estimator using the monte carlo simulator is used to estimate the ELBO.
 
-[Joint probabilistic modeling of single-cell multi-omic data with totalVI - Gayoso et al. Nat Meth 2021](https://pubmed.ncbi.nlm.nih.gov/33589839/) 
 
-    - Integrating multiple CITE-seq datasets.
-    - Probabilistic latent variable model. 
-    - Joint low dimensional representations and the parameters are inferred by VAE. 
-    - Compared against factor analysis (FA), single cell hierarchical poisson factorization (scHPF) and scVI. 
-    - To check the model fitting, they used posterior predictive check (PPC) by simulating replicated datasets 
-        - comparing the statistical significance between the coefficients of variation (CV) per gene and protein. 
-    - To benchmark the single cell integration, they propose 4 different metrics, and compare against Seurat, Harmony, Scanorama.
-    - Compares between matched panels (using only overlapping proteins) vs unmatched panels (union of two protein panels).
 
-[UINMF performs mosaic integration of single-cell multi-omic datasets using nonnegative matrix factorization - Kriebel et al. Nat Comm 2022](https://pubmed.ncbi.nlm.nih.gov/35140223/) 
 
-    - LIGER v2. 
-    - UINMF using both shared and unshared features to integrate multiple multi-omic datasets. 
-    - Can integrate datasets with neither the same number of features (genes / peaks / bins) nor the same number of cells.
-    - Each dataset (Ei) is decomposed into shared metagenes (W), dataset specific metagenes constructed from shared features (Vi), unshared metagenes (Ui) and cell factor loadings (Hi).
-    - Adjusts the ANLS (adjusted non-negative least square) method and uses coordinate block descent (CBD) algorithm for solving the UINMF optimization problem. 
-        - CBD divides the parameters into blocks and then finds the optimal parameters for one block while fixing the others.
-
-[Benchmarking atlas-level data integration in single-cell genomics - Review paper on data integration - Luecken et al. Nat Meth 2022](https://pubmed.ncbi.nlm.nih.gov/34949812/) 
-
-    - Compares various multimodal data integration approaches. 
-    - Conclusions: 
-        - Scanorama and scVI perform well, particularly on complex integration tasks. 
-        - If cell annotations are available, scGen and scANVI outperform most other methods across tasks, and Harmony and LIGER are effective for scATAC-seq data integration on window and peak feature spaces. 
-        - In more complex integration tasks, there is a tradeoff between batch effect removal and bio-conservation. 
-            - Methods SAUCIE, LIGER, BBKNN, and Seurat v3 tend to favor the removal of batch effects over the conservation of biological variation. 
-            - DESC, and Conos favor bio-conservation 
-            - Scanorama, scVI, and FastMNN (gene) balance these two objectives.
-
-[Computational principles and challenges in single-cell data integration - Review paper - Argelaguet et al. Nat Biotech 2021](https://pubmed.ncbi.nlm.nih.gov/33941931/) 
-
-    - Discusses and categorizes various approaches for scRNA-seq data integration - horizontal (gene-based), vertical (cell-based), and diagonal.
-
-[Robust single-cell matching and multimodal analysis using shared and distinct features - MARIO - Zhu et al. Nat Meth 2023](https://pubmed.ncbi.nlm.nih.gov/36624212/) 
-
-    - **Input**: Single cell proteomic datasets (CITE-seq, CyTOF, etc). 
-    - **Output**: Integrated proteomic datasets.
-    - *Method*:
-        - First get the shared features (genes). 
-        - Using SVD on the shared features, cell-cell correlations are computed, which produces the initial cross-data distance matrix.
-        - Initial clustering is performed using this distance matrix and a convex optimization.
-        - Then shared and distinct features are used on these aligned datasets, to project in a common subspace using CCA 
-            - (incorporating the hidden correlations between exclusive features)
-        - Then a regularized K-means clustering is performed for the final integration.
-
-[Multi-omics single-cell data integration and regulatory inference with graph-linked embedding - GLUE - Cao et al. Nat Biotech 2022](https://pubmed.ncbi.nlm.nih.gov/35501393/) 
-
-    - Integrating multi-omics datasets using graph variational autoencoders 
-        - and also by using the regulatory interactions between the omics as a prior guided graph 
-        - (knowledge graph - vertices: features of different omics layers, edges: regulatory interactions). 
-    - Example: integration between scRNA-seq and scATAC-seq data requires prior edge formation using the peak-to-gene correlation. 
-    - First creates low-dimensional cell embeddings for individual modalities using VAE (scVI).  
 
 [CMOT- Cross-Modality Optimal Transport for multimodal inference - Alatkar et al. Genome Biology 2023](https://pubmed.ncbi.nlm.nih.gov/37434182/) Integration of multiple single or multi-omic datasets where individual datasets may not have the same set of cells. *Input*: Multiple multi-omic or single omic single cell datasets. All datasets may not have same set of cells, i.e. there may be partial coverage. *Output*: Integrated multi-omic data. *Method*: Optimal transport based integration. Alignment of multi-omic data to single cell data, for the missing cells.
 
