@@ -4,180 +4,22 @@
 
 [GWAS tutorial](https://pbreheny.github.io/adv-gwas-tutorial/quality_control.html)
 
-## Genotyping
-
-[A flexible and accurate genotype imputation method for the next generation of genome-wide association studies - Howie et al. PLoS Comp Biol 2009](https://pubmed.ncbi.nlm.nih.gov/19543373/)
-
-    - Statistical estimation of haplotypes from genetic data 
-        - predicts unobserved genotypes of a study sample from one or more reference panels - such as 1000 Genome Phase 3.
-    - Choosing one of 2^N possible haplotypes from a given set of N bi-allelic SNPs
-    - Assumption: haplotypes matching at set T (typed at both study and reference samples) should also match at set U (untyped at study but present at reference samples).
-    - Cons: accuracy of the study haplotypes phased at SNPs of T determines the accuracy of their matching with the reference panel.
-    - Accounting for the unknown phases of SNPs in T is computationally expensive. Requirement of a phasing algorithm.
-    - Improved imputation at U by improving phasing at T. 
-    - Alternately estimate haplotypes at T, and impute alleles at SNPs in U - separating phasing and imputation by MCMC framework
-        - In fact, U can be U1 and U2 where the untyped SNPs are present in one of multiple reference panels.
-    - Step 1: sample a new haplotype pair for individual samples with respect to SNPs in T.
-        - Using a MCMC conditional distribution, on the reference panel haplotypes and the current study sample haplotypes (excluding the current sample)
-    - Step 2: Impute new alleles for SNPs in the set U. Here the reference panel haplotype information is used.
-        - Li and Stephens based HMM (Genetics 2003) based modeling is used for both IMPUTE1 and IMPUTE2.
-        - Similar to PHASE, but much faster 
-        - iteratively update the haplotype estimates of each sample conditional upon a subset of K haplotype estimates of other samples. 
-        - introduced the idea of carefully choosing which subset of haplotypes to condition on to improve accuracy. 
-        - Accuracy increases with K but with quadratic O(K^2) computational complexity.
-
-[Fast and accurate genotype imputation in genome-wide association studies through pre-phasing - Howie et al. Nat Genet 2012](https://pubmed.ncbi.nlm.nih.gov/22820512/)
-
-    - IMPUTE2 method.
-    - Using the reference HapMap2, 1000 Genome haplotypes, first estimates phased GWAS haplotypes (called pre-phasing) 
-        - and then imputes SNPs using these phased haplotypes.
-    - Pre-phasing is a useful technique for speeding up an imputation run, 
-        - even more useful if you want to impute a single study dataset from different reference panels 
-        - (e.g., successive updates to the reference haplotypes released by the 1,000 Genomes Project). 
-        - Here, you can perform the pre-phasing step just once and save the estimated haplotypes; 
-        - you can then use the same study haplotypes to perform the imputation step with each new reference panel.
-
-[Accurate, scalable and integrative haplotype estimation - Delaneau et al. Nature Comm 2019](https://pubmed.ncbi.nlm.nih.gov/31780650/)
-
-    - SHAPEIT4 method.
-    - Initial approaches: SHAPEIT to infer the haplotypes - then passing these to IMPUTE2 for imputation (as implemented in SHAPEIT2)
-    - The idea is to sample P(D|H) where D = data, H = haplotype information using a compact graph representation - genotype graph.
-    - SHAPEIT1: advance by introducing a linear O(K) complexity method that operates only on the space of haplotypes (K) consistent with an individual’s genotypes.
-    - SHAPEIT4: Haplotype similarity is modeled by Positional Burrows Wheeler transform (PBWT)
-        - Get P haplotypes sharing the longest prefixes with the current haplotype estimate
-        - Collapses the haplotypes identified across the entire region into a list of K distinct haplotypes.
-        - K varies according to the length of matches found in PBWT
-    - SHAPIET4 complexity is O(K)
-
-[Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank - Hofmeister et al. Nature 2023](https://www.nature.com/articles/s41588-023-01415-w)
-
-    - SHAPEIT5 method to infer the haplotypes underlying your study genotypes
-    - 3 additional layers of phasing information: 
-        - reference panel of haplotypes, 
-        - phase information contained in sequencing reads, using haplotype assembly methods like WhatsHap 
-        - subsets of genotypes where the phase information is known a priori (haplotype scaffolding)    
-    - SHAPEIT5: follows BEAGLE 5 to first phase the common variants and then the rare variants.
-
-[Meta-imputation: An efficient method to combine genotype data after imputation with multiple reference panels - Yu et al. AJHG 2022](https://pubmed.ncbi.nlm.nih.gov/35508176/) 
-
-    - Integrates multiple genotype imputation output (imputed separately from individual reference panels). 
-    - Uses weighted average of meta analysis (reference panels containing that specific marker are only considered).
-    - Masks each observed genotype in turn and then impute based on the information of flanking alleles.
-        - Corresponding genotype emission probability is set to 1.
-    - Assumes target genotype is pre-phased prior to imputation.
-    - Implemented in Minimac4 imputation package, with minor change in HMM
-        - Hidden state S_m: underlying choice of reference panels at marker m
-        - Emission state A_m: observed allele (0: reference, 1: alternate)
-        - Hidden states are modeled by forward backward algorithm.
 
 
-## Regulatory regions, motifs
 
-[IMPACT: Genomic Annotation of Cell-State-Specific Regulatory Elements Inferred from the Epigenome of Bound Transcription Factors - Amariuta et al. AJHG 2019](https://doi.org/10.1016/j.ajhg.2019.03.012) 
-
-    - IMPACT (inference and modeling of phenotype related active transcription) method. 
-    - Uses histone marks, promoter and enhancer marks, for different cell types.
-    - Two step approach to infer cell-state specific regulatory elements.
-        - 1. For a candidate TF, first scans the TF binding motifs.
-        - 2. Then learns the TF binding motifs for specific cell types, by using the cell-type-specific regulatory elements as signatures.
-    - Uses a elastic net logistic regression model on 503 cell-type specific epigenomic features (open chromatin, histone marks), and 12 sequence features 
-        - to identify the cell-type-specific active regulatory elements with TF binding motifs.
-
-[Improving the trans-ancestry portability of polygenic risk scores by prioritizing variants in predicted cell-type-specific regulatory elements - Amariuta et al. Nat Gen 2020](https://www.nature.com/articles/s41588-020-00740-8) 
-
-    - Uses IMPACT to predict TF binding motifs across 245 cell types,
-    - Particularly to prioritize TF binding motifs and regulatory variants across multi-ancestry settings.
-    - **** To Do: Can be further augmented by DeepLIFT related approaches - prioritizing motif scores using BPNet etc. ** 
 
 
 ## QTL / ASE / GWAS inference
 
-[WASP: allele-specific software for robust molecular quantitative trait locus discovery - Geijn et al. Nat Meth 2015](https://pubmed.ncbi.nlm.nih.gov/26366987/)
 
-    - Integrates ASE and total read count for QTL inference. 
-        - Eliminates reference mapping bias by discarding mis-mapped reads, such that both alleles do not map to the same region. 
-    - Performs combined haplotype test (CHT) for cis-QTL doscovery
-        - 2 components: 1) total read depth in the target region, 2) allelic imbalance at phased heterozygous SNP
-    - CHT is a combined likelihood ratio test from two models
-        - Read depth is modeled by NB; allelic imbalance is modeled by beta-binomial distribution
-        - Also accounts for genotyoping errors, by approximating allelic imbalance as a mixture of 2 beta-binomials.
-    - Compares between 3 apporoaches: 
-        - 1) mapping to genome using N masked SNP, 
-        - 2) mapping to a personalized genome, 
-        - 3) WASP, where the read mapping for both the alleles of a SNP is checked to overlap the same position.
 
-[RASQUAL - Kumasaka et al. Nat Genet 2016](https://pubmed.ncbi.nlm.nih.gov/26656845/) 
 
-    - QTL inference by NB distribution of total reads and beta-binomial distribution of ASE.
-    - Applicable for 1D QTL (ATAC-QTL and ChIP-QTL).
 
-[Fast and efficient QTL mapper for thousands of molecular phenotypes - fastQTL - Ongen et al. Bioinformatics 2016](https://pubmed.ncbi.nlm.nih.gov/26708335/) 
 
-    - QTL inference by population model and efficient permutation. 
-    - Default model in GTEx. Also implemented in the TensorQTL framework (including conditional eQTL analysis). 
-    - Uses permutation and an adaptive permutation scheme. 
-    - Approximate p-values at any significance levels without requiring the full set of permutations is performed by an approximate beta distribution 
-        - (because order statistics of iid random variables are beta distributed). 
-    - The second step uses FDR not from BH correction but from ST method (Storey and Tibshirani) to report higher number of significant entries, 
-        - corresponding to testing thousands of molecular phenotypes (here gene expression for thousands of genes) genome-wide.
 
-[Common DNA sequence variation influences 3-dimensional conformation of the human genome - Gorkin et al. Genome Biology 2019](https://pubmed.ncbi.nlm.nih.gov/31779666/) 
 
-    - First interaction-QTL paper. 
-    - Applies HiC data on LCL to derive interaction QTLs, but does not extensively compare with conventional eQTLs. 
-    - Rather, it focuses on Hi-C-specific FIRE-QTLs, etc.
 
-[Subtle changes in chromatin loop contact propensity are associated with differential gene regulation and expression - Greenwald et al. Nature Comm 2019](https://www.nature.com/articles/s41467-019-08940-5) 
 
-    - Concept of HTAL - Haplotype associated loops.
-    - Generated phased Hi-C data from induced pluripotent stem cells (iPSCs) and iPSC-derived cardiomyocytes of seven individuals 
-        - to derive 114 haplotype-associated chromatin loops (HTALs) primarily driven by imprinting and/or CNVs but not for eQTLs. 
-    - Subtle changes of these HTALs were shown to impact gene expression and H3K27ac levels, 
-    - Did not identify specific regulatory variants or SNPs since these HTALs were too few and limited to imprinted and CNV regions.
-
-[The GTEx Consortium atlas of genetic regulatory effects across human tissues - GTEx v8 release - Science 2020](https://pubmed.ncbi.nlm.nih.gov/32913098/) 
-
-    - GTEx v8 release. Specifically check the supplementary material for the details of QTL derivation.
-    - WGS data processing:
-        - Alignment with BWA-MEM + Duplicate removal by PICARD + Variant Quality Score recalibration 
-        - Detect outliers from WGS BAMs
-        - Mean sequence coverage + percent of chimeric reads + median and standard deviation of insert size + contamination rate (VerifyBAMID)
-        - PCA + Ancestry of donors - Hail
-        - Genome STRiP for WGS CNV identification
-        - Genotype quality scores 
-        - Variant QC by GATK, PLINK and Hail - VQSR, variant in LCR
-        - Variant PCA - PLINK
-        - Phasing - SHAPEIT2
-    - RNA-seq data processing
-        - STAR - alignment - WASP for removing allele-specific read bias
-
-[A vast resource of allelic expression data spanning human tissues - GTEx v8 - Castel et al. Genome Biology 2020](https://pubmed.ncbi.nlm.nih.gov/32912332/) 
-
-    - Repository of haplotype-specific expression for GTEx v8 tissues. 
-    - Allelic log fold change count is used for comparing SNP and haplotype-level ASE data. 
-    - WASP filtering is recommended for ASE inference. 
-    - Also developed an extension of their tool phASER, namely phASER-POP 
-        - which models population-scale haplotype level ASE data and calculate effect size for regulatory variants.
-
-[Allele-Specific QTL Fine-Mapping with PLASMA - Wang et al. AJHG 2020](https://pubmed.ncbi.nlm.nih.gov/32004450/) 
-
-    - uses both genotype and AS statistics to infer the significant SNPs.
-    - Total expression (y) is modeled by allelic dosage (x) while the allelic imbalance (w) is determined by phasing (v). 
-        - Imbalance has both magnitude as well as sign (depending on the phase)
-    - Also performs fine mapping by using a genotype-LD matrix, and returns a credible causal set using shotgun stochastic search (SSS). 
-    - Compares with fine-mapping approaches CAVIAR, AS-Meta, and RASQUAL 
-        - (by converting the chi-sq statistics of RASQUAL to z-scores and putting them as input to fine-map approaches).
-
-[DeepWAS: Multivariate genotype-phenotype associations by directly integrating regulatory information using deep learning - Arloth et al. PLoS comp biol 2020](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007616) 
-
-    - Derives GWAS SNPs by using regulatory annotations a prior. 
-    - Uses DEEPSEA to first define the regulatory annotation score and filter the SNPs with score exceeding a certain threshold. 
-    - These filtered SNPs are then subjected to a LASSO regression to call the significant GWAS entries.
-
-[ASEP: Gene-based detection of allele-specific expression across individuals in a population by RNA sequencing - Fan et al. PLOS Genetics 2020](https://pubmed.ncbi.nlm.nih.gov/32392242/) 
-
-    - Uses a mixture model to estimate ASE across individuals 
-    - Also computes differential ASE between conditions among groups of individuals.
 
 [Detection of quantitative trait loci from RNA-seq data with or without genotypes using BaseQTL - Vigorito et al. Nat Computational Science 2021](https://pubmed.ncbi.nlm.nih.gov/34993494/) 
 
