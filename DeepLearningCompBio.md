@@ -10,6 +10,8 @@
 
 [Talk like a graph](https://github.com/google-research/talk-like-a-graph/tree/main)
 
+[Deep learning for drug discovery](https://github.com/HICAI-ZJU/Scientific-LLM-Survey)
+
 ## Variant Calling:
 
 [A universal SNP and small-indel variant caller using deep neural networks - DeepVariant - Poplin et al. Nat Biotech 2018](https://www.nature.com/articles/nbt.4235)
