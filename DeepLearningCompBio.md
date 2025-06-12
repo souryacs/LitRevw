@@ -1,5 +1,7 @@
 # Deep Learning in Computational Biology
 
+[Bioinformatics toolkit](https://github.com/evanpeikon/Bioinformatics_Toolkit)
+
 [LLM Models - review](https://github.com/RUCAIBox/LLMSurvey)
 
 [Single cell transformer papers - Theislab](https://github.com/theislab/single-cell-transformer-papers)
