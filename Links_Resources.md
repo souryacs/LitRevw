@@ -38,6 +38,8 @@
   - ENCODE: https://www.encodeproject.org/ and the annotations in SCREEN
   - 4DN: https://www.4dnucleome.org/
   - 3D Genomic organization, contact matrix: https://expresso.sustech.edu.cn/
+  - Loop catalog: https://loopcatalog.lji.org/
+  - ChIP-seq: ROADMAP: https://egg2.wustl.edu/roadmap/web_portal/index.html
 
 
 ## Gene targets / variants consortium / drug targets
@@ -62,7 +64,9 @@
   - dbSNP: https://www.ncbi.nlm.nih.gov/snp
   - GWAS catalog: http://www.ebi.ac.uk/gwas
   - GRASP (Genome-Wide Repository of Associations between SNPs and Phenotypes) database 
-  - GTEx portal: https://www.gtexportal.org/home/    
+  - GTEx portal: https://www.gtexportal.org/home/
+  - ImmunexUT: https://ddbj.nig.ac.jp/public/ddbj_database/gea/experiment/E-GEAD-000/E-GEAD-398/
+  - DICE (immune cell eQTLs): https://dice-database.org/
   - VIPdb: https://genomeinterpretation.org/vipdb.html
   - gnomAD database - contains germline variants
   - Genebass (gene biobank association summary statistics): https://genebass.org
@@ -120,7 +124,6 @@
 
 ### HIV
   - HIV database: https://www.hiv.lanl.gov/content/sequence/HIV/mainpage.html
-  - 
 
 ## Single cell databases
   - Single cell ATAC-seq CRE Atlas CATLAS (www.catlas.org)
@@ -137,6 +140,9 @@
   - CRISPRBrain: https://crisprbrain.org
   - Primary CD4 T cell perturb-seq data: https://virtualcellmodels.cziscience.com/dataset/genome-scale-tcell-perturb-seq
   - lllumina single cell CRISPR database for drug targets: https://www.illumina.com/company/news-center/press-releases/press-release-details.html?newsid=fda84c92-b4b3-4691-a402-35555abe8605
+  - MPRA database: http://mprabase.ucsf.edu/app/mprabase
+  - emVars: Nature papers https://www.nature.com/articles/s41588-022-01056-5 (hg19) and https://www.nature.com/articles/s41588-025-02301-3 (hg19, hg38)
+  - MPRAvardb: https://mpravardb.rc.ufl.edu/
 
 
 ## Review literures / links / websites
