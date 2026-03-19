@@ -1,4 +1,4 @@
-## Books
+## Machine learning Books
 
 Model based machine learning: https://www.mbmlbook.com/
 
@@ -11,6 +11,21 @@ Bayesian data analysis for cognitive science: https://vasishth.github.io/bayesco
 Graph ML: https://huggingface.co/blog/intro-graphml
 
 Mathematics for computational biology: https://github.com/evanpeikon/math_for_compbio
+
+## Courses in computational biology
+
+University of Wisconsin–Madison - Computational Network Biology: [compnetbiocourse.discovery.wisc.edu](https://bmi775.sites.wisc.edu/)
+
+MIT Computational biology lectures : https://www.youtube.com/playlist?list=PLypiXJdtIca6GBQwDTo4bIEDV8F4RcAgt
+
+
+
+
+
+
+
+
+
 
 ## Review papers - ML in computational Biology
 
