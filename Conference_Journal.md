@@ -1,35 +1,37 @@
 **Important Journals:**
 
-Nature
-Nature Cancer
-Nature Methods
-Nature Biotechnology
-Nature Genetics
-Nature Structural and Molecular Biology
-Nature Reviews Genetics
-Nature Reviews Molecular Cell Biology
-Nature Communications
-Nature Computational Science
-Science
-Cell
-Cell Reports
-Cell systems
-Patterns
-Molecular Cell
-eLife
-Genome biology
-Genome Research
-Nucleic Acids research
-NAR Genomics and Bioinformatics
-Plos Computational Biology
-Plos Genetics
-Bioinformatics
-BioStatistics
-Briefings in Bioinformatics
-Cell Research
-IEEE/ACM transactions on computational biology and bioinformatics
-BMC bioinformatics
-BMC Genomics
+| Journal Name	| Link |
+| :--- | :--- |
+| Nature | :--- |
+| Nature Cancer | :--- |
+| Nature Methods | :--- |
+| Nature Biotechnology | :--- |
+| Nature Genetics | :--- |
+| Nature Structural and Molecular Biology | :--- |
+| Nature Reviews Genetics | :--- |
+| Nature Reviews Molecular Cell Biology | :--- |
+| Nature Communications | :--- |
+| Nature Computational Science | :--- |
+| Science | :--- |
+| Cell | :--- |
+| Cell Reports | :--- |
+| Cell systems | :--- |
+| Patterns | :--- |
+| Molecular Cell | :--- |
+| eLife | :--- |
+| Genome biology | :--- |
+| Genome Research | :--- |
+| Nucleic Acids research | :--- |
+| NAR Genomics and Bioinformatics | :--- |
+| Plos Computational Biology | :--- |
+| Plos Genetics | :--- |
+| Bioinformatics | :--- |
+| BioStatistics | :--- |
+| Briefings in Bioinformatics | :--- |
+| Cell Research | :--- |
+| IEEE/ACM transactions on computational biology and bioinformatics | :--- |
+| BMC bioinformatics | :--- |
+| BMC Genomics | :--- |
 
 
 **Important Conferences:**
