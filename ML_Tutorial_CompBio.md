@@ -12,6 +12,12 @@ Graph ML: https://huggingface.co/blog/intro-graphml
 
 Mathematics for computational biology: https://github.com/evanpeikon/math_for_compbio
 
+## Blogs / Research
+
+| Company | Link |
+| --------| -------- |
+| Google Research Blog | https://research.google/blog/ |
+
 ## Courses in computational biology
 
 University of Wisconsin–Madison - Computational Network Biology: [compnetbiocourse.discovery.wisc.edu](https://bmi775.sites.wisc.edu/)
