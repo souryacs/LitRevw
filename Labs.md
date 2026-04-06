@@ -6,3 +6,9 @@
 | Olga Troyanskaya | Princeton University | https://function.princeton.edu/ | variant to function interpretation, https://www.youtube.com/watch?v=M7RyuC9CM3s |
 
 
+## Industrial research
+
+| Lab name / PI name | Location / Institute / Company | Website | Working area |
+| :----------------- | :----------------------------- | :------ | :----------- | 
+| Shekoofeh Azizi | Google Deepmind |  | AI in Cancer |
+
