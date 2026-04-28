@@ -100,6 +100,7 @@
   - PCAWG - Pan Cancer Consortium https://dcc.icgc.org/pcawg
   - DepMap - https://depmap.org/portal/home/#/
   - TRACERx (Oncology database): http://tracerx.co.uk/
+  - Cell free DNA (cfDNA) packages and works: https://odinokov.github.io/cfdna-tools/
 
 ### Diabetes
   - DIAMANTE - Diabetes consortium (GWAS)  https://kp4cd.org/node/169
